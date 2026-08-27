@@ -11,9 +11,182 @@ permissions:
 
 jobs:
   publish:
-    permissions:
-      contents: write
-      pull-requests: write
-    uses: WordPress/action-wp-playground-pr-preview/.github/workflows/preview-publish.yml@v3
-    with:
-      kind: theme
+    if: >-
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Identify validated preview bundle
+        id: meta
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          SOURCE_RUN_ID: ${{ github.event.workflow_run.id }}
+        with:
+          script: |
+            const runId = Number(process.env.SOURCE_RUN_ID);
+            const { data } = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: runId,
+            });
+
+            const artifacts = data.artifacts.filter((artifact) =>
+              /^wp-playground-preview-pr\d+-[0-9a-f]+$/i.test(artifact.name)
+            );
+
+            if (artifacts.length !== 1) {
+              throw new Error(`Expected one Playground preview bundle, found ${artifacts.length}.`);
+            }
+
+            const artifact = artifacts[0];
+            const match = artifact.name.match(/^wp-playground-preview-pr(\d+)-(.+)$/);
+
+            if (!match) {
+              throw new Error(`Cannot parse preview artifact name: ${artifact.name}`);
+            }
+
+            const [, prNumber, headSha] = match;
+            const expectedSha = context.payload.workflow_run.head_sha;
+
+            if (headSha !== expectedSha) {
+              throw new Error(`Artifact SHA ${headSha} does not match workflow SHA ${expectedSha}.`);
+            }
+
+            const { data: pullRequest } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: Number(prNumber),
+            });
+
+            if (pullRequest.head.sha !== expectedSha) {
+              throw new Error('Pull request head changed before preview publication.');
+            }
+
+            core.setOutput('artifact-id', String(artifact.id));
+            core.setOutput('pr-number', prNumber);
+            core.setOutput('head-sha', headSha);
+
+      - name: Download preview bundle
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ARTIFACT_ID: ${{ steps.meta.outputs.artifact-id }}
+        run: |
+          set -euo pipefail
+          mkdir -p bundle
+          gh api -X GET "/repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > bundle.zip
+          unzip -oq bundle.zip -d bundle
+          test -f bundle/zips/buildora.zip
+
+      - name: Publish built theme to CORS-safe raw branch
+        id: publish
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          PR_NUMBER: ${{ steps.meta.outputs.pr-number }}
+          HEAD_SHA: ${{ steps.meta.outputs.head-sha }}
+        with:
+          script: |
+            const fs = require('fs');
+            const branch = 'playground-artifacts';
+            const zipPath = 'bundle/zips/buildora.zip';
+            const repository = context.repo;
+
+            if (!fs.existsSync(zipPath)) {
+              throw new Error(`Built theme not found at ${zipPath}`);
+            }
+
+            try {
+              await github.rest.git.getRef({
+                owner: repository.owner,
+                repo: repository.repo,
+                ref: `heads/${branch}`,
+              });
+            } catch (error) {
+              if (error.status !== 404) throw error;
+
+              const { data: repoData } = await github.rest.repos.get({
+                owner: repository.owner,
+                repo: repository.repo,
+              });
+              const { data: baseBranch } = await github.rest.repos.getBranch({
+                owner: repository.owner,
+                repo: repository.repo,
+                branch: repoData.default_branch,
+              });
+
+              await github.rest.git.createRef({
+                owner: repository.owner,
+                repo: repository.repo,
+                ref: `refs/heads/${branch}`,
+                sha: baseBranch.commit.sha,
+              });
+            }
+
+            const path = `pr-${process.env.PR_NUMBER}/${process.env.HEAD_SHA}/buildora.zip`;
+            let existingSha;
+
+            try {
+              const { data: existing } = await github.rest.repos.getContent({
+                owner: repository.owner,
+                repo: repository.repo,
+                path,
+                ref: branch,
+              });
+              if (!Array.isArray(existing)) existingSha = existing.sha;
+            } catch (error) {
+              if (error.status !== 404) throw error;
+            }
+
+            await github.rest.repos.createOrUpdateFileContents({
+              owner: repository.owner,
+              repo: repository.repo,
+              path,
+              branch,
+              message: `ci: publish Buildora preview PR #${process.env.PR_NUMBER}`,
+              content: fs.readFileSync(zipPath).toString('base64'),
+              ...(existingSha ? { sha: existingSha } : {}),
+            });
+
+            const rawUrl = `https://raw.githubusercontent.com/${repository.owner}/${repository.repo}/${branch}/${path}`;
+            core.setOutput('theme-url', rawUrl);
+            core.info(`Published preview theme: ${rawUrl}`);
+
+      - name: Build modern Playground blueprint
+        id: blueprint
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        env:
+          THEME_URL: ${{ steps.publish.outputs.theme-url }}
+        with:
+          script: |
+            const blueprint = {
+              $schema: 'https://playground.wordpress.net/blueprint-schema.json',
+              landingPage: '/',
+              login: true,
+              preferredVersions: {
+                php: '8.3',
+                wp: '7.1',
+              },
+              steps: [
+                {
+                  step: 'installTheme',
+                  themeData: {
+                    resource: 'url',
+                    url: process.env.THEME_URL,
+                  },
+                  options: {
+                    activate: true,
+                  },
+                },
+              ],
+            };
+
+            core.setOutput('json', JSON.stringify(blueprint));
+
+      - name: Publish Playground button
+        uses: WordPress/action-wp-playground-pr-preview@43fc435558bc6cee69f5b214d6b8ca4f9f80c31d # v3
+        with:
+          mode: append-to-description
+          playground-host: 'https://playground.wordpress.net/?storage=temp'
+          blueprint: ${{ steps.blueprint.outputs.json }}
+          pr-number: ${{ steps.meta.outputs.pr-number }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
