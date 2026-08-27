@@ -7,7 +7,7 @@ export default defineConfig({
     emptyOutDir: true,
     sourcemap: false,
     rollupOptions: {
-      input: 'src/js/app.js',
+      input: 'src/scss/app.scss',
       output: {
         entryFileNames: 'js/[name]-[hash].js',
         chunkFileNames: 'js/[name]-[hash].js',
