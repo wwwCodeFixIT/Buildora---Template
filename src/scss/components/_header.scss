@@ -26,11 +26,6 @@
   gap: 0.75rem;
 }
 
-.buildora-header__brand .wp-block-site-logo {
-  flex: 0 0 auto;
-  margin: 0;
-}
-
 .buildora-header__brand .wp-block-site-title {
   margin: 0;
   line-height: 1;
@@ -107,63 +102,145 @@
   outline-offset: 4px;
 }
 
-.buildora-primary-nav .wp-block-navigation__responsive-container.is-menu-open {
-  padding: clamp(1.25rem, 5vw, 2rem);
+.buildora-mobile-menu {
+  display: none;
+}
+
+.buildora-mobile-menu__toggle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--wp--preset--color--ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.buildora-mobile-menu__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.buildora-mobile-menu__toggle::marker {
+  content: '';
+}
+
+.buildora-mobile-menu__toggle:focus-visible {
+  outline: 3px solid var(--wp--preset--color--ink);
+  outline-offset: 3px;
+}
+
+.buildora-mobile-menu__icon,
+.buildora-mobile-menu__icon::before,
+.buildora-mobile-menu__icon::after {
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  content: '';
+  transform: translateX(-50%);
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+.buildora-mobile-menu__icon {
+  top: 50%;
+}
+
+.buildora-mobile-menu__icon::before {
+  top: -6px;
+}
+
+.buildora-mobile-menu__icon::after {
+  top: 6px;
+}
+
+.buildora-mobile-menu[open] .buildora-mobile-menu__icon {
+  background: transparent;
+}
+
+.buildora-mobile-menu[open] .buildora-mobile-menu__icon::before {
+  top: 0;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.buildora-mobile-menu[open] .buildora-mobile-menu__icon::after {
+  top: 0;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.buildora-mobile-menu__panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 90;
+  max-height: calc(100svh - 68px);
+  overflow-y: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   background: var(--wp--preset--color--ink);
   color: var(--wp--preset--color--paper);
+  box-shadow: 0 24px 50px rgba(17, 19, 21, 0.18);
 }
 
-.buildora-primary-nav
-  .wp-block-navigation__responsive-container.is-menu-open
-  .wp-block-navigation__responsive-container-content {
-  align-items: stretch;
-  padding-top: clamp(4rem, 12vh, 7rem);
+.buildora-mobile-menu__nav {
+  width: min(100%, 1280px);
+  min-height: calc(100svh - 68px);
+  margin-inline: auto;
+  padding: clamp(2rem, 8vw, 4rem) clamp(1rem, 4vw, 2rem);
 }
 
-.buildora-primary-nav
-  .wp-block-navigation__responsive-container.is-menu-open
-  .wp-block-navigation__container {
-  width: 100%;
-  align-items: stretch;
+.buildora-mobile-menu__nav ul {
+  display: grid;
   gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.buildora-primary-nav
-  .wp-block-navigation__responsive-container.is-menu-open
-  .wp-block-navigation-item {
-  width: 100%;
+.buildora-mobile-menu__nav li {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.buildora-primary-nav
-  .wp-block-navigation__responsive-container.is-menu-open
-  .wp-block-navigation-item__content {
+.buildora-mobile-menu__nav a:not(.buildora-mobile-menu__cta) {
   display: block;
-  width: 100%;
   padding: 1rem 0;
   color: var(--wp--preset--color--paper);
   font-size: clamp(1.5rem, 7vw, 2.5rem);
   font-weight: 750;
   line-height: 1.1;
   letter-spacing: -0.03em;
+  text-decoration: none;
 }
 
-.buildora-primary-nav
-  .wp-block-navigation__responsive-container.is-menu-open
-  .wp-block-navigation-item__content::after {
-  display: none;
+.buildora-mobile-menu__nav a:not(.buildora-mobile-menu__cta):hover,
+.buildora-mobile-menu__nav a:not(.buildora-mobile-menu__cta):focus-visible {
+  color: var(--wp--preset--color--brand);
 }
 
-.buildora-primary-nav .wp-block-navigation__responsive-container-close {
-  color: var(--wp--preset--color--paper);
-}
-
-.buildora-primary-nav .wp-block-navigation__responsive-container-open,
-.buildora-primary-nav .wp-block-navigation__responsive-container-close {
-  min-width: 44px;
-  min-height: 44px;
+.buildora-mobile-menu__cta {
+  display: inline-flex;
+  min-height: 48px;
   align-items: center;
   justify-content: center;
+  margin-top: 2rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  background: var(--wp--preset--color--brand);
+  color: var(--wp--preset--color--ink);
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.buildora-mobile-menu__cta:hover,
+.buildora-mobile-menu__cta:focus-visible {
+  background: var(--wp--preset--color--brand-dark);
+  color: var(--wp--preset--color--ink);
 }
 
 @media (max-width: 960px) {
@@ -171,8 +248,14 @@
     min-height: 68px;
   }
 
+  .buildora-primary-nav,
   .buildora-header__cta {
     display: none;
+  }
+
+  .buildora-mobile-menu {
+    display: block;
+    margin: 0;
   }
 }
 
@@ -184,7 +267,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .buildora-primary-nav .wp-block-navigation-item__content::after,
-  .buildora-header__cta .wp-block-button__link {
+  .buildora-header__cta .wp-block-button__link,
+  .buildora-mobile-menu__icon,
+  .buildora-mobile-menu__icon::before,
+  .buildora-mobile-menu__icon::after {
     transition: none;
   }
 
