@@ -1,0 +1,208 @@
+.buildora-services {
+  padding-block: clamp(4.5rem, 8vw, 7rem);
+  background: var(--wp--preset--color--paper);
+}
+
+.buildora-services__intro {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.buildora-services__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 1rem;
+  color: var(--wp--preset--color--ink);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.buildora-services__eyebrow::before {
+  width: 2.25rem;
+  height: 0.2rem;
+  background: var(--wp--preset--color--brand);
+  content: '';
+}
+
+.buildora-services__heading-row {
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.buildora-services__title {
+  max-width: 10ch;
+  margin: 0;
+  font-size: clamp(2.6rem, 4.5vw, 4.7rem) !important;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.buildora-services__lead {
+  max-width: 34rem;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.buildora-services__grid {
+  gap: 1rem;
+  align-items: stretch !important;
+}
+
+.buildora-service-card {
+  min-height: 31rem;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid rgba(17, 19, 21, 0.12);
+  background: var(--wp--preset--color--surface);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.buildora-service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(17, 19, 21, 0.24);
+  box-shadow: 0 24px 50px rgba(17, 19, 21, 0.08);
+}
+
+.buildora-service-card--featured {
+  border-color: var(--wp--preset--color--ink);
+  background: var(--wp--preset--color--ink);
+  color: var(--wp--preset--color--paper);
+}
+
+.buildora-service-card--featured .buildora-service-card__number,
+.buildora-service-card--featured .buildora-service-card__meta,
+.buildora-service-card--featured .buildora-service-card__link a {
+  color: var(--wp--preset--color--brand);
+}
+
+.buildora-service-card__number {
+  margin: 0 0 auto;
+  color: var(--wp--preset--color--brand-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.buildora-service-card__title {
+  margin: 4rem 0 1rem;
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.buildora-service-card__text {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.buildora-service-card--featured .buildora-service-card__text {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.buildora-service-card__meta {
+  margin: 1.75rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(17, 19, 21, 0.1);
+  color: var(--wp--preset--color--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.buildora-service-card--featured .buildora-service-card__meta {
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+.buildora-service-card__link {
+  margin: auto 0 0;
+  padding-top: 2rem;
+}
+
+.buildora-service-card__link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--wp--preset--color--ink);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.buildora-service-card__link a span {
+  transition: transform 180ms ease;
+}
+
+.buildora-service-card__link a:hover span,
+.buildora-service-card__link a:focus-visible span {
+  transform: translate(0.15rem, -0.15rem);
+}
+
+@media (max-width: 960px) {
+  .buildora-services__heading-row {
+    gap: 2rem;
+  }
+
+  .buildora-service-card {
+    min-height: 28rem;
+  }
+}
+
+@media (max-width: 781px) {
+  .buildora-services {
+    padding-block: 4rem;
+  }
+
+  .buildora-services__heading-row,
+  .buildora-services__grid {
+    gap: 1rem;
+  }
+
+  .buildora-services__title {
+    max-width: none;
+    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 11vw, 4rem) !important;
+  }
+
+  .buildora-service-card {
+    min-height: 24rem;
+  }
+
+  .buildora-service-card__title {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .buildora-services {
+    padding-block: 3.5rem;
+  }
+
+  .buildora-services__eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .buildora-service-card {
+    min-height: 22rem;
+    padding: 1.4rem;
+  }
+
+  .buildora-service-card__title {
+    margin-top: 2.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildora-service-card,
+  .buildora-service-card__link a span {
+    transition: none;
+  }
+
+  .buildora-service-card:hover,
+  .buildora-service-card__link a:hover span,
+  .buildora-service-card__link a:focus-visible span {
+    transform: none;
+  }
+}
