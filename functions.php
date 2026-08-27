@@ -112,6 +112,7 @@ function buildora_enqueue_assets(): void {
 			if ( is_string( $css_file ) ) {
 				$css_files[] = ltrim( $css_file, '/' );
 			}
+		}
 	}
 
 	$css_files = array_values( array_unique( $css_files ) );
