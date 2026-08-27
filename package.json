@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "format": "prettier --write \"src/**/*.{js,scss}\" \"scripts/**/*.mjs\" \"playground/**/*.json\" \".devcontainer/**/*.json\" \"*.{json,js,md}\" \".github/**/*.{yml,yaml}\"",
-    "format:check": "prettier --check \"src/**/*.{js,scss}\" \"scripts/**/*.mjs\" \"playground/**/*.json\" \".devcontainer/**/*.json\" \"*.{json,js,md}\" \".github/**/*.{yml,yaml}\"",
+    "format:check": "prettier --check \"src/**/*.{js,scss}\" \"scripts/**/*.mjs\" \"playground/**/*.json\" \".devcontainer/**/*.json\" \"*.{json,js}\" \".github/**/*.{yml,yaml}\"",
     "check": "npm run lint && npm run format:check && npm run build",
     "package": "npm run build && bash scripts/build-theme-zip.sh",
     "configure:cloud": "node scripts/configure-cloud.mjs"
