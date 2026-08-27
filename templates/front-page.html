@@ -10,7 +10,7 @@
 
 		<!-- wp:group {"className":"buildora-header__actions","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
 		<div class="wp-block-group buildora-header__actions">
-			<!-- wp:navigation {"overlayMenu":"mobile","className":"buildora-primary-nav","layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"1.5rem"}}} -->
+			<!-- wp:navigation {"overlayMenu":"never","className":"buildora-primary-nav","layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"1.5rem"}}} -->
 				<!-- wp:navigation-link {"label":"Home","url":"/","kind":"custom","isTopLevelLink":true} /-->
 				<!-- wp:navigation-link {"label":"Services","url":"/services/","kind":"custom","isTopLevelLink":true} /-->
 				<!-- wp:navigation-link {"label":"Projects","url":"/projects/","kind":"custom","isTopLevelLink":true} /-->
@@ -25,6 +25,27 @@
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->
+
+			<!-- wp:html -->
+			<details class="buildora-mobile-menu">
+				<summary class="buildora-mobile-menu__toggle">
+					<span class="screen-reader-text">Open navigation</span>
+					<span class="buildora-mobile-menu__icon" aria-hidden="true"></span>
+				</summary>
+				<div class="buildora-mobile-menu__panel">
+					<nav class="buildora-mobile-menu__nav" aria-label="Mobile navigation">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li><a href="/services/">Services</a></li>
+							<li><a href="/projects/">Projects</a></li>
+							<li><a href="/about/">About</a></li>
+							<li><a href="/contact/">Contact</a></li>
+						</ul>
+						<a class="buildora-mobile-menu__cta" href="/contact/">Get a quote</a>
+					</nav>
+				</div>
+			</details>
+			<!-- /wp:html -->
 		</div>
 		<!-- /wp:group -->
 	</div>
