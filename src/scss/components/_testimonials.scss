@@ -1,0 +1,198 @@
+.buildora-testimonials {
+  padding-block: clamp(4.5rem, 8vw, 7rem);
+  background: var(--wp--preset--color--paper);
+}
+
+.buildora-testimonials__intro {
+  margin-bottom: clamp(2.75rem, 5vw, 4.5rem);
+}
+
+.buildora-testimonials__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.buildora-testimonials__eyebrow::before {
+  width: 2rem;
+  height: 0.18rem;
+  background: var(--wp--preset--color--brand);
+  content: '';
+}
+
+.buildora-testimonials__heading-row {
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.buildora-testimonials__title {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(3rem, 5.2vw, 5.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.buildora-testimonials__lead {
+  max-width: 34rem;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.buildora-testimonials__grid {
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.buildora-testimonials__stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.buildora-testimonial {
+  min-height: 100%;
+  margin: 0;
+  padding: clamp(2rem, 4vw, 3rem);
+  border: 1px solid rgb(17 19 21 / 12%);
+  background: #fff;
+}
+
+.buildora-testimonial--featured {
+  position: relative;
+  display: flex;
+  min-height: 34rem;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-color: transparent;
+}
+
+.buildora-testimonial--featured::after {
+  position: absolute;
+  right: -12%;
+  bottom: -26%;
+  width: 55%;
+  aspect-ratio: 1;
+  border: 1px solid rgb(255 255 255 / 10%);
+  content: '';
+  transform: rotate(12deg);
+}
+
+.buildora-testimonial__rating {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 2rem;
+  color: var(--wp--preset--color--brand);
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+}
+
+.buildora-testimonial__quote {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.buildora-testimonial__quote p {
+  margin: 0;
+  font-size: clamp(2rem, 3.8vw, 3.9rem);
+  font-weight: 750;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.buildora-testimonial__quote--small p {
+  font-size: clamp(1.4rem, 2.1vw, 2rem);
+  line-height: 1.2;
+}
+
+.buildora-testimonial__meta {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(3rem, 7vw, 6rem);
+}
+
+.buildora-testimonial__name,
+.buildora-testimonial__project {
+  margin: 0;
+}
+
+.buildora-testimonial__name {
+  font-size: 1rem;
+}
+
+.buildora-testimonial__project {
+  margin-top: 0.3rem;
+  color: var(--wp--preset--color--muted);
+  font-size: 0.88rem;
+}
+
+.buildora-testimonial--featured .buildora-testimonial__project {
+  color: rgb(255 255 255 / 62%);
+}
+
+.buildora-testimonials__stack .buildora-testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buildora-testimonials__stack .buildora-testimonial__name {
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 781px) {
+  .buildora-testimonials {
+    padding-block: 4rem;
+  }
+
+  .buildora-testimonials__heading-row {
+    gap: 1.25rem;
+  }
+
+  .buildora-testimonials__title {
+    max-width: 11ch;
+  }
+
+  .buildora-testimonials__grid {
+    gap: 1rem;
+  }
+
+  .buildora-testimonial--featured {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .buildora-testimonials {
+    padding-block: 3.5rem;
+  }
+
+  .buildora-testimonials__intro {
+    margin-bottom: 2.5rem;
+  }
+
+  .buildora-testimonials__title {
+    font-size: clamp(2.7rem, 12vw, 3.7rem);
+  }
+
+  .buildora-testimonial {
+    padding: 1.75rem;
+  }
+
+  .buildora-testimonial__quote p {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+  }
+
+  .buildora-testimonial__quote--small p {
+    font-size: 1.45rem;
+  }
+}
