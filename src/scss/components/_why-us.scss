@@ -1,0 +1,215 @@
+.buildora-why {
+  padding-block: clamp(4.5rem, 8vw, 7rem);
+}
+
+.buildora-why__grid {
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: stretch;
+}
+
+.buildora-why__panel,
+.buildora-why__content {
+  min-width: 0;
+}
+
+.buildora-why__panel-inner {
+  height: 100%;
+  min-height: 34rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(2rem, 5vw, 4rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.buildora-why__panel-inner::after {
+  position: absolute;
+  right: -10%;
+  bottom: -20%;
+  width: 60%;
+  aspect-ratio: 1;
+  border: 1px solid rgb(255 255 255 / 10%);
+  content: '';
+  transform: rotate(12deg);
+}
+
+.buildora-why__eyebrow,
+.buildora-why__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.buildora-why__eyebrow {
+  color: var(--wp--preset--color--brand);
+}
+
+.buildora-why__kicker {
+  color: var(--wp--preset--color--ink);
+}
+
+.buildora-why__kicker::before {
+  width: 2rem;
+  height: 0.18rem;
+  background: var(--wp--preset--color--brand);
+  content: '';
+}
+
+.buildora-why__panel-title,
+.buildora-why__title {
+  margin: 0;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.buildora-why__panel-title {
+  max-width: 9ch;
+  font-size: clamp(2.6rem, 4.4vw, 4.4rem);
+}
+
+.buildora-why__title {
+  max-width: 10ch;
+  font-size: clamp(2.6rem, 4vw, 4rem);
+}
+
+.buildora-why__panel-copy {
+  max-width: 31rem;
+  margin-top: 1.5rem;
+  color: rgb(255 255 255 / 68%);
+  line-height: 1.7;
+}
+
+.buildora-why__stats {
+  position: relative;
+  z-index: 1;
+  gap: 0;
+  margin-top: clamp(3rem, 7vw, 6rem);
+  border-top: 1px solid rgb(255 255 255 / 14%);
+}
+
+.buildora-why__stat {
+  margin: 0;
+  padding-top: 1.4rem;
+}
+
+.buildora-why__stat + .buildora-why__stat {
+  padding-left: clamp(1rem, 3vw, 2rem);
+  border-left: 1px solid rgb(255 255 255 / 14%);
+}
+
+.buildora-why__stat-value,
+.buildora-why__stat-label {
+  margin: 0;
+}
+
+.buildora-why__stat-value {
+  color: var(--wp--preset--color--brand);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.buildora-why__stat-label {
+  max-width: 12rem;
+  margin-top: 0.45rem;
+  color: rgb(255 255 255 / 62%);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.buildora-why__content {
+  padding-block: clamp(1rem, 3vw, 2rem);
+}
+
+.buildora-why__reasons {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.buildora-why__reason {
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin: 0;
+  padding-block: 1.5rem;
+  border-top: 1px solid rgb(17 19 21 / 12%);
+}
+
+.buildora-why__reason:last-child {
+  border-bottom: 1px solid rgb(17 19 21 / 12%);
+}
+
+.buildora-why__reason-number {
+  min-width: 2.2rem;
+  margin: 0;
+  color: var(--wp--preset--color--brand);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.buildora-why__reason-title,
+.buildora-why__reason-copy {
+  margin: 0;
+}
+
+.buildora-why__reason-title {
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  letter-spacing: -0.025em;
+}
+
+.buildora-why__reason-copy {
+  max-width: 36rem;
+  margin-top: 0.55rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 781px) {
+  .buildora-why {
+    padding-block: 4rem;
+  }
+
+  .buildora-why__grid {
+    gap: 2.75rem;
+  }
+
+  .buildora-why__panel-inner {
+    min-height: 0;
+  }
+
+  .buildora-why__panel-title,
+  .buildora-why__title {
+    max-width: 11ch;
+  }
+
+  .buildora-why__stats {
+    margin-top: 3.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .buildora-why {
+    padding-block: 3.5rem;
+  }
+
+  .buildora-why__panel-inner {
+    padding: 1.75rem;
+  }
+
+  .buildora-why__panel-title,
+  .buildora-why__title {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+
+  .buildora-why__stats {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .buildora-why__reason {
+    align-items: flex-start;
+  }
+}
