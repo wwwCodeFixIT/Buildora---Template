@@ -32,11 +32,11 @@
 			<!-- wp:buttons {"className":"buildora-final-cta__buttons","layout":{"type":"flex","flexWrap":"wrap"}} -->
 			<div class="wp-block-buttons buildora-final-cta__buttons">
 				<!-- wp:button {"className":"buildora-final-cta__primary"} -->
-				<div class="wp-block-button buildora-final-cta__primary"><a class="wp-block-button__link wp-element-button" href="/contact/"><?php esc_html_e( 'Request a free quote', 'buildora' ); ?></a></div>
+				<div class="wp-block-button buildora-final-cta__primary"><a class="wp-block-button__link wp-element-button" href="#contact"><?php esc_html_e( 'Request a free quote', 'buildora' ); ?></a></div>
 				<!-- /wp:button -->
 
 				<!-- wp:button {"className":"is-style-outline buildora-final-cta__secondary"} -->
-				<div class="wp-block-button is-style-outline buildora-final-cta__secondary"><a class="wp-block-button__link wp-element-button" href="/projects/"><?php esc_html_e( 'View recent projects', 'buildora' ); ?></a></div>
+				<div class="wp-block-button is-style-outline buildora-final-cta__secondary"><a class="wp-block-button__link wp-element-button" href="#projects"><?php esc_html_e( 'View recent projects', 'buildora' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->
