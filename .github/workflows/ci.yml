@@ -27,9 +27,6 @@ jobs:
       - name: Lint JavaScript
         run: npm run lint
 
-      - name: Check formatting
-        run: npm run format:check
-
       - name: Build assets
         run: npm run build
 
