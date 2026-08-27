@@ -49,10 +49,18 @@
 }
 
 .buildora-hero__title {
-  max-width: 10.8ch;
+  max-width: none;
   margin-block: 0;
   font-size: clamp(3.4rem, 5vw, 5.6rem) !important;
   text-wrap: balance;
+}
+
+.buildora-hero__title-line {
+  display: block;
+}
+
+.buildora-hero__title-line--wide {
+  white-space: nowrap;
 }
 
 .buildora-hero__lead {
@@ -135,7 +143,7 @@
 
 .buildora-hero__visual {
   position: relative;
-  width: min(100%, 34rem);
+  width: min(100%, 32rem);
   margin-inline: auto;
   padding: clamp(0.75rem, 1.5vw, 1rem);
 }
@@ -144,7 +152,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 44%;
+  width: 42%;
   aspect-ratio: 1;
   background: var(--wp--preset--color--brand);
   content: '';
@@ -155,9 +163,9 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 39%;
+  width: 37%;
   aspect-ratio: 1;
-  border: 1px solid rgba(17, 19, 21, 0.16);
+  border: 1px solid rgba(17, 19, 21, 0.14);
   content: '';
   transform: translate(-10%, 8%);
 }
@@ -174,27 +182,27 @@
   object-fit: cover;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 0;
-  box-shadow: 0 30px 80px rgba(17, 19, 21, 0.18);
+  box-shadow: 0 24px 64px rgba(17, 19, 21, 0.15);
 }
 
 .buildora-hero__badge {
   position: absolute;
   z-index: 2;
-  min-width: 9.25rem;
+  min-width: 9rem;
   margin: 0;
-  padding: 0.9rem 1rem;
+  padding: 0.85rem 0.95rem;
   border: 1px solid rgba(17, 19, 21, 0.08);
-  box-shadow: 0 18px 40px rgba(17, 19, 21, 0.12);
+  box-shadow: 0 16px 34px rgba(17, 19, 21, 0.1);
 }
 
 .buildora-hero__badge--top {
   top: 11%;
-  right: -4%;
+  right: -3%;
 }
 
 .buildora-hero__badge--bottom {
   bottom: 8%;
-  left: -4%;
+  left: -3%;
 }
 
 .buildora-hero__badge-label,
@@ -234,8 +242,8 @@
     gap: 3.25rem;
   }
 
-  .buildora-hero__title {
-    max-width: 11ch;
+  .buildora-hero__title-line--wide {
+    white-space: normal;
   }
 
   .buildora-hero__badge--top {
@@ -257,7 +265,6 @@
   }
 
   .buildora-hero__title {
-    max-width: 12ch;
     font-size: clamp(3rem, 12vw, 4.5rem) !important;
   }
 
@@ -271,7 +278,7 @@
   }
 
   .buildora-hero__visual {
-    width: min(92%, 31rem);
+    width: min(92%, 30rem);
   }
 }
 
