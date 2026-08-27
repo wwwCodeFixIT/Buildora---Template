@@ -39,7 +39,7 @@ $buildora_mailto_url    = $buildora_contact_email ? 'mailto:' . antispambot( $bu
 				<!-- /wp:button -->
 
 				<!-- wp:button {"className":"is-style-outline buildora-final-cta__secondary"} -->
-				<div class="wp-block-button is-style-outline buildora-final-cta__secondary"><a class="wp-block-button__link wp-element-button" href="#projects"><?php esc_html_e( 'View recent projects', 'buildora' ); ?></a></div>
+				<div class="wp-block-button is-style-outline buildora-final-cta__secondary"><a class="wp-block-button__link wp-element-button" href="/#projects"><?php esc_html_e( 'View recent projects', 'buildora' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->
