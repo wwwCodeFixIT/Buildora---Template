@@ -24,6 +24,20 @@ function buildora_setup(): void {
 	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'editor-styles' );
 	add_theme_support( 'appearance-tools' );
+	add_theme_support( 'align-wide' );
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'style',
+			'script',
+		)
+	);
+
 	add_editor_style( 'style.css' );
 }
 add_action( 'after_setup_theme', 'buildora_setup' );
@@ -55,6 +69,21 @@ function buildora_get_vite_manifest(): array {
 }
 
 /**
+ * Resolve the Vite app entry.
+ *
+ * The production build is CSS-only today, but the JS entry fallback keeps the
+ * loader future-proof if progressive enhancement is added later.
+ *
+ * @return array<string, mixed>|null
+ */
+function buildora_get_vite_entry(): ?array {
+	$manifest = buildora_get_vite_manifest();
+	$entry    = $manifest['src/scss/app.scss'] ?? $manifest['src/js/app.js'] ?? null;
+
+	return is_array( $entry ) ? $entry : null;
+}
+
+/**
  * Enqueue frontend assets produced by Vite.
  */
 function buildora_enqueue_assets(): void {
@@ -65,29 +94,42 @@ function buildora_enqueue_assets(): void {
 		BUILDORA_VERSION
 	);
 
-	$manifest = buildora_get_vite_manifest();
-	$entry    = $manifest['src/js/app.js'] ?? null;
+	$entry = buildora_get_vite_entry();
 
-	if ( ! is_array( $entry ) || empty( $entry['file'] ) ) {
+	if ( null === $entry || empty( $entry['file'] ) || ! is_string( $entry['file'] ) ) {
 		return;
 	}
 
-	if ( ! empty( $entry['css'] ) && is_array( $entry['css'] ) ) {
-		foreach ( $entry['css'] as $index => $css_file ) {
-			if ( ! is_string( $css_file ) ) {
-				continue;
-			}
+	$entry_file = ltrim( $entry['file'], '/' );
+	$css_files  = array();
 
-			wp_enqueue_style(
-				'buildora-app-' . absint( $index ),
-				get_theme_file_uri( 'assets/dist/' . ltrim( $css_file, '/' ) ),
-				array( 'buildora-base' ),
-				BUILDORA_VERSION
-			);
-		}
+	if ( '.css' === substr( $entry_file, -4 ) ) {
+		$css_files[] = $entry_file;
 	}
 
-	$script_uri = get_theme_file_uri( 'assets/dist/' . ltrim( (string) $entry['file'], '/' ) );
+	if ( ! empty( $entry['css'] ) && is_array( $entry['css'] ) ) {
+		foreach ( $entry['css'] as $css_file ) {
+			if ( is_string( $css_file ) ) {
+				$css_files[] = ltrim( $css_file, '/' );
+			}
+	}
+
+	$css_files = array_values( array_unique( $css_files ) );
+
+	foreach ( $css_files as $index => $css_file ) {
+		wp_enqueue_style(
+			'buildora-app-' . absint( $index ),
+			get_theme_file_uri( 'assets/dist/' . $css_file ),
+			array( 'buildora-base' ),
+			BUILDORA_VERSION
+		);
+	}
+
+	if ( '.css' === substr( $entry_file, -4 ) ) {
+		return;
+	}
+
+	$script_uri = get_theme_file_uri( 'assets/dist/' . $entry_file );
 
 	if ( function_exists( 'wp_enqueue_script_module' ) ) {
 		wp_enqueue_script_module(
