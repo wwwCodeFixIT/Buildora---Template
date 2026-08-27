@@ -1,4 +1,37 @@
-<!-- wp:template-part {"slug":"header","theme":"buildora","tagName":"header"} /-->
+<!-- wp:group {"align":"full","className":"buildora-header","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull buildora-header">
+	<!-- wp:group {"align":"wide","className":"buildora-header__inner","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+	<div class="wp-block-group alignwide buildora-header__inner">
+		<!-- wp:group {"className":"buildora-header__brand","layout":{"type":"flex","flexWrap":"nowrap"}} -->
+		<div class="wp-block-group buildora-header__brand">
+			<!-- wp:site-title {"level":0,"style":{"typography":{"fontWeight":"800","fontSize":"1.25rem","letterSpacing":"-0.035em"}}} /-->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:group {"className":"buildora-header__actions","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
+		<div class="wp-block-group buildora-header__actions">
+			<!-- wp:navigation {"overlayMenu":"mobile","className":"buildora-primary-nav","layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"1.5rem"}}} -->
+				<!-- wp:navigation-link {"label":"Home","url":"/","kind":"custom","isTopLevelLink":true} /-->
+				<!-- wp:navigation-link {"label":"Services","url":"/services/","kind":"custom","isTopLevelLink":true} /-->
+				<!-- wp:navigation-link {"label":"Projects","url":"/projects/","kind":"custom","isTopLevelLink":true} /-->
+				<!-- wp:navigation-link {"label":"About","url":"/about/","kind":"custom","isTopLevelLink":true} /-->
+				<!-- wp:navigation-link {"label":"Contact","url":"/contact/","kind":"custom","isTopLevelLink":true} /-->
+			<!-- /wp:navigation -->
+
+			<!-- wp:buttons {"className":"buildora-header__cta"} -->
+			<div class="wp-block-buttons buildora-header__cta">
+				<!-- wp:button -->
+				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/contact/">Get a quote</a></div>
+				<!-- /wp:button -->
+			</div>
+			<!-- /wp:buttons -->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
 <!-- wp:group {"tagName":"main","anchor":"main","layout":{"type":"default"}} -->
 <main id="main" class="wp-block-group">
 	<!-- wp:pattern {"slug":"buildora/hero-construction"} /-->
