@@ -5,6 +5,10 @@
     "php": "8.3",
     "wp": "latest"
   },
+  "siteOptions": {
+    "blogname": "Buildora",
+    "blogdescription": "Construction & Home Services"
+  },
   "login": true,
   "steps": [
     {
