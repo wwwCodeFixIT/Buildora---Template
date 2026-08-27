@@ -1,7 +1,7 @@
 .buildora-hero {
   position: relative;
   overflow: clip;
-  padding-block: clamp(4.5rem, 8vw, 7.5rem);
+  padding-block: clamp(4rem, 7vw, 6.5rem);
 }
 
 .buildora-hero::before {
@@ -9,27 +9,28 @@
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(17, 19, 21, 0.035) 1px, transparent 1px),
-    linear-gradient(rgba(17, 19, 21, 0.035) 1px, transparent 1px);
-  background-size: 56px 56px;
+    radial-gradient(circle at 78% 34%, rgba(242, 183, 5, 0.08), transparent 30%),
+    linear-gradient(90deg, rgba(17, 19, 21, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(17, 19, 21, 0.03) 1px, transparent 1px);
+  background-size: auto, 56px 56px, 56px 56px;
   content: '';
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent 88%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.78), transparent 90%);
 }
 
 .buildora-hero__grid {
   position: relative;
   z-index: 1;
-  gap: clamp(3rem, 7vw, 7rem);
+  gap: clamp(3rem, 6vw, 6rem);
 }
 
 .buildora-hero__copy {
-  max-width: 46rem;
+  max-width: 44rem;
 }
 
 .buildora-hero__eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   margin: 0 0 1.25rem;
   color: var(--wp--preset--color--ink);
   font-size: 0.78rem;
@@ -42,18 +43,20 @@
 .buildora-hero__eyebrow::before {
   width: 2.25rem;
   height: 0.2rem;
+  flex: 0 0 auto;
   background: var(--wp--preset--color--brand);
   content: '';
 }
 
 .buildora-hero__title {
-  max-width: 9.2ch;
+  max-width: 10.8ch;
   margin-block: 0;
+  font-size: clamp(3.4rem, 5vw, 5.6rem) !important;
   text-wrap: balance;
 }
 
 .buildora-hero__lead {
-  max-width: 39rem;
+  max-width: 37rem;
   margin-top: clamp(1.5rem, 3vw, 2rem);
   margin-bottom: 0;
   line-height: 1.7;
@@ -88,7 +91,7 @@
 
 .buildora-hero__actions .is-style-outline .wp-block-button__link {
   border: 1px solid rgba(17, 19, 21, 0.22);
-  background: transparent;
+  background: rgba(255, 255, 255, 0.4);
   color: var(--wp--preset--color--ink);
 }
 
@@ -99,7 +102,7 @@
 }
 
 .buildora-hero__proof {
-  gap: 0.75rem 1.4rem;
+  gap: 0.75rem 1.35rem;
   margin-top: clamp(1.75rem, 4vw, 2.5rem);
   padding-top: 1.25rem;
   border-top: 1px solid rgba(17, 19, 21, 0.1);
@@ -132,7 +135,7 @@
 
 .buildora-hero__visual {
   position: relative;
-  width: min(100%, 35rem);
+  width: min(100%, 34rem);
   margin-inline: auto;
   padding: clamp(0.75rem, 1.5vw, 1rem);
 }
@@ -141,7 +144,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 46%;
+  width: 44%;
   aspect-ratio: 1;
   background: var(--wp--preset--color--brand);
   content: '';
@@ -152,7 +155,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 42%;
+  width: 39%;
   aspect-ratio: 1;
   border: 1px solid rgba(17, 19, 21, 0.16);
   content: '';
@@ -169,23 +172,24 @@
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 0;
-  box-shadow: 0 30px 80px rgba(17, 19, 21, 0.16);
+  box-shadow: 0 30px 80px rgba(17, 19, 21, 0.18);
 }
 
 .buildora-hero__badge {
   position: absolute;
   z-index: 2;
-  min-width: 9.5rem;
+  min-width: 9.25rem;
   margin: 0;
-  padding: 0.95rem 1.05rem;
+  padding: 0.9rem 1rem;
   border: 1px solid rgba(17, 19, 21, 0.08);
   box-shadow: 0 18px 40px rgba(17, 19, 21, 0.12);
 }
 
 .buildora-hero__badge--top {
-  top: 9%;
-  right: -5%;
+  top: 11%;
+  right: -4%;
 }
 
 .buildora-hero__badge--bottom {
@@ -215,17 +219,23 @@
   letter-spacing: -0.03em;
 }
 
+@media (max-width: 1100px) {
+  .buildora-hero__title {
+    font-size: clamp(3.1rem, 5.5vw, 4.6rem) !important;
+  }
+}
+
 @media (max-width: 960px) {
   .buildora-hero {
-    padding-block: clamp(3.5rem, 8vw, 5.5rem);
+    padding-block: clamp(3.5rem, 8vw, 5.25rem);
   }
 
   .buildora-hero__grid {
-    gap: 3.5rem;
+    gap: 3.25rem;
   }
 
   .buildora-hero__title {
-    max-width: 10ch;
+    max-width: 11ch;
   }
 
   .buildora-hero__badge--top {
@@ -247,7 +257,8 @@
   }
 
   .buildora-hero__title {
-    max-width: 11ch;
+    max-width: 12ch;
+    font-size: clamp(3rem, 12vw, 4.5rem) !important;
   }
 
   .buildora-hero__actions {
@@ -269,6 +280,11 @@
     padding-block: 3rem 3.5rem;
   }
 
+  .buildora-hero__eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
   .buildora-hero__proof {
     display: grid;
     grid-template-columns: 1fr;
@@ -280,8 +296,8 @@
   }
 
   .buildora-hero__badge {
-    min-width: 8.5rem;
-    padding: 0.8rem 0.9rem;
+    min-width: 8.25rem;
+    padding: 0.75rem 0.85rem;
   }
 
   .buildora-hero__badge--top {
