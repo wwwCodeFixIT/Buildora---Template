@@ -136,8 +136,8 @@
   }
 
   .buildora-final-cta__inner {
-    gap: 2rem;
-    padding: 2rem 1.25rem;
+    gap: 1.75rem;
+    padding: 2rem 1.1rem;
   }
 
   .buildora-final-cta__eyebrow {
@@ -146,12 +146,16 @@
   }
 
   .buildora-final-cta__title {
-    max-width: none;
-    font-size: clamp(2.5rem, 12vw, 3.5rem);
+    max-width: 100%;
+    font-size: clamp(2.15rem, 9.5vw, 2.75rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    overflow-wrap: break-word;
   }
 
   .buildora-final-cta__text {
-    margin-top: 1.5rem;
+    margin-top: 1.35rem;
+    line-height: 1.6;
   }
 
   .buildora-final-cta__buttons {
@@ -162,6 +166,10 @@
   .buildora-final-cta__buttons .wp-block-button,
   .buildora-final-cta__buttons .wp-block-button__link {
     width: 100%;
+  }
+
+  .buildora-final-cta__note {
+    margin-top: 1rem;
   }
 }
 
