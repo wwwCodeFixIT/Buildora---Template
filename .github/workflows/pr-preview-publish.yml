@@ -158,6 +158,40 @@ jobs:
           THEME_URL: ${{ steps.publish.outputs.theme-url }}
         with:
           script: |
+            const demoPagesPhp = `<?php
+            require_once '/wordpress/wp-load.php';
+
+            $pages = array(
+              array( 'title' => 'Services', 'slug' => 'services' ),
+              array( 'title' => 'Projects', 'slug' => 'projects' ),
+              array( 'title' => 'About', 'slug' => 'about' ),
+              array( 'title' => 'Contact', 'slug' => 'contact' ),
+            );
+
+            foreach ( $pages as $page ) {
+              $existing = get_page_by_path( $page['slug'], OBJECT, 'page' );
+
+              if ( $existing instanceof WP_Post ) {
+                continue;
+              }
+
+              $page_id = wp_insert_post(
+                array(
+                  'post_type'   => 'page',
+                  'post_status' => 'publish',
+                  'post_title'  => $page['title'],
+                  'post_name'   => $page['slug'],
+                  'post_content'=> '',
+                ),
+                true
+              );
+
+              if ( is_wp_error( $page_id ) ) {
+                throw new RuntimeException( $page_id->get_error_message() );
+              }
+            }
+            `;
+
             const blueprint = {
               $schema: 'https://playground.wordpress.net/blueprint-schema.json',
               landingPage: '/',
@@ -180,6 +214,10 @@ jobs:
                   options: {
                     activate: true,
                   },
+                },
+                {
+                  step: 'runPHP',
+                  code: demoPagesPhp,
                 },
               ],
             };
