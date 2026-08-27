@@ -19,7 +19,7 @@
 			<!-- /wp:paragraph -->
 
 			<!-- wp:heading {"level":1,"fontSize":"hero","className":"buildora-hero__title"} -->
-			<h1 class="wp-block-heading buildora-hero__title has-hero-font-size"><?php esc_html_e( 'Built right. Delivered on time.', 'buildora' ); ?></h1>
+			<h1 class="wp-block-heading buildora-hero__title has-hero-font-size"><span class="buildora-hero__title-line"><?php esc_html_e( 'Built right.', 'buildora' ); ?></span><span class="buildora-hero__title-line buildora-hero__title-line--wide"><?php esc_html_e( 'Delivered on time.', 'buildora' ); ?></span></h1>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"fontSize":"md","textColor":"muted","className":"buildora-hero__lead"} -->
