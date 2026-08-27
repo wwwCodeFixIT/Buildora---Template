@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
-  <title id="title">Buildora hero placeholder</title>
-  <desc id="desc">Abstract architectural placeholder for the Buildora starter theme.</desc>
-  <rect width="800" height="1000" fill="#111315"/>
-  <rect x="70" y="120" width="660" height="760" rx="24" fill="#F4F5F2"/>
-  <rect x="120" y="610" width="560" height="220" fill="#F2B705"/>
-  <path d="M150 610L400 330L650 610Z" fill="#111315"/>
-  <rect x="335" y="610" width="130" height="220" fill="#FFFFFF"/>
-</svg>
