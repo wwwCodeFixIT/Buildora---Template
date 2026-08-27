@@ -5,3 +5,13 @@
 :where(main) {
   min-height: 50vh;
 }
+
+:where(#services, #about, #projects, #process, #contact) {
+  scroll-margin-top: 6rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
