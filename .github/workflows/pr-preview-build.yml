@@ -1,0 +1,19 @@
+name: PR Preview - Build
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: WordPress/action-wp-playground-pr-preview/.github/workflows/preview-build.yml@v3
+    with:
+      artifacts: buildora=build/buildora.zip
+      node-version: '22'
+      php-version: '8.3'
+      build-command: |
+        npm install --no-audit --no-fund
+        npm run package

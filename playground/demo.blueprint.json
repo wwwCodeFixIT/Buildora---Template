@@ -1,0 +1,23 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "login": false,
+  "steps": [
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "git:directory",
+        "url": "https://github.com/wwwCodeFixIT/Buildora---Template",
+        "ref": "main",
+        "refType": "branch"
+      },
+      "options": {
+        "activate": true
+      }
+    }
+  ]
+}

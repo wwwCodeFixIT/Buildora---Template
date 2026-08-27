@@ -32,6 +32,24 @@ npm run build
 3. Activate **Buildora** in WordPress.
 4. Open **Appearance → Editor** and configure the logo/navigation.
 
+## Cloud development
+
+Buildora is configured for a browser-only workflow:
+
+- GitHub is the source of truth.
+- GitHub Codespaces provides VS Code, Node 22 and PHP 8.3.
+- WordPress Playground runs WordPress + the Site Editor in the browser.
+- Pull requests get an automated WordPress Playground preview.
+
+Open **Code → Codespaces → Create codespace on main**, then run:
+
+```bash
+npm run check
+npm run package
+```
+
+Playground links are stored in `playground/LINKS.md`. Full details: `CLOUD-WORKFLOW.md`.
+
 ## Development
 
 ```bash
