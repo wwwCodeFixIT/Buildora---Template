@@ -1,0 +1,7 @@
+.buildora-header {
+  position: relative;
+  z-index: 20;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  background: color-mix(in srgb, var(--wp--preset--color--paper) 94%, transparent);
+  backdrop-filter: blur(14px);
+}

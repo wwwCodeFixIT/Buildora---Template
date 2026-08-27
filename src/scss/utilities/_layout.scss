@@ -1,0 +1,7 @@
+:where(.wp-site-blocks) {
+  overflow-x: clip;
+}
+
+:where(main) {
+  min-height: 50vh;
+}

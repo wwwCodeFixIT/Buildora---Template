@@ -1,0 +1,7 @@
+.buildora-card {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid color-mix(in srgb, var(--wp--preset--color--ink) 12%, transparent);
+  border-radius: 1rem;
+  background: var(--wp--preset--color--paper);
+  box-shadow: 0 12px 40px rgb(17 19 21 / 6%);
+}

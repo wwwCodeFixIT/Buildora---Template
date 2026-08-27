@@ -1,0 +1,17 @@
+.buildora-hero {
+  overflow: clip;
+}
+
+.buildora-hero__media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: clamp(1rem, 3vw, 2rem);
+  box-shadow: var(--wp--preset--shadow--soft);
+}
+
+@media (max-width: 781px) {
+  .buildora-hero .wp-block-columns {
+    gap: var(--wp--preset--spacing--60);
+  }
+}
