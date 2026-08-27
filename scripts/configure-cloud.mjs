@@ -17,10 +17,7 @@ for (const file of blueprintFiles) {
   const blueprint = JSON.parse(await readFile(file, 'utf8'));
 
   for (const step of blueprint.steps ?? []) {
-    if (
-      step.step === 'installTheme' &&
-      step.themeData?.resource === 'git:directory'
-    ) {
+    if (step.step === 'installTheme' && step.themeData?.resource === 'git:directory') {
       step.themeData.url = `https://github.com/${repository}`;
     }
   }
@@ -31,8 +28,12 @@ for (const file of blueprintFiles) {
 const rawBase = `https://raw.githubusercontent.com/${repository}/main/playground`;
 const demoBlueprint = `${rawBase}/demo.blueprint.json`;
 const devBlueprint = `${rawBase}/dev.blueprint.json`;
-const demoUrl = `https://playground.wordpress.net/?blueprint-url=${encodeURIComponent(demoBlueprint)}`;
-const devUrl = `https://playground.wordpress.net/?blueprint-url=${encodeURIComponent(devBlueprint)}`;
+
+// Always use a temporary Playground for review links. This prevents an autosaved
+// browser instance from reusing an older Buildora installation/template-part.
+const playgroundBase = 'https://playground.wordpress.net/?storage=temp';
+const demoUrl = `${playgroundBase}&blueprint-url=${encodeURIComponent(demoBlueprint)}`;
+const devUrl = `${playgroundBase}&blueprint-url=${encodeURIComponent(devBlueprint)}`;
 
 const output = `# Buildora Playground links\n\nRepository: https://github.com/${repository}\n\n## Demo\n${demoUrl}\n\n## Development\n${devUrl}\n`;
 await writeFile(path.resolve('playground/LINKS.md'), output);
