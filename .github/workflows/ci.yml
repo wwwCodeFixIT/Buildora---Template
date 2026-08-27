@@ -35,3 +35,13 @@ jobs:
 
       - name: PHP syntax check
         run: find . -type f -name '*.php' -not -path './node_modules/*' -print0 | xargs -0 -n1 php -l
+
+      - name: Package installable theme
+        run: bash scripts/build-theme-zip.sh
+
+      - name: Upload theme artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: buildora-theme-${{ github.sha }}
+          path: build/buildora.zip
+          if-no-files-found: error
