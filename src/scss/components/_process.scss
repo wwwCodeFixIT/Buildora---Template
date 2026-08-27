@@ -1,0 +1,224 @@
+.buildora-process {
+  padding-block: clamp(4.5rem, 8vw, 7rem);
+  background: var(--wp--preset--color--paper);
+}
+
+.buildora-process__intro {
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: flex-end;
+}
+
+.buildora-process__heading,
+.buildora-process__lead {
+  min-width: 0;
+}
+
+.buildora-process__heading {
+  flex: 1 1 34rem;
+}
+
+.buildora-process__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.buildora-process__eyebrow::before {
+  width: 2rem;
+  height: 0.18rem;
+  background: var(--wp--preset--color--brand);
+  content: '';
+}
+
+.buildora-process__title {
+  max-width: 13ch;
+  margin: 0;
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.buildora-process__lead {
+  flex: 0 1 29rem;
+  margin: 0 0 0.35rem;
+  color: var(--wp--preset--color--muted);
+  line-height: 1.7;
+}
+
+.buildora-process__timeline {
+  position: relative;
+  gap: 0;
+  margin-top: clamp(3.5rem, 7vw, 6rem);
+  border-top: 1px solid rgb(17 19 21 / 16%);
+}
+
+.buildora-process__timeline::before {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 25%;
+  height: 3px;
+  background: var(--wp--preset--color--brand);
+  content: '';
+}
+
+.buildora-process__step {
+  position: relative;
+  min-height: 20rem;
+  margin: 0;
+  padding: 2rem clamp(1.25rem, 2.5vw, 2.5rem) 2.25rem 0;
+}
+
+.buildora-process__step:not(:last-child) {
+  border-right: 1px solid rgb(17 19 21 / 10%);
+}
+
+.buildora-process__step:not(:first-child) {
+  padding-left: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+.buildora-process__number {
+  margin: 0 0 clamp(3.5rem, 7vw, 6rem);
+  color: var(--wp--preset--color--brand);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.buildora-process__step-title,
+.buildora-process__step-copy {
+  margin: 0;
+}
+
+.buildora-process__step-title {
+  max-width: 13ch;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.buildora-process__step-copy {
+  max-width: 18rem;
+  margin-top: 0.8rem;
+  color: var(--wp--preset--color--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.buildora-process__footer {
+  gap: 1.25rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgb(17 19 21 / 16%);
+}
+
+.buildora-process__note {
+  margin: 0;
+  color: var(--wp--preset--color--muted);
+  font-size: 0.95rem;
+}
+
+.buildora-process__footer .wp-block-button__link {
+  min-height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1.4rem;
+}
+
+.buildora-process__footer .wp-block-button__link:focus-visible {
+  outline: 3px solid var(--wp--preset--color--brand);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .buildora-process__timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .buildora-process__timeline::before {
+    width: 50%;
+  }
+
+  .buildora-process__step:nth-child(2) {
+    border-right: 0;
+  }
+
+  .buildora-process__step:nth-child(n + 3) {
+    border-top: 1px solid rgb(17 19 21 / 10%);
+  }
+}
+
+@media (max-width: 600px) {
+  .buildora-process {
+    padding-block: 4rem;
+  }
+
+  .buildora-process__intro {
+    gap: 1.75rem;
+  }
+
+  .buildora-process__title {
+    max-width: 11ch;
+    font-size: clamp(2.6rem, 12vw, 3.6rem);
+  }
+
+  .buildora-process__timeline {
+    grid-template-columns: 1fr !important;
+    margin-top: 3rem;
+    border-top: 0;
+    border-left: 1px solid rgb(17 19 21 / 16%);
+  }
+
+  .buildora-process__timeline::before {
+    top: 0;
+    left: -2px;
+    width: 3px;
+    height: 25%;
+  }
+
+  .buildora-process__step,
+  .buildora-process__step:not(:first-child) {
+    min-height: 0;
+    padding: 0 0 2.25rem 1.75rem;
+    border-top: 0;
+    border-right: 0;
+  }
+
+  .buildora-process__step + .buildora-process__step {
+    padding-top: 2.25rem;
+    border-top: 1px solid rgb(17 19 21 / 10%);
+  }
+
+  .buildora-process__number {
+    margin-bottom: 1.1rem;
+  }
+
+  .buildora-process__step-title,
+  .buildora-process__step-copy {
+    max-width: none;
+  }
+
+  .buildora-process__footer {
+    align-items: stretch;
+  }
+
+  .buildora-process__footer .wp-block-buttons,
+  .buildora-process__footer .wp-block-button,
+  .buildora-process__footer .wp-block-button__link {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildora-process *,
+  .buildora-process *::before,
+  .buildora-process *::after {
+    scroll-behavior: auto !important;
+  }
+}
