@@ -114,6 +114,7 @@ function buildora_get_vite_css_files(): array {
 				$css_files[] = ltrim( $css_file, '/' );
 			}
 		}
+	}
 
 	return array_values( array_unique( $css_files ) );
 }
