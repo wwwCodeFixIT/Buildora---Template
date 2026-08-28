@@ -7,8 +7,7 @@
  * Description: High-impact final conversion block for quote requests.
  */
 
-$buildora_contact_email = sanitize_email( (string) get_option( 'admin_email' ) );
-$buildora_mailto_url    = $buildora_contact_email ? 'mailto:' . antispambot( $buildora_contact_email ) : '/#contact';
+$buildora_quote_url = home_url( '/contact/' ) . '#project-brief';
 ?>
 <!-- wp:group {"anchor":"contact","align":"full","className":"buildora-final-cta","layout":{"type":"constrained"}} -->
 <div id="contact" class="wp-block-group alignfull buildora-final-cta">
@@ -35,7 +34,7 @@ $buildora_mailto_url    = $buildora_contact_email ? 'mailto:' . antispambot( $bu
 			<!-- wp:buttons {"className":"buildora-final-cta__buttons","layout":{"type":"flex","flexWrap":"wrap"}} -->
 			<div class="wp-block-buttons buildora-final-cta__buttons">
 				<!-- wp:button {"className":"buildora-final-cta__primary"} -->
-				<div class="wp-block-button buildora-final-cta__primary"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( $buildora_mailto_url ); ?>"><?php esc_html_e( 'Request a free quote', 'buildora' ); ?></a></div>
+				<div class="wp-block-button buildora-final-cta__primary"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( $buildora_quote_url ); ?>"><?php esc_html_e( 'Request a free quote', 'buildora' ); ?></a></div>
 				<!-- /wp:button -->
 
 				<!-- wp:button {"className":"is-style-outline buildora-final-cta__secondary"} -->

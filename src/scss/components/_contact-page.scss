@@ -1,0 +1,483 @@
+.buildora-contact-hero__summary {
+  margin-top: 0;
+}
+
+.buildora-contact-hero__panel {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 4vw, 3.25rem);
+}
+
+.buildora-contact-hero__panel::after {
+  position: absolute;
+  right: -3rem;
+  bottom: -5rem;
+  width: 12rem;
+  height: 12rem;
+  border: 1px solid rgb(242 183 5 / 28%);
+  transform: rotate(13deg);
+  content: '';
+  pointer-events: none;
+}
+
+.buildora-contact-hero__panel-label,
+.buildora-contact-form-section__eyebrow,
+.buildora-contact-next__eyebrow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0 0 1.4rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.buildora-contact-hero__panel-label {
+  color: var(--wp--preset--color--brand);
+}
+
+.buildora-contact-form-section__eyebrow::before,
+.buildora-contact-next__eyebrow::before {
+  width: 1.8rem;
+  height: 2px;
+  background: var(--wp--preset--color--brand);
+  content: '';
+}
+
+.buildora-contact-hero__checklist {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgb(255 255 255 / 16%);
+}
+
+.buildora-contact-hero__checklist > div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.25rem;
+  border-bottom: 1px solid rgb(255 255 255 / 16%);
+}
+
+.buildora-contact-hero__checklist strong {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+
+.buildora-contact-hero__checklist span {
+  color: var(--wp--preset--color--brand);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.buildora-contact-hero__panel-note {
+  position: relative;
+  z-index: 1;
+  max-width: 25rem;
+  margin: 1.75rem 0 0;
+  color: rgb(255 255 255 / 68%);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.buildora-contact-form-section {
+  padding-block: clamp(5rem, 9vw, 8rem);
+}
+
+.buildora-contact-form-section__inner {
+  display: grid;
+  gap: clamp(3rem, 6vw, 5.5rem);
+}
+
+.buildora-contact-form-section__intro {
+  max-width: 56rem;
+}
+
+.buildora-contact-form-section__title,
+.buildora-contact-next__title {
+  max-width: 12ch;
+  margin: 0;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.buildora-contact-form-section__lead {
+  max-width: 48rem;
+  margin: 1.75rem 0 0;
+  color: var(--wp--preset--color--muted);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.75;
+}
+
+.buildora-contact-layout {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.buildora-contact-details {
+  border-top: 1px solid rgb(17 19 21 / 16%);
+}
+
+.buildora-contact-details__item {
+  display: grid;
+  gap: 0.55rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid rgb(17 19 21 / 16%);
+}
+
+.buildora-contact-details__item span {
+  color: var(--wp--preset--color--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.buildora-contact-details__item strong,
+.buildora-contact-details__item a {
+  color: var(--wp--preset--color--ink);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-weight: 750;
+  line-height: 1.45;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+.buildora-contact-details__item a:hover {
+  color: var(--wp--preset--color--brand-dark);
+}
+
+.buildora-contact-details__item a:focus-visible {
+  outline: 2px solid var(--wp--preset--color--ink);
+  outline-offset: 4px;
+}
+
+.buildora-contact-details__note {
+  padding: 1.75rem;
+  margin-top: 2rem;
+  background: var(--wp--preset--color--surface);
+}
+
+.buildora-contact-details__note strong {
+  font-size: 1rem;
+}
+
+.buildora-contact-details__note p {
+  margin: 0.65rem 0 0;
+  color: var(--wp--preset--color--muted);
+  line-height: 1.7;
+}
+
+.buildora-contact-form-card {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid rgb(17 19 21 / 16%);
+  background: var(--wp--preset--color--paper);
+}
+
+.buildora-contact-form__notice {
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--wp--preset--color--ink);
+  background: var(--wp--preset--color--surface);
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.buildora-contact-form__notice--success {
+  border-left-color: #4a7a38;
+}
+
+.buildora-contact-form__notice--error {
+  border-left-color: #a33a32;
+}
+
+.buildora-contact-form {
+  position: relative;
+  display: grid;
+  gap: 1.35rem;
+}
+
+.buildora-contact-form__honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+.buildora-contact-form__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.buildora-contact-form__field {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.buildora-contact-form__field label {
+  color: var(--wp--preset--color--ink);
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+.buildora-contact-form__field label > span[aria-hidden='true'] {
+  color: #8d2f27;
+}
+
+.buildora-contact-form__optional {
+  margin-left: 0.35rem;
+  color: var(--wp--preset--color--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.buildora-contact-form input,
+.buildora-contact-form select,
+.buildora-contact-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 3.4rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgb(17 19 21 / 24%);
+  border-radius: 0;
+  background: #fff;
+  color: var(--wp--preset--color--ink);
+  font: inherit;
+  line-height: 1.45;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.buildora-contact-form textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+.buildora-contact-form input::placeholder,
+.buildora-contact-form textarea::placeholder {
+  color: rgb(91 97 102 / 72%);
+}
+
+.buildora-contact-form input:focus-visible,
+.buildora-contact-form select:focus-visible,
+.buildora-contact-form textarea:focus-visible {
+  border-color: var(--wp--preset--color--ink);
+  outline: 0;
+  box-shadow: 0 0 0 3px rgb(242 183 5 / 30%);
+}
+
+.buildora-contact-form__footer {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.buildora-contact-form__privacy {
+  max-width: 30rem;
+  margin: 0;
+  color: var(--wp--preset--color--muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.buildora-contact-form__privacy a {
+  color: var(--wp--preset--color--ink);
+}
+
+.buildora-contact-form__privacy a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.buildora-contact-form__submit {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.5rem;
+  padding: 0.9rem 1.35rem;
+  border: 2px solid var(--wp--preset--color--ink);
+  border-radius: 999px;
+  background: var(--wp--preset--color--ink);
+  color: var(--wp--preset--color--paper);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.buildora-contact-form__submit span {
+  font-size: 1.1rem;
+}
+
+.buildora-contact-form__submit:hover {
+  background: var(--wp--preset--color--brand);
+  color: var(--wp--preset--color--ink);
+  transform: translateY(-1px);
+}
+
+.buildora-contact-form__submit:focus-visible {
+  outline: 3px solid var(--wp--preset--color--brand);
+  outline-offset: 3px;
+}
+
+.buildora-contact-next {
+  padding-block: clamp(5rem, 9vw, 8rem);
+  border-top: 1px solid rgb(17 19 21 / 8%);
+}
+
+.buildora-contact-next__inner {
+  display: grid;
+  gap: clamp(3rem, 6vw, 5rem);
+}
+
+.buildora-contact-next__intro {
+  max-width: 58rem;
+}
+
+.buildora-contact-next__steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid rgb(17 19 21 / 16%);
+  border-bottom: 1px solid rgb(17 19 21 / 16%);
+}
+
+.buildora-contact-next__step {
+  padding: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+.buildora-contact-next__step + .buildora-contact-next__step {
+  border-left: 1px solid rgb(17 19 21 / 16%);
+}
+
+.buildora-contact-next__number {
+  display: block;
+  margin-bottom: 2.5rem;
+  color: var(--wp--preset--color--brand-dark);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.buildora-contact-next__step h3 {
+  margin: 0;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  letter-spacing: -0.03em;
+}
+
+.buildora-contact-next__step p {
+  margin: 0.85rem 0 0;
+  color: var(--wp--preset--color--muted);
+  line-height: 1.7;
+}
+
+.buildora-contact-next__note {
+  max-width: 48rem;
+  margin: 0;
+  color: var(--wp--preset--color--muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .buildora-contact-hero__summary {
+    flex-basis: 100% !important;
+  }
+
+  .buildora-contact-hero__panel {
+    max-width: 38rem;
+  }
+
+  .buildora-contact-layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .buildora-contact-details {
+    max-width: 42rem;
+  }
+
+  .buildora-contact-next__steps {
+    grid-template-columns: 1fr;
+  }
+
+  .buildora-contact-next__step + .buildora-contact-next__step {
+    border-top: 1px solid rgb(17 19 21 / 16%);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .buildora-contact-hero__panel {
+    padding: 1.75rem;
+  }
+
+  .buildora-contact-form-section,
+  .buildora-contact-next {
+    padding-block: 4.5rem;
+  }
+
+  .buildora-contact-form-section__title,
+  .buildora-contact-next__title {
+    max-width: none;
+    font-size: clamp(2.55rem, 11.5vw, 3.4rem);
+  }
+
+  .buildora-contact-form-section__inner,
+  .buildora-contact-next__inner {
+    gap: 2.75rem;
+  }
+
+  .buildora-contact-form-card {
+    padding: 1.35rem;
+  }
+
+  .buildora-contact-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .buildora-contact-form__footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .buildora-contact-form__submit {
+    width: 100%;
+  }
+
+  .buildora-contact-next__step {
+    padding: 2rem 0;
+  }
+
+  .buildora-contact-next__number {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buildora-contact-form input,
+  .buildora-contact-form select,
+  .buildora-contact-form textarea,
+  .buildora-contact-form__submit {
+    transition: none;
+  }
+
+  .buildora-contact-form__submit:hover {
+    transform: none;
+  }
+}
