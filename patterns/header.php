@@ -24,7 +24,7 @@
 				<!-- wp:navigation-link {"label":"Home","url":"/","kind":"custom","isTopLevelLink":true} /-->
 				<!-- wp:navigation-link {"label":"Services","url":"/services/","kind":"custom","isTopLevelLink":true} /-->
 				<!-- wp:navigation-link {"label":"Projects","url":"/projects/","kind":"custom","isTopLevelLink":true} /-->
-				<!-- wp:navigation-link {"label":"About","url":"/#about","kind":"custom","isTopLevelLink":true} /-->
+				<!-- wp:navigation-link {"label":"About","url":"/about/","kind":"custom","isTopLevelLink":true} /-->
 				<!-- wp:navigation-link {"label":"Contact","url":"/#contact","kind":"custom","isTopLevelLink":true} /-->
 			<!-- /wp:navigation -->
 
@@ -48,7 +48,7 @@
 							<li><a href="/"><?php esc_html_e( 'Home', 'buildora' ); ?></a></li>
 							<li><a href="/services/"><?php esc_html_e( 'Services', 'buildora' ); ?></a></li>
 							<li><a href="/projects/"><?php esc_html_e( 'Projects', 'buildora' ); ?></a></li>
-							<li><a href="/#about"><?php esc_html_e( 'About', 'buildora' ); ?></a></li>
+							<li><a href="/about/"><?php esc_html_e( 'About', 'buildora' ); ?></a></li>
 							<li><a href="/#contact"><?php esc_html_e( 'Contact', 'buildora' ); ?></a></li>
 						</ul>
 						<a class="buildora-mobile-menu__cta" href="/#contact"><?php esc_html_e( 'Get a quote', 'buildora' ); ?></a>
