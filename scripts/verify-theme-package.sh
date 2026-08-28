@@ -59,6 +59,23 @@ for pattern in "${forbidden_patterns[@]}"; do
   fi
 done
 
+pattern_markup="$(unzip -p "$ZIP_FILE" 'buildora/patterns/*.php')"
+
+if grep -Eq 'href="/?#contact"' <<<"$pattern_markup"; then
+  echo "Legacy #contact CTA leaked into packaged patterns." >&2
+  exit 1
+fi
+
+if grep -Eq 'href="/' <<<"$pattern_markup"; then
+  echo "Root-relative href leaked into packaged PHP patterns; use home_url() instead." >&2
+  exit 1
+fi
+
+if grep -Eq '"url":"/' <<<"$pattern_markup"; then
+  echo "Root-relative navigation URL leaked into packaged PHP patterns; use home_url() instead." >&2
+  exit 1
+fi
+
 theme_version="$(unzip -p "$ZIP_FILE" buildora/style.css | awk -F': ' '/^Version:/ { print $2; exit }' | tr -d '\r')"
 runtime_version="$(unzip -p "$ZIP_FILE" buildora/functions.php | sed -n "s/^define( 'BUILDORA_VERSION', '\([^']*\)' );$/\1/p" | head -n 1 | tr -d '\r')"
 

@@ -32,7 +32,7 @@
 			<!-- wp:paragraph {"className":"buildora-service-detail__kicker"} --><p class="buildora-service-detail__kicker"><?php esc_html_e( 'Residential · Interior · Exterior', 'buildora' ); ?></p><!-- /wp:paragraph -->
 			<!-- wp:heading {"level":3,"className":"buildora-service-detail__title"} --><h3 class="wp-block-heading buildora-service-detail__title"><?php esc_html_e( 'Renovation', 'buildora' ); ?></h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"className":"buildora-service-detail__copy","textColor":"muted"} --><p class="buildora-service-detail__copy has-muted-color has-text-color"><?php esc_html_e( 'Upgrade a room or rework the whole property without losing control of the programme. We coordinate the practical details, sequencing and finish around one agreed scope.', 'buildora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-service-detail__link"} --><p class="buildora-service-detail__link"><a href="/#contact"><?php esc_html_e( 'Discuss a renovation', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"buildora-service-detail__link"} --><p class="buildora-service-detail__link"><a href="<?php echo esc_url( home_url( '/contact/#project-brief' ) ); ?>"><?php esc_html_e( 'Discuss a renovation', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
 
@@ -63,7 +63,7 @@
 			<!-- wp:paragraph {"className":"buildora-service-detail__kicker"} --><p class="buildora-service-detail__kicker"><?php esc_html_e( 'Extensions · New build · Commercial', 'buildora' ); ?></p><!-- /wp:paragraph -->
 			<!-- wp:heading {"level":3,"className":"buildora-service-detail__title"} --><h3 class="wp-block-heading buildora-service-detail__title"><?php esc_html_e( 'Construction', 'buildora' ); ?></h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"className":"buildora-service-detail__copy"} --><p class="buildora-service-detail__copy"><?php esc_html_e( 'For larger jobs, we build around milestones you can see and decisions you can track. The emphasis stays on coordination, accountability and a handover that does not drag on.', 'buildora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-service-detail__link"} --><p class="buildora-service-detail__link"><a href="/#contact"><?php esc_html_e( 'Plan your build', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"buildora-service-detail__link"} --><p class="buildora-service-detail__link"><a href="<?php echo esc_url( home_url( '/contact/#project-brief' ) ); ?>"><?php esc_html_e( 'Plan your build', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
 
@@ -94,7 +94,7 @@
 			<!-- wp:paragraph {"className":"buildora-service-detail__kicker"} --><p class="buildora-service-detail__kicker"><?php esc_html_e( 'Repairs · Preventive care · Call-outs', 'buildora' ); ?></p><!-- /wp:paragraph -->
 			<!-- wp:heading {"level":3,"className":"buildora-service-detail__title"} --><h3 class="wp-block-heading buildora-service-detail__title"><?php esc_html_e( 'Repairs & maintenance', 'buildora' ); ?></h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"className":"buildora-service-detail__copy","textColor":"muted"} --><p class="buildora-service-detail__copy has-muted-color has-text-color"><?php esc_html_e( 'Smaller work still deserves a clear response. We handle practical repairs and planned upkeep with simple communication, sensible priorities and no unnecessary process.', 'buildora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-service-detail__link"} --><p class="buildora-service-detail__link"><a href="/#contact"><?php esc_html_e( 'Book a service visit', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"buildora-service-detail__link"} --><p class="buildora-service-detail__link"><a href="<?php echo esc_url( home_url( '/contact/#project-brief' ) ); ?>"><?php esc_html_e( 'Book a service visit', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
 
