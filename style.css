@@ -3,14 +3,14 @@ Theme Name: Buildora
 Theme URI: https://codefix.it/
 Author: CodeFix.IT
 Author URI: https://codefix.it/
-Description: Performance-first block theme starter for construction and home-service businesses.
-Version: 0.1.0
+Description: Performance-first WordPress block theme for construction, renovation and home-service businesses.
+Version: 1.0.0
 Requires at least: 6.6
 Requires PHP: 8.1
 Text Domain: buildora
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Tags: block-patterns, full-site-editing, custom-logo, featured-images, accessibility-ready
+Tags: block-patterns, full-site-editing, custom-logo, featured-images
 */
 
 /* Keep this file intentionally small. Production styles are built by Vite. */
