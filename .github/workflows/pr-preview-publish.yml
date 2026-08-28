@@ -77,8 +77,9 @@ jobs:
           gh api -X GET "/repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > bundle.zip
           unzip -oq bundle.zip -d bundle
           test -f bundle/zips/buildora.zip
+          test -f bundle/blueprint.json
 
-      - name: Publish built theme to CORS-safe raw branch
+      - name: Publish theme and compact blueprint
         id: publish
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
         env:
@@ -88,11 +89,15 @@ jobs:
           script: |
             const fs = require('fs');
             const branch = 'playground-artifacts';
-            const zipPath = 'bundle/zips/buildora.zip';
             const repository = context.repo;
+            const basePath = `pr-${process.env.PR_NUMBER}/${process.env.HEAD_SHA}`;
+            const zipPath = 'bundle/zips/buildora.zip';
+            const blueprintPath = 'bundle/blueprint.json';
 
-            if (!fs.existsSync(zipPath)) {
-              throw new Error(`Built theme not found at ${zipPath}`);
+            for (const requiredPath of [zipPath, blueprintPath]) {
+              if (!fs.existsSync(requiredPath)) {
+                throw new Error(`Preview file not found: ${requiredPath}`);
+              }
             }
 
             try {
@@ -122,206 +127,67 @@ jobs:
               });
             }
 
-            const path = `pr-${process.env.PR_NUMBER}/${process.env.HEAD_SHA}/buildora.zip`;
-            let existingSha;
+            async function upsert(path, content, message) {
+              let existingSha;
 
-            try {
-              const { data: existing } = await github.rest.repos.getContent({
+              try {
+                const { data: existing } = await github.rest.repos.getContent({
+                  owner: repository.owner,
+                  repo: repository.repo,
+                  path,
+                  ref: branch,
+                });
+                if (!Array.isArray(existing)) existingSha = existing.sha;
+              } catch (error) {
+                if (error.status !== 404) throw error;
+              }
+
+              await github.rest.repos.createOrUpdateFileContents({
                 owner: repository.owner,
                 repo: repository.repo,
                 path,
-                ref: branch,
+                branch,
+                message,
+                content: Buffer.from(content).toString('base64'),
+                ...(existingSha ? { sha: existingSha } : {}),
               });
-              if (!Array.isArray(existing)) existingSha = existing.sha;
-            } catch (error) {
-              if (error.status !== 404) throw error;
             }
 
-            await github.rest.repos.createOrUpdateFileContents({
-              owner: repository.owner,
-              repo: repository.repo,
-              path,
-              branch,
-              message: `ci: publish Buildora preview PR #${process.env.PR_NUMBER}`,
-              content: fs.readFileSync(zipPath).toString('base64'),
-              ...(existingSha ? { sha: existingSha } : {}),
-            });
-
-            const rawUrl = `https://raw.githubusercontent.com/${repository.owner}/${repository.repo}/${branch}/${path}`;
-            core.setOutput('theme-url', rawUrl);
-            core.info(`Published preview theme: ${rawUrl}`);
-
-      - name: Build modern Playground blueprint
-        id: blueprint
-        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
-        env:
-          THEME_URL: ${{ steps.publish.outputs.theme-url }}
-        with:
-          script: |
-            const demoPagesPhp = `<?php
-            require_once '/wordpress/wp-load.php';
-
-            function buildora_demo_case_content( $scope, $duration, $delivery, $brief, $changes, $outcome ) {
-              return '<!-- wp:html --><div class="buildora-case-study-demo">'
-                . '<div class="buildora-case-study-demo__visual" aria-hidden="true"></div>'
-                . '<div class="buildora-case-study-demo__snapshot">'
-                . '<div><span>Scope</span><strong>' . esc_html( $scope ) . '</strong></div>'
-                . '<div><span>Programme</span><strong>' . esc_html( $duration ) . '</strong></div>'
-                . '<div><span>Delivery</span><strong>' . esc_html( $delivery ) . '</strong></div>'
-                . '</div>'
-                . '<section class="buildora-case-study-demo__section"><h2>The brief</h2><div><p>' . esc_html( $brief ) . '</p></div></section>'
-                . '<section class="buildora-case-study-demo__section"><h2>What changed</h2><div><p>' . esc_html( $changes ) . '</p></div></section>'
-                . '<section class="buildora-case-study-demo__section"><h2>The outcome</h2><div><p>' . esc_html( $outcome ) . '</p></div></section>'
-                . '</div><!-- /wp:html -->';
-            }
-
-            $pages = array(
-              array( 'title' => 'Services', 'slug' => 'services' ),
-              array( 'title' => 'Projects', 'slug' => 'projects' ),
-              array( 'title' => 'About', 'slug' => 'about' ),
-              array( 'title' => 'Contact', 'slug' => 'contact' ),
+            const themeRepoPath = `${basePath}/buildora.zip`;
+            await upsert(
+              themeRepoPath,
+              fs.readFileSync(zipPath),
+              `ci: publish Buildora preview theme PR #${process.env.PR_NUMBER}`
             );
 
-            $page_ids = array();
+            const themeUrl = `https://raw.githubusercontent.com/${repository.owner}/${repository.repo}/${branch}/${themeRepoPath}`;
+            const blueprintTemplate = fs.readFileSync(blueprintPath, 'utf8');
 
-            foreach ( $pages as $page ) {
-              $existing = get_page_by_path( $page['slug'], OBJECT, 'page' );
-
-              if ( $existing instanceof WP_Post ) {
-                $page_ids[ $page['slug'] ] = $existing->ID;
-                continue;
-              }
-
-              $page_id = wp_insert_post(
-                array(
-                  'post_type'    => 'page',
-                  'post_status'  => 'publish',
-                  'post_title'   => $page['title'],
-                  'post_name'    => $page['slug'],
-                  'post_content' => '',
-                ),
-                true
-              );
-
-              if ( is_wp_error( $page_id ) ) {
-                throw new RuntimeException( $page_id->get_error_message() );
-              }
-
-              $page_ids[ $page['slug'] ] = $page_id;
+            if (!blueprintTemplate.includes('__BUILDORA_THEME_URL__')) {
+              throw new Error('Blueprint theme URL placeholder is missing.');
             }
 
-            $projects = array(
-              array(
-                'title'    => 'Riverside House',
-                'slug'     => 'riverside-house',
-                'excerpt'  => 'A full internal renovation with a reworked ground floor, upgraded finishes and a tighter handover programme.',
-                'scope'    => 'Full renovation',
-                'duration' => '18 weeks',
-                'delivery' => 'Occupied home',
-                'brief'    => 'Create a more practical ground floor, refresh the full interior and keep decisions visible enough for the client to stay confident throughout the programme.',
-                'changes'  => 'The layout was simplified, finish decisions were locked earlier and milestones were documented before each trade moved on to the next stage.',
-                'outcome'  => 'The home was handed back with a cleaner layout, consistent finishes and a close-out pack that made the final walkthrough straightforward.',
-              ),
-              array(
-                'title'    => 'Northline Studio',
-                'slug'     => 'northline-studio',
-                'excerpt'  => 'A light-commercial fit-out coordinated around access, programme certainty and a clean close-out.',
-                'scope'    => 'Commercial fit-out',
-                'duration' => '10 weeks',
-                'delivery' => 'Fixed opening date',
-                'brief'    => 'Deliver a practical studio fit-out to a fixed opening date while keeping access, approvals and finish decisions tightly coordinated.',
-                'changes'  => 'The programme was broken into visible decision gates, long-lead items were confirmed first and site updates were tied to measurable milestones.',
-                'outcome'  => 'The studio opened to plan with a documented snag close-out and a clear handover of finishes, warranties and maintenance notes.',
-              ),
-              array(
-                'title'    => 'Oakfield Extension',
-                'slug'     => 'oakfield-extension',
-                'excerpt'  => 'A rear extension delivered around an occupied home with staged decisions and practical handover notes.',
-                'scope'    => 'Residential extension',
-                'duration' => '14 weeks',
-                'delivery' => 'Staged around family life',
-                'brief'    => 'Add useful family space without turning the occupied house into an unmanaged building site for the duration of the work.',
-                'changes'  => 'Access and noisy work were phased, temporary protection was treated as part of the scope and finish choices were signed off before installation.',
-                'outcome'  => 'The extension connected cleanly to the existing home and the family received a clear walkthrough of final checks and aftercare items.',
-              ),
+            const blueprintJson = blueprintTemplate.replace('__BUILDORA_THEME_URL__', themeUrl);
+            JSON.parse(blueprintJson);
+
+            const blueprintRepoPath = `${basePath}/blueprint.json`;
+            await upsert(
+              blueprintRepoPath,
+              blueprintJson,
+              `ci: publish Buildora preview blueprint PR #${process.env.PR_NUMBER}`
             );
 
-            foreach ( $projects as $project ) {
-              $path = 'projects/' . $project['slug'];
-              $existing = get_page_by_path( $path, OBJECT, 'page' );
-              $content = buildora_demo_case_content(
-                $project['scope'],
-                $project['duration'],
-                $project['delivery'],
-                $project['brief'],
-                $project['changes'],
-                $project['outcome']
-              );
-
-              $postarr = array(
-                'post_type'    => 'page',
-                'post_status'  => 'publish',
-                'post_parent'  => $page_ids['projects'],
-                'post_title'   => $project['title'],
-                'post_name'    => $project['slug'],
-                'post_excerpt' => $project['excerpt'],
-                'post_content' => $content,
-              );
-
-              if ( $existing instanceof WP_Post ) {
-                $postarr['ID'] = $existing->ID;
-                $project_id = wp_update_post( $postarr, true );
-              } else {
-                $project_id = wp_insert_post( $postarr, true );
-              }
-
-              if ( is_wp_error( $project_id ) ) {
-                throw new RuntimeException( $project_id->get_error_message() );
-              }
-
-              update_post_meta( $project_id, '_wp_page_template', 'project-case-study' );
-            }
-
-            flush_rewrite_rules();
-            `;
-
-            const blueprint = {
-              $schema: 'https://playground.wordpress.net/blueprint-schema.json',
-              landingPage: '/',
-              login: true,
-              preferredVersions: {
-                php: '8.3',
-                wp: '7.1',
-              },
-              siteOptions: {
-                blogname: 'Buildora',
-                blogdescription: 'Construction & Home Services',
-              },
-              steps: [
-                {
-                  step: 'installTheme',
-                  themeData: {
-                    resource: 'url',
-                    url: process.env.THEME_URL,
-                  },
-                  options: {
-                    activate: true,
-                  },
-                },
-                {
-                  step: 'runPHP',
-                  code: demoPagesPhp,
-                },
-              ],
-            };
-
-            core.setOutput('json', JSON.stringify(blueprint));
+            const blueprintUrl = `https://raw.githubusercontent.com/${repository.owner}/${repository.repo}/${branch}/${blueprintRepoPath}`;
+            core.setOutput('theme-url', themeUrl);
+            core.setOutput('blueprint-url', blueprintUrl);
+            core.info(`Published preview theme: ${themeUrl}`);
+            core.info(`Published preview blueprint: ${blueprintUrl}`);
 
       - name: Publish Playground button
         uses: WordPress/action-wp-playground-pr-preview@43fc435558bc6cee69f5b214d6b8ca4f9f80c31d # v3
         with:
           mode: append-to-description
           playground-host: 'https://playground.wordpress.net/?storage=temp'
-          blueprint: ${{ steps.blueprint.outputs.json }}
+          blueprint-url: ${{ steps.publish.outputs.blueprint-url }}
           pr-number: ${{ steps.meta.outputs.pr-number }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
