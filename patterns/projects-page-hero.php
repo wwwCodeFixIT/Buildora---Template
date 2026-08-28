@@ -12,7 +12,7 @@
 	<!-- wp:group {"align":"wide","className":"buildora-projects-page-hero__inner","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide buildora-projects-page-hero__inner">
 		<!-- wp:paragraph {"className":"buildora-projects-page-hero__breadcrumb"} -->
-		<p class="buildora-projects-page-hero__breadcrumb"><a href="/"><?php esc_html_e( 'Home', 'buildora' ); ?></a><span aria-hidden="true"> / </span><strong><?php esc_html_e( 'Projects', 'buildora' ); ?></strong></p>
+		<p class="buildora-projects-page-hero__breadcrumb"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'buildora' ); ?></a><span aria-hidden="true"> / </span><strong><?php esc_html_e( 'Projects', 'buildora' ); ?></strong></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:columns {"verticalAlignment":"center","className":"buildora-projects-page-hero__grid"} -->
