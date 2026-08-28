@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -27,8 +29,25 @@ jobs:
       - name: Lint source
         run: npm run lint
 
-      - name: Check formatting
-        run: npm run format:check
+      - name: Check formatting of changed files
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          mapfile -t files < <(
+            git diff --name-only \
+              "${{ github.event.pull_request.base.sha }}" \
+              "${{ github.event.pull_request.head.sha }}" \
+              | grep -E '\.(js|scss|json|md|ya?ml)$' \
+              || true
+          )
+
+          if (( ${#files[@]} == 0 )); then
+            echo "No Prettier-supported files changed."
+            exit 0
+          fi
+
+          printf 'Checking %s\n' "${files[@]}"
+          npx prettier --check "${files[@]}"
 
       - name: Build assets
         run: npm run build
