@@ -6,7 +6,7 @@
   min-height: 50vh;
 }
 
-:where(#services, #about, #projects, #process, #contact) {
+:where(#services, #about, #projects, #process, #contact, #renovation, #construction, #maintenance) {
   scroll-margin-top: 6rem;
 }
 
