@@ -1,0 +1,278 @@
+.buildora-projects-page-hero {
+  padding-block: clamp(3.5rem, 7vw, 6.75rem);
+}
+
+.buildora-projects-page-hero__inner {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.buildora-projects-page-hero__breadcrumb {
+  margin: 0;
+  color: var(--wp--preset--color--muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.buildora-projects-page-hero__breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.buildora-projects-page-hero__grid {
+  gap: clamp(2.5rem, 7vw, 7rem);
+}
+
+.buildora-projects-page-hero__eyebrow,
+.buildora-projects-page-grid__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.buildora-projects-page-hero__eyebrow::before,
+.buildora-projects-page-grid__eyebrow::before {
+  width: 2rem;
+  height: 0.17rem;
+  background: var(--wp--preset--color--brand);
+  content: '';
+}
+
+.buildora-projects-page-hero__title {
+  max-width: 11ch;
+  margin: 0;
+  font-size: clamp(3.2rem, 6.2vw, 6.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.buildora-projects-page-hero__lead {
+  max-width: 48rem;
+  margin: clamp(1.5rem, 3vw, 2.25rem) 0 0;
+  color: var(--wp--preset--color--muted);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.75;
+}
+
+.buildora-projects-page-hero__panel {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(1.6rem, 3vw, 2.25rem);
+  background: var(--wp--preset--color--ink);
+  color: var(--wp--preset--color--paper);
+}
+
+.buildora-projects-page-hero__panel::after {
+  position: absolute;
+  right: -14%;
+  bottom: -36%;
+  width: 58%;
+  aspect-ratio: 1;
+  border: 1px solid rgb(242 183 5 / 34%);
+  transform: rotate(12deg);
+  content: '';
+  pointer-events: none;
+}
+
+.buildora-projects-page-hero__panel-label {
+  margin: 0 0 1.25rem;
+  color: var(--wp--preset--color--brand);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.buildora-projects-page-hero__panel-list {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.buildora-projects-page-hero__panel-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-top: 1px solid rgb(255 255 255 / 16%);
+  font-weight: 750;
+}
+
+.buildora-projects-page-hero__panel-list strong {
+  color: var(--wp--preset--color--brand);
+  font-size: 0.75rem;
+}
+
+.buildora-projects-page-hero__panel-note {
+  position: relative;
+  z-index: 1;
+  margin: 1.15rem 0 0;
+  color: rgb(255 255 255 / 68%);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.buildora-projects-page-grid {
+  padding-block: clamp(4.75rem, 8vw, 8rem);
+}
+
+.buildora-projects-page-grid__intro {
+  gap: 2rem;
+}
+
+.buildora-projects-page-grid__title {
+  max-width: 13ch;
+  margin: 0;
+  font-size: clamp(2.8rem, 5vw, 5.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  text-wrap: balance;
+}
+
+.buildora-projects-page-grid__lead {
+  max-width: 36rem;
+  margin: 0;
+  color: var(--wp--preset--color--muted);
+  line-height: 1.75;
+}
+
+.buildora-projects-page-grid__items {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: clamp(2.75rem, 5vw, 4.5rem);
+}
+
+.buildora-project-case-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgb(17 19 21 / 10%);
+  background: var(--wp--preset--color--paper);
+}
+
+.buildora-project-case-card--featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(20rem, 0.65fr);
+}
+
+.buildora-project-case-card--featured .buildora-project__visual {
+  min-height: clamp(28rem, 45vw, 38rem);
+}
+
+.buildora-project-case-card:not(.buildora-project-case-card--featured) .buildora-project__visual {
+  min-height: clamp(20rem, 32vw, 28rem);
+}
+
+.buildora-project-case-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(1.5rem, 3.5vw, 2.75rem);
+}
+
+.buildora-project-case-card__meta,
+.buildora-project-case-card__title,
+.buildora-project-case-card__copy,
+.buildora-project-case-card__link {
+  margin: 0;
+}
+
+.buildora-project-case-card__meta {
+  color: #a47700;
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.buildora-project-case-card__title {
+  margin-top: 0.65rem;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  letter-spacing: -0.04em;
+}
+
+.buildora-project-case-card__copy {
+  max-width: 38rem;
+  margin-top: 0.85rem;
+  color: var(--wp--preset--color--muted);
+  line-height: 1.7;
+}
+
+.buildora-project-case-card__link {
+  margin-top: 1.4rem;
+}
+
+.buildora-project-case-card__link a {
+  font-weight: 800;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+.buildora-project-case-card__link a:hover,
+.buildora-project-case-card__link a:focus-visible {
+  color: #9a7300;
+}
+
+@media (max-width: 900px) {
+  .buildora-projects-page-hero__grid {
+    gap: 2.5rem;
+  }
+
+  .buildora-project-case-card--featured {
+    grid-template-columns: 1fr;
+  }
+
+  .buildora-project-case-card--featured .buildora-project__visual {
+    min-height: 28rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .buildora-projects-page-hero {
+    padding-block: 3rem 4rem;
+  }
+
+  .buildora-projects-page-hero__inner {
+    gap: 2.25rem;
+  }
+
+  .buildora-projects-page-hero__title {
+    font-size: clamp(3rem, 13.5vw, 4.3rem);
+  }
+
+  .buildora-projects-page-hero__grid {
+    gap: 2rem;
+  }
+
+  .buildora-projects-page-grid {
+    padding-block: 4rem;
+  }
+
+  .buildora-projects-page-grid__title {
+    font-size: clamp(2.7rem, 12vw, 3.8rem);
+  }
+
+  .buildora-projects-page-grid__items {
+    grid-template-columns: 1fr;
+  }
+
+  .buildora-project-case-card--featured {
+    grid-column: auto;
+  }
+
+  .buildora-project-case-card--featured .buildora-project__visual,
+  .buildora-project-case-card:not(.buildora-project-case-card--featured) .buildora-project__visual {
+    min-height: 20rem;
+  }
+}
