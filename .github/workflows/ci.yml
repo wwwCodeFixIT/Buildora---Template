@@ -24,8 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      - name: Lint JavaScript
+      - name: Lint source
         run: npm run lint
+
+      - name: Check formatting
+        run: npm run format:check
 
       - name: Build assets
         run: npm run build
@@ -38,6 +41,9 @@ jobs:
 
       - name: Package installable theme
         run: bash scripts/build-theme-zip.sh
+
+      - name: Verify package contents
+        run: bash scripts/verify-theme-package.sh
 
       - name: Upload theme artifact
         uses: actions/upload-artifact@v4
