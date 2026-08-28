@@ -31,7 +31,7 @@
 				<!-- wp:paragraph {"className":"buildora-project-case-card__meta"} --><p class="buildora-project-case-card__meta"><?php esc_html_e( 'Residential · Full renovation', 'buildora' ); ?></p><!-- /wp:paragraph -->
 				<!-- wp:heading {"level":3,"className":"buildora-project-case-card__title"} --><h3 class="wp-block-heading buildora-project-case-card__title"><?php esc_html_e( 'Riverside House', 'buildora' ); ?></h3><!-- /wp:heading -->
 				<!-- wp:paragraph {"className":"buildora-project-case-card__copy"} --><p class="buildora-project-case-card__copy"><?php esc_html_e( 'A full internal renovation with a reworked ground floor, upgraded finishes and a tighter handover programme.', 'buildora' ); ?></p><!-- /wp:paragraph -->
-				<!-- wp:paragraph {"className":"buildora-project-case-card__link"} --><p class="buildora-project-case-card__link"><a href="/projects/riverside-house/"><?php esc_html_e( 'Read case study', 'buildora' ); ?> ↗</a></p><!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"buildora-project-case-card__link"} --><p class="buildora-project-case-card__link"><a href="<?php echo esc_url( home_url( '/projects/riverside-house/' ) ); ?>"><?php esc_html_e( 'Read case study', 'buildora' ); ?> ↗</a></p><!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 		</div>
@@ -45,7 +45,7 @@
 				<!-- wp:paragraph {"className":"buildora-project-case-card__meta"} --><p class="buildora-project-case-card__meta"><?php esc_html_e( 'Commercial · Fit-out', 'buildora' ); ?></p><!-- /wp:paragraph -->
 				<!-- wp:heading {"level":3,"className":"buildora-project-case-card__title"} --><h3 class="wp-block-heading buildora-project-case-card__title"><?php esc_html_e( 'Northline Studio', 'buildora' ); ?></h3><!-- /wp:heading -->
 				<!-- wp:paragraph {"className":"buildora-project-case-card__copy"} --><p class="buildora-project-case-card__copy"><?php esc_html_e( 'A light-commercial fit-out coordinated around access, programme certainty and a clean close-out.', 'buildora' ); ?></p><!-- /wp:paragraph -->
-				<!-- wp:paragraph {"className":"buildora-project-case-card__link"} --><p class="buildora-project-case-card__link"><a href="/projects/northline-studio/"><?php esc_html_e( 'Read case study', 'buildora' ); ?> ↗</a></p><!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"buildora-project-case-card__link"} --><p class="buildora-project-case-card__link"><a href="<?php echo esc_url( home_url( '/projects/northline-studio/' ) ); ?>"><?php esc_html_e( 'Read case study', 'buildora' ); ?> ↗</a></p><!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 		</div>
@@ -59,7 +59,7 @@
 				<!-- wp:paragraph {"className":"buildora-project-case-card__meta"} --><p class="buildora-project-case-card__meta"><?php esc_html_e( 'Residential · Extension', 'buildora' ); ?></p><!-- /wp:paragraph -->
 				<!-- wp:heading {"level":3,"className":"buildora-project-case-card__title"} --><h3 class="wp-block-heading buildora-project-case-card__title"><?php esc_html_e( 'Oakfield Extension', 'buildora' ); ?></h3><!-- /wp:heading -->
 				<!-- wp:paragraph {"className":"buildora-project-case-card__copy"} --><p class="buildora-project-case-card__copy"><?php esc_html_e( 'A rear extension delivered around an occupied home with staged decisions and practical handover notes.', 'buildora' ); ?></p><!-- /wp:paragraph -->
-				<!-- wp:paragraph {"className":"buildora-project-case-card__link"} --><p class="buildora-project-case-card__link"><a href="/projects/oakfield-extension/"><?php esc_html_e( 'Read case study', 'buildora' ); ?> ↗</a></p><!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"buildora-project-case-card__link"} --><p class="buildora-project-case-card__link"><a href="<?php echo esc_url( home_url( '/projects/oakfield-extension/' ) ); ?>"><?php esc_html_e( 'Read case study', 'buildora' ); ?> ↗</a></p><!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 		</div>
