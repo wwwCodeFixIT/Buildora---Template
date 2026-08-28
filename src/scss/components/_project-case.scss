@@ -1,0 +1,250 @@
+.buildora-project-case__hero {
+  padding-block: clamp(3.5rem, 7vw, 6.75rem);
+}
+
+.buildora-project-case__hero-inner {
+  display: grid;
+  gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.buildora-project-case__breadcrumb {
+  margin: 0;
+  color: var(--wp--preset--color--muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.buildora-project-case__breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.buildora-project-case__hero-grid {
+  gap: clamp(2.5rem, 7vw, 6rem);
+}
+
+.buildora-project-case__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.buildora-project-case__eyebrow::before {
+  width: 2rem;
+  height: 0.17rem;
+  background: var(--wp--preset--color--brand);
+  content: '';
+}
+
+.buildora-project-case__title {
+  max-width: 11ch;
+  margin: 0;
+  font-size: clamp(3.2rem, 6.5vw, 6.6rem);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.buildora-project-case__excerpt {
+  max-width: 48rem;
+  margin-top: clamp(1.4rem, 3vw, 2.2rem);
+  color: var(--wp--preset--color--muted);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.75;
+}
+
+.buildora-project-case__excerpt p {
+  margin: 0;
+}
+
+.buildora-project-case__principles {
+  padding: clamp(1.5rem, 3vw, 2.1rem);
+  background: var(--wp--preset--color--ink);
+  color: var(--wp--preset--color--paper);
+}
+
+.buildora-project-case__principles-label {
+  margin: 0 0 1rem;
+  color: var(--wp--preset--color--brand);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.buildora-project-case__principles ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.buildora-project-case__principles li {
+  padding-block: 0.85rem;
+  border-top: 1px solid rgb(255 255 255 / 16%);
+  font-weight: 750;
+}
+
+.buildora-project-case__content-shell {
+  padding-block: clamp(4.5rem, 8vw, 7.5rem);
+}
+
+.buildora-project-case__content {
+  --wp--style--global--content-size: 780px;
+}
+
+.buildora-case-study-demo {
+  display: grid;
+  gap: clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.buildora-case-study-demo__visual {
+  position: relative;
+  min-height: clamp(22rem, 50vw, 38rem);
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgb(17 19 21 / 5%) 1px, transparent 1px),
+    linear-gradient(rgb(17 19 21 / 5%) 1px, transparent 1px),
+    #ecece8;
+  background-size: 44px 44px;
+}
+
+.buildora-case-study-demo__visual::before,
+.buildora-case-study-demo__visual::after {
+  position: absolute;
+  content: '';
+}
+
+.buildora-case-study-demo__visual::before {
+  inset: 17% 12% 14% 17%;
+  background: var(--wp--preset--color--ink);
+  clip-path: polygon(0 26%, 52% 0, 100% 25%, 100% 100%, 0 100%);
+}
+
+.buildora-case-study-demo__visual::after {
+  left: 31%;
+  bottom: 14%;
+  width: 18%;
+  height: 43%;
+  background: var(--wp--preset--color--brand);
+}
+
+.buildora-case-study-demo__snapshot {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid rgb(17 19 21 / 14%);
+}
+
+.buildora-case-study-demo__snapshot > div {
+  padding: 1.4rem 1rem;
+}
+
+.buildora-case-study-demo__snapshot > div + div {
+  border-left: 1px solid rgb(17 19 21 / 14%);
+}
+
+.buildora-case-study-demo__snapshot span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #a47700;
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.buildora-case-study-demo__snapshot strong {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.buildora-case-study-demo__section {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.34fr) minmax(0, 0.66fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  border-top: 1px solid rgb(17 19 21 / 14%);
+}
+
+.buildora-case-study-demo__section h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  letter-spacing: -0.045em;
+}
+
+.buildora-case-study-demo__section p {
+  margin: 0;
+  color: var(--wp--preset--color--muted);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.8;
+}
+
+.buildora-case-study-demo__section p + p {
+  margin-top: 1rem;
+}
+
+.buildora-project-case__back {
+  padding-block: 2rem clamp(4rem, 7vw, 6rem);
+}
+
+.buildora-project-case__back > .wp-block-group {
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgb(17 19 21 / 14%);
+}
+
+.buildora-project-case__back p {
+  margin: 0;
+  color: var(--wp--preset--color--muted);
+}
+
+@media (max-width: 700px) {
+  .buildora-project-case__hero {
+    padding-block: 3rem 4rem;
+  }
+
+  .buildora-project-case__hero-inner {
+    gap: 2.25rem;
+  }
+
+  .buildora-project-case__hero-grid {
+    gap: 2rem;
+  }
+
+  .buildora-project-case__title {
+    font-size: clamp(3rem, 13.5vw, 4.3rem);
+  }
+
+  .buildora-project-case__content-shell {
+    padding-block: 4rem;
+  }
+
+  .buildora-case-study-demo__visual {
+    min-height: 20rem;
+  }
+
+  .buildora-case-study-demo__snapshot {
+    grid-template-columns: 1fr;
+  }
+
+  .buildora-case-study-demo__snapshot > div + div {
+    border-top: 1px solid rgb(17 19 21 / 14%);
+    border-left: 0;
+  }
+
+  .buildora-case-study-demo__section {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .buildora-project-case__back .wp-block-buttons,
+  .buildora-project-case__back .wp-block-button,
+  .buildora-project-case__back .wp-block-button__link {
+    width: 100%;
+  }
+}
