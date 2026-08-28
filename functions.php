@@ -113,6 +113,7 @@ function buildora_enqueue_assets(): void {
 				$css_files[] = ltrim( $css_file, '/' );
 			}
 		}
+	}
 
 	$css_files = array_values( array_unique( $css_files ) );
 
@@ -327,7 +328,12 @@ function buildora_handle_contact_form(): void {
 		$headers
 	);
 
-	buildora_contact_redirect( $sent ? 'success' : 'error' );
+	if ( ! $sent ) {
+		delete_transient( $rate_limit_key );
+		buildora_contact_redirect( 'error' );
+	}
+
+	buildora_contact_redirect( 'success' );
 }
 add_action( 'admin_post_buildora_contact', 'buildora_handle_contact_form' );
 add_action( 'admin_post_nopriv_buildora_contact', 'buildora_handle_contact_form' );
