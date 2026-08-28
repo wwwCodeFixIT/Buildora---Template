@@ -3,7 +3,7 @@
   "landingPage": "/wp-admin/site-editor.php",
   "preferredVersions": {
     "php": "8.3",
-    "wp": "latest"
+    "wp": "7.1"
   },
   "siteOptions": {
     "blogname": "Buildora",
@@ -24,14 +24,24 @@
     {
       "step": "installTheme",
       "themeData": {
-        "resource": "git:directory",
-        "url": "https://github.com/wwwCodeFixIT/Buildora---Template",
-        "ref": "main",
-        "refType": "branch"
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/wwwCodeFixIT/Buildora---Template/playground-artifacts/main/buildora.zip"
       },
       "options": {
         "activate": true
       }
+    },
+    {
+      "step": "writeFile",
+      "path": "/tmp/buildora-demo-seed.php",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/wwwCodeFixIT/Buildora---Template/main/.github/playground/demo-seed.php"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/tmp/buildora-demo-seed.php';"
     }
   ]
 }
