@@ -61,7 +61,7 @@
 	<!-- wp:group {"align":"wide","className":"buildora-process__footer","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 	<div class="wp-block-group alignwide buildora-process__footer">
 		<!-- wp:paragraph {"className":"buildora-process__note"} --><p class="buildora-process__note"><?php esc_html_e( 'Have plans already? We can review them before quoting.', 'buildora' ); ?></p><!-- /wp:paragraph -->
-		<!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#contact"><?php esc_html_e( 'Start your project', 'buildora' ); ?></a></div><!-- /wp:button --></div><!-- /wp:buttons -->
+		<!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/#project-brief' ) ); ?>"><?php esc_html_e( 'Start your project', 'buildora' ); ?></a></div><!-- /wp:button --></div><!-- /wp:buttons -->
 	</div>
 	<!-- /wp:group -->
 </div>
