@@ -29,11 +29,11 @@
 			<!-- wp:buttons {"className":"buildora-hero__actions"} -->
 			<div class="wp-block-buttons buildora-hero__actions">
 				<!-- wp:button -->
-				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#contact"><?php esc_html_e( 'Request a free quote', 'buildora' ); ?></a></div>
+				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/#project-brief' ) ); ?>"><?php esc_html_e( 'Request a free quote', 'buildora' ); ?></a></div>
 				<!-- /wp:button -->
 
 				<!-- wp:button {"className":"is-style-outline"} -->
-				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="#projects"><?php esc_html_e( 'View recent projects', 'buildora' ); ?></a></div>
+				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/projects/' ) ); ?>"><?php esc_html_e( 'View recent projects', 'buildora' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->
