@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BUILDORA_VERSION', '0.1.0' );
+define( 'BUILDORA_VERSION', '1.0.0' );
 
 /**
  * Theme setup.
