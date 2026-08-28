@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BUILDORA_VERSION', '0.1.0' );
+define( 'BUILDORA_VERSION', '1.0.0' );
 
 /**
  * Theme setup.
@@ -38,7 +38,13 @@ function buildora_setup(): void {
 		)
 	);
 
-	add_editor_style( 'style.css' );
+	$editor_styles = array( 'style.css' );
+
+	foreach ( buildora_get_vite_css_files() as $css_file ) {
+		$editor_styles[] = 'assets/dist/' . $css_file;
+	}
+
+	add_editor_style( $editor_styles );
 }
 add_action( 'after_setup_theme', 'buildora_setup' );
 
@@ -84,20 +90,15 @@ function buildora_get_vite_entry(): ?array {
 }
 
 /**
- * Enqueue frontend assets produced by Vite.
+ * Resolve all CSS files attached to the current Vite entry.
+ *
+ * @return array<int, string>
  */
-function buildora_enqueue_assets(): void {
-	wp_enqueue_style(
-		'buildora-base',
-		get_stylesheet_uri(),
-		array(),
-		BUILDORA_VERSION
-	);
-
+function buildora_get_vite_css_files(): array {
 	$entry = buildora_get_vite_entry();
 
 	if ( null === $entry || empty( $entry['file'] ) || ! is_string( $entry['file'] ) ) {
-		return;
+		return array();
 	}
 
 	$entry_file = ltrim( $entry['file'], '/' );
@@ -115,9 +116,21 @@ function buildora_enqueue_assets(): void {
 		}
 	}
 
-	$css_files = array_values( array_unique( $css_files ) );
+	return array_values( array_unique( $css_files ) );
+}
 
-	foreach ( $css_files as $index => $css_file ) {
+/**
+ * Enqueue frontend assets produced by Vite.
+ */
+function buildora_enqueue_assets(): void {
+	wp_enqueue_style(
+		'buildora-base',
+		get_stylesheet_uri(),
+		array(),
+		BUILDORA_VERSION
+	);
+
+	foreach ( buildora_get_vite_css_files() as $index => $css_file ) {
 		wp_enqueue_style(
 			'buildora-app-' . absint( $index ),
 			get_theme_file_uri( 'assets/dist/' . $css_file ),
@@ -125,6 +138,14 @@ function buildora_enqueue_assets(): void {
 			BUILDORA_VERSION
 		);
 	}
+
+	$entry = buildora_get_vite_entry();
+
+	if ( null === $entry || empty( $entry['file'] ) || ! is_string( $entry['file'] ) ) {
+		return;
+	}
+
+	$entry_file = ltrim( $entry['file'], '/' );
 
 	if ( '.css' === substr( $entry_file, -4 ) ) {
 		return;
@@ -280,7 +301,7 @@ function buildora_handle_contact_form(): void {
 		strlen( $email ) > 190 ||
 		strlen( $phone ) > 80 ||
 		strlen( $location ) > 160 ||
-		strlen( $message ) > 10000
+		strlen( $message ) > 5000
 	) {
 		buildora_contact_redirect( 'invalid' );
 	}

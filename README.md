@@ -1,87 +1,181 @@
 # Buildora
 
-Performance-first WordPress block theme starter for construction and home-service businesses.
+Buildora is a performance-first WordPress block theme for construction, renovation and home-service businesses. It ships with a complete homepage, Services, Projects, About and Contact page designs, reusable block patterns and a project case-study template.
 
-## Stack
+## Version
 
-- WordPress Block Theme / Full Site Editing
-- `theme.json` v3
-- native `/patterns` auto-registration
-- Vite 8 + Sass
-- vanilla JS loaded as a WordPress Script Module
-- ESLint + Prettier
-- GitHub Actions CI
+**1.0.0**
 
 ## Requirements
 
 - WordPress 6.6+
 - PHP 8.1+
-- Node.js 22.12+
-- npm
+- modern browser with CSS Grid support
 
-## Local setup
+Node.js is required only when developing the source repository. The installable ZIP already contains compiled production assets.
 
-1. Put the theme directory in `wp-content/themes/buildora`.
-2. From the theme directory run:
+## Theme features
 
-```bash
-npm install
-npm run build
+- Full Site Editing / block-theme architecture
+- `theme.json` v3 design tokens
+- reusable native WordPress patterns
+- responsive sticky header and no-JS mobile navigation
+- homepage conversion sections
+- dedicated Services, Projects, About and Contact templates
+- reusable **Project Case Study** page template
+- built-in project enquiry form using `admin-post.php` and `wp_mail()`
+- nonce verification, honeypot protection and basic submission throttling
+- skip link, keyboard focus states and reduced-motion handling
+- system font stack; no third-party font request
+- no jQuery and no required frontend JavaScript
+- Vite + Sass source workflow for developers
+- GitHub Actions CI and automated WordPress Playground PR previews
+
+## Install the packaged theme
+
+1. Build or download `buildora.zip`.
+2. In WordPress open **Appearance → Themes → Add New → Upload Theme**.
+3. Upload `buildora.zip` and activate **Buildora**.
+4. Open **Appearance → Editor** to change the global styles, site title and content.
+
+## Recommended page setup
+
+Buildora does not silently insert demo content into a production WordPress database. Create the following Pages so the bundled slug-specific templates and global navigation resolve correctly:
+
+| Page | Slug |
+| --- | --- |
+| Services | `services` |
+| Projects | `projects` |
+| About | `about` |
+| Contact | `contact` |
+
+For project case studies, create child Pages beneath **Projects** and assign the **Project Case Study** template in the Page settings.
+
+Example:
+
+```text
+Projects
+├── Riverside House
+├── Northline Studio
+└── Oakfield Extension
 ```
 
-3. Activate **Buildora** in WordPress.
-4. Open **Appearance → Editor** and configure the logo/navigation.
+The repository's WordPress Playground preview seeds demo Pages only for development and review. Normal theme installation never writes demo Pages automatically.
 
-## Cloud development
+## Contact form
 
-Buildora is configured for a browser-only workflow:
+The Contact template contains a lightweight enquiry form.
 
-- GitHub is the source of truth.
-- GitHub Codespaces provides VS Code, Node 22 and PHP 8.3.
-- WordPress Playground runs WordPress + the Site Editor in the browser.
-- Pull requests get an automated WordPress Playground preview.
+By default:
 
-Open **Code → Codespaces → Create codespace on main**, then run:
+- submissions are sent to the WordPress **Administration Email Address**;
+- the public contact email also uses the WordPress administration email;
+- a valid nonce is required;
+- a honeypot field filters simple bots;
+- repeated submissions from the same browser/network fingerprint are throttled for one minute;
+- all submitted values are sanitized and validated server-side.
 
-```bash
-npm run check
-npm run package
+The recipient can be customized in PHP:
+
+```php
+add_filter(
+    'buildora_contact_recipient',
+    static function (): string {
+        return 'projects@example.com';
+    }
+);
 ```
 
-Playground links are stored in `playground/LINKS.md`. Full details: `CLOUD-WORKFLOW.md`.
+The public email shown on the Contact page can be changed independently:
+
+```php
+add_filter(
+    'buildora_contact_public_email',
+    static function (): string {
+        return 'hello@example.com';
+    }
+);
+```
+
+`wp_mail()` depends on the hosting environment. For reliable production delivery, configure transactional SMTP or a mail provider through a dedicated WordPress mail plugin/service.
+
+## SEO baseline
+
+Buildora provides the theme-side SEO foundation:
+
+- WordPress-managed document titles via `title-tag` support;
+- one primary H1 in the supplied marketing templates;
+- semantic landmarks and heading hierarchy;
+- clean internal URLs;
+- responsive layouts and lightweight assets.
+
+Buildora intentionally does **not** hardcode canonical tags, Open Graph metadata or organization/local-business schema because those values are site-specific and would conflict with SEO plugins. Configure them with a dedicated SEO solution such as Yoast SEO, Rank Math or another standards-compliant plugin.
+
+## Performance baseline
+
+- CSS-only production frontend today
+- no jQuery dependency
+- no remote font request
+- no page-builder dependency
+- no required third-party frontend library
+- fixed visual geometry to reduce layout shifts
+- `prefers-reduced-motion` support
+
+If real project photographs are added, use responsive WordPress images (`srcset` / `sizes`), modern formats such as AVIF/WebP where appropriate, explicit dimensions/aspect ratios and avoid lazy-loading the above-the-fold LCP image.
+
+## Accessibility baseline
+
+Buildora includes:
+
+- semantic landmarks
+- a keyboard-accessible skip link
+- visible focus styles
+- no-JS mobile navigation based on native HTML
+- reduced-motion handling
+- form labels and server-side validation feedback
+
+Accessibility still depends on the content entered by the site owner. Verify heading order, link purpose, alternative text, color choices and any third-party plugins after customization.
 
 ## Development
 
 ```bash
+npm install
 npm run dev
 ```
 
-The Vite dev server is useful for frontend asset development, but this starter intentionally loads the production manifest from WordPress. Run `npm run build` after changes to test inside WordPress.
+Build production CSS:
 
-## Quality commands
+```bash
+npm run build
+```
+
+Run repository checks:
 
 ```bash
 npm run lint
-npm run format
 npm run format:check
 npm run build
-npm run check
 ```
 
-## Architecture
+Create the installable theme ZIP:
+
+```bash
+npm run package
+```
+
+## Repository architecture
 
 ```text
 buildora/
 ├── assets/
-│   ├── dist/               # generated by Vite
-│   └── images/
-├── parts/                  # block template parts
-├── patterns/               # auto-registered WordPress patterns
+│   └── dist/               # compiled production assets
+├── parts/                  # template parts
+├── patterns/               # reusable WordPress patterns
 ├── templates/              # block templates
 ├── src/
-│   ├── js/
-│   └── scss/
-├── .github/workflows/ci.yml
+│   └── scss/               # development styles
+├── playground/             # development preview fixtures
+├── scripts/                # build/cloud tooling
 ├── functions.php
 ├── style.css
 ├── theme.json
@@ -89,37 +183,18 @@ buildora/
 └── vite.config.js
 ```
 
-## Performance principles
+## Cloud development
 
-- no jQuery
-- no page-builder dependency
-- system font stack by default
-- progressive enhancement only
-- fixed image aspect ratios to reduce CLS
-- no unnecessary frontend JavaScript
-- native WordPress navigation and block markup
+The repository supports a browser-only workflow:
 
-For a real demo, replace `assets/images/hero-placeholder.svg` with an optimized AVIF/WebP image and ensure the LCP image is not lazy-loaded.
+- GitHub is the source of truth;
+- GitHub Codespaces provides the development environment;
+- WordPress Playground provides temporary WordPress instances;
+- pull requests receive automated Playground previews;
+- CI validates JavaScript tooling, asset builds, `theme.json`, PHP syntax and the installable ZIP.
 
-## Accessibility baseline
-
-- semantic block markup
-- native navigation block
-- skip link
-- visible `:focus-visible`
-- reduced-motion handling
-- decorative demo hero image has an empty alt attribute
-
-## Before marketplace release
-
-- replace all demo copy and placeholder imagery
-- test WordPress Site Editor parity
-- validate keyboard navigation
-- test current Chrome/Firefox/Safari/WebKit
-- run Lighthouse and axe/WAVE
-- add documentation and import/demo instructions
-- create a clean theme ZIP without `node_modules`, `.git`, `src` if the marketplace requires production-only files
+See `CLOUD-WORKFLOW.md` for repository-maintainer details.
 
 ## License
 
-GPL-2.0-or-later.
+Buildora is licensed under **GPL-2.0-or-later**. See `LICENSE`.
