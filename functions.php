@@ -196,6 +196,57 @@ function buildora_skip_link(): void {
 add_action( 'wp_body_open', 'buildora_skip_link' );
 
 /**
+ * Keep starter navigation useful before recommended marketing Pages exist.
+ *
+ * Buildora intentionally does not create production content on activation. If
+ * one of the theme's reserved marketing routes is still a 404, redirect the
+ * visitor to the matching homepage section. As soon as the real Page exists,
+ * WordPress resolves it normally and this fallback does nothing.
+ */
+function buildora_redirect_missing_marketing_routes(): void {
+	if ( is_admin() || wp_doing_ajax() || ! is_404() ) {
+		return;
+	}
+
+	$request_uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '';
+	$request_path = wp_parse_url( $request_uri, PHP_URL_PATH );
+
+	if ( ! is_string( $request_path ) || '' === $request_path ) {
+		return;
+	}
+
+	$home_path = wp_parse_url( home_url( '/' ), PHP_URL_PATH );
+	$home_path = is_string( $home_path ) ? untrailingslashit( $home_path ) : '';
+
+	if ( '' !== $home_path && 0 === strpos( $request_path, $home_path ) ) {
+		$request_path = substr( $request_path, strlen( $home_path ) );
+	}
+
+	$route = trim( $request_path, '/' );
+
+	$fallbacks = array(
+		'services' => 'services',
+		'projects' => 'projects',
+		'about'    => 'about',
+		'contact'  => 'contact',
+	);
+
+	$anchor = $fallbacks[ $route ] ?? '';
+
+	if ( '' === $anchor && 0 === strpos( $route, 'projects/' ) ) {
+		$anchor = 'projects';
+	}
+
+	if ( '' === $anchor ) {
+		return;
+	}
+
+	wp_safe_redirect( home_url( '/#' . $anchor ), 302 );
+	exit;
+}
+add_action( 'template_redirect', 'buildora_redirect_missing_marketing_routes' );
+
+/**
  * Redirect a contact form submission back to the Contact page.
  *
  * @param string $status Public status key.
