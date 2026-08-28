@@ -38,7 +38,7 @@ $buildora_quote_url = home_url( '/contact/' ) . '#project-brief';
 				<!-- /wp:button -->
 
 				<!-- wp:button {"className":"is-style-outline buildora-final-cta__secondary"} -->
-				<div class="wp-block-button is-style-outline buildora-final-cta__secondary"><a class="wp-block-button__link wp-element-button" href="/projects/"><?php esc_html_e( 'View recent projects', 'buildora' ); ?></a></div>
+				<div class="wp-block-button is-style-outline buildora-final-cta__secondary"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/projects/' ) ); ?>"><?php esc_html_e( 'View recent projects', 'buildora' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->
