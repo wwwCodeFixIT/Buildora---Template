@@ -45,7 +45,7 @@
 			<!-- wp:heading {"level":3,"className":"buildora-service-card__title"} --><h3 class="wp-block-heading buildora-service-card__title"><?php esc_html_e( 'Renovation', 'buildora' ); ?></h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"textColor":"muted","className":"buildora-service-card__text"} --><p class="buildora-service-card__text has-muted-color has-text-color"><?php esc_html_e( 'Interior and exterior upgrades managed around a clear scope, realistic schedule and one accountable team.', 'buildora' ); ?></p><!-- /wp:paragraph -->
 			<!-- wp:paragraph {"className":"buildora-service-card__meta"} --><p class="buildora-service-card__meta"><?php esc_html_e( 'Kitchens • Bathrooms • Full-home', 'buildora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-service-card__link"} --><p class="buildora-service-card__link"><a href="#contact"><?php esc_html_e( 'Discuss a renovation', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"buildora-service-card__link"} --><p class="buildora-service-card__link"><a href="<?php echo esc_url( home_url( '/contact/#project-brief' ) ); ?>"><?php esc_html_e( 'Discuss a renovation', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 
@@ -55,7 +55,7 @@
 			<!-- wp:heading {"level":3,"className":"buildora-service-card__title"} --><h3 class="wp-block-heading buildora-service-card__title"><?php esc_html_e( 'Construction', 'buildora' ); ?></h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"className":"buildora-service-card__text"} --><p class="buildora-service-card__text"><?php esc_html_e( 'Reliable delivery for residential and light-commercial projects, with milestones you can actually track.', 'buildora' ); ?></p><!-- /wp:paragraph -->
 			<!-- wp:paragraph {"className":"buildora-service-card__meta"} --><p class="buildora-service-card__meta"><?php esc_html_e( 'Extensions • New builds • Commercial', 'buildora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-service-card__link"} --><p class="buildora-service-card__link"><a href="#contact"><?php esc_html_e( 'Plan your build', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"buildora-service-card__link"} --><p class="buildora-service-card__link"><a href="<?php echo esc_url( home_url( '/contact/#project-brief' ) ); ?>"><?php esc_html_e( 'Plan your build', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 
@@ -65,7 +65,7 @@
 			<!-- wp:heading {"level":3,"className":"buildora-service-card__title"} --><h3 class="wp-block-heading buildora-service-card__title"><?php esc_html_e( 'Repairs & maintenance', 'buildora' ); ?></h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"textColor":"muted","className":"buildora-service-card__text"} --><p class="buildora-service-card__text has-muted-color has-text-color"><?php esc_html_e( 'Responsive repair and maintenance support for properties that need practical fixes without unnecessary delay.', 'buildora' ); ?></p><!-- /wp:paragraph -->
 			<!-- wp:paragraph {"className":"buildora-service-card__meta"} --><p class="buildora-service-card__meta"><?php esc_html_e( 'Repairs • Preventive care • Call-outs', 'buildora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-service-card__link"} --><p class="buildora-service-card__link"><a href="#contact"><?php esc_html_e( 'Book a service visit', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"buildora-service-card__link"} --><p class="buildora-service-card__link"><a href="<?php echo esc_url( home_url( '/contact/#project-brief' ) ); ?>"><?php esc_html_e( 'Book a service visit', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 	</div>
