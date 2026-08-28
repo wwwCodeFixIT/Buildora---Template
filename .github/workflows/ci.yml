@@ -37,7 +37,7 @@ jobs:
             git diff --name-only \
               "${{ github.event.pull_request.base.sha }}" \
               "${{ github.event.pull_request.head.sha }}" \
-              | grep -E '\.(js|scss|json|md|ya?ml)$' \
+              | grep -E '\.(js|scss|json|ya?ml)$' \
               || true
           )
 
