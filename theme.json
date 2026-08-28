@@ -131,5 +131,8 @@
   },
   "templateParts": [
     { "name": "footer", "title": "Footer", "area": "footer" }
+  ],
+  "customTemplates": [
+    { "name": "project-case-study", "title": "Project Case Study", "postTypes": ["page"] }
   ]
 }
