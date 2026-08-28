@@ -1,0 +1,120 @@
+name: Publish Main Playground Demo
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-main-playground
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Build installable theme
+        run: npm run package
+
+      - name: Build stable Playground bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          bundle_dir="build/playground-bundle"
+          rm -rf "$bundle_dir"
+          mkdir -p "$bundle_dir"
+
+          cp build/buildora.zip "$bundle_dir/buildora.zip"
+          cp .github/playground/demo-seed.php "$bundle_dir/demo-seed.php"
+
+          cat > "$bundle_dir/blueprint.json" <<'JSON'
+          {
+            "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+            "landingPage": "/",
+            "login": true,
+            "preferredVersions": {
+              "php": "8.3",
+              "wp": "7.1"
+            },
+            "siteOptions": {
+              "blogname": "Buildora",
+              "blogdescription": "Construction & Home Services"
+            },
+            "steps": [
+              {
+                "step": "installTheme",
+                "themeData": {
+                  "resource": "bundled",
+                  "path": "/buildora.zip"
+                },
+                "options": {
+                  "activate": true
+                }
+              },
+              {
+                "step": "writeFile",
+                "path": "/tmp/buildora-demo-seed.php",
+                "data": {
+                  "resource": "bundled",
+                  "path": "/demo-seed.php"
+                }
+              },
+              {
+                "step": "runPHP",
+                "code": "<?php require '/tmp/buildora-demo-seed.php';"
+              }
+            ]
+          }
+          JSON
+
+          (
+            cd "$bundle_dir"
+            zip -qr ../buildora-playground.zip .
+          )
+
+      - name: Publish stable demo assets
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git fetch origin playground-artifacts
+          rm -rf /tmp/buildora-playground-artifacts
+          git worktree add --detach /tmp/buildora-playground-artifacts origin/playground-artifacts
+
+          cd /tmp/buildora-playground-artifacts
+          git checkout -B playground-artifacts origin/playground-artifacts
+          mkdir -p main
+
+          cp "$GITHUB_WORKSPACE/build/buildora.zip" main/buildora.zip
+          cp "$GITHUB_WORKSPACE/build/playground-bundle/blueprint.json" main/blueprint.json
+          cp "$GITHUB_WORKSPACE/build/buildora-playground.zip" main/buildora-playground.zip
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add main/
+
+          if git diff --cached --quiet; then
+            echo "Stable Playground assets are already current."
+            exit 0
+          fi
+
+          git commit -m "chore: publish main Playground demo ${GITHUB_SHA}"
+          git push origin HEAD:playground-artifacts
