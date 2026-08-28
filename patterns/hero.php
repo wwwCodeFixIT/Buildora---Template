@@ -61,7 +61,7 @@
 			<!-- wp:group {"className":"buildora-hero__visual","layout":{"type":"default"}} -->
 			<div class="wp-block-group buildora-hero__visual">
 				<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"buildora-hero__media"} -->
-				<figure class="wp-block-image size-full buildora-hero__media"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero-construction.svg' ) ); ?>" alt="" width="800" height="1000" decoding="async" /></figure>
+				<figure class="wp-block-image size-full buildora-hero__media"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero-construction.svg' ) ); ?>" alt="" /></figure>
 				<!-- /wp:image -->
 
 				<!-- wp:group {"className":"buildora-hero__badge buildora-hero__badge--top","backgroundColor":"paper","layout":{"type":"constrained"}} -->
