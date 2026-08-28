@@ -109,7 +109,11 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add main/
+
+          # The repository ignores *.zip for normal development. These are intentional,
+          # built distribution artifacts on the dedicated playground-artifacts branch.
+          git add main/blueprint.json
+          git add -f main/buildora.zip main/buildora-playground.zip
 
           if git diff --cached --quiet; then
             echo "Stable Playground assets are already current."
