@@ -25,7 +25,7 @@ rsync -a "$ROOT/" "$STAGE_DIR/" \
   --exclude='package.json' \
   --exclude='package-lock.json' \
   --exclude='vite.config.js' \
-  --exclude='README.md'
+  --exclude='CLOUD-WORKFLOW.md'
 
 (
   cd "$BUILD_DIR"
