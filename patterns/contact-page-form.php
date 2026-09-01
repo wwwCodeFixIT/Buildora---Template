@@ -26,7 +26,7 @@ $lexora_contact_messages = array(
 	),
 	'error' => array(
 		'type' => 'error',
-		'text' => __( 'We could not send your enquiry right now. Please try again or use the email address shown here.', 'lexora' ),
+		'text' => __( 'We could not send your enquiry right now. Please try again later or use another published contact method.', 'lexora' ),
 	),
 );
 
