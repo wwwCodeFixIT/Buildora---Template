@@ -32,7 +32,7 @@ $lexora_contact_messages = array(
 
 $lexora_contact_message = $lexora_contact_messages[ $lexora_contact_status ] ?? null;
 $lexora_public_email    = sanitize_email(
-	apply_filters( 'lexora_contact_public_email', get_option( 'admin_email' ) )
+	apply_filters( 'lexora_contact_public_email', '' )
 );
 $lexora_privacy_url     = get_privacy_policy_url();
 ?>
