@@ -23,7 +23,7 @@ Node.js is required only when developing the source repository. The installable 
 - responsive sticky header and no-JS mobile navigation
 - conversion-focused legal homepage
 - dedicated Practice Areas, Attorneys, Results, About and Contact templates
-- dedicated attorney profile template
+- reusable Attorney Profile and Case Result custom templates
 - representative-matters / results presentation
 - testimonials and trust-building sections
 - built-in consultation form using `admin-post.php` and `wp_mail()`
@@ -52,9 +52,20 @@ Lexora does not silently insert demo content into a production WordPress databas
 | About | `about` |
 | Contact | `contact` |
 
-For the bundled attorney-profile presentation, create a Page for an attorney and assign the **Attorney Profile** template in the Page settings. The Playground preview includes a fictional `Eleanor Mercer` profile only as demo content.
-
 The repository's WordPress Playground preview seeds development/demo Pages only for review. A normal theme installation never writes demo Pages automatically.
+
+## Attorney profiles
+
+Create one WordPress Page for each attorney and assign the **Attorney Profile** custom template in the Page settings. The template deliberately uses normal WordPress fields instead of theme-specific custom data, so profiles remain editable in the block editor and portable between installations:
+
+| WordPress field | Attorney Profile output |
+| --- | --- |
+| Page title | Attorney name / profile H1 |
+| Excerpt | Short hero introduction |
+| Featured image | Attorney portrait |
+| Page content | Biography, practice focus, representative matters and credentials |
+
+If no featured image is set, Lexora displays a restrained branded fallback panel rather than a broken image. The Playground preview includes three fictional attorney Pages under `/attorneys/` to demonstrate the reusable template. Replace all demo names, roles, credentials and matter descriptions before using the theme on a live site.
 
 ## Consultation form
 
