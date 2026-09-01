@@ -1,0 +1,172 @@
+.lexora-profile {
+  padding-block: clamp(4rem, 8vw, 8rem);
+}
+
+.lexora-profile__inner {
+  display: grid;
+  gap: clamp(3rem, 6vw, 6rem);
+}
+
+.lexora-profile__hero {
+  gap: 0;
+  margin: 0;
+}
+
+.lexora-profile__portrait {
+  min-height: clamp(26rem, 48vw, 38rem);
+  height: 100%;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.lexora-profile__portrait::after {
+  content: '';
+  position: absolute;
+  inset: auto -12% 12% 28%;
+  height: 1px;
+  background: color-mix(in srgb, var(--wp--preset--color--brand) 65%, transparent);
+  transform: rotate(-10deg);
+  transform-origin: center;
+}
+
+.lexora-profile__initials {
+  margin: auto 0;
+  font-family: var(--wp--preset--font-family--display);
+  font-size: clamp(6rem, 13vw, 11rem);
+  line-height: 0.85;
+  color: var(--wp--preset--color--brand);
+  letter-spacing: -0.06em;
+}
+
+.lexora-profile__portrait-note,
+.lexora-profile__sidebar-label {
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.lexora-profile__intro {
+  padding: clamp(2rem, 6vw, 5rem);
+  border-block: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  border-inline-end: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.lexora-profile__name {
+  margin-block: 0.7rem 1.25rem;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.055em;
+}
+
+.lexora-profile__lead {
+  max-width: 44rem;
+}
+
+.lexora-profile__facts {
+  margin-block: clamp(2rem, 4vw, 3.5rem);
+  border-block: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.lexora-profile__fact {
+  padding: 1.25rem 1rem 1.25rem 0;
+  border-inline-end: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.lexora-profile__fact:last-child {
+  border-inline-end: 0;
+}
+
+.lexora-profile__fact p {
+  margin: 0;
+}
+
+.lexora-profile__fact p:first-child {
+  color: var(--wp--preset--color--brand);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.lexora-profile__fact p:last-child {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--wp--preset--color--muted);
+}
+
+.lexora-profile__body {
+  gap: clamp(2.5rem, 6vw, 6rem);
+  margin: 0;
+}
+
+.lexora-profile__body h2 {
+  max-width: 16ch;
+  margin-block: 0.8rem 1.5rem;
+}
+
+.lexora-profile__body h3 {
+  margin-top: 2.5rem;
+}
+
+.lexora-profile__matter-list,
+.lexora-profile__credential-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.lexora-profile__matter-list li,
+.lexora-profile__credential-list li {
+  position: relative;
+  padding: 1rem 0 1rem 1.4rem;
+  border-top: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.lexora-profile__matter-list li::before,
+.lexora-profile__credential-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.55rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  background: var(--wp--preset--color--brand);
+}
+
+.lexora-profile__sidebar {
+  padding: clamp(1.75rem, 4vw, 3rem);
+  position: sticky;
+  top: 7rem;
+}
+
+@media (max-width: 782px) {
+  .lexora-profile__hero,
+  .lexora-profile__body {
+    gap: 0;
+  }
+
+  .lexora-profile__intro {
+    padding: 2rem 0 0;
+    border: 0;
+  }
+
+  .lexora-profile__facts {
+    grid-template-columns: 1fr !important;
+  }
+
+  .lexora-profile__fact {
+    border-inline-end: 0;
+    border-bottom: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+  }
+
+  .lexora-profile__fact:last-child {
+    border-bottom: 0;
+  }
+
+  .lexora-profile__sidebar {
+    position: static;
+    margin-top: 2rem;
+  }
+}
