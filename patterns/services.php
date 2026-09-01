@@ -1,18 +1,18 @@
 <?php
 /**
- * Title: Services Grid
- * Slug: buildora/services-grid
- * Categories: buildora, services
- * Keywords: services, cards, grid
- * Description: Premium three-card services section for construction and home-service businesses.
+ * Title: Practice Areas Grid
+ * Slug: lexora/practice-areas
+ * Categories: lexora, services
+ * Keywords: practice areas, legal services, cards, grid
+ * Description: Premium three-card practice areas section for law firms and legal practices.
  */
 ?>
-<!-- wp:group {"anchor":"services","align":"full","className":"buildora-services","layout":{"type":"constrained"}} -->
-<div id="services" class="wp-block-group alignfull buildora-services">
+<!-- wp:group {"anchor":"practice-areas","align":"full","className":"buildora-services","layout":{"type":"constrained"}} -->
+<div id="practice-areas" class="wp-block-group alignfull buildora-services">
 	<!-- wp:group {"align":"wide","className":"buildora-services__intro","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide buildora-services__intro">
 		<!-- wp:paragraph {"className":"buildora-services__eyebrow"} -->
-		<p class="buildora-services__eyebrow"><?php esc_html_e( 'What we do', 'buildora' ); ?></p>
+		<p class="buildora-services__eyebrow"><?php esc_html_e( 'Practice areas', 'lexora' ); ?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:columns {"verticalAlignment":"bottom","className":"buildora-services__heading-row"} -->
@@ -20,7 +20,7 @@
 			<!-- wp:column {"verticalAlignment":"bottom","width":"62%"} -->
 			<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:62%">
 				<!-- wp:heading {"fontSize":"xl","className":"buildora-services__title"} -->
-				<h2 class="wp-block-heading buildora-services__title has-xl-font-size"><?php esc_html_e( 'Services built around your project.', 'buildora' ); ?></h2>
+				<h2 class="wp-block-heading buildora-services__title has-xl-font-size"><?php esc_html_e( 'Focused legal support for important decisions.', 'lexora' ); ?></h2>
 				<!-- /wp:heading -->
 			</div>
 			<!-- /wp:column -->
@@ -28,7 +28,7 @@
 			<!-- wp:column {"verticalAlignment":"bottom","width":"38%"} -->
 			<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:38%">
 				<!-- wp:paragraph {"textColor":"muted","className":"buildora-services__lead"} -->
-				<p class="buildora-services__lead has-muted-color has-text-color"><?php esc_html_e( 'From full renovations to ongoing repairs, our crews keep scope, timing and communication straightforward from day one.', 'buildora' ); ?></p>
+				<p class="buildora-services__lead has-muted-color has-text-color"><?php esc_html_e( 'From commercial matters to private disputes, our team brings structured advice and clear communication to every stage.', 'lexora' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:column -->
@@ -42,30 +42,30 @@
 		<!-- wp:column {"className":"buildora-service-card"} -->
 		<div class="wp-block-column buildora-service-card">
 			<!-- wp:paragraph {"className":"buildora-service-card__number"} --><p class="buildora-service-card__number">01</p><!-- /wp:paragraph -->
-			<!-- wp:heading {"level":3,"className":"buildora-service-card__title"} --><h3 class="wp-block-heading buildora-service-card__title"><?php esc_html_e( 'Renovation', 'buildora' ); ?></h3><!-- /wp:heading -->
-			<!-- wp:paragraph {"textColor":"muted","className":"buildora-service-card__text"} --><p class="buildora-service-card__text has-muted-color has-text-color"><?php esc_html_e( 'Interior and exterior upgrades managed around a clear scope, realistic schedule and one accountable team.', 'buildora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-service-card__meta"} --><p class="buildora-service-card__meta"><?php esc_html_e( 'Kitchens • Bathrooms • Full-home', 'buildora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-service-card__link"} --><p class="buildora-service-card__link"><a href="<?php echo esc_url( home_url( '/contact/#project-brief' ) ); ?>"><?php esc_html_e( 'Discuss a renovation', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
+			<!-- wp:heading {"level":3,"className":"buildora-service-card__title"} --><h3 class="wp-block-heading buildora-service-card__title"><?php esc_html_e( 'Corporate & commercial', 'lexora' ); ?></h3><!-- /wp:heading -->
+			<!-- wp:paragraph {"textColor":"muted","className":"buildora-service-card__text"} --><p class="buildora-service-card__text has-muted-color has-text-color"><?php esc_html_e( 'Practical advice for contracts, transactions, governance and the legal decisions that keep a business moving.', 'lexora' ); ?></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"buildora-service-card__meta"} --><p class="buildora-service-card__meta"><?php esc_html_e( 'Contracts • Advisory • Transactions', 'lexora' ); ?></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"buildora-service-card__link"} --><p class="buildora-service-card__link"><a href="<?php echo esc_url( home_url( '/practice-areas/' ) ); ?>"><?php esc_html_e( 'Explore commercial law', 'lexora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 
 		<!-- wp:column {"className":"buildora-service-card buildora-service-card--featured"} -->
 		<div class="wp-block-column buildora-service-card buildora-service-card--featured">
 			<!-- wp:paragraph {"className":"buildora-service-card__number"} --><p class="buildora-service-card__number">02</p><!-- /wp:paragraph -->
-			<!-- wp:heading {"level":3,"className":"buildora-service-card__title"} --><h3 class="wp-block-heading buildora-service-card__title"><?php esc_html_e( 'Construction', 'buildora' ); ?></h3><!-- /wp:heading -->
-			<!-- wp:paragraph {"className":"buildora-service-card__text"} --><p class="buildora-service-card__text"><?php esc_html_e( 'Reliable delivery for residential and light-commercial projects, with milestones you can actually track.', 'buildora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-service-card__meta"} --><p class="buildora-service-card__meta"><?php esc_html_e( 'Extensions • New builds • Commercial', 'buildora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-service-card__link"} --><p class="buildora-service-card__link"><a href="<?php echo esc_url( home_url( '/contact/#project-brief' ) ); ?>"><?php esc_html_e( 'Plan your build', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
+			<!-- wp:heading {"level":3,"className":"buildora-service-card__title"} --><h3 class="wp-block-heading buildora-service-card__title"><?php esc_html_e( 'Dispute resolution', 'lexora' ); ?></h3><!-- /wp:heading -->
+			<!-- wp:paragraph {"className":"buildora-service-card__text"} --><p class="buildora-service-card__text"><?php esc_html_e( 'Measured, strategic representation for negotiations, claims and litigation where preparation and timing matter.', 'lexora' ); ?></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"buildora-service-card__meta"} --><p class="buildora-service-card__meta"><?php esc_html_e( 'Negotiation • Claims • Litigation', 'lexora' ); ?></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"buildora-service-card__link"} --><p class="buildora-service-card__link"><a href="<?php echo esc_url( home_url( '/contact/#consultation' ) ); ?>"><?php esc_html_e( 'Discuss a dispute', 'lexora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 
 		<!-- wp:column {"className":"buildora-service-card"} -->
 		<div class="wp-block-column buildora-service-card">
 			<!-- wp:paragraph {"className":"buildora-service-card__number"} --><p class="buildora-service-card__number">03</p><!-- /wp:paragraph -->
-			<!-- wp:heading {"level":3,"className":"buildora-service-card__title"} --><h3 class="wp-block-heading buildora-service-card__title"><?php esc_html_e( 'Repairs & maintenance', 'buildora' ); ?></h3><!-- /wp:heading -->
-			<!-- wp:paragraph {"textColor":"muted","className":"buildora-service-card__text"} --><p class="buildora-service-card__text has-muted-color has-text-color"><?php esc_html_e( 'Responsive repair and maintenance support for properties that need practical fixes without unnecessary delay.', 'buildora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-service-card__meta"} --><p class="buildora-service-card__meta"><?php esc_html_e( 'Repairs • Preventive care • Call-outs', 'buildora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-service-card__link"} --><p class="buildora-service-card__link"><a href="<?php echo esc_url( home_url( '/contact/#project-brief' ) ); ?>"><?php esc_html_e( 'Book a service visit', 'buildora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
+			<!-- wp:heading {"level":3,"className":"buildora-service-card__title"} --><h3 class="wp-block-heading buildora-service-card__title"><?php esc_html_e( 'Family & private client', 'lexora' ); ?></h3><!-- /wp:heading -->
+			<!-- wp:paragraph {"textColor":"muted","className":"buildora-service-card__text"} --><p class="buildora-service-card__text has-muted-color has-text-color"><?php esc_html_e( 'Calm, discreet guidance for personal legal matters that require careful judgment and clear next steps.', 'lexora' ); ?></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"buildora-service-card__meta"} --><p class="buildora-service-card__meta"><?php esc_html_e( 'Family • Estates • Private matters', 'lexora' ); ?></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"buildora-service-card__link"} --><p class="buildora-service-card__link"><a href="<?php echo esc_url( home_url( '/contact/#consultation' ) ); ?>"><?php esc_html_e( 'Request a consultation', 'lexora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 	</div>
