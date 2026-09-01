@@ -216,15 +216,20 @@ function lexora_redirect_missing_marketing_routes(): void {
 	$route = trim( $request_path, '/' );
 
 	$fallbacks = array(
-		'practice-areas'   => 'practice-areas',
-		'attorneys'        => 'attorneys',
-		'attorney-profile' => 'attorneys',
-		'results'          => 'results',
-		'about'            => 'about',
-		'contact'          => 'contact',
+		'practice-areas'                 => 'practice-areas',
+		'attorneys'                      => 'attorneys',
+		'attorney-profile'               => 'attorneys',
+		'commercial-contract-resolution' => 'results',
+		'results'                        => 'results',
+		'about'                          => 'about',
+		'contact'                        => 'contact',
 	);
 
 	$anchor = $fallbacks[ $route ] ?? '';
+
+	if ( '' === $anchor && 0 === strpos( $route, 'attorneys/' ) ) {
+		$anchor = 'attorneys';
+	}
 
 	if ( '' === $anchor ) {
 		return;
