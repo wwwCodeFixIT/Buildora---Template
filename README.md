@@ -1,6 +1,6 @@
-# Buildora
+# Lexora
 
-Buildora is a performance-first WordPress block theme for construction, renovation and home-service businesses. It ships with a complete homepage, Services, Projects, About and Contact page designs, reusable block patterns and a project case-study template.
+Lexora is a premium Full Site Editing WordPress block theme for law firms, attorneys and legal practices. It combines an editorial legal aesthetic with native WordPress blocks, reusable patterns, dedicated practice/attorney/result pages and a confidential-consultation enquiry flow.
 
 ## Version
 
@@ -18,123 +18,108 @@ Node.js is required only when developing the source repository. The installable 
 
 - Full Site Editing / block-theme architecture
 - `theme.json` v3 design tokens
-- reusable native WordPress patterns
+- midnight / ivory / antique-gold legal design system
+- reusable native WordPress block patterns
 - responsive sticky header and no-JS mobile navigation
-- homepage conversion sections
-- dedicated Services, Projects, About and Contact templates
-- reusable **Project Case Study** page template
-- built-in project enquiry form using `admin-post.php` and `wp_mail()`
+- conversion-focused legal homepage
+- dedicated Practice Areas, Attorneys, Results, About and Contact templates
+- dedicated attorney profile template
+- representative-matters / results presentation
+- testimonials and trust-building sections
+- built-in consultation form using `admin-post.php` and `wp_mail()`
 - nonce verification, honeypot protection and basic submission throttling
 - skip link, keyboard focus states and reduced-motion handling
-- system font stack; no third-party font request
-- no jQuery and no required frontend JavaScript
+- no page-builder dependency
 - Vite + Sass source workflow for developers
 - GitHub Actions CI and automated WordPress Playground PR previews
 
 ## Install the packaged theme
 
-1. Build or download `buildora.zip`.
+1. Build or download `lexora.zip`.
 2. In WordPress open **Appearance → Themes → Add New → Upload Theme**.
-3. Upload `buildora.zip` and activate **Buildora**.
-4. Open **Appearance → Editor** to change the global styles, site title and content.
+3. Upload `lexora.zip` and activate **Lexora**.
+4. Open **Appearance → Editor** to customize global styles, branding and content.
 
 ## Recommended page setup
 
-Buildora does not silently insert demo content into a production WordPress database. Create the following Pages so the bundled slug-specific templates and global navigation resolve correctly:
+Lexora does not silently insert demo content into a production WordPress database. Create the following Pages so the bundled slug-specific templates and navigation resolve correctly:
 
 | Page | Slug |
 | --- | --- |
-| Services | `services` |
-| Projects | `projects` |
+| Practice Areas | `practice-areas` |
+| Attorneys | `attorneys` |
+| Results | `results` |
 | About | `about` |
 | Contact | `contact` |
 
-For project case studies, create child Pages beneath **Projects** and assign the **Project Case Study** template in the Page settings.
+For the bundled attorney-profile presentation, create a Page for an attorney and assign the **Attorney Profile** template in the Page settings. The Playground preview includes a fictional `Eleanor Mercer` profile only as demo content.
 
-Example:
+The repository's WordPress Playground preview seeds development/demo Pages only for review. A normal theme installation never writes demo Pages automatically.
 
-```text
-Projects
-├── Riverside House
-├── Northline Studio
-└── Oakfield Extension
-```
+## Consultation form
 
-The repository's WordPress Playground preview seeds demo Pages only for development and review. Normal theme installation never writes demo Pages automatically.
-
-## Contact form
-
-The Contact template contains a lightweight enquiry form.
+The Contact template contains a lightweight consultation enquiry form.
 
 By default:
 
 - submissions are sent to the WordPress **Administration Email Address**;
-- the public contact email also uses the WordPress administration email;
 - a valid nonce is required;
 - a honeypot field filters simple bots;
 - repeated submissions from the same browser/network fingerprint are throttled for one minute;
-- all submitted values are sanitized and validated server-side.
+- submitted values are sanitized and validated server-side;
+- the matter summary is limited to 5000 characters.
 
 The recipient can be customized in PHP:
 
 ```php
 add_filter(
-    'buildora_contact_recipient',
+    'lexora_contact_recipient',
     static function (): string {
-        return 'projects@example.com';
-    }
-);
-```
-
-The public email shown on the Contact page can be changed independently:
-
-```php
-add_filter(
-    'buildora_contact_public_email',
-    static function (): string {
-        return 'hello@example.com';
+        return 'consultations@example.com';
     }
 );
 ```
 
 `wp_mail()` depends on the hosting environment. For reliable production delivery, configure transactional SMTP or a mail provider through a dedicated WordPress mail plugin/service.
 
+## Demo-content notice
+
+Names, firms, representative matters, statistics, testimonials, addresses and legal-service copy included in the theme preview are sample content. Replace them with accurate client content before publishing a production website. Do not present fictional case results, credentials or testimonials as real claims.
+
 ## SEO baseline
 
-Buildora provides the theme-side SEO foundation:
+Lexora provides the theme-side SEO foundation:
 
 - WordPress-managed document titles via `title-tag` support;
-- one primary H1 in the supplied marketing templates;
 - semantic landmarks and heading hierarchy;
-- clean internal URLs;
+- clean internal routes;
 - responsive layouts and lightweight assets.
 
-Buildora intentionally does **not** hardcode canonical tags, Open Graph metadata or organization/local-business schema because those values are site-specific and would conflict with SEO plugins. Configure them with a dedicated SEO solution such as Yoast SEO, Rank Math or another standards-compliant plugin.
+Lexora intentionally does **not** hardcode canonical tags, Open Graph metadata or organization/legal-service schema because those values are site-specific and can conflict with SEO plugins. Configure them with a dedicated SEO solution where required.
 
 ## Performance baseline
 
-- CSS-only production frontend today
 - no jQuery dependency
-- no remote font request
 - no page-builder dependency
 - no required third-party frontend library
-- fixed visual geometry to reduce layout shifts
+- compiled production CSS
+- responsive layout geometry designed to reduce layout shifts
 - `prefers-reduced-motion` support
 
-If real project photographs are added, use responsive WordPress images (`srcset` / `sizes`), modern formats such as AVIF/WebP where appropriate, explicit dimensions/aspect ratios and avoid lazy-loading the above-the-fold LCP image.
+When replacing demo artwork with real photography, use responsive WordPress images (`srcset` / `sizes`), modern formats such as AVIF/WebP where appropriate and explicit dimensions/aspect ratios.
 
 ## Accessibility baseline
 
-Buildora includes:
+Lexora includes:
 
 - semantic landmarks
 - a keyboard-accessible skip link
 - visible focus styles
 - no-JS mobile navigation based on native HTML
 - reduced-motion handling
-- form labels and server-side validation feedback
+- labelled form controls and server-side validation feedback
 
-Accessibility still depends on the content entered by the site owner. Verify heading order, link purpose, alternative text, color choices and any third-party plugins after customization.
+Accessibility still depends on site-owner content. Verify heading order, link purpose, alternative text, color choices and third-party plugin output after customization.
 
 ## Development
 
@@ -143,7 +128,7 @@ npm install
 npm run dev
 ```
 
-Build production CSS:
+Build production assets:
 
 ```bash
 npm run build
@@ -163,10 +148,16 @@ Create the installable theme ZIP:
 npm run package
 ```
 
+The buyer-ready archive is generated as:
+
+```text
+build/lexora.zip
+```
+
 ## Repository architecture
 
 ```text
-buildora/
+lexora/
 ├── assets/
 │   └── dist/               # compiled production assets
 ├── parts/                  # template parts
@@ -183,18 +174,6 @@ buildora/
 └── vite.config.js
 ```
 
-## Cloud development
-
-The repository supports a browser-only workflow:
-
-- GitHub is the source of truth;
-- GitHub Codespaces provides the development environment;
-- WordPress Playground provides temporary WordPress instances;
-- pull requests receive automated Playground previews;
-- CI validates JavaScript tooling, asset builds, `theme.json`, PHP syntax and the installable ZIP.
-
-See `CLOUD-WORKFLOW.md` for repository-maintainer details.
-
 ## License
 
-Buildora is licensed under **GPL-2.0-or-later**. See `LICENSE`.
+Lexora is licensed under **GPL-2.0-or-later**. See `LICENSE`.
