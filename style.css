@@ -1,13 +1,13 @@
 /*
-Theme Name: Buildora
+Theme Name: Lexora
 Theme URI: https://codefix.it/
 Author: CodeFix.IT
 Author URI: https://codefix.it/
-Description: Performance-first WordPress block theme for construction, renovation and home-service businesses.
+Description: Premium Full Site Editing WordPress theme for law firms, attorneys and legal practices.
 Version: 1.0.0
 Requires at least: 6.6
 Requires PHP: 8.1
-Text Domain: buildora
+Text Domain: lexora
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: block-patterns, full-site-editing, custom-logo, featured-images
@@ -39,8 +39,8 @@ Tags: block-patterns, full-site-editing, custom-logo, featured-images
   overflow: visible;
   clip: auto;
   white-space: normal;
-  background: #ffffff;
-  color: #111111;
-  border-radius: 0.375rem;
-  box-shadow: 0 0 0 3px #111111;
+  background: #fbf8f1;
+  color: #101820;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0 3px #b08d57;
 }
