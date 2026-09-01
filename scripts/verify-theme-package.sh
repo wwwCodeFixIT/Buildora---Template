@@ -61,6 +61,33 @@ done
 
 pattern_markup="$(unzip -p "$ZIP_FILE" 'lexora/patterns/*.php')"
 
+if grep -Fq '* Slug: buildora/' <<<"$pattern_markup"; then
+  echo "Legacy Buildora pattern slug leaked into packaged patterns." >&2
+  exit 1
+fi
+
+mapfile -t template_entries < <(
+  printf '%s\n' "${entries[@]}" | grep -E '^lexora/templates/.+\.html$' || true
+)
+
+for template_path in "${template_entries[@]}"; do
+  template_markup="$(unzip -p "$ZIP_FILE" "$template_path")"
+
+  while IFS= read -r pattern_slug; do
+    [[ -z "$pattern_slug" ]] && continue
+
+    if ! grep -Fq "* Slug: $pattern_slug" <<<"$pattern_markup"; then
+      echo "Template $template_path references missing theme pattern: $pattern_slug" >&2
+      exit 1
+    fi
+  done < <(
+    grep -oE '"slug":"lexora/[^"]+"' <<<"$template_markup" \
+      | sed -E 's/^"slug":"([^"]+)"$/\1/' \
+      | sort -u \
+      || true
+  )
+done
+
 if grep -Eq 'href="/?#contact"' <<<"$pattern_markup"; then
   echo "Legacy #contact CTA leaked into packaged patterns." >&2
   exit 1
