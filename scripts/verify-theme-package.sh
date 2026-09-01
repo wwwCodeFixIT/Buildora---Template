@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-ZIP_FILE="$ROOT/build/buildora.zip"
+ZIP_FILE="$ROOT/build/lexora.zip"
 
 if [[ ! -f "$ZIP_FILE" ]]; then
   echo "Missing package: $ZIP_FILE" >&2
@@ -12,16 +12,16 @@ fi
 mapfile -t entries < <(unzip -Z1 "$ZIP_FILE")
 
 required=(
-  "buildora/style.css"
-  "buildora/functions.php"
-  "buildora/theme.json"
-  "buildora/templates/index.html"
-  "buildora/templates/front-page.html"
-  "buildora/assets/dist/manifest.json"
-  "buildora/README.md"
-  "buildora/readme.txt"
-  "buildora/CHANGELOG.md"
-  "buildora/LICENSE"
+  "lexora/style.css"
+  "lexora/functions.php"
+  "lexora/theme.json"
+  "lexora/templates/index.html"
+  "lexora/templates/front-page.html"
+  "lexora/assets/dist/manifest.json"
+  "lexora/README.md"
+  "lexora/readme.txt"
+  "lexora/CHANGELOG.md"
+  "lexora/LICENSE"
 )
 
 for required_path in "${required[@]}"; do
@@ -31,25 +31,25 @@ for required_path in "${required[@]}"; do
   fi
 done
 
-if ! printf '%s\n' "${entries[@]}" | grep -Eq '^buildora/assets/dist/css/.+\.css$'; then
+if ! printf '%s\n' "${entries[@]}" | grep -Eq '^lexora/assets/dist/css/.+\.css$'; then
   echo "Package is missing compiled production CSS." >&2
   exit 1
 fi
 
 forbidden_patterns=(
-  '^buildora/\.git/'
-  '^buildora/\.github/'
-  '^buildora/\.devcontainer/'
-  '^buildora/node_modules/'
-  '^buildora/playground/'
-  '^buildora/scripts/'
-  '^buildora/src/'
-  '^buildora/build/'
-  '^buildora/package\.json$'
-  '^buildora/package-lock\.json$'
-  '^buildora/vite\.config\.js$'
-  '^buildora/eslint\.config\.js$'
-  '^buildora/CLOUD-WORKFLOW\.md$'
+  '^lexora/\.git/'
+  '^lexora/\.github/'
+  '^lexora/\.devcontainer/'
+  '^lexora/node_modules/'
+  '^lexora/playground/'
+  '^lexora/scripts/'
+  '^lexora/src/'
+  '^lexora/build/'
+  '^lexora/package\.json$'
+  '^lexora/package-lock\.json$'
+  '^lexora/vite\.config\.js$'
+  '^lexora/eslint\.config\.js$'
+  '^lexora/CLOUD-WORKFLOW\.md$'
 )
 
 for pattern in "${forbidden_patterns[@]}"; do
@@ -59,7 +59,7 @@ for pattern in "${forbidden_patterns[@]}"; do
   fi
 done
 
-pattern_markup="$(unzip -p "$ZIP_FILE" 'buildora/patterns/*.php')"
+pattern_markup="$(unzip -p "$ZIP_FILE" 'lexora/patterns/*.php')"
 
 if grep -Eq 'href="/?#contact"' <<<"$pattern_markup"; then
   echo "Legacy #contact CTA leaked into packaged patterns." >&2
@@ -76,8 +76,8 @@ if grep -Eq '"url":"/' <<<"$pattern_markup"; then
   exit 1
 fi
 
-theme_version="$(unzip -p "$ZIP_FILE" buildora/style.css | awk -F': ' '/^Version:/ { print $2; exit }' | tr -d '\r')"
-runtime_version="$(unzip -p "$ZIP_FILE" buildora/functions.php | sed -n "s/^define( 'BUILDORA_VERSION', '\([^']*\)' );$/\1/p" | head -n 1 | tr -d '\r')"
+theme_version="$(unzip -p "$ZIP_FILE" lexora/style.css | awk -F': ' '/^Version:/ { print $2; exit }' | tr -d '\r')"
+runtime_version="$(unzip -p "$ZIP_FILE" lexora/functions.php | sed -n "s/^define( 'LEXORA_VERSION', '\([^']*\)' );$/\1/p" | head -n 1 | tr -d '\r')"
 
 if [[ -z "$theme_version" || -z "$runtime_version" ]]; then
   echo "Could not resolve package version metadata." >&2
@@ -89,4 +89,4 @@ if [[ "$theme_version" != "$runtime_version" ]]; then
   exit 1
 fi
 
-echo "Verified Buildora package $theme_version (${#entries[@]} ZIP entries)."
+echo "Verified Lexora package $theme_version (${#entries[@]} ZIP entries)."
