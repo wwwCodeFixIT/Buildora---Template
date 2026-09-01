@@ -48,7 +48,7 @@
 			<!-- wp:paragraph {"className":"lexora-attorney-card__role"} --><p class="lexora-attorney-card__role"><?php esc_html_e( 'Managing Partner', 'lexora' ); ?></p><!-- /wp:paragraph -->
 			<!-- wp:heading {"level":3,"className":"lexora-attorney-card__name"} --><h3 class="wp-block-heading lexora-attorney-card__name"><?php esc_html_e( 'Eleanor Mercer', 'lexora' ); ?></h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"textColor":"muted","className":"lexora-attorney-card__focus"} --><p class="lexora-attorney-card__focus has-muted-color has-text-color"><?php esc_html_e( 'Commercial disputes • Corporate advisory', 'lexora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"lexora-attorney-card__link"} --><p class="lexora-attorney-card__link"><a href="<?php echo esc_url( home_url( '/attorneys/' ) ); ?>"><?php esc_html_e( 'View profile', 'lexora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"lexora-attorney-card__link"} --><p class="lexora-attorney-card__link"><a href="<?php echo esc_url( home_url( '/attorneys/eleanor-mercer/' ) ); ?>"><?php esc_html_e( 'View profile', 'lexora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 
@@ -60,7 +60,7 @@
 			<!-- wp:paragraph {"className":"lexora-attorney-card__role"} --><p class="lexora-attorney-card__role"><?php esc_html_e( 'Senior Associate', 'lexora' ); ?></p><!-- /wp:paragraph -->
 			<!-- wp:heading {"level":3,"className":"lexora-attorney-card__name"} --><h3 class="wp-block-heading lexora-attorney-card__name"><?php esc_html_e( 'Daniel Moore', 'lexora' ); ?></h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"textColor":"muted","className":"lexora-attorney-card__focus"} --><p class="lexora-attorney-card__focus has-muted-color has-text-color"><?php esc_html_e( 'Employment • Contract disputes', 'lexora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"lexora-attorney-card__link"} --><p class="lexora-attorney-card__link"><a href="<?php echo esc_url( home_url( '/attorneys/' ) ); ?>"><?php esc_html_e( 'View profile', 'lexora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"lexora-attorney-card__link"} --><p class="lexora-attorney-card__link"><a href="<?php echo esc_url( home_url( '/attorneys/daniel-moore/' ) ); ?>"><?php esc_html_e( 'View profile', 'lexora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 
@@ -72,7 +72,7 @@
 			<!-- wp:paragraph {"className":"lexora-attorney-card__role"} --><p class="lexora-attorney-card__role"><?php esc_html_e( 'Associate', 'lexora' ); ?></p><!-- /wp:paragraph -->
 			<!-- wp:heading {"level":3,"className":"lexora-attorney-card__name"} --><h3 class="wp-block-heading lexora-attorney-card__name"><?php esc_html_e( 'Sophia Carter', 'lexora' ); ?></h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"textColor":"muted","className":"lexora-attorney-card__focus"} --><p class="lexora-attorney-card__focus has-muted-color has-text-color"><?php esc_html_e( 'Property • Private client', 'lexora' ); ?></p><!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"lexora-attorney-card__link"} --><p class="lexora-attorney-card__link"><a href="<?php echo esc_url( home_url( '/attorneys/' ) ); ?>"><?php esc_html_e( 'View profile', 'lexora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
+			<!-- wp:paragraph {"className":"lexora-attorney-card__link"} --><p class="lexora-attorney-card__link"><a href="<?php echo esc_url( home_url( '/attorneys/sophia-carter/' ) ); ?>"><?php esc_html_e( 'View profile', 'lexora' ); ?> <span aria-hidden="true">↗</span></a></p><!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
 	</div>
