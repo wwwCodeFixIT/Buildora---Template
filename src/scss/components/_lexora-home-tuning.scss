@@ -1,40 +1,6 @@
 // Desktop rhythm and type tuning for the Lexora homepage.
 // These overrides intentionally load after the shared Buildora-derived components.
 
-// Normalize inherited Buildora accent treatments to the Lexora antique-gold palette.
-.buildora-hero::before {
-  background:
-    radial-gradient(circle at 78% 34%, rgb(176 141 87 / 8%), transparent 30%),
-    linear-gradient(90deg, rgb(16 24 32 / 3%) 1px, transparent 1px),
-    linear-gradient(rgb(16 24 32 / 3%) 1px, transparent 1px);
-  background-size: auto, 56px 56px, 56px 56px;
-}
-
-.buildora-hero__actions
-  .wp-block-button:not(.is-style-outline)
-  .wp-block-button__link {
-  box-shadow: 0 12px 30px rgb(176 141 87 / 22%);
-}
-
-.buildora-about-hero__panel::after {
-  border-color: rgb(176 141 87 / 35%);
-}
-
-.buildora-about-principle__number {
-  color: var(--wp--preset--color--brand-dark);
-}
-
-.buildora-services-page-hero__panel::after,
-.buildora-contact-hero__panel::after {
-  border-color: rgb(176 141 87 / 28%);
-}
-
-.buildora-contact-form input:focus-visible,
-.buildora-contact-form select:focus-visible,
-.buildora-contact-form textarea:focus-visible {
-  box-shadow: 0 0 0 3px rgb(176 141 87 / 30%);
-}
-
 @media (min-width: 782px) {
   .buildora-hero__grid {
     gap: clamp(2.5rem, 4vw, 4rem);
