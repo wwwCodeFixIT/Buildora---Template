@@ -36,10 +36,6 @@ foreach ( $pages as $page ) {
 		'post_excerpt' => $page['excerpt'] ?? '',
 	);
 
-	if ( ! empty( $page['template'] ) ) {
-		$postarr['page_template'] = $page['template'];
-	}
-
 	if ( $existing instanceof WP_Post ) {
 		$postarr['ID'] = $existing->ID;
 		$page_id       = wp_update_post( $postarr, true );
@@ -49,6 +45,10 @@ foreach ( $pages as $page ) {
 
 	if ( is_wp_error( $page_id ) ) {
 		throw new RuntimeException( $page_id->get_error_message() );
+	}
+
+	if ( ! empty( $page['template'] ) ) {
+		update_post_meta( $page_id, '_wp_page_template', $page['template'] );
 	}
 }
 
