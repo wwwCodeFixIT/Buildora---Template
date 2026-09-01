@@ -16,33 +16,33 @@
       "palette": [
         {
           "slug": "ink",
-          "name": "Midnight",
-          "color": "#101820"
+          "name": "Deep Navy",
+          "color": "#071423"
         },
         {
           "slug": "paper",
           "name": "Ivory",
-          "color": "#FBF8F1"
+          "color": "#FBF8F2"
         },
         {
           "slug": "surface",
-          "name": "Parchment",
-          "color": "#F1ECE2"
+          "name": "Warm Parchment",
+          "color": "#F3EEE6"
         },
         {
           "slug": "muted",
           "name": "Slate",
-          "color": "#667078"
+          "color": "#69727D"
         },
         {
           "slug": "brand",
           "name": "Antique Gold",
-          "color": "#B08D57"
+          "color": "#C9A76B"
         },
         {
           "slug": "brand-dark",
           "name": "Deep Gold",
-          "color": "#7E623D"
+          "color": "#8F6B35"
         }
       ]
     },
@@ -154,7 +154,7 @@
         {
           "slug": "soft",
           "name": "Soft",
-          "shadow": "0 18px 50px rgba(16, 24, 32, 0.10)"
+          "shadow": "0 24px 64px rgba(7, 20, 35, 0.12)"
         }
       ]
     }
@@ -180,9 +180,9 @@
       "heading": {
         "typography": {
           "fontFamily": "var:preset|font-family|serif",
-          "fontWeight": "600",
+          "fontWeight": "500",
           "lineHeight": "1.03",
-          "letterSpacing": "-0.025em"
+          "letterSpacing": "-0.03em"
         }
       },
       "link": {
@@ -204,11 +204,11 @@
       },
       "button": {
         "border": {
-          "radius": "0.25rem"
+          "radius": "0.125rem"
         },
         "color": {
           "background": "var:preset|color|brand",
-          "text": "var:preset|color|paper"
+          "text": "var:preset|color|ink"
         },
         "spacing": {
           "padding": {
@@ -220,11 +220,12 @@
         },
         "typography": {
           "fontWeight": "700",
-          "letterSpacing": "0.01em"
+          "letterSpacing": "0.06em"
         },
         ":hover": {
           "color": {
-            "background": "var:preset|color|brand-dark"
+            "background": "var:preset|color|brand-dark",
+            "text": "var:preset|color|paper"
           }
         },
         ":focus": {
