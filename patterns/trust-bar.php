@@ -1,10 +1,10 @@
 <?php
 /**
  * Title: Trust Bar
- * Slug: buildora/trust-bar
- * Categories: buildora, featured
- * Keywords: trust, proof, reassurance
- * Description: Compact reassurance grid for the homepage.
+ * Slug: lexora/trust-bar
+ * Categories: lexora, featured
+ * Keywords: trust, legal, reassurance, counsel
+ * Description: Compact reassurance grid for a law firm homepage.
  */
 ?>
 <!-- wp:group {"align":"full","className":"buildora-trust","backgroundColor":"ink","textColor":"paper","layout":{"type":"constrained"}} -->
@@ -14,10 +14,10 @@
 		<!-- wp:group {"className":"buildora-trust__item","layout":{"type":"default"}} -->
 		<div class="wp-block-group buildora-trust__item">
 			<!-- wp:paragraph {"className":"buildora-trust__label"} -->
-			<p class="buildora-trust__label"><strong><?php esc_html_e( 'Licensed & insured', 'buildora' ); ?></strong></p>
+			<p class="buildora-trust__label"><strong><?php esc_html_e( 'Confidentiality first', 'lexora' ); ?></strong></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"className":"buildora-trust__meta","fontSize":"xs"} -->
-			<p class="buildora-trust__meta has-xs-font-size"><?php esc_html_e( 'Fully covered crews', 'buildora' ); ?></p>
+			<p class="buildora-trust__meta has-xs-font-size"><?php esc_html_e( 'Discreet consultations', 'lexora' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
@@ -25,10 +25,10 @@
 		<!-- wp:group {"className":"buildora-trust__item","layout":{"type":"default"}} -->
 		<div class="wp-block-group buildora-trust__item">
 			<!-- wp:paragraph {"className":"buildora-trust__label"} -->
-			<p class="buildora-trust__label"><strong><?php esc_html_e( 'Transparent quotes', 'buildora' ); ?></strong></p>
+			<p class="buildora-trust__label"><strong><?php esc_html_e( 'Clear strategy', 'lexora' ); ?></strong></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"className":"buildora-trust__meta","fontSize":"xs"} -->
-			<p class="buildora-trust__meta has-xs-font-size"><?php esc_html_e( 'No hidden extras', 'buildora' ); ?></p>
+			<p class="buildora-trust__meta has-xs-font-size"><?php esc_html_e( 'Practical next steps', 'lexora' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
@@ -36,10 +36,10 @@
 		<!-- wp:group {"className":"buildora-trust__item","layout":{"type":"default"}} -->
 		<div class="wp-block-group buildora-trust__item">
 			<!-- wp:paragraph {"className":"buildora-trust__label"} -->
-			<p class="buildora-trust__label"><strong><?php esc_html_e( 'On-time delivery', 'buildora' ); ?></strong></p>
+			<p class="buildora-trust__label"><strong><?php esc_html_e( 'Responsive counsel', 'lexora' ); ?></strong></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"className":"buildora-trust__meta","fontSize":"xs"} -->
-			<p class="buildora-trust__meta has-xs-font-size"><?php esc_html_e( 'Clear project milestones', 'buildora' ); ?></p>
+			<p class="buildora-trust__meta has-xs-font-size"><?php esc_html_e( 'Direct communication', 'lexora' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
@@ -47,10 +47,10 @@
 		<!-- wp:group {"className":"buildora-trust__item","layout":{"type":"default"}} -->
 		<div class="wp-block-group buildora-trust__item">
 			<!-- wp:paragraph {"className":"buildora-trust__label"} -->
-			<p class="buildora-trust__label"><strong><?php esc_html_e( 'Local support', 'buildora' ); ?></strong></p>
+			<p class="buildora-trust__label"><strong><?php esc_html_e( 'Established practice', 'lexora' ); ?></strong></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"className":"buildora-trust__meta","fontSize":"xs"} -->
-			<p class="buildora-trust__meta has-xs-font-size"><?php esc_html_e( 'Fast, human response', 'buildora' ); ?></p>
+			<p class="buildora-trust__meta has-xs-font-size"><?php esc_html_e( 'Experienced representation', 'lexora' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
