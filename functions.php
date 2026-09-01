@@ -44,6 +44,8 @@ function lexora_setup(): void {
 		$editor_styles[] = 'assets/dist/' . $css_file;
 	}
 
+	$editor_styles[] = 'assets/css/lexora-premium.css';
+
 	add_editor_style( $editor_styles );
 }
 add_action( 'after_setup_theme', 'lexora_setup' );
@@ -117,7 +119,7 @@ function lexora_get_vite_css_files(): array {
 }
 
 /**
- * Enqueue frontend assets produced by Vite.
+ * Enqueue frontend assets produced by Vite and the final Lexora visual layer.
  */
 function lexora_enqueue_assets(): void {
 	wp_enqueue_style(
@@ -127,14 +129,26 @@ function lexora_enqueue_assets(): void {
 		LEXORA_VERSION
 	);
 
+	$app_style_handles = array();
+
 	foreach ( lexora_get_vite_css_files() as $index => $css_file ) {
+		$handle              = 'lexora-app-' . absint( $index );
+		$app_style_handles[] = $handle;
+
 		wp_enqueue_style(
-			'lexora-app-' . absint( $index ),
+			$handle,
 			get_theme_file_uri( 'assets/dist/' . $css_file ),
 			array( 'lexora-base' ),
 			LEXORA_VERSION
 		);
 	}
+
+	wp_enqueue_style(
+		'lexora-premium',
+		get_theme_file_uri( 'assets/css/lexora-premium.css' ),
+		array_merge( array( 'lexora-base' ), $app_style_handles ),
+		LEXORA_VERSION
+	);
 
 	$entry = lexora_get_vite_entry();
 
