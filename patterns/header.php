@@ -14,7 +14,10 @@
 	<div class="wp-block-group alignwide buildora-header__inner">
 		<!-- wp:group {"className":"buildora-header__brand","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 		<div class="wp-block-group buildora-header__brand">
-			<!-- wp:site-title {"level":0,"style":{"typography":{"fontWeight":"700","fontSize":"1.25rem","letterSpacing":"-0.02em"}}} /-->
+			<!-- wp:html -->
+			<span class="lexora-brand-mark" aria-hidden="true">L</span>
+			<!-- /wp:html -->
+			<!-- wp:site-title {"level":0} /-->
 		</div>
 		<!-- /wp:group -->
 
