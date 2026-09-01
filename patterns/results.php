@@ -44,6 +44,7 @@
 				<!-- wp:heading {"level":3,"className":"lexora-result-card__title"} --><h3 class="wp-block-heading lexora-result-card__title"><?php esc_html_e( 'Complex supplier dispute resolved before trial.', 'lexora' ); ?></h3><!-- /wp:heading -->
 				<!-- wp:paragraph {"className":"lexora-result-card__copy"} --><p class="lexora-result-card__copy"><?php esc_html_e( 'Early case analysis, focused disclosure and a disciplined negotiation strategy helped the client reach a commercially workable settlement.', 'lexora' ); ?></p><!-- /wp:paragraph -->
 				<!-- wp:paragraph {"className":"lexora-result-card__outcome"} --><p class="lexora-result-card__outcome"><strong><?php esc_html_e( 'Outcome:', 'lexora' ); ?></strong> <?php esc_html_e( 'Negotiated resolution', 'lexora' ); ?></p><!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"lexora-result-card__link"} --><p class="lexora-result-card__link"><a href="<?php echo esc_url( home_url( '/commercial-contract-resolution/' ) ); ?>"><?php esc_html_e( 'View illustrative matter', 'lexora' ); ?> →</a></p><!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:column -->
 
