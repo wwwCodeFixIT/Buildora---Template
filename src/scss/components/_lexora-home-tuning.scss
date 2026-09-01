@@ -1,0 +1,93 @@
+// Desktop rhythm and type tuning for the Lexora homepage.
+// These overrides intentionally load after the shared Buildora-derived components.
+
+@media (min-width: 782px) {
+  .buildora-hero__grid {
+    gap: clamp(2.5rem, 4vw, 4rem);
+  }
+
+  .buildora-hero__copy {
+    max-width: 40rem;
+  }
+
+  .buildora-hero__title {
+    max-width: 12ch;
+    font-size: clamp(3.15rem, 4.25vw, 4.75rem) !important;
+    line-height: 0.98;
+  }
+
+  .buildora-hero__title-line--wide {
+    white-space: normal;
+  }
+}
+
+.buildora-testimonials__title {
+  max-width: 15ch;
+  font-size: clamp(2.8rem, 4vw, 4.25rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.buildora-testimonial--featured {
+  min-height: 30rem;
+}
+
+.buildora-testimonial__quote p {
+  font-size: clamp(1.9rem, 2.7vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+}
+
+.buildora-testimonial__quote--small p {
+  font-size: clamp(1.3rem, 1.7vw, 1.75rem);
+  line-height: 1.25;
+}
+
+.buildora-testimonial__meta {
+  margin-top: clamp(2.25rem, 4vw, 4rem);
+}
+
+.buildora-why__panel-inner {
+  min-height: 31rem;
+  padding: clamp(2rem, 3.5vw, 3.25rem);
+}
+
+.buildora-why__panel-title {
+  max-width: 12ch;
+  font-size: clamp(2.35rem, 3.4vw, 3.5rem);
+  line-height: 1;
+}
+
+.buildora-why__title {
+  max-width: 15ch;
+  font-size: clamp(2.35rem, 3.1vw, 3.35rem);
+  line-height: 1;
+}
+
+@media (max-width: 960px) {
+  .buildora-testimonials__title {
+    max-width: 14ch;
+    font-size: clamp(2.6rem, 6vw, 3.8rem);
+  }
+
+  .buildora-testimonial__quote p {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+
+  .buildora-why__panel-title,
+  .buildora-why__title {
+    max-width: 14ch;
+  }
+}
+
+@media (max-width: 781px) {
+  .buildora-testimonials__title,
+  .buildora-why__panel-title,
+  .buildora-why__title {
+    max-width: none;
+  }
+
+  .buildora-testimonial--featured {
+    min-height: 0;
+  }
+}
