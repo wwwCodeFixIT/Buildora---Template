@@ -7,11 +7,11 @@
  * Description: Accessible legal consultation enquiry form with practical contact guidance.
  */
 
-$buildora_contact_status = isset( $_GET['contact_status'] )
+$lexora_contact_status = isset( $_GET['contact_status'] )
 	? sanitize_key( wp_unslash( $_GET['contact_status'] ) )
 	: '';
 
-$buildora_contact_messages = array(
+$lexora_contact_messages = array(
 	'success' => array(
 		'type' => 'success',
 		'text' => __( 'Thanks — your consultation request has been sent. We will review it and come back with the next step.', 'lexora' ),
@@ -30,11 +30,11 @@ $buildora_contact_messages = array(
 	),
 );
 
-$buildora_contact_message = $buildora_contact_messages[ $buildora_contact_status ] ?? null;
-$buildora_public_email    = sanitize_email(
-	apply_filters( 'buildora_contact_public_email', get_option( 'admin_email' ) )
+$lexora_contact_message = $lexora_contact_messages[ $lexora_contact_status ] ?? null;
+$lexora_public_email    = sanitize_email(
+	apply_filters( 'lexora_contact_public_email', get_option( 'admin_email' ) )
 );
-$buildora_privacy_url     = get_privacy_policy_url();
+$lexora_privacy_url     = get_privacy_policy_url();
 ?>
 <!-- wp:group {"align":"full","anchor":"consultation","className":"buildora-contact-form-section","layout":{"type":"constrained"}} -->
 <div id="consultation" class="wp-block-group alignfull buildora-contact-form-section">
@@ -59,10 +59,10 @@ $buildora_privacy_url     = get_privacy_policy_url();
 					<span><?php esc_html_e( 'Best for', 'lexora' ); ?></span>
 					<strong><?php esc_html_e( 'Business, disputes, family and property matters', 'lexora' ); ?></strong>
 				</div>
-				<?php if ( is_email( $buildora_public_email ) ) : ?>
+				<?php if ( is_email( $lexora_public_email ) ) : ?>
 					<div class="buildora-contact-details__item">
 						<span><?php esc_html_e( 'Prefer email?', 'lexora' ); ?></span>
-						<a href="mailto:<?php echo esc_attr( antispambot( $buildora_public_email ) ); ?>"><?php echo esc_html( antispambot( $buildora_public_email ) ); ?></a>
+						<a href="mailto:<?php echo esc_attr( antispambot( $lexora_public_email ) ); ?>"><?php echo esc_html( antispambot( $lexora_public_email ) ); ?></a>
 					</div>
 				<?php endif; ?>
 				<div class="buildora-contact-details__note">
@@ -72,69 +72,69 @@ $buildora_privacy_url     = get_privacy_policy_url();
 			</aside>
 
 			<div class="buildora-contact-form-card">
-				<?php if ( is_array( $buildora_contact_message ) ) : ?>
-					<div class="buildora-contact-form__notice buildora-contact-form__notice--<?php echo esc_attr( $buildora_contact_message['type'] ); ?>" role="<?php echo 'error' === $buildora_contact_message['type'] ? 'alert' : 'status'; ?>">
-						<?php echo esc_html( $buildora_contact_message['text'] ); ?>
+				<?php if ( is_array( $lexora_contact_message ) ) : ?>
+					<div class="buildora-contact-form__notice buildora-contact-form__notice--<?php echo esc_attr( $lexora_contact_message['type'] ); ?>" role="<?php echo 'error' === $lexora_contact_message['type'] ? 'alert' : 'status'; ?>">
+						<?php echo esc_html( $lexora_contact_message['text'] ); ?>
 					</div>
 				<?php endif; ?>
 
 				<form class="buildora-contact-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
-					<input type="hidden" name="action" value="buildora_contact">
-					<?php echo wp_nonce_field( 'buildora_contact', 'buildora_contact_nonce', false, false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<input type="hidden" name="action" value="lexora_contact">
+					<?php echo wp_nonce_field( 'lexora_contact', 'lexora_contact_nonce', false, false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 
 					<div class="buildora-contact-form__honeypot" aria-hidden="true">
-						<label for="buildora-company-website"><?php esc_html_e( 'Company website', 'lexora' ); ?></label>
-						<input id="buildora-company-website" type="text" name="company_website" tabindex="-1" autocomplete="off">
+						<label for="lexora-company-website"><?php esc_html_e( 'Company website', 'lexora' ); ?></label>
+						<input id="lexora-company-website" type="text" name="company_website" tabindex="-1" autocomplete="off">
 					</div>
 
 					<div class="buildora-contact-form__row">
 						<div class="buildora-contact-form__field">
-							<label for="buildora-contact-name"><?php esc_html_e( 'Your name', 'lexora' ); ?> <span aria-hidden="true">*</span></label>
-							<input id="buildora-contact-name" type="text" name="name" autocomplete="name" maxlength="120" required>
+							<label for="lexora-contact-name"><?php esc_html_e( 'Your name', 'lexora' ); ?> <span aria-hidden="true">*</span></label>
+							<input id="lexora-contact-name" type="text" name="name" autocomplete="name" maxlength="120" required>
 						</div>
 						<div class="buildora-contact-form__field">
-							<label for="buildora-contact-email"><?php esc_html_e( 'Email', 'lexora' ); ?> <span aria-hidden="true">*</span></label>
-							<input id="buildora-contact-email" type="email" name="email" autocomplete="email" maxlength="190" required>
+							<label for="lexora-contact-email"><?php esc_html_e( 'Email', 'lexora' ); ?> <span aria-hidden="true">*</span></label>
+							<input id="lexora-contact-email" type="email" name="email" autocomplete="email" maxlength="190" required>
 						</div>
 					</div>
 
 					<div class="buildora-contact-form__row">
 						<div class="buildora-contact-form__field">
-							<label for="buildora-contact-phone"><?php esc_html_e( 'Phone', 'lexora' ); ?> <span class="buildora-contact-form__optional"><?php esc_html_e( 'Optional', 'lexora' ); ?></span></label>
-							<input id="buildora-contact-phone" type="tel" name="phone" autocomplete="tel" maxlength="80">
+							<label for="lexora-contact-phone"><?php esc_html_e( 'Phone', 'lexora' ); ?> <span class="buildora-contact-form__optional"><?php esc_html_e( 'Optional', 'lexora' ); ?></span></label>
+							<input id="lexora-contact-phone" type="tel" name="phone" autocomplete="tel" maxlength="80">
 						</div>
 						<div class="buildora-contact-form__field">
-							<label for="buildora-contact-location"><?php esc_html_e( 'Jurisdiction / location', 'lexora' ); ?> <span aria-hidden="true">*</span></label>
-							<input id="buildora-contact-location" type="text" name="location" maxlength="160" required>
+							<label for="lexora-contact-location"><?php esc_html_e( 'Jurisdiction / location', 'lexora' ); ?> <span aria-hidden="true">*</span></label>
+							<input id="lexora-contact-location" type="text" name="location" maxlength="160" required>
 						</div>
 					</div>
 
 					<div class="buildora-contact-form__field">
-						<label for="buildora-contact-project-type"><?php esc_html_e( 'Type of legal matter', 'lexora' ); ?> <span aria-hidden="true">*</span></label>
-						<select id="buildora-contact-project-type" name="project_type" required>
+						<label for="lexora-contact-matter-type"><?php esc_html_e( 'Type of legal matter', 'lexora' ); ?> <span aria-hidden="true">*</span></label>
+						<select id="lexora-contact-matter-type" name="matter_type" required>
 							<option value=""><?php esc_html_e( 'Choose one', 'lexora' ); ?></option>
-							<option value="renovation"><?php esc_html_e( 'Business / commercial law', 'lexora' ); ?></option>
-							<option value="construction"><?php esc_html_e( 'Dispute / litigation', 'lexora' ); ?></option>
-							<option value="maintenance"><?php esc_html_e( 'Family / property / private client', 'lexora' ); ?></option>
+							<option value="business"><?php esc_html_e( 'Business / commercial law', 'lexora' ); ?></option>
+							<option value="dispute"><?php esc_html_e( 'Dispute / litigation', 'lexora' ); ?></option>
+							<option value="private"><?php esc_html_e( 'Family / property / private client', 'lexora' ); ?></option>
 							<option value="other"><?php esc_html_e( 'Something else', 'lexora' ); ?></option>
 						</select>
 					</div>
 
 					<div class="buildora-contact-form__field">
-						<label for="buildora-contact-message"><?php esc_html_e( 'Tell us about the matter', 'lexora' ); ?> <span aria-hidden="true">*</span></label>
-						<textarea id="buildora-contact-message" name="message" rows="7" maxlength="5000" placeholder="<?php echo esc_attr__( 'What has happened, what outcome you need and whether there is an urgent deadline.', 'lexora' ); ?>" required></textarea>
+						<label for="lexora-contact-message"><?php esc_html_e( 'Tell us about the matter', 'lexora' ); ?> <span aria-hidden="true">*</span></label>
+						<textarea id="lexora-contact-message" name="message" rows="7" maxlength="5000" placeholder="<?php echo esc_attr__( 'What has happened, what outcome you need and whether there is an urgent deadline.', 'lexora' ); ?>" required></textarea>
 					</div>
 
 					<div class="buildora-contact-form__footer">
 						<p class="buildora-contact-form__privacy">
 							<?php
-							if ( $buildora_privacy_url ) {
+							if ( $lexora_privacy_url ) {
 								printf(
 									wp_kses(
 										__( 'We only use these details to review and respond to your enquiry. See our <a href="%s">privacy policy</a>.', 'lexora' ),
 										array( 'a' => array( 'href' => array() ) )
 									),
-									esc_url( $buildora_privacy_url )
+									esc_url( $lexora_privacy_url )
 								);
 							} else {
 								esc_html_e( 'We only use these details to review and respond to your enquiry.', 'lexora' );
