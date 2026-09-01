@@ -253,6 +253,11 @@
   ],
   "customTemplates": [
     {
+      "name": "attorney-profile",
+      "title": "Attorney Profile",
+      "postTypes": ["page"]
+    },
+    {
       "name": "case-result",
       "title": "Case Result",
       "postTypes": ["page"]
