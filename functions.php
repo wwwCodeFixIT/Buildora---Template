@@ -111,6 +111,7 @@ function lexora_get_vite_css_files(): array {
 				$css_files[] = ltrim( $css_file, '/' );
 			}
 		}
+	}
 
 	return array_values( array_unique( $css_files ) );
 }
@@ -215,12 +216,12 @@ function lexora_redirect_missing_marketing_routes(): void {
 	$route = trim( $request_path, '/' );
 
 	$fallbacks = array(
-		'practice-areas'  => 'practice-areas',
-		'attorneys'       => 'attorneys',
+		'practice-areas'   => 'practice-areas',
+		'attorneys'        => 'attorneys',
 		'attorney-profile' => 'attorneys',
-		'results'         => 'results',
-		'about'           => 'about',
-		'contact'         => 'contact',
+		'results'          => 'results',
+		'about'            => 'about',
+		'contact'          => 'contact',
 	);
 
 	$anchor = $fallbacks[ $route ] ?? '';
