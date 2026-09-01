@@ -88,6 +88,20 @@ for template_path in "${template_entries[@]}"; do
   )
 done
 
+mapfile -t custom_templates < <(
+  unzip -p "$ZIP_FILE" lexora/theme.json \
+    | python3 -c 'import json, sys; data = json.load(sys.stdin); print("\n".join(item["name"] for item in data.get("customTemplates", []) if isinstance(item, dict) and item.get("name")))'
+)
+
+for template_name in "${custom_templates[@]}"; do
+  template_path="lexora/templates/${template_name}.html"
+
+  if ! printf '%s\n' "${entries[@]}" | grep -Fxq "$template_path"; then
+    echo "theme.json registers custom template without matching file: $template_name" >&2
+    exit 1
+  fi
+done
+
 if grep -Eq 'href="/?#contact"' <<<"$pattern_markup"; then
   echo "Legacy #contact CTA leaked into packaged patterns." >&2
   exit 1
