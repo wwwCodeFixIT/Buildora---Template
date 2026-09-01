@@ -14,12 +14,36 @@
       "customDuotone": false,
       "customGradient": false,
       "palette": [
-        { "slug": "ink", "name": "Midnight", "color": "#101820" },
-        { "slug": "paper", "name": "Ivory", "color": "#FBF8F1" },
-        { "slug": "surface", "name": "Parchment", "color": "#F1ECE2" },
-        { "slug": "muted", "name": "Slate", "color": "#667078" },
-        { "slug": "brand", "name": "Antique Gold", "color": "#B08D57" },
-        { "slug": "brand-dark", "name": "Deep Gold", "color": "#7E623D" }
+        {
+          "slug": "ink",
+          "name": "Midnight",
+          "color": "#101820"
+        },
+        {
+          "slug": "paper",
+          "name": "Ivory",
+          "color": "#FBF8F1"
+        },
+        {
+          "slug": "surface",
+          "name": "Parchment",
+          "color": "#F1ECE2"
+        },
+        {
+          "slug": "muted",
+          "name": "Slate",
+          "color": "#667078"
+        },
+        {
+          "slug": "brand",
+          "name": "Antique Gold",
+          "color": "#B08D57"
+        },
+        {
+          "slug": "brand-dark",
+          "name": "Deep Gold",
+          "color": "#7E623D"
+        }
       ]
     },
     "spacing": {
@@ -28,14 +52,46 @@
       "padding": true,
       "units": ["px", "rem", "vw", "%"],
       "spacingSizes": [
-        { "slug": "10", "name": "2XS", "size": "0.25rem" },
-        { "slug": "20", "name": "XS", "size": "0.5rem" },
-        { "slug": "30", "name": "S", "size": "0.75rem" },
-        { "slug": "40", "name": "M", "size": "1rem" },
-        { "slug": "50", "name": "L", "size": "1.5rem" },
-        { "slug": "60", "name": "XL", "size": "2rem" },
-        { "slug": "70", "name": "2XL", "size": "clamp(2.5rem, 5vw, 4rem)" },
-        { "slug": "80", "name": "3XL", "size": "clamp(4rem, 8vw, 7rem)" }
+        {
+          "slug": "10",
+          "name": "2XS",
+          "size": "0.25rem"
+        },
+        {
+          "slug": "20",
+          "name": "XS",
+          "size": "0.5rem"
+        },
+        {
+          "slug": "30",
+          "name": "S",
+          "size": "0.75rem"
+        },
+        {
+          "slug": "40",
+          "name": "M",
+          "size": "1rem"
+        },
+        {
+          "slug": "50",
+          "name": "L",
+          "size": "1.5rem"
+        },
+        {
+          "slug": "60",
+          "name": "XL",
+          "size": "2rem"
+        },
+        {
+          "slug": "70",
+          "name": "2XL",
+          "size": "clamp(2.5rem, 5vw, 4rem)"
+        },
+        {
+          "slug": "80",
+          "name": "3XL",
+          "size": "clamp(4rem, 8vw, 7rem)"
+        }
       ]
     },
     "typography": {
@@ -54,12 +110,36 @@
         }
       ],
       "fontSizes": [
-        { "slug": "xs", "name": "XS", "size": "0.875rem" },
-        { "slug": "sm", "name": "S", "size": "1rem" },
-        { "slug": "md", "name": "M", "size": "1.125rem" },
-        { "slug": "lg", "name": "L", "size": "clamp(1.25rem, 2vw, 1.5rem)" },
-        { "slug": "xl", "name": "XL", "size": "clamp(2rem, 4vw, 3rem)" },
-        { "slug": "hero", "name": "Hero", "size": "clamp(3rem, 7vw, 6rem)" }
+        {
+          "slug": "xs",
+          "name": "XS",
+          "size": "0.875rem"
+        },
+        {
+          "slug": "sm",
+          "name": "S",
+          "size": "1rem"
+        },
+        {
+          "slug": "md",
+          "name": "M",
+          "size": "1.125rem"
+        },
+        {
+          "slug": "lg",
+          "name": "L",
+          "size": "clamp(1.25rem, 2vw, 1.5rem)"
+        },
+        {
+          "slug": "xl",
+          "name": "XL",
+          "size": "clamp(2rem, 4vw, 3rem)"
+        },
+        {
+          "slug": "hero",
+          "name": "Hero",
+          "size": "clamp(3rem, 7vw, 6rem)"
+        }
       ]
     },
     "border": {
@@ -106,12 +186,26 @@
         }
       },
       "link": {
-        "color": { "text": "var:preset|color|ink" },
-        ":hover": { "color": { "text": "var:preset|color|brand-dark" } },
-        ":focus": { "outline": { "color": "var:preset|color|brand", "style": "solid", "width": "2px" } }
+        "color": {
+          "text": "var:preset|color|ink"
+        },
+        ":hover": {
+          "color": {
+            "text": "var:preset|color|brand-dark"
+          }
+        },
+        ":focus": {
+          "outline": {
+            "color": "var:preset|color|brand",
+            "style": "solid",
+            "width": "2px"
+          }
+        }
       },
       "button": {
-        "border": { "radius": "0.25rem" },
+        "border": {
+          "radius": "0.25rem"
+        },
         "color": {
           "background": "var:preset|color|brand",
           "text": "var:preset|color|paper"
@@ -128,20 +222,40 @@
           "fontWeight": "700",
           "letterSpacing": "0.01em"
         },
-        ":hover": { "color": { "background": "var:preset|color|brand-dark" } },
-        ":focus": { "outline": { "color": "var:preset|color|brand", "style": "solid", "width": "3px" } }
+        ":hover": {
+          "color": {
+            "background": "var:preset|color|brand-dark"
+          }
+        },
+        ":focus": {
+          "outline": {
+            "color": "var:preset|color|brand",
+            "style": "solid",
+            "width": "3px"
+          }
+        }
       }
     },
     "blocks": {
       "core/navigation": {
-        "typography": { "fontWeight": "600" }
+        "typography": {
+          "fontWeight": "600"
+        }
       }
     }
   },
   "templateParts": [
-    { "name": "footer", "title": "Footer", "area": "footer" }
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    }
   ],
   "customTemplates": [
-    { "name": "case-result", "title": "Case Result", "postTypes": ["page"] }
+    {
+      "name": "case-result",
+      "title": "Case Result",
+      "postTypes": ["page"]
+    }
   ]
 }
