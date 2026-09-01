@@ -63,19 +63,31 @@ The Contact template contains a lightweight consultation enquiry form.
 By default:
 
 - submissions are sent to the WordPress **Administration Email Address**;
+- the Administration Email Address is **not displayed publicly** on the Contact page;
 - a valid nonce is required;
 - a honeypot field filters simple bots;
 - repeated submissions from the same browser/network fingerprint are throttled for one minute;
 - submitted values are sanitized and validated server-side;
 - the matter summary is limited to 5000 characters.
 
-The recipient can be customized in PHP:
+The form recipient can be customized in PHP:
 
 ```php
 add_filter(
     'lexora_contact_recipient',
     static function (): string {
         return 'consultations@example.com';
+    }
+);
+```
+
+If the firm wants to display a public contact email beside the form, configure it separately. This avoids exposing the WordPress administration address by default:
+
+```php
+add_filter(
+    'lexora_contact_public_email',
+    static function (): string {
+        return 'contact@example.com';
     }
 );
 ```
@@ -165,7 +177,8 @@ lexora/
 ├── templates/              # block templates
 ├── src/
 │   └── scss/               # development styles
-├── playground/             # development preview fixtures
+├── .github/
+│   └── playground/         # development preview fixtures
 ├── scripts/                # build/cloud tooling
 ├── functions.php
 ├── style.css
