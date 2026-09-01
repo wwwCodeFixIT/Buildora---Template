@@ -10,7 +10,9 @@
   background-size: auto, 56px 56px, 56px 56px;
 }
 
-.buildora-hero__actions .wp-block-button:not(.is-style-outline) .wp-block-button__link {
+.buildora-hero__actions
+  .wp-block-button:not(.is-style-outline)
+  .wp-block-button__link {
   box-shadow: 0 12px 30px rgb(176 141 87 / 22%);
 }
 
