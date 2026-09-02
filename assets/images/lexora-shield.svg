@@ -1,14 +1,16 @@
-<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="g" x1="16" y1="12" x2="80" y2="84" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#E3C07A"/>
-      <stop offset="1" stop-color="#B18845"/>
+    <linearGradient id="gold" x1="22" y1="14" x2="108" y2="116" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1D79A"/>
+      <stop offset="0.45" stop-color="#D7AE62"/>
+      <stop offset="1" stop-color="#9D6D31"/>
     </linearGradient>
   </defs>
-  <path d="M48 8L74 18V42C74 61.3 63 76.8 48 86C33 76.8 22 61.3 22 42V18L48 8Z" stroke="url(#g)" stroke-width="2.5"/>
-  <path d="M17 32C10 38 8 48 10 58C12 68 18 76 25 81" stroke="url(#g)" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M79 32C86 38 88 48 86 58C84 68 78 76 71 81" stroke="url(#g)" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M35 55V38M44 55V38M53 55V38M62 55V38" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
-  <path d="M32 33H64L48 24L32 33Z" stroke="url(#g)" stroke-width="2.5"/>
-  <path d="M30 58H66" stroke="url(#g)" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M64 12C78 24 91 31 105 34V65C105 86 89 102 64 116C39 102 23 86 23 65V34C37 31 50 24 64 12Z" stroke="url(#gold)" stroke-width="3"/>
+  <path d="M17 52C9 62 9 78 17 91M111 52C119 62 119 78 111 91" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M13 68L22 64M15 79L25 73M20 90L29 82M115 68L106 64M113 79L103 73M108 90L99 82" stroke="url(#gold)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M43 38V88H76" stroke="url(#gold)" stroke-width="8" stroke-linecap="square"/>
+  <path d="M69 45H91M72 50H88M75 55H85" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M71 58H88V86M76 58V86M82 58V86" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M57 105L64 98L71 105L64 112L57 105Z" stroke="url(#gold)" stroke-width="2"/>
 </svg>
