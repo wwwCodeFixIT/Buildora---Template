@@ -15,13 +15,13 @@
 			<header class="lexora-showcase-heading">
 				<h2><?php esc_html_e( 'Practice Areas', 'lexora' ); ?></h2>
 				<div class="lexora-showcase-divider" aria-hidden="true"><span></span><i></i><span></span></div>
-				<p><?php esc_html_e( 'Focused legal solutions tailored to your needs.', 'lexora' ); ?></p>
+				<p><?php esc_html_e( 'Comprehensive legal solutions tailored to your needs.', 'lexora' ); ?></p>
 			</header>
 			<div class="lexora-practice-mini-grid">
-				<div class="lexora-practice-mini"><div class="lexora-practice-mini__icon">⚖</div><h3><?php esc_html_e( 'Business Law', 'lexora' ); ?></h3><p><?php esc_html_e( 'Guiding businesses through every stage of growth.', 'lexora' ); ?></p></div>
-				<div class="lexora-practice-mini"><div class="lexora-practice-mini__icon">♙</div><h3><?php esc_html_e( 'Family Law', 'lexora' ); ?></h3><p><?php esc_html_e( 'Compassionate representation for your family.', 'lexora' ); ?></p></div>
-				<div class="lexora-practice-mini"><div class="lexora-practice-mini__icon">✒</div><h3><?php esc_html_e( 'Estate Planning', 'lexora' ); ?></h3><p><?php esc_html_e( 'Protecting your legacy and securing your future.', 'lexora' ); ?></p></div>
-				<div class="lexora-practice-mini"><div class="lexora-practice-mini__icon">⚖</div><h3><?php esc_html_e( 'Litigation', 'lexora' ); ?></h3><p><?php esc_html_e( 'Strong advocacy in and out of court.', 'lexora' ); ?></p></div>
+				<div class="lexora-practice-mini"><div class="lexora-practice-mini__icon">🏛</div><h3><?php esc_html_e( 'Business Law', 'lexora' ); ?></h3><p><?php esc_html_e( 'Guiding businesses through every stage of growth.', 'lexora' ); ?></p></div>
+				<div class="lexora-practice-mini"><div class="lexora-practice-mini__icon">👥</div><h3><?php esc_html_e( 'Family Law', 'lexora' ); ?></h3><p><?php esc_html_e( 'Compassionate representation for your family.', 'lexora' ); ?></p></div>
+				<div class="lexora-practice-mini"><div class="lexora-practice-mini__icon">▤</div><h3><?php esc_html_e( 'Estate Planning', 'lexora' ); ?></h3><p><?php esc_html_e( 'Protect your legacy and secure your future.', 'lexora' ); ?></p></div>
+				<div class="lexora-practice-mini"><div class="lexora-practice-mini__icon">⚖</div><h3><?php esc_html_e( 'Litigation', 'lexora' ); ?></h3><p><?php esc_html_e( 'Aggressive representation in and out of court.', 'lexora' ); ?></p></div>
 			</div>
 			<a class="lexora-showcase-button" href="<?php echo esc_url( home_url( '/practice-areas/' ) ); ?>"><?php esc_html_e( 'View all practice areas', 'lexora' ); ?></a>
 		</article>
@@ -33,10 +33,10 @@
 				<p><?php esc_html_e( 'Experienced. Dedicated. On your side.', 'lexora' ); ?></p>
 			</header>
 			<div class="lexora-attorney-mini-grid">
-				<a class="lexora-attorney-mini" href="<?php echo esc_url( home_url( '/attorneys/eleanor-mercer/' ) ); ?>"><div class="lexora-attorney-mini__portrait"><span>EM</span></div><h3>Eleanor Mercer</h3><p><?php esc_html_e( 'Managing Partner', 'lexora' ); ?></p><small>in&nbsp;&nbsp;✉</small></a>
-				<a class="lexora-attorney-mini" href="<?php echo esc_url( home_url( '/attorneys/daniel-moore/' ) ); ?>"><div class="lexora-attorney-mini__portrait"><span>DM</span></div><h3>Daniel Moore</h3><p><?php esc_html_e( 'Senior Attorney', 'lexora' ); ?></p><small>in&nbsp;&nbsp;✉</small></a>
-				<a class="lexora-attorney-mini" href="<?php echo esc_url( home_url( '/attorneys/sophia-carter/' ) ); ?>"><div class="lexora-attorney-mini__portrait"><span>SC</span></div><h3>Sophia Carter</h3><p><?php esc_html_e( 'Litigation Attorney', 'lexora' ); ?></p><small>in&nbsp;&nbsp;✉</small></a>
-				<a class="lexora-attorney-mini" href="<?php echo esc_url( home_url( '/attorneys/' ) ); ?>"><div class="lexora-attorney-mini__portrait"><span>LB</span></div><h3>Laura Bennett</h3><p><?php esc_html_e( 'Family Law Attorney', 'lexora' ); ?></p><small>in&nbsp;&nbsp;✉</small></a>
+				<a class="lexora-attorney-mini" href="<?php echo esc_url( home_url( '/attorneys/eleanor-mercer/' ) ); ?>"><div class="lexora-attorney-mini__portrait"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/attorney-david.svg' ) ); ?>" alt="David Whitmore"></div><h3>David Whitmore</h3><p><?php esc_html_e( 'Founding Partner', 'lexora' ); ?></p><small>in&nbsp;&nbsp;✉</small></a>
+				<a class="lexora-attorney-mini" href="<?php echo esc_url( home_url( '/attorneys/sophia-carter/' ) ); ?>"><div class="lexora-attorney-mini__portrait"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/attorney-sophia.svg' ) ); ?>" alt="Sophia Langford"></div><h3>Sophia Langford</h3><p><?php esc_html_e( 'Senior Attorney', 'lexora' ); ?></p><small>in&nbsp;&nbsp;✉</small></a>
+				<a class="lexora-attorney-mini" href="<?php echo esc_url( home_url( '/attorneys/daniel-moore/' ) ); ?>"><div class="lexora-attorney-mini__portrait"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/attorney-james.svg' ) ); ?>" alt="James Carter"></div><h3>James Carter</h3><p><?php esc_html_e( 'Litigation Attorney', 'lexora' ); ?></p><small>in&nbsp;&nbsp;✉</small></a>
+				<a class="lexora-attorney-mini" href="<?php echo esc_url( home_url( '/attorneys/' ) ); ?>"><div class="lexora-attorney-mini__portrait"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/attorney-olivia.svg' ) ); ?>" alt="Olivia Bennett"></div><h3>Olivia Bennett</h3><p><?php esc_html_e( 'Family Law Attorney', 'lexora' ); ?></p><small>in&nbsp;&nbsp;✉</small></a>
 			</div>
 		</article>
 
