@@ -13,6 +13,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: block-patterns, full-site-editing, custom-logo, featured-images
 */
 
+@import url("assets/css/lexora-reference-pages.css");
 @import url("assets/css/lexora-homepage-mockup.css");
 
 /* Keep this file intentionally small. Production styles are built by Vite. */
