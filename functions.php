@@ -1,21 +1,21 @@
 <?php
 /**
- * Buildora theme bootstrap.
+ * Lexora theme bootstrap.
  *
- * @package Buildora
+ * @package Lexora
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BUILDORA_VERSION', '1.0.0' );
+define( 'LEXORA_VERSION', '1.0.0' );
 
 /**
  * Theme setup.
  */
-function buildora_setup(): void {
-	load_theme_textdomain( 'buildora', get_template_directory() . '/languages' );
+function lexora_setup(): void {
+	load_theme_textdomain( 'lexora', get_template_directory() . '/languages' );
 
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
@@ -40,20 +40,22 @@ function buildora_setup(): void {
 
 	$editor_styles = array( 'style.css' );
 
-	foreach ( buildora_get_vite_css_files() as $css_file ) {
+	foreach ( lexora_get_vite_css_files() as $css_file ) {
 		$editor_styles[] = 'assets/dist/' . $css_file;
 	}
 
+	$editor_styles[] = 'assets/css/lexora-premium.css';
+
 	add_editor_style( $editor_styles );
 }
-add_action( 'after_setup_theme', 'buildora_setup' );
+add_action( 'after_setup_theme', 'lexora_setup' );
 
 /**
  * Read the Vite production manifest.
  *
  * @return array<string, mixed>
  */
-function buildora_get_vite_manifest(): array {
+function lexora_get_vite_manifest(): array {
 	static $manifest = null;
 
 	if ( null !== $manifest ) {
@@ -77,13 +79,10 @@ function buildora_get_vite_manifest(): array {
 /**
  * Resolve the Vite app entry.
  *
- * The production build is CSS-only today, but the JS entry fallback keeps the
- * loader future-proof if progressive enhancement is added later.
- *
  * @return array<string, mixed>|null
  */
-function buildora_get_vite_entry(): ?array {
-	$manifest = buildora_get_vite_manifest();
+function lexora_get_vite_entry(): ?array {
+	$manifest = lexora_get_vite_manifest();
 	$entry    = $manifest['src/scss/app.scss'] ?? $manifest['src/js/app.js'] ?? null;
 
 	return is_array( $entry ) ? $entry : null;
@@ -94,8 +93,8 @@ function buildora_get_vite_entry(): ?array {
  *
  * @return array<int, string>
  */
-function buildora_get_vite_css_files(): array {
-	$entry = buildora_get_vite_entry();
+function lexora_get_vite_css_files(): array {
+	$entry = lexora_get_vite_entry();
 
 	if ( null === $entry || empty( $entry['file'] ) || ! is_string( $entry['file'] ) ) {
 		return array();
@@ -120,26 +119,38 @@ function buildora_get_vite_css_files(): array {
 }
 
 /**
- * Enqueue frontend assets produced by Vite.
+ * Enqueue frontend assets produced by Vite and the final Lexora visual layer.
  */
-function buildora_enqueue_assets(): void {
+function lexora_enqueue_assets(): void {
 	wp_enqueue_style(
-		'buildora-base',
+		'lexora-base',
 		get_stylesheet_uri(),
 		array(),
-		BUILDORA_VERSION
+		LEXORA_VERSION
 	);
 
-	foreach ( buildora_get_vite_css_files() as $index => $css_file ) {
+	$app_style_handles = array();
+
+	foreach ( lexora_get_vite_css_files() as $index => $css_file ) {
+		$handle              = 'lexora-app-' . absint( $index );
+		$app_style_handles[] = $handle;
+
 		wp_enqueue_style(
-			'buildora-app-' . absint( $index ),
+			$handle,
 			get_theme_file_uri( 'assets/dist/' . $css_file ),
-			array( 'buildora-base' ),
-			BUILDORA_VERSION
+			array( 'lexora-base' ),
+			LEXORA_VERSION
 		);
 	}
 
-	$entry = buildora_get_vite_entry();
+	wp_enqueue_style(
+		'lexora-premium',
+		get_theme_file_uri( 'assets/css/lexora-premium.css' ),
+		array_merge( array( 'lexora-base' ), $app_style_handles ),
+		LEXORA_VERSION
+	);
+
+	$entry = lexora_get_vite_entry();
 
 	if ( null === $entry || empty( $entry['file'] ) || ! is_string( $entry['file'] ) ) {
 		return;
@@ -155,55 +166,49 @@ function buildora_enqueue_assets(): void {
 
 	if ( function_exists( 'wp_enqueue_script_module' ) ) {
 		wp_enqueue_script_module(
-			'buildora/app',
+			'lexora/app',
 			$script_uri,
 			array(),
-			BUILDORA_VERSION,
+			LEXORA_VERSION,
 			array( 'in_footer' => true )
 		);
 		return;
 	}
 
-	// Fallback for older WordPress versions.
-	wp_enqueue_script( 'buildora-app', $script_uri, array(), BUILDORA_VERSION, true );
-	wp_script_add_data( 'buildora-app', 'type', 'module' );
+	wp_enqueue_script( 'lexora-app', $script_uri, array(), LEXORA_VERSION, true );
+	wp_script_add_data( 'lexora-app', 'type', 'module' );
 }
-add_action( 'wp_enqueue_scripts', 'buildora_enqueue_assets' );
+add_action( 'wp_enqueue_scripts', 'lexora_enqueue_assets' );
 
 /**
- * Register a dedicated pattern category.
+ * Register the Lexora pattern category.
  */
-function buildora_register_pattern_category(): void {
+function lexora_register_pattern_category(): void {
 	register_block_pattern_category(
-		'buildora',
+		'lexora',
 		array(
-			'label'       => __( 'Buildora', 'buildora' ),
-			'description' => __( 'Reusable Buildora page sections.', 'buildora' ),
+			'label'       => __( 'Lexora', 'lexora' ),
+			'description' => __( 'Reusable Lexora legal-practice page sections.', 'lexora' ),
 		)
 	);
 }
-add_action( 'init', 'buildora_register_pattern_category' );
+add_action( 'init', 'lexora_register_pattern_category' );
 
 /**
  * Add an accessible skip link as early as possible in the body.
  */
-function buildora_skip_link(): void {
+function lexora_skip_link(): void {
 	printf(
 		'<a class="screen-reader-text skip-link" href="#main">%s</a>',
-		esc_html__( 'Skip to content', 'buildora' )
+		esc_html__( 'Skip to content', 'lexora' )
 	);
 }
-add_action( 'wp_body_open', 'buildora_skip_link' );
+add_action( 'wp_body_open', 'lexora_skip_link' );
 
 /**
  * Keep starter navigation useful before recommended marketing Pages exist.
- *
- * Buildora intentionally does not create production content on activation. If
- * one of the theme's reserved marketing routes is still a 404, redirect the
- * visitor to the matching homepage section. As soon as the real Page exists,
- * WordPress resolves it normally and this fallback does nothing.
  */
-function buildora_redirect_missing_marketing_routes(): void {
+function lexora_redirect_missing_marketing_routes(): void {
 	if ( is_admin() || wp_doing_ajax() || ! is_404() ) {
 		return;
 	}
@@ -225,16 +230,19 @@ function buildora_redirect_missing_marketing_routes(): void {
 	$route = trim( $request_path, '/' );
 
 	$fallbacks = array(
-		'services' => 'services',
-		'projects' => 'projects',
-		'about'    => 'about',
-		'contact'  => 'contact',
+		'practice-areas'                 => 'practice-areas',
+		'attorneys'                      => 'attorneys',
+		'attorney-profile'               => 'attorneys',
+		'commercial-contract-resolution' => 'results',
+		'results'                        => 'results',
+		'about'                          => 'about',
+		'contact'                        => 'contact',
 	);
 
 	$anchor = $fallbacks[ $route ] ?? '';
 
-	if ( '' === $anchor && 0 === strpos( $route, 'projects/' ) ) {
-		$anchor = 'projects';
+	if ( '' === $anchor && 0 === strpos( $route, 'attorneys/' ) ) {
+		$anchor = 'attorneys';
 	}
 
 	if ( '' === $anchor ) {
@@ -244,28 +252,28 @@ function buildora_redirect_missing_marketing_routes(): void {
 	wp_safe_redirect( home_url( '/#' . $anchor ), 302 );
 	exit;
 }
-add_action( 'template_redirect', 'buildora_redirect_missing_marketing_routes' );
+add_action( 'template_redirect', 'lexora_redirect_missing_marketing_routes' );
 
 /**
- * Redirect a contact form submission back to the Contact page.
+ * Redirect a consultation form submission back to the Contact page.
  *
  * @param string $status Public status key.
  */
-function buildora_contact_redirect( string $status ): void {
+function lexora_contact_redirect( string $status ): void {
 	$url = add_query_arg(
 		'contact_status',
 		sanitize_key( $status ),
 		home_url( '/contact/' )
 	);
 
-	wp_safe_redirect( $url . '#project-brief' );
+	wp_safe_redirect( $url . '#consultation' );
 	exit;
 }
 
 /**
  * Build a privacy-preserving transient key for basic contact-form throttling.
  */
-function buildora_contact_rate_limit_key(): string {
+function lexora_contact_rate_limit_key(): string {
 	$remote_address = isset( $_SERVER['REMOTE_ADDR'] )
 		? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) )
 		: '';
@@ -279,27 +287,27 @@ function buildora_contact_rate_limit_key(): string {
 		wp_salt( 'nonce' )
 	);
 
-	return 'buildora_contact_' . substr( $fingerprint, 0, 32 );
+	return 'lexora_contact_' . substr( $fingerprint, 0, 32 );
 }
 
 /**
- * Process the project enquiry form.
+ * Process the legal consultation form.
  */
-function buildora_handle_contact_form(): void {
+function lexora_handle_contact_form(): void {
 	$request_method = isset( $_SERVER['REQUEST_METHOD'] )
 		? strtoupper( sanitize_text_field( wp_unslash( $_SERVER['REQUEST_METHOD'] ) ) )
 		: '';
 
 	if ( 'POST' !== $request_method ) {
-		buildora_contact_redirect( 'invalid' );
+		lexora_contact_redirect( 'invalid' );
 	}
 
-	$nonce = isset( $_POST['buildora_contact_nonce'] )
-		? sanitize_text_field( wp_unslash( $_POST['buildora_contact_nonce'] ) )
+	$nonce = isset( $_POST['lexora_contact_nonce'] )
+		? sanitize_text_field( wp_unslash( $_POST['lexora_contact_nonce'] ) )
 		: '';
 
-	if ( ! $nonce || ! wp_verify_nonce( $nonce, 'buildora_contact' ) ) {
-		buildora_contact_redirect( 'invalid' );
+	if ( ! $nonce || ! wp_verify_nonce( $nonce, 'lexora_contact' ) ) {
+		lexora_contact_redirect( 'invalid' );
 	}
 
 	$honeypot = isset( $_POST['company_website'] )
@@ -307,13 +315,13 @@ function buildora_handle_contact_form(): void {
 		: '';
 
 	if ( '' !== $honeypot ) {
-		buildora_contact_redirect( 'success' );
+		lexora_contact_redirect( 'success' );
 	}
 
-	$rate_limit_key = buildora_contact_rate_limit_key();
+	$rate_limit_key = lexora_contact_rate_limit_key();
 
 	if ( get_transient( $rate_limit_key ) ) {
-		buildora_contact_redirect( 'rate_limited' );
+		lexora_contact_redirect( 'rate_limited' );
 	}
 
 	$name = isset( $_POST['name'] )
@@ -328,25 +336,25 @@ function buildora_handle_contact_form(): void {
 	$location = isset( $_POST['location'] )
 		? sanitize_text_field( wp_unslash( $_POST['location'] ) )
 		: '';
-	$project_type = isset( $_POST['project_type'] )
-		? sanitize_key( wp_unslash( $_POST['project_type'] ) )
+	$matter_type = isset( $_POST['matter_type'] )
+		? sanitize_key( wp_unslash( $_POST['matter_type'] ) )
 		: '';
 	$message = isset( $_POST['message'] )
 		? sanitize_textarea_field( wp_unslash( $_POST['message'] ) )
 		: '';
 
-	$project_types = array(
-		'renovation'   => __( 'Renovation', 'buildora' ),
-		'construction' => __( 'Construction', 'buildora' ),
-		'maintenance'  => __( 'Repairs & maintenance', 'buildora' ),
-		'other'        => __( 'Something else', 'buildora' ),
+	$matter_types = array(
+		'business' => __( 'Business / commercial law', 'lexora' ),
+		'dispute'  => __( 'Dispute / litigation', 'lexora' ),
+		'private'  => __( 'Family / property / private client', 'lexora' ),
+		'other'    => __( 'Something else', 'lexora' ),
 	);
 
 	if (
 		'' === $name ||
 		! is_email( $email ) ||
 		'' === $location ||
-		! isset( $project_types[ $project_type ] ) ||
+		! isset( $matter_types[ $matter_type ] ) ||
 		'' === $message ||
 		strlen( $name ) > 120 ||
 		strlen( $email ) > 190 ||
@@ -354,38 +362,38 @@ function buildora_handle_contact_form(): void {
 		strlen( $location ) > 160 ||
 		strlen( $message ) > 5000
 	) {
-		buildora_contact_redirect( 'invalid' );
+		lexora_contact_redirect( 'invalid' );
 	}
 
 	$recipient = sanitize_email(
-		apply_filters( 'buildora_contact_recipient', get_option( 'admin_email' ) )
+		apply_filters( 'lexora_contact_recipient', get_option( 'admin_email' ) )
 	);
 
 	if ( ! is_email( $recipient ) ) {
-		buildora_contact_redirect( 'error' );
+		lexora_contact_redirect( 'error' );
 	}
 
 	set_transient( $rate_limit_key, 1, MINUTE_IN_SECONDS );
 
 	$subject = sprintf(
-		/* translators: %s: project type. */
-		__( 'New Buildora enquiry: %s', 'buildora' ),
-		$project_types[ $project_type ]
+		/* translators: %s: legal matter type. */
+		__( 'New Lexora consultation request: %s', 'lexora' ),
+		$matter_types[ $matter_type ]
 	);
 
 	$body_lines = array(
-		__( 'New project enquiry from the Buildora website', 'buildora' ),
+		__( 'New consultation request from the Lexora website', 'lexora' ),
 		'',
-		sprintf( __( 'Name: %s', 'buildora' ), $name ),
-		sprintf( __( 'Email: %s', 'buildora' ), $email ),
-		sprintf( __( 'Phone: %s', 'buildora' ), $phone ?: __( 'Not provided', 'buildora' ) ),
-		sprintf( __( 'Location / postcode: %s', 'buildora' ), $location ),
-		sprintf( __( 'Type of work: %s', 'buildora' ), $project_types[ $project_type ] ),
+		sprintf( __( 'Name: %s', 'lexora' ), $name ),
+		sprintf( __( 'Email: %s', 'lexora' ), $email ),
+		sprintf( __( 'Phone: %s', 'lexora' ), $phone ?: __( 'Not provided', 'lexora' ) ),
+		sprintf( __( 'Jurisdiction / location: %s', 'lexora' ), $location ),
+		sprintf( __( 'Type of legal matter: %s', 'lexora' ), $matter_types[ $matter_type ] ),
 		'',
-		__( 'Project brief:', 'buildora' ),
+		__( 'Matter summary:', 'lexora' ),
 		$message,
 		'',
-		sprintf( __( 'Website: %s', 'buildora' ), home_url( '/' ) ),
+		sprintf( __( 'Website: %s', 'lexora' ), home_url( '/' ) ),
 	);
 
 	$headers = array(
@@ -402,10 +410,10 @@ function buildora_handle_contact_form(): void {
 
 	if ( ! $sent ) {
 		delete_transient( $rate_limit_key );
-		buildora_contact_redirect( 'error' );
+		lexora_contact_redirect( 'error' );
 	}
 
-	buildora_contact_redirect( 'success' );
+	lexora_contact_redirect( 'success' );
 }
-add_action( 'admin_post_buildora_contact', 'buildora_handle_contact_form' );
-add_action( 'admin_post_nopriv_buildora_contact', 'buildora_handle_contact_form' );
+add_action( 'admin_post_lexora_contact', 'lexora_handle_contact_form' );
+add_action( 'admin_post_nopriv_lexora_contact', 'lexora_handle_contact_form' );

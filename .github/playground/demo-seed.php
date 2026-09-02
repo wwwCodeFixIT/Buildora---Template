@@ -1,125 +1,100 @@
 <?php
 require_once '/wordpress/wp-load.php';
 
-function buildora_demo_case_content( $scope, $duration, $delivery, $brief, $changes, $outcome ) {
-	return '<!-- wp:html --><div class="buildora-case-study-demo">'
-		. '<div class="buildora-case-study-demo__visual" aria-hidden="true"></div>'
-		. '<div class="buildora-case-study-demo__snapshot">'
-		. '<div><span>Scope</span><strong>' . esc_html( $scope ) . '</strong></div>'
-		. '<div><span>Programme</span><strong>' . esc_html( $duration ) . '</strong></div>'
-		. '<div><span>Delivery</span><strong>' . esc_html( $delivery ) . '</strong></div>'
-		. '</div>'
-		. '<section class="buildora-case-study-demo__section"><h2>The brief</h2><div><p>' . esc_html( $brief ) . '</p></div></section>'
-		. '<section class="buildora-case-study-demo__section"><h2>What changed</h2><div><p>' . esc_html( $changes ) . '</p></div></section>'
-		. '<section class="buildora-case-study-demo__section"><h2>The outcome</h2><div><p>' . esc_html( $outcome ) . '</p></div></section>'
-		. '</div><!-- /wp:html -->';
-}
+update_option( 'blogname', 'Lexora' );
+update_option( 'blogdescription', 'Law Firm & Legal Practice' );
 
-$pages = array(
-	array( 'title' => 'Services', 'slug' => 'services' ),
-	array( 'title' => 'Projects', 'slug' => 'projects' ),
-	array( 'title' => 'About', 'slug' => 'about' ),
-	array( 'title' => 'Contact', 'slug' => 'contact' ),
-);
+/**
+ * Create or update a demo Page.
+ *
+ * @param array<string, mixed> $page Demo page data.
+ * @return int Page ID.
+ */
+function lexora_seed_page( array $page ): int {
+	$parent_id = isset( $page['parent'] ) ? absint( $page['parent'] ) : 0;
+	$path      = $parent_id > 0 && ! empty( $page['parent_slug'] )
+		? trailingslashit( (string) $page['parent_slug'] ) . $page['slug']
+		: $page['slug'];
+	$existing  = get_page_by_path( $path, OBJECT, 'page' );
 
-$page_ids = array();
-
-foreach ( $pages as $page ) {
-	$existing = get_page_by_path( $page['slug'], OBJECT, 'page' );
+	$postarr = array(
+		'post_type'    => 'page',
+		'post_status'  => 'publish',
+		'post_parent'  => $parent_id,
+		'post_title'   => $page['title'],
+		'post_name'    => $page['slug'],
+		'post_content' => $page['content'] ?? '',
+		'post_excerpt' => $page['excerpt'] ?? '',
+	);
 
 	if ( $existing instanceof WP_Post ) {
-		$page_ids[ $page['slug'] ] = $existing->ID;
-		continue;
+		$postarr['ID'] = $existing->ID;
+		$page_id       = wp_update_post( $postarr, true );
+	} else {
+		$page_id = wp_insert_post( $postarr, true );
 	}
-
-	$page_id = wp_insert_post(
-		array(
-			'post_type'    => 'page',
-			'post_status'  => 'publish',
-			'post_title'   => $page['title'],
-			'post_name'    => $page['slug'],
-			'post_content' => '',
-		),
-		true
-	);
 
 	if ( is_wp_error( $page_id ) ) {
 		throw new RuntimeException( $page_id->get_error_message() );
 	}
 
-	$page_ids[ $page['slug'] ] = $page_id;
+	if ( ! empty( $page['template'] ) ) {
+		update_post_meta( $page_id, '_wp_page_template', sanitize_key( $page['template'] ) );
+	}
+
+	return (int) $page_id;
 }
 
-$projects = array(
+$page_ids = array();
+
+foreach (
 	array(
-		'title'    => 'Riverside House',
-		'slug'     => 'riverside-house',
-		'excerpt'  => 'A full internal renovation with a reworked ground floor, upgraded finishes and a tighter handover programme.',
-		'scope'    => 'Full renovation',
-		'duration' => '18 weeks',
-		'delivery' => 'Occupied home',
-		'brief'    => 'Create a more practical ground floor, refresh the full interior and keep decisions visible enough for the client to stay confident throughout the programme.',
-		'changes'  => 'The layout was simplified, finish decisions were locked earlier and milestones were documented before each trade moved on to the next stage.',
-		'outcome'  => 'The home was handed back with a cleaner layout, consistent finishes and a close-out pack that made the final walkthrough straightforward.',
+		array( 'title' => 'Practice Areas', 'slug' => 'practice-areas' ),
+		array( 'title' => 'Attorneys', 'slug' => 'attorneys' ),
+		array( 'title' => 'Results', 'slug' => 'results' ),
+		array( 'title' => 'About', 'slug' => 'about' ),
+		array( 'title' => 'Contact', 'slug' => 'contact' ),
+	) as $page
+) {
+	$page_ids[ $page['slug'] ] = lexora_seed_page( $page );
+}
+
+$attorney_profiles = array(
+	array(
+		'title'   => 'Eleanor Mercer',
+		'slug'    => 'eleanor-mercer',
+		'excerpt' => 'Managing Partner focused on commercial disputes, strategic contracts and corporate risk.',
+		'content' => '<!-- wp:paragraph {"fontSize":"xs","textColor":"muted"} --><p class="has-muted-color has-text-color has-xs-font-size"><strong>Demo content:</strong> Eleanor Mercer is a fictional attorney profile included only to demonstrate the theme layout.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Prepared for complexity. Focused on the decision in front of you.</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Eleanor advises businesses and senior decision-makers when a legal problem carries commercial consequences. Her approach identifies the leverage points, preserves options and keeps the next decision clear.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Advice stays direct: what matters now, what can wait, what the evidence supports and what each route may cost in time, money and management attention.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Representative matters</h2><!-- /wp:heading --><!-- wp:list {"className":"lexora-profile__matter-list"} --><ul class="wp-block-list lexora-profile__matter-list"><li>Advising a founder-led business through a complex shareholder dispute and negotiated exit.</li><li>Defending a services company against a substantial breach-of-contract claim.</li><li>Structuring strategic supplier agreements for a growing professional-services group.</li></ul><!-- /wp:list --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Credentials</h2><!-- /wp:heading --><!-- wp:list {"className":"lexora-profile__credential-list"} --><ul class="wp-block-list lexora-profile__credential-list"><li>Managing Partner — demo role</li><li>Commercial disputes and corporate advisory</li><li>LL.M., Commercial Law — illustrative credential</li></ul><!-- /wp:list -->',
 	),
 	array(
-		'title'    => 'Northline Studio',
-		'slug'     => 'northline-studio',
-		'excerpt'  => 'A light-commercial fit-out coordinated around access, programme certainty and a clean close-out.',
-		'scope'    => 'Commercial fit-out',
-		'duration' => '10 weeks',
-		'delivery' => 'Fixed opening date',
-		'brief'    => 'Deliver a practical studio fit-out to a fixed opening date while keeping access, approvals and finish decisions tightly coordinated.',
-		'changes'  => 'The programme was broken into visible decision gates, long-lead items were confirmed first and site updates were tied to measurable milestones.',
-		'outcome'  => 'The studio opened to plan with a documented snag close-out and a clear handover of finishes, warranties and maintenance notes.',
+		'title'   => 'Daniel Moore',
+		'slug'    => 'daniel-moore',
+		'excerpt' => 'Senior Associate advising on employment issues, contract disputes and negotiated resolutions.',
+		'content' => '<!-- wp:paragraph {"fontSize":"xs","textColor":"muted"} --><p class="has-muted-color has-text-color has-xs-font-size"><strong>Demo content:</strong> Daniel Moore is a fictional attorney profile included only to demonstrate the theme layout.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Clear advice when people and contracts collide.</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Daniel works with employers and senior professionals on employment risk, contractual disputes and sensitive negotiations. He focuses on resolving uncertainty early and preparing thoroughly when formal action is necessary.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Representative matters</h2><!-- /wp:heading --><!-- wp:list {"className":"lexora-profile__matter-list"} --><ul class="wp-block-list lexora-profile__matter-list"><li>Supporting a company through a senior executive exit and confidential settlement.</li><li>Advising on post-termination restrictions and contract enforcement.</li><li>Resolving a services agreement dispute through structured negotiation.</li></ul><!-- /wp:list --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Credentials</h2><!-- /wp:heading --><!-- wp:list {"className":"lexora-profile__credential-list"} --><ul class="wp-block-list lexora-profile__credential-list"><li>Senior Associate — demo role</li><li>Employment and contract disputes</li><li>Professional qualifications — illustrative content</li></ul><!-- /wp:list -->',
 	),
 	array(
-		'title'    => 'Oakfield Extension',
-		'slug'     => 'oakfield-extension',
-		'excerpt'  => 'A rear extension delivered around an occupied home with staged decisions and practical handover notes.',
-		'scope'    => 'Residential extension',
-		'duration' => '14 weeks',
-		'delivery' => 'Staged around family life',
-		'brief'    => 'Add useful family space without turning the occupied house into an unmanaged building site for the duration of the work.',
-		'changes'  => 'Access and noisy work were phased, temporary protection was treated as part of the scope and finish choices were signed off before installation.',
-		'outcome'  => 'The extension connected cleanly to the existing home and the family received a clear walkthrough of final checks and aftercare items.',
+		'title'   => 'Sophia Carter',
+		'slug'    => 'sophia-carter',
+		'excerpt' => 'Associate focused on property, ownership questions and private-client matters.',
+		'content' => '<!-- wp:paragraph {"fontSize":"xs","textColor":"muted"} --><p class="has-muted-color has-text-color has-xs-font-size"><strong>Demo content:</strong> Sophia Carter is a fictional attorney profile included only to demonstrate the theme layout.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Calm guidance for decisions with personal consequences.</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Sophia supports clients on property transactions, ownership disputes and private-client issues. Her work combines careful documentation with a practical explanation of the available routes and their likely consequences.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Representative matters</h2><!-- /wp:heading --><!-- wp:list {"className":"lexora-profile__matter-list"} --><ul class="wp-block-list lexora-profile__matter-list"><li>Advising on a disputed beneficial ownership position.</li><li>Supporting a private client through a complex property transaction.</li><li>Negotiating practical terms to resolve a co-ownership disagreement.</li></ul><!-- /wp:list --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Credentials</h2><!-- /wp:heading --><!-- wp:list {"className":"lexora-profile__credential-list"} --><ul class="wp-block-list lexora-profile__credential-list"><li>Associate — demo role</li><li>Property and private-client matters</li><li>Professional qualifications — illustrative content</li></ul><!-- /wp:list -->',
 	),
 );
 
-foreach ( $projects as $project ) {
-	$path     = 'projects/' . $project['slug'];
-	$existing = get_page_by_path( $path, OBJECT, 'page' );
-	$content  = buildora_demo_case_content(
-		$project['scope'],
-		$project['duration'],
-		$project['delivery'],
-		$project['brief'],
-		$project['changes'],
-		$project['outcome']
-	);
-
-	$postarr = array(
-		'post_type'    => 'page',
-		'post_status'  => 'publish',
-		'post_parent'  => $page_ids['projects'],
-		'post_title'   => $project['title'],
-		'post_name'    => $project['slug'],
-		'post_excerpt' => $project['excerpt'],
-		'post_content' => $content,
-	);
-
-	if ( $existing instanceof WP_Post ) {
-		$postarr['ID'] = $existing->ID;
-		$project_id    = wp_update_post( $postarr, true );
-	} else {
-		$project_id = wp_insert_post( $postarr, true );
-	}
-
-	if ( is_wp_error( $project_id ) ) {
-		throw new RuntimeException( $project_id->get_error_message() );
-	}
-
-	update_post_meta( $project_id, '_wp_page_template', 'project-case-study' );
+foreach ( $attorney_profiles as $profile ) {
+	$profile['parent']      = $page_ids['attorneys'];
+	$profile['parent_slug'] = 'attorneys';
+	$profile['template']    = 'attorney-profile';
+	lexora_seed_page( $profile );
 }
+
+lexora_seed_page(
+	array(
+		'title'    => 'Commercial Contract Resolution',
+		'slug'     => 'commercial-contract-resolution',
+		'template' => 'case-result',
+		'excerpt'  => 'Illustrative demo matter showing how Lexora presents a representative result without implying a guaranteed outcome.',
+		'content'  => '<!-- wp:paragraph {"fontSize":"xs","textColor":"muted"} --><p class="has-muted-color has-text-color has-xs-font-size"><strong>Demo content:</strong> This representative matter is fictional and included only to demonstrate the theme layout.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">The situation</h2><!-- /wp:heading --><!-- wp:paragraph --><p>A growing services business faced a contractual dispute with a key supplier. The commercial relationship had become difficult, but prolonged proceedings would have created additional cost and management distraction.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">The approach</h2><!-- /wp:heading --><!-- wp:paragraph --><p>The legal team reviewed the contractual position, narrowed the disputed issues and prepared a negotiation strategy around the client’s commercial priorities.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Illustrative outcome</h2><!-- /wp:heading --><!-- wp:paragraph --><p>The matter demonstrates how a firm can present its process and representative experience while keeping results language careful and factual. Past outcomes never guarantee future results.</p><!-- /wp:paragraph -->',
+	)
+);
 
 flush_rewrite_rules();

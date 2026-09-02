@@ -1,0 +1,934 @@
+/* Lexora reference build: shared visual system for marketplace-aligned pages. */
+:root {
+  --lx-ref-navy: #03162f;
+  --lx-ref-navy-deep: #020e20;
+  --lx-ref-navy-soft: #0a223d;
+  --lx-ref-gold: #c99b50;
+  --lx-ref-gold-light: #e0bd7a;
+  --lx-ref-ivory: #f5f1eb;
+  --lx-ref-ivory-2: #fbf8f3;
+  --lx-ref-ink: #181818;
+  --lx-ref-muted: #5f5a54;
+  --lx-ref-border: #d8c9b4;
+  --lx-ref-serif: var(--wp--preset--font-family--serif);
+  --lx-ref-sans: var(--wp--preset--font-family--sans);
+}
+
+body {
+  background: var(--lx-ref-navy-deep);
+}
+
+/* Shared reference header. */
+.lexora-header,
+.buildora-header {
+  background: var(--lx-ref-navy-deep) !important;
+  border-bottom: 1px solid rgb(201 155 80 / 18%) !important;
+  box-shadow: none !important;
+}
+
+.lexora-header__inner,
+.buildora-header__inner {
+  min-height: 86px;
+}
+
+.lexora-header__logo img {
+  width: 58px;
+  height: 58px;
+}
+
+.lexora-header__brand-text,
+.buildora-header__brand .wp-block-site-title a {
+  color: #f7f0e6 !important;
+  font-family: var(--lx-ref-serif);
+  font-size: clamp(1.9rem, 2.1vw, 2.45rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.035em !important;
+  text-transform: uppercase;
+}
+
+.buildora-primary-nav .wp-block-navigation-item__content,
+.lexora-primary-nav .wp-block-navigation-item__content {
+  color: #f5eee5 !important;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.buildora-primary-nav .wp-block-navigation-item__content:hover,
+.buildora-primary-nav .wp-block-navigation-item__content:focus-visible,
+.lexora-primary-nav .wp-block-navigation-item__content:hover,
+.lexora-primary-nav .wp-block-navigation-item__content:focus-visible {
+  color: var(--lx-ref-gold-light) !important;
+}
+
+.lexora-header__cta .wp-block-button__link,
+.buildora-header__cta .wp-block-button__link {
+  min-height: 46px;
+  padding: 0.85rem 1.35rem;
+  border: 1px solid #d9b56f !important;
+  border-radius: 3px !important;
+  background: linear-gradient(180deg, #dcb875, #bb8c46) !important;
+  color: white !important;
+  box-shadow: none !important;
+  font-size: 0.74rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* Generic reference inner hero. */
+.lx-ref-page {
+  background: var(--lx-ref-ivory);
+  color: var(--lx-ref-ink);
+}
+
+.lx-ref-inner-hero {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 30%, rgb(26 59 96 / 30%), transparent 40%),
+    linear-gradient(120deg, #061b37, #020e20 72%);
+  color: #f8f0e6;
+}
+
+.lx-ref-inner-hero__grid {
+  min-height: 360px;
+  gap: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.lx-ref-inner-hero__copy {
+  padding: 3.3rem clamp(1rem, 5vw, 5rem) 3.3rem 0;
+}
+
+.lx-ref-kicker {
+  margin: 0 0 1.1rem;
+  color: var(--lx-ref-gold) !important;
+  font-family: var(--lx-ref-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.lx-ref-inner-hero__title,
+.lx-ref-results__title,
+.lx-ref-profile__name {
+  margin: 0;
+  color: #f8f1e7;
+  font-family: var(--lx-ref-serif);
+  font-size: clamp(3.2rem, 5.4vw, 5.4rem);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.lx-ref-inner-hero__lead {
+  max-width: 44rem;
+  margin: 1.5rem 0 0;
+  color: rgb(248 241 231 / 84%);
+  font-family: var(--lx-ref-serif);
+  font-size: 1.12rem;
+  line-height: 1.65;
+}
+
+.lx-ref-inner-hero__media {
+  position: relative;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.lx-ref-inner-hero__media::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--lx-ref-navy-deep), transparent 28%, transparent 82%, rgb(2 14 32 / 18%));
+  content: '';
+  pointer-events: none;
+}
+
+.lx-ref-inner-hero__media figure,
+.lx-ref-inner-hero__media img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  margin: 0;
+}
+
+.lx-ref-inner-hero__media img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.lx-ref-rule,
+.lx-ref-centered-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.lx-ref-rule {
+  margin: 1.5rem 0;
+}
+
+.lx-ref-rule span,
+.lx-ref-centered-rule span {
+  width: 120px;
+  height: 1px;
+  background: var(--lx-ref-gold);
+}
+
+.lx-ref-rule i,
+.lx-ref-centered-rule i {
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--lx-ref-gold);
+  transform: rotate(45deg);
+}
+
+.lx-ref-centered-rule {
+  justify-content: center;
+  padding: 1.7rem 0 1.2rem;
+}
+
+/* Practice Areas. */
+.lx-ref-practice__body {
+  padding: 0 0 2.4rem;
+  background: var(--lx-ref-ivory);
+}
+
+.lx-ref-practice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.lx-ref-practice-card {
+  min-height: 245px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.7rem;
+  border: 1px solid var(--lx-ref-border);
+  background: rgb(255 253 249 / 74%);
+  text-align: center;
+}
+
+.lx-ref-practice-card__icon {
+  margin-bottom: 0.9rem;
+  color: #17202c;
+  font-size: 2.2rem;
+}
+
+.lx-ref-practice-card h2 {
+  margin: 0 0 0.65rem;
+  font-family: var(--lx-ref-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.lx-ref-practice-card p {
+  max-width: 22rem;
+  margin: 0;
+  color: #514d48;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.lx-ref-practice-card a {
+  margin-top: 1.2rem;
+  color: #aa7d3b;
+  font-size: 0.76rem;
+  letter-spacing: 0.09em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.lx-ref-bottom-cta {
+  margin-top: 1.7rem !important;
+  padding: 1.45rem 2rem;
+  border: 1px solid rgb(201 155 80 / 25%);
+  background: linear-gradient(90deg, #041831, #020f22);
+  color: #f8f1e7;
+}
+
+.lx-ref-bottom-cta__icon {
+  color: var(--lx-ref-gold);
+  font-size: 2.6rem;
+}
+
+.lx-ref-bottom-cta h2 {
+  margin: 0;
+  color: #f8f1e7;
+  font-family: var(--lx-ref-serif);
+  font-size: 1.55rem;
+  font-weight: 500;
+}
+
+.lx-ref-bottom-cta p,
+.lx-ref-bottom-cta__copy {
+  margin: 0.2rem 0 0;
+  color: rgb(248 241 231 / 80%);
+}
+
+.lx-ref-bottom-cta .wp-block-button__link {
+  border: 1px solid var(--lx-ref-gold) !important;
+  border-radius: 2px !important;
+  background: transparent !important;
+  color: var(--lx-ref-gold-light) !important;
+  font-size: 0.76rem;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+/* Attorneys directory. */
+.lx-ref-directory {
+  padding: 1.6rem 0 2.4rem;
+  background: var(--lx-ref-ivory);
+}
+
+.lx-ref-directory__toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  color: #6b6258;
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.lx-ref-directory__toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.lx-ref-directory__toolbar select {
+  min-width: 250px;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #d5ccc0;
+  background: #f8f5f0;
+  color: #4b4742;
+}
+
+.lx-ref-attorney-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.lx-ref-attorney-card {
+  overflow: hidden;
+  border: 1px solid #e3d9cc;
+  background: #f8f4ee;
+  box-shadow: 0 9px 22px rgb(17 24 39 / 8%);
+}
+
+.lx-ref-attorney-card__media {
+  display: block;
+  aspect-ratio: 0.93;
+  overflow: hidden;
+  background: #171717;
+}
+
+.lx-ref-attorney-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lx-ref-attorney-card__body {
+  padding: 0.8rem 0.6rem 0.9rem;
+  text-align: center;
+}
+
+.lx-ref-attorney-card h2 {
+  margin: 0;
+  font-family: var(--lx-ref-serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.lx-ref-attorney-card h2 a {
+  color: #202020;
+  text-decoration: none;
+}
+
+.lx-ref-attorney-card p {
+  margin: 0.25rem 0;
+  color: #58514a;
+  font-size: 0.79rem;
+}
+
+.lx-ref-attorney-card__role {
+  color: #a67737 !important;
+  font-family: var(--lx-ref-serif);
+  font-size: 0.9rem !important;
+}
+
+.lx-ref-attorney-card__social {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 0.55rem;
+  color: #242424;
+  font-weight: 600;
+}
+
+/* Results. */
+.lx-ref-results {
+  background: var(--lx-ref-navy-deep);
+  color: #f7efe5;
+}
+
+.lx-ref-results__hero {
+  position: relative;
+  overflow: hidden;
+  padding: 3.4rem 0 2.2rem;
+  background:
+    linear-gradient(90deg, rgb(2 14 32 / 96%) 0%, rgb(2 14 32 / 84%) 48%, rgb(2 14 32 / 18%) 100%),
+    url('../images/hero-legal.svg') center right / 58% 100% no-repeat,
+    var(--lx-ref-navy-deep);
+}
+
+.lx-ref-results__hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.lx-ref-results__title {
+  font-size: clamp(3.2rem, 5.2vw, 5.1rem);
+}
+
+.lx-ref-results__title::first-letter {
+  color: #f8f1e7;
+}
+
+.lx-ref-results__lead {
+  max-width: 37rem;
+  margin-top: 1.25rem;
+  color: rgb(248 241 231 / 82%);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.lx-ref-result-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem !important;
+}
+
+.lx-ref-result-grid article {
+  min-height: 190px;
+  padding: 1.35rem 1.3rem;
+  border: 1px solid rgb(201 155 80 / 42%);
+  background: linear-gradient(145deg, rgb(11 35 60 / 94%), rgb(4 19 38 / 96%));
+}
+
+.lx-ref-result-grid__icon {
+  color: var(--lx-ref-gold);
+  font-size: 2rem;
+}
+
+.lx-ref-result-grid strong {
+  display: block;
+  margin: 0.55rem 0 0.3rem;
+  color: var(--lx-ref-gold-light);
+  font-family: var(--lx-ref-serif);
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+
+.lx-ref-result-grid h2 {
+  margin: 0 0 0.35rem;
+  color: white;
+  font-family: var(--lx-ref-serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.lx-ref-result-grid p {
+  margin: 0;
+  color: rgb(248 241 231 / 78%);
+  font-size: 0.87rem;
+  line-height: 1.5;
+}
+
+.lx-ref-results__lower {
+  margin: 0 !important;
+  gap: 0 !important;
+}
+
+.lx-ref-testimonial-panel,
+.lx-ref-results-form {
+  min-height: 430px;
+  padding: clamp(2.3rem, 5vw, 4.2rem);
+}
+
+.lx-ref-testimonial-panel {
+  background: linear-gradient(140deg, #faf7f1, #eee7de);
+  color: #1a1a1a;
+}
+
+.lx-ref-testimonial-panel h2,
+.lx-ref-results-form h2 {
+  margin: 0;
+  font-family: var(--lx-ref-serif);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 500;
+  line-height: 1.02;
+}
+
+.lx-ref-testimonial-panel h2 span {
+  color: #b18b51;
+}
+
+.lx-ref-testimonial-panel__quote {
+  margin: 1.5rem 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--lx-ref-serif);
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.lx-ref-testimonial-panel__author {
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.lx-ref-testimonial-panel__avatar {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #1c2634;
+  color: white;
+  font-family: var(--lx-ref-serif);
+}
+
+.lx-ref-testimonial-panel__author span {
+  color: #a67d42;
+}
+
+.lx-ref-results-form {
+  position: relative;
+  background: linear-gradient(135deg, #071c38, #020f22);
+  color: #f8f1e7;
+}
+
+.lx-ref-results-form__form {
+  display: grid;
+  gap: 0.7rem;
+  max-width: 38rem;
+  margin-top: 1.3rem;
+}
+
+.lx-ref-results-form__form > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+}
+
+.lx-ref-results-form input,
+.lx-ref-results-form select,
+.lx-ref-results-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 2px;
+  background: #f5f0e9;
+  color: #292929;
+  font: inherit;
+}
+
+.lx-ref-results-form button {
+  width: fit-content;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid var(--lx-ref-gold);
+  background: linear-gradient(180deg, #dbb773, #b88742);
+  color: white;
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.lx-ref-results-form__contact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(201 155 80 / 28%);
+}
+
+.lx-ref-results-form__contact p {
+  margin: 0;
+  color: rgb(248 241 231 / 76%);
+  font-size: 0.82rem;
+}
+
+.lx-ref-results-form__contact strong {
+  color: #f8f1e7;
+}
+
+/* Attorney profile. */
+.lx-ref-profile {
+  background: var(--lx-ref-navy-deep);
+  color: #f8f1e7;
+}
+
+.lx-ref-profile__hero {
+  padding: 1.25rem 0 0;
+  background:
+    linear-gradient(90deg, rgb(2 14 32 / 100%) 0%, rgb(2 14 32 / 88%) 58%, rgb(2 14 32 / 20%) 100%),
+    url('../images/hero-legal.svg') right center / 52% 100% no-repeat,
+    var(--lx-ref-navy-deep);
+}
+
+.lx-ref-profile__crumbs {
+  padding-bottom: 1.1rem;
+}
+
+.lx-ref-profile__crumbs nav {
+  display: flex;
+  gap: 0.65rem;
+  color: var(--lx-ref-gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lx-ref-profile__crumbs a {
+  color: var(--lx-ref-gold);
+  text-decoration: none;
+}
+
+.lx-ref-profile__hero-grid {
+  min-height: 340px;
+  gap: 2.7rem !important;
+  margin-bottom: 0 !important;
+}
+
+.lx-ref-profile__portrait {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgb(201 155 80 / 34%);
+  background: #181512;
+}
+
+.lx-ref-profile__portrait figure,
+.lx-ref-profile__portrait img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.lx-ref-profile__portrait img {
+  object-fit: cover;
+}
+
+.lx-ref-profile__featured {
+  position: absolute;
+  inset: 0;
+}
+
+.lx-ref-profile__intro {
+  padding: 2rem 0;
+}
+
+.lx-ref-profile__name {
+  font-size: clamp(3.2rem, 5vw, 5.2rem) !important;
+}
+
+.lx-ref-profile__role {
+  margin: 0.55rem 0 0;
+  color: var(--lx-ref-gold);
+  font-family: var(--lx-ref-serif);
+  font-size: 1.8rem;
+}
+
+.lx-ref-profile__lead {
+  max-width: 46rem;
+  color: rgb(248 241 231 / 84%);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.lx-ref-profile__contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  margin-top: 1.5rem;
+  color: rgb(248 241 231 / 82%);
+  font-size: 0.9rem;
+}
+
+.lx-ref-profile__facts {
+  padding: 2rem 0;
+  background: #f4efe8;
+  color: #202020;
+}
+
+.lx-ref-profile__facts-grid {
+  gap: 0 !important;
+}
+
+.lx-ref-profile__facts-grid > .wp-block-column {
+  padding: 0 2rem;
+  border-right: 1px solid #d7cabb;
+}
+
+.lx-ref-profile__facts-grid > .wp-block-column:first-child {
+  padding-left: 0;
+}
+
+.lx-ref-profile__facts-grid > .wp-block-column:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.lx-ref-profile__facts h2,
+.lx-ref-profile__lower h2 {
+  margin: 0 0 1rem;
+  font-family: var(--lx-ref-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.lx-ref-profile__facts h2::after,
+.lx-ref-profile__lower > .wp-block-columns > .wp-block-column:first-child > h2::after {
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin-top: 0.55rem;
+  background: var(--lx-ref-gold);
+  content: '';
+}
+
+.lx-ref-profile__content {
+  color: #45413c;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.lx-ref-profile__facts li,
+.lx-ref-profile__facts p {
+  color: #45413c;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.lx-ref-profile__lower {
+  padding: 2rem 0 2.4rem;
+  background: var(--lx-ref-navy-deep);
+}
+
+.lx-ref-profile__focus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem 2rem;
+}
+
+.lx-ref-profile__focus-grid article {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 0.8rem;
+}
+
+.lx-ref-profile__focus-grid b {
+  color: var(--lx-ref-gold);
+  font-size: 1.8rem;
+}
+
+.lx-ref-profile__focus-grid h3,
+.lx-ref-profile__focus-grid p {
+  margin: 0;
+}
+
+.lx-ref-profile__focus-grid h3 {
+  color: #f8f1e7;
+  font-family: var(--lx-ref-serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.lx-ref-profile__focus-grid p {
+  margin-top: 0.2rem;
+  color: rgb(248 241 231 / 72%);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.lx-ref-profile__consult {
+  padding: 1.7rem;
+  border: 1px solid rgb(201 155 80 / 72%);
+  background: rgb(4 24 49 / 60%);
+}
+
+.lx-ref-profile__consult h2 {
+  color: #f8f1e7;
+}
+
+.lx-ref-profile__consult p {
+  color: rgb(248 241 231 / 78%);
+}
+
+.lx-ref-profile__consult .wp-block-button__link {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #dcb875, #bb8c46) !important;
+  color: white !important;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Footer aligned to reference art. */
+.lexora-footer-shell,
+.buildora-footer.lexora-footer-shell {
+  min-height: 80px;
+  background: var(--lx-ref-navy-deep) !important;
+}
+
+/* Responsive behavior matching mobile reference. */
+@media (max-width: 1100px) {
+  .lx-ref-attorney-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lx-ref-practice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lx-ref-result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .lx-ref-inner-hero__grid,
+  .lx-ref-profile__hero-grid,
+  .lx-ref-results__lower {
+    display: block !important;
+  }
+
+  .lx-ref-inner-hero__copy {
+    padding: 2.6rem 0 1.6rem;
+  }
+
+  .lx-ref-inner-hero__media {
+    min-height: 250px;
+  }
+
+  .lx-ref-inner-hero__media img {
+    min-height: 250px;
+  }
+
+  .lx-ref-directory__toolbar {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .lx-ref-directory__toolbar label {
+    justify-content: space-between;
+  }
+
+  .lx-ref-directory__toolbar select {
+    min-width: 0;
+    width: 58%;
+  }
+
+  .lx-ref-attorney-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lx-ref-practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lx-ref-result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lx-ref-profile__hero {
+    background: var(--lx-ref-navy-deep);
+  }
+
+  .lx-ref-profile__portrait {
+    min-height: 420px;
+  }
+
+  .lx-ref-profile__facts-grid {
+    display: block !important;
+  }
+
+  .lx-ref-profile__facts-grid > .wp-block-column {
+    padding: 1.5rem 0;
+    border-right: 0;
+    border-bottom: 1px solid #d7cabb;
+  }
+
+  .lx-ref-profile__facts-grid > .wp-block-column:last-child {
+    border-bottom: 0;
+  }
+
+  .lx-ref-profile__focus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lx-ref-results-form__contact {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .lexora-header__logo img {
+    display: none;
+  }
+
+  .lexora-header__brand-text,
+  .buildora-header__brand .wp-block-site-title a {
+    font-size: 2rem !important;
+  }
+
+  .lx-ref-inner-hero__title,
+  .lx-ref-profile__name,
+  .lx-ref-results__title {
+    font-size: clamp(2.7rem, 13vw, 4rem) !important;
+  }
+
+  .lx-ref-attorney-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lx-ref-directory__toolbar label {
+    display: grid;
+  }
+
+  .lx-ref-directory__toolbar select {
+    width: 100%;
+  }
+
+  .lx-ref-bottom-cta {
+    display: grid !important;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .lx-ref-results-form__form > div {
+    grid-template-columns: 1fr;
+  }
+
+  .lx-ref-profile__contact {
+    display: grid;
+    gap: 0.75rem;
+  }
+}

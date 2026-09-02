@@ -14,12 +14,36 @@
       "customDuotone": false,
       "customGradient": false,
       "palette": [
-        { "slug": "ink", "name": "Ink", "color": "#111315" },
-        { "slug": "paper", "name": "Paper", "color": "#FFFFFF" },
-        { "slug": "surface", "name": "Surface", "color": "#F4F5F2" },
-        { "slug": "muted", "name": "Muted", "color": "#62676B" },
-        { "slug": "brand", "name": "Brand", "color": "#F2B705" },
-        { "slug": "brand-dark", "name": "Brand Dark", "color": "#C89400" }
+        {
+          "slug": "ink",
+          "name": "Deep Navy",
+          "color": "#071423"
+        },
+        {
+          "slug": "paper",
+          "name": "Ivory",
+          "color": "#FBF8F2"
+        },
+        {
+          "slug": "surface",
+          "name": "Warm Parchment",
+          "color": "#F3EEE6"
+        },
+        {
+          "slug": "muted",
+          "name": "Slate",
+          "color": "#69727D"
+        },
+        {
+          "slug": "brand",
+          "name": "Antique Gold",
+          "color": "#C9A76B"
+        },
+        {
+          "slug": "brand-dark",
+          "name": "Deep Gold",
+          "color": "#8F6B35"
+        }
       ]
     },
     "spacing": {
@@ -28,14 +52,46 @@
       "padding": true,
       "units": ["px", "rem", "vw", "%"],
       "spacingSizes": [
-        { "slug": "10", "name": "2XS", "size": "0.25rem" },
-        { "slug": "20", "name": "XS", "size": "0.5rem" },
-        { "slug": "30", "name": "S", "size": "0.75rem" },
-        { "slug": "40", "name": "M", "size": "1rem" },
-        { "slug": "50", "name": "L", "size": "1.5rem" },
-        { "slug": "60", "name": "XL", "size": "2rem" },
-        { "slug": "70", "name": "2XL", "size": "clamp(2.5rem, 5vw, 4rem)" },
-        { "slug": "80", "name": "3XL", "size": "clamp(4rem, 8vw, 7rem)" }
+        {
+          "slug": "10",
+          "name": "2XS",
+          "size": "0.25rem"
+        },
+        {
+          "slug": "20",
+          "name": "XS",
+          "size": "0.5rem"
+        },
+        {
+          "slug": "30",
+          "name": "S",
+          "size": "0.75rem"
+        },
+        {
+          "slug": "40",
+          "name": "M",
+          "size": "1rem"
+        },
+        {
+          "slug": "50",
+          "name": "L",
+          "size": "1.5rem"
+        },
+        {
+          "slug": "60",
+          "name": "XL",
+          "size": "2rem"
+        },
+        {
+          "slug": "70",
+          "name": "2XL",
+          "size": "clamp(2.5rem, 5vw, 4rem)"
+        },
+        {
+          "slug": "80",
+          "name": "3XL",
+          "size": "clamp(4rem, 8vw, 7rem)"
+        }
       ]
     },
     "typography": {
@@ -46,15 +102,44 @@
           "slug": "sans",
           "name": "System Sans",
           "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+        },
+        {
+          "slug": "serif",
+          "name": "Editorial Serif",
+          "fontFamily": "Georgia, 'Times New Roman', Times, serif"
         }
       ],
       "fontSizes": [
-        { "slug": "xs", "name": "XS", "size": "0.875rem" },
-        { "slug": "sm", "name": "S", "size": "1rem" },
-        { "slug": "md", "name": "M", "size": "1.125rem" },
-        { "slug": "lg", "name": "L", "size": "clamp(1.25rem, 2vw, 1.5rem)" },
-        { "slug": "xl", "name": "XL", "size": "clamp(2rem, 4vw, 3rem)" },
-        { "slug": "hero", "name": "Hero", "size": "clamp(2.75rem, 7vw, 5.75rem)" }
+        {
+          "slug": "xs",
+          "name": "XS",
+          "size": "0.875rem"
+        },
+        {
+          "slug": "sm",
+          "name": "S",
+          "size": "1rem"
+        },
+        {
+          "slug": "md",
+          "name": "M",
+          "size": "1.125rem"
+        },
+        {
+          "slug": "lg",
+          "name": "L",
+          "size": "clamp(1.25rem, 2vw, 1.5rem)"
+        },
+        {
+          "slug": "xl",
+          "name": "XL",
+          "size": "clamp(2rem, 4vw, 3rem)"
+        },
+        {
+          "slug": "hero",
+          "name": "Hero",
+          "size": "clamp(3rem, 7vw, 6rem)"
+        }
       ]
     },
     "border": {
@@ -69,7 +154,7 @@
         {
           "slug": "soft",
           "name": "Soft",
-          "shadow": "0 18px 50px rgba(17, 19, 21, 0.10)"
+          "shadow": "0 24px 64px rgba(7, 20, 35, 0.12)"
         }
       ]
     }
@@ -89,50 +174,94 @@
     "typography": {
       "fontFamily": "var:preset|font-family|sans",
       "fontSize": "var:preset|font-size|sm",
-      "lineHeight": "1.6"
+      "lineHeight": "1.65"
     },
     "elements": {
       "heading": {
         "typography": {
-          "fontWeight": "750",
-          "lineHeight": "1.05",
-          "letterSpacing": "-0.035em"
+          "fontFamily": "var:preset|font-family|serif",
+          "fontWeight": "500",
+          "lineHeight": "1.03",
+          "letterSpacing": "-0.03em"
         }
       },
       "link": {
-        "color": { "text": "var:preset|color|ink" },
-        ":hover": { "color": { "text": "var:preset|color|brand-dark" } },
-        ":focus": { "outline": { "color": "var:preset|color|ink", "style": "solid", "width": "2px" } }
+        "color": {
+          "text": "var:preset|color|ink"
+        },
+        ":hover": {
+          "color": {
+            "text": "var:preset|color|brand-dark"
+          }
+        },
+        ":focus": {
+          "outline": {
+            "color": "var:preset|color|brand",
+            "style": "solid",
+            "width": "2px"
+          }
+        }
       },
       "button": {
-        "border": { "radius": "999px" },
+        "border": {
+          "radius": "0.125rem"
+        },
         "color": {
           "background": "var:preset|color|brand",
           "text": "var:preset|color|ink"
         },
         "spacing": {
           "padding": {
-            "top": "0.85rem",
-            "right": "1.25rem",
-            "bottom": "0.85rem",
-            "left": "1.25rem"
+            "top": "0.9rem",
+            "right": "1.4rem",
+            "bottom": "0.9rem",
+            "left": "1.4rem"
           }
         },
-        "typography": { "fontWeight": "700" },
-        ":hover": { "color": { "background": "var:preset|color|brand-dark" } },
-        ":focus": { "outline": { "color": "var:preset|color|ink", "style": "solid", "width": "3px" } }
+        "typography": {
+          "fontWeight": "700",
+          "letterSpacing": "0.06em"
+        },
+        ":hover": {
+          "color": {
+            "background": "var:preset|color|brand-dark",
+            "text": "var:preset|color|paper"
+          }
+        },
+        ":focus": {
+          "outline": {
+            "color": "var:preset|color|brand",
+            "style": "solid",
+            "width": "3px"
+          }
+        }
       }
     },
     "blocks": {
       "core/navigation": {
-        "typography": { "fontWeight": "650" }
+        "typography": {
+          "fontWeight": "600"
+        }
       }
     }
   },
   "templateParts": [
-    { "name": "footer", "title": "Footer", "area": "footer" }
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    }
   ],
   "customTemplates": [
-    { "name": "project-case-study", "title": "Project Case Study", "postTypes": ["page"] }
+    {
+      "name": "attorney-profile",
+      "title": "Attorney Profile",
+      "postTypes": ["page"]
+    },
+    {
+      "name": "case-result",
+      "title": "Case Result",
+      "postTypes": ["page"]
+    }
   ]
 }
