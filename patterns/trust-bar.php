@@ -7,54 +7,15 @@
  * Description: Compact reassurance grid for a law firm homepage.
  */
 ?>
-<!-- wp:group {"align":"full","className":"buildora-trust","backgroundColor":"ink","textColor":"paper","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull buildora-trust has-paper-color has-ink-background-color has-text-color has-background">
-	<!-- wp:group {"align":"wide","className":"buildora-trust__grid","layout":{"type":"default"}} -->
-	<div class="wp-block-group alignwide buildora-trust__grid">
-		<!-- wp:group {"className":"buildora-trust__item","layout":{"type":"default"}} -->
-		<div class="wp-block-group buildora-trust__item">
-			<!-- wp:paragraph {"className":"buildora-trust__label"} -->
-			<p class="buildora-trust__label"><strong><?php esc_html_e( 'Confidentiality first', 'lexora' ); ?></strong></p>
-			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-trust__meta","fontSize":"xs"} -->
-			<p class="buildora-trust__meta has-xs-font-size"><?php esc_html_e( 'Discreet consultations', 'lexora' ); ?></p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:group {"className":"buildora-trust__item","layout":{"type":"default"}} -->
-		<div class="wp-block-group buildora-trust__item">
-			<!-- wp:paragraph {"className":"buildora-trust__label"} -->
-			<p class="buildora-trust__label"><strong><?php esc_html_e( 'Clear strategy', 'lexora' ); ?></strong></p>
-			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-trust__meta","fontSize":"xs"} -->
-			<p class="buildora-trust__meta has-xs-font-size"><?php esc_html_e( 'Practical next steps', 'lexora' ); ?></p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:group {"className":"buildora-trust__item","layout":{"type":"default"}} -->
-		<div class="wp-block-group buildora-trust__item">
-			<!-- wp:paragraph {"className":"buildora-trust__label"} -->
-			<p class="buildora-trust__label"><strong><?php esc_html_e( 'Responsive counsel', 'lexora' ); ?></strong></p>
-			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-trust__meta","fontSize":"xs"} -->
-			<p class="buildora-trust__meta has-xs-font-size"><?php esc_html_e( 'Direct communication', 'lexora' ); ?></p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
-
-		<!-- wp:group {"className":"buildora-trust__item","layout":{"type":"default"}} -->
-		<div class="wp-block-group buildora-trust__item">
-			<!-- wp:paragraph {"className":"buildora-trust__label"} -->
-			<p class="buildora-trust__label"><strong><?php esc_html_e( 'Established practice', 'lexora' ); ?></strong></p>
-			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"className":"buildora-trust__meta","fontSize":"xs"} -->
-			<p class="buildora-trust__meta has-xs-font-size"><?php esc_html_e( 'Experienced representation', 'lexora' ); ?></p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:group -->
+<!-- wp:group {"align":"full","className":"lexora-stat-bar","backgroundColor":"paper","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull lexora-stat-bar has-paper-background-color has-background">
+	<!-- wp:columns {"align":"wide","className":"lexora-stat-bar__grid"} -->
+	<div class="wp-block-columns alignwide lexora-stat-bar__grid">
+		<!-- wp:column {"className":"lexora-stat-bar__item"} --><div class="wp-block-column lexora-stat-bar__item"><p class="lexora-stat-bar__value">15+</p><p class="lexora-stat-bar__label"><?php esc_html_e( 'Years of Experience', 'lexora' ); ?></p></div><!-- /wp:column -->
+		<!-- wp:column {"className":"lexora-stat-bar__item"} --><div class="wp-block-column lexora-stat-bar__item"><p class="lexora-stat-bar__value">500+</p><p class="lexora-stat-bar__label"><?php esc_html_e( 'Cases Won', 'lexora' ); ?></p></div><!-- /wp:column -->
+		<!-- wp:column {"className":"lexora-stat-bar__item"} --><div class="wp-block-column lexora-stat-bar__item"><p class="lexora-stat-bar__value">98%</p><p class="lexora-stat-bar__label"><?php esc_html_e( 'Client Satisfaction', 'lexora' ); ?></p></div><!-- /wp:column -->
+		<!-- wp:column {"className":"lexora-stat-bar__item"} --><div class="wp-block-column lexora-stat-bar__item"><p class="lexora-stat-bar__value">24/7</p><p class="lexora-stat-bar__label"><?php esc_html_e( 'Client Support', 'lexora' ); ?></p></div><!-- /wp:column -->
 	</div>
-	<!-- /wp:group -->
+	<!-- /wp:columns -->
 </div>
 <!-- /wp:group -->
