@@ -1,0 +1,658 @@
+/* Homepage-only marketplace composition for Lexora. */
+
+body.home {
+  --lx-navy: #04162e;
+  --lx-navy-deep: #020f22;
+  --lx-gold: #d3ab66;
+  --lx-gold-light: #e2c181;
+  --lx-paper: #f7f3ed;
+  --lx-paper-soft: #fcfaf6;
+  --lx-ink: #1a1a1a;
+}
+
+body.home .wp-site-blocks {
+  background: var(--lx-paper);
+}
+
+body.home .lexora-header {
+  background: linear-gradient(180deg, #061a35, #031429);
+  border-bottom: 1px solid rgb(211 171 102 / 16%);
+}
+
+body.home .lexora-header__inner {
+  min-height: 94px;
+}
+
+body.home .lexora-header__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.95rem;
+  color: #f8f1e7;
+  text-decoration: none;
+}
+
+body.home .lexora-header__logo img {
+  width: 54px;
+  height: 54px;
+}
+
+body.home .lexora-header__logo span {
+  font-family: var(--wp--preset--font-family--serif);
+  font-size: clamp(2rem, 1.4rem + 1.1vw, 2.9rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+body.home .lexora-primary-nav .wp-block-navigation-item__content {
+  color: #f8f3ec;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+body.home .lexora-primary-nav .wp-block-navigation-item:first-child .wp-block-navigation-item__content {
+  color: var(--lx-gold-light);
+  position: relative;
+}
+
+body.home .lexora-primary-nav .wp-block-navigation-item:first-child .wp-block-navigation-item__content::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.8rem;
+  left: 0;
+  height: 1px;
+  background: var(--lx-gold);
+  content: '';
+}
+
+body.home .lexora-header__cta .wp-block-button__link {
+  min-height: 50px;
+  padding: 0.9rem 1.55rem;
+  border: 1px solid var(--lx-gold);
+  border-radius: 3px;
+  background: linear-gradient(180deg, #dfbd7d, #c49a58);
+  box-shadow: none;
+  color: #fff;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.home .lexora-hero-visual {
+  overflow: hidden;
+  padding: 0;
+  background: linear-gradient(90deg, #071f40 0%, #041a36 47%, #020f22 100%) !important;
+  color: #f9f3ea;
+}
+
+body.home .lexora-hero-visual__grid {
+  min-height: 590px;
+  margin-bottom: 0;
+  gap: 0;
+}
+
+body.home .lexora-hero-visual__content {
+  padding: clamp(3.5rem, 5vw, 5.5rem) clamp(2rem, 4.5vw, 4.8rem) clamp(3.8rem, 5vw, 5.4rem) 0;
+}
+
+body.home .lexora-hero-visual__eyebrow {
+  margin: 0 0 1.35rem;
+  color: var(--lx-gold);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+body.home .lexora-hero-visual__title {
+  margin: 0;
+  color: #f8f1e7;
+  font-family: var(--wp--preset--font-family--serif);
+  font-size: clamp(4rem, 5.3vw, 6.2rem) !important;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+body.home .lexora-hero-visual__title span {
+  display: block;
+}
+
+body.home .lexora-hero-visual__title-accent {
+  margin-top: 0.08em;
+  color: var(--lx-gold);
+}
+
+body.home .lexora-hero-visual__divider,
+body.home .lexora-showcase-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+body.home .lexora-hero-visual__divider {
+  margin: 1.65rem 0 1.55rem;
+}
+
+body.home .lexora-hero-visual__divider span {
+  width: 116px;
+  height: 1px;
+  background: rgb(211 171 102 / 72%);
+}
+
+body.home .lexora-hero-visual__divider i,
+body.home .lexora-showcase-divider i {
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--lx-gold);
+  transform: rotate(45deg);
+}
+
+body.home .lexora-hero-visual__lead {
+  max-width: 34rem;
+  margin: 0;
+  color: rgb(249 243 234 / 88%) !important;
+  font-size: 1.08rem !important;
+  line-height: 1.68;
+}
+
+body.home .lexora-hero-visual__actions {
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+body.home .lexora-hero-visual__actions .wp-block-button__link {
+  min-width: 220px;
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  padding: 0.9rem 1.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.home .lexora-hero-visual__actions .wp-block-button:first-child .wp-block-button__link {
+  border: 1px solid var(--lx-gold);
+  background: linear-gradient(180deg, #dfbd7d, #c49a58) !important;
+  color: #fff !important;
+}
+
+body.home .lexora-hero-visual__actions .is-style-outline .wp-block-button__link {
+  border: 1px solid rgb(224 190 128 / 48%) !important;
+  background: transparent !important;
+  color: #fff !important;
+}
+
+body.home .lexora-hero-visual__media-column,
+body.home .lexora-hero-visual__image,
+body.home .lexora-hero-visual__image img {
+  height: 100%;
+  min-height: 590px;
+}
+
+body.home .lexora-hero-visual__image {
+  width: 100%;
+  margin: 0;
+}
+
+body.home .lexora-hero-visual__image img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+body.home .lexora-stat-bar {
+  margin: 0;
+  border-block: 1px solid rgb(5 25 51 / 11%);
+  background: linear-gradient(180deg, #fffdf9, #f2ede6) !important;
+}
+
+body.home .lexora-stat-bar__grid {
+  gap: 0;
+  margin: 0;
+}
+
+body.home .lexora-stat-bar__item {
+  padding: 1.2rem 1rem 1.3rem;
+  border-right: 1px solid rgb(5 25 51 / 11%);
+  text-align: center;
+}
+
+body.home .lexora-stat-bar__item:last-child {
+  border-right: 0;
+}
+
+body.home .lexora-stat-bar__value {
+  margin: 0 0 0.28rem;
+  color: #b68949;
+  font-family: var(--wp--preset--font-family--serif);
+  font-size: clamp(2rem, 2.1vw, 2.8rem);
+  line-height: 1;
+}
+
+body.home .lexora-stat-bar__label {
+  margin: 0;
+  color: #454545;
+  font-family: var(--wp--preset--font-family--serif);
+  font-size: 0.94rem;
+}
+
+body.home .lexora-home-showcase {
+  padding: 1.05rem max(1rem, calc((100vw - var(--wp--style--global--wide-size)) / 2)) 1.15rem;
+  background: var(--lx-paper);
+}
+
+body.home .lexora-home-showcase__inner {
+  display: grid;
+  grid-template-columns: 1.05fr 1.7fr 0.72fr;
+  gap: 0.9rem;
+  align-items: stretch;
+}
+
+body.home .lexora-showcase-panel,
+body.home .lexora-contact-mini {
+  min-width: 0;
+  border: 1px solid rgb(5 25 51 / 13%);
+  border-radius: 11px;
+  box-shadow: 0 8px 28px rgb(5 25 51 / 7%);
+}
+
+body.home .lexora-showcase-panel {
+  padding: 1.25rem 1rem 1.05rem;
+  background: #fcfaf7;
+}
+
+body.home .lexora-showcase-heading {
+  text-align: center;
+}
+
+body.home .lexora-showcase-heading h2 {
+  margin: 0;
+  color: #202020;
+  font-family: var(--wp--preset--font-family--serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+body.home .lexora-showcase-heading p {
+  margin: 0.45rem 0 0;
+  color: #5b5b5b;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+body.home .lexora-showcase-divider {
+  justify-content: center;
+  margin: 0.42rem 0;
+}
+
+body.home .lexora-showcase-divider span {
+  width: 46px;
+  height: 1px;
+  background: rgb(186 140 74 / 48%);
+}
+
+body.home .lexora-showcase-divider i {
+  width: 6px;
+  height: 6px;
+  border-width: 1px;
+}
+
+body.home .lexora-practice-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 1.1rem;
+}
+
+body.home .lexora-practice-mini {
+  padding: 0 0.65rem;
+  border-right: 1px solid rgb(5 25 51 / 9%);
+  text-align: center;
+}
+
+body.home .lexora-practice-mini:last-child {
+  border-right: 0;
+}
+
+body.home .lexora-practice-mini__icon {
+  min-height: 42px;
+  display: grid;
+  place-items: center;
+  color: #18212e;
+  font-size: 1.85rem;
+}
+
+body.home .lexora-practice-mini h3,
+body.home .lexora-attorney-mini h3 {
+  color: #242424;
+  font-family: var(--wp--preset--font-family--serif);
+  font-weight: 500;
+}
+
+body.home .lexora-practice-mini h3 {
+  margin: 0.45rem 0 0.4rem;
+  font-size: 0.88rem;
+}
+
+body.home .lexora-practice-mini p {
+  margin: 0;
+  color: #666;
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+body.home .lexora-showcase-button {
+  width: fit-content;
+  display: block;
+  margin: 1.2rem auto 0;
+  padding: 0.72rem 1.35rem;
+  border-radius: 3px;
+  background: #041a36;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+body.home .lexora-attorney-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.72rem;
+  margin-top: 0.85rem;
+}
+
+body.home .lexora-attorney-mini {
+  overflow: hidden;
+  border: 1px solid rgb(5 25 51 / 10%);
+  background: #fff;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+}
+
+body.home .lexora-attorney-mini__portrait {
+  aspect-ratio: 0.88 / 1;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 50% 22%, rgb(213 171 102 / 20%), transparent 32%),
+    linear-gradient(155deg, #262b31, #090d13);
+  color: #e0bf82;
+  font-family: var(--wp--preset--font-family--serif);
+  font-size: 2rem;
+}
+
+body.home .lexora-attorney-mini h3 {
+  margin: 0.62rem 0 0.15rem;
+  padding: 0 0.25rem;
+  font-size: 0.83rem;
+}
+
+body.home .lexora-attorney-mini p {
+  margin: 0;
+  padding: 0 0.25rem;
+  color: #626262;
+  font-size: 0.66rem;
+}
+
+body.home .lexora-attorney-mini small {
+  display: block;
+  padding: 0.52rem 0 0.62rem;
+  color: #222;
+  font-size: 0.63rem;
+}
+
+body.home .lexora-contact-mini {
+  padding: 1.05rem 0.85rem 1rem;
+  background: linear-gradient(180deg, #061b39, #031429);
+  color: #f8f1e7;
+}
+
+body.home .lexora-showcase-heading--dark h2 {
+  color: #f8f1e7;
+}
+
+body.home .lexora-showcase-heading--dark p {
+  color: rgb(248 241 231 / 78%);
+}
+
+body.home .lexora-contact-mini__form {
+  display: grid;
+  gap: 0.42rem;
+  margin-top: 0.95rem;
+}
+
+body.home .lexora-contact-mini__form input,
+body.home .lexora-contact-mini__form textarea {
+  width: 100%;
+  min-height: 35px;
+  box-sizing: border-box;
+  border: 1px solid rgb(5 25 51 / 12%);
+  border-radius: 2px;
+  background: #fcfaf7;
+  color: #222;
+  padding: 0.52rem 0.6rem;
+  font: inherit;
+  font-size: 0.68rem;
+}
+
+body.home .lexora-contact-mini__form textarea {
+  min-height: 72px;
+  resize: vertical;
+}
+
+body.home .lexora-contact-mini__form button {
+  min-height: 37px;
+  border: 0;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #dbb978, #bd914f);
+  color: #fff;
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body.home .lexora-contact-mini__details {
+  margin-top: 0.8rem;
+  border-top: 1px solid rgb(213 171 102 / 18%);
+}
+
+body.home .lexora-contact-mini__details p {
+  margin: 0;
+  padding: 0.68rem 0;
+  border-bottom: 1px solid rgb(213 171 102 / 13%);
+  color: rgb(248 241 231 / 78%);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+body.home .lexora-contact-mini__details span {
+  margin-right: 0.35rem;
+  color: var(--lx-gold);
+}
+
+body.home .lexora-contact-mini__details strong {
+  color: #fff;
+  font-weight: 500;
+}
+
+body.home .lexora-footer-shell {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgb(213 171 102 / 16%);
+  background: linear-gradient(180deg, #04172f, #021124) !important;
+}
+
+body.home .lexora-footer-shell__inner {
+  min-height: 92px;
+  gap: 1rem;
+}
+
+body.home .lexora-footer-shell__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--lx-gold);
+}
+
+body.home .lexora-footer-shell__mark {
+  font-size: 1.9rem;
+}
+
+body.home .lexora-footer-shell__brand strong,
+body.home .lexora-footer-shell__brand small {
+  display: block;
+}
+
+body.home .lexora-footer-shell__brand strong {
+  font-family: var(--wp--preset--font-family--serif);
+  font-size: 0.86rem;
+  letter-spacing: 0.05em;
+}
+
+body.home .lexora-footer-shell__brand small {
+  margin-top: 0.15rem;
+  color: rgb(248 241 231 / 64%);
+  font-size: 0.66rem;
+}
+
+body.home .lexora-footer-shell__nav {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+body.home .lexora-footer-shell__nav a {
+  color: #f8f1e7;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+body.home .lexora-footer-shell__social {
+  display: flex;
+  gap: 0.6rem;
+}
+
+body.home .lexora-footer-shell__social a {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgb(213 171 102 / 68%);
+  border-radius: 999px;
+  color: var(--lx-gold);
+  font-size: 0.72rem;
+  text-decoration: none;
+}
+
+@media (max-width: 1180px) {
+  body.home .lexora-home-showcase__inner {
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  body.home .lexora-contact-mini {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 900px) {
+  body.home .lexora-primary-nav,
+  body.home .lexora-header__cta {
+    display: none !important;
+  }
+
+  body.home .lexora-hero-visual__grid {
+    display: block;
+  }
+
+  body.home .lexora-hero-visual__content {
+    padding: 3rem 0 2rem;
+  }
+
+  body.home .lexora-hero-visual__media-column,
+  body.home .lexora-hero-visual__image,
+  body.home .lexora-hero-visual__image img {
+    min-height: 360px;
+  }
+
+  body.home .lexora-stat-bar__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  body.home .lexora-stat-bar__item:nth-child(2) {
+    border-right: 0;
+  }
+
+  body.home .lexora-stat-bar__item:nth-child(-n + 2) {
+    border-bottom: 1px solid rgb(5 25 51 / 11%);
+  }
+
+  body.home .lexora-home-showcase__inner {
+    grid-template-columns: 1fr;
+  }
+
+  body.home .lexora-contact-mini {
+    grid-column: auto;
+  }
+
+  body.home .lexora-footer-shell__inner,
+  body.home .lexora-footer-shell__nav {
+    justify-content: center !important;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 620px) {
+  body.home .lexora-header__logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  body.home .lexora-header__logo span {
+    font-size: 1.75rem;
+  }
+
+  body.home .lexora-hero-visual__title {
+    font-size: clamp(3rem, 14vw, 4.2rem) !important;
+  }
+
+  body.home .lexora-hero-visual__divider span {
+    width: 64px;
+  }
+
+  body.home .lexora-hero-visual__actions .wp-block-button,
+  body.home .lexora-hero-visual__actions .wp-block-button__link {
+    width: 100%;
+    min-width: 0;
+  }
+
+  body.home .lexora-practice-mini-grid,
+  body.home .lexora-attorney-mini-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  body.home .lexora-practice-mini:nth-child(2) {
+    border-right: 0;
+  }
+
+  body.home .lexora-practice-mini:nth-child(-n + 2) {
+    margin-bottom: 1rem;
+  }
+}
