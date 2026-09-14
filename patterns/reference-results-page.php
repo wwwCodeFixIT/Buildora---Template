@@ -17,27 +17,13 @@
 		url('https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&fit=crop&w=1800&q=88') center right / 58% 100% no-repeat,
 		#020e20 !important;
 }
-.lx-ref-results__title span {
-	color: var(--lx-ref-gold-light);
-}
-.lx-ref-results__lead {
-	max-width: 39rem;
-}
-.lx-ref-result-grid {
-	margin-top: 1.7rem !important;
-}
-.lx-ref-result-grid article {
-	min-height: 182px;
-	padding: 1.25rem 1.3rem;
-}
-.lx-ref-results__lower {
-	align-items: stretch !important;
-}
+.lx-ref-results__title span { color: var(--lx-ref-gold-light); }
+.lx-ref-results__lead { max-width: 39rem; }
+.lx-ref-result-grid { margin-top: 1.7rem !important; }
+.lx-ref-result-grid article { min-height: 182px; padding: 1.25rem 1.3rem; }
+.lx-ref-results__lower { align-items: stretch !important; }
 .lx-ref-testimonial-panel,
-.lx-ref-results-form {
-	min-height: 430px;
-	box-sizing: border-box;
-}
+.lx-ref-results-form { min-height: 430px; box-sizing: border-box; }
 .lx-ref-testimonial-panel {
 	position: relative;
 	overflow: hidden;
@@ -55,10 +41,7 @@
 	content: '';
 	pointer-events: none;
 }
-.lx-ref-testimonial-panel > * {
-	position: relative;
-	z-index: 1;
-}
+.lx-ref-testimonial-panel > * { position: relative; z-index: 1; }
 .lx-ref-testimonial-panel__quote-wrap {
 	display: grid;
 	grid-template-columns: 42px 1fr;
@@ -72,12 +55,8 @@
 	font-size: 4.25rem;
 	line-height: .8;
 }
-.lx-ref-testimonial-panel__quote {
-	margin: 0 !important;
-}
-.lx-ref-testimonial-panel__author {
-	margin-left: 3.6rem;
-}
+.lx-ref-testimonial-panel__quote { margin: 0 !important; }
+.lx-ref-testimonial-panel__author { margin-left: 3.6rem; }
 .lx-ref-testimonial-panel__avatar {
 	width: 64px;
 	height: 64px;
@@ -86,15 +65,8 @@
 	border-radius: 50%;
 	background: #1c2634;
 }
-.lx-ref-testimonial-panel__avatar img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	display: block;
-}
-.lx-ref-results-form {
-	padding: 2.55rem clamp(2rem, 3.6vw, 3.6rem) !important;
-}
+.lx-ref-testimonial-panel__avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lx-ref-results-form { padding: 2.55rem clamp(2rem, 3.6vw, 3.6rem) !important; }
 .lx-ref-results-form__layout {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) 220px;
@@ -102,10 +74,7 @@
 	align-items: start;
 	margin-top: 1.15rem;
 }
-.lx-ref-results-form__form {
-	max-width: none;
-	margin-top: 0 !important;
-}
+.lx-ref-results-form__form { max-width: none; margin-top: 0 !important; }
 .lx-ref-results-form__side {
 	display: grid;
 	gap: 1.15rem;
@@ -138,9 +107,7 @@
 	font-size: .9rem;
 }
 .lx-ref-results-form__contact strong,
-.lx-ref-results-form__contact span:not(.lx-ref-contact-icon) {
-	grid-column: 2;
-}
+.lx-ref-results-form__contact span:not(.lx-ref-contact-icon) { grid-column: 2; }
 .lx-ref-results-form__secure {
 	margin: .2rem 0 0;
 	padding-top: 1rem;
@@ -150,9 +117,7 @@
 	line-height: 1.5;
 }
 @media (max-width: 1050px) {
-	.lx-ref-results-form__layout {
-		grid-template-columns: 1fr;
-	}
+	.lx-ref-results-form__layout { grid-template-columns: 1fr; }
 	.lx-ref-results-form__side {
 		padding-left: 0;
 		padding-top: 1.2rem;
@@ -161,9 +126,7 @@
 	}
 }
 @media (max-width: 800px) {
-	.lx-ref-testimonial-panel__author {
-		margin-left: 0;
-	}
+	.lx-ref-testimonial-panel__author { margin-left: 0; }
 }
 </style>
 <!-- /wp:html -->
@@ -196,7 +159,7 @@
 			<!-- wp:paragraph {"className":"lx-ref-kicker"} --><p class="lx-ref-kicker"><?php esc_html_e( 'Client testimonials', 'lexora' ); ?></p><!-- /wp:paragraph -->
 			<!-- wp:heading {"level":2} --><h2 class="wp-block-heading"><?php esc_html_e( 'Trusted by Clients.', 'lexora' ); ?><br><span><?php esc_html_e( 'Proven by Results.', 'lexora' ); ?></span></h2><!-- /wp:heading -->
 			<!-- wp:html --><div class="lx-ref-testimonial-panel__quote-wrap"><div class="lx-ref-testimonial-panel__mark" aria-hidden="true">“</div><blockquote class="lx-ref-testimonial-panel__quote"><p><?php esc_html_e( 'The team at Lexora delivered exceptional service and achieved a result far beyond our expectations. Their dedication and professionalism are unmatched.', 'lexora' ); ?></p></blockquote></div><!-- /wp:html -->
-			<!-- wp:group {"className":"lx-ref-testimonial-panel__author","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} --><div class="wp-block-group lx-ref-testimonial-panel__author"><!-- wp:html --><div class="lx-ref-testimonial-panel__avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&amp;fit=crop&amp;w=160&amp;h=160&amp;q=82" alt="Michael T." /></div><!-- /wp:html --><!-- wp:paragraph --><p><strong>Michael T.</strong><br><span><?php esc_html_e( 'Personal Injury Client', 'lexora' ); ?></span></p><!-- /wp:paragraph --></div><!-- /wp:group -->
+			<!-- wp:group {"className":"lx-ref-testimonial-panel__author","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} --><div class="wp-block-group lx-ref-testimonial-panel__author"><!-- wp:html --><div class="lx-ref-testimonial-panel__avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&amp;fit=crop&amp;w=160&amp;h=160&amp;q=82" alt="" /></div><!-- /wp:html --><!-- wp:paragraph --><p><strong>Michael T.</strong><br><span><?php esc_html_e( 'Personal Injury Client', 'lexora' ); ?></span></p><!-- /wp:paragraph --></div><!-- /wp:group -->
 		</div>
 		<!-- /wp:column -->
 
@@ -208,9 +171,9 @@
 			<!-- wp:html -->
 			<div class="lx-ref-results-form__layout">
 				<form class="lx-ref-results-form__form" action="<?php echo esc_url( home_url( '/contact/#consultation' ) ); ?>" method="get">
-					<div><input type="text" name="name" placeholder="<?php echo esc_attr__( 'Your Name', 'lexora' ); ?>"><input type="email" name="email" placeholder="<?php echo esc_attr__( 'Your Email', 'lexora' ); ?>"></div>
-					<div><input type="tel" name="phone" placeholder="<?php echo esc_attr__( 'Phone Number', 'lexora' ); ?>"><select name="area"><option><?php esc_html_e( 'Practice Area', 'lexora' ); ?></option><option><?php esc_html_e( 'Business Law', 'lexora' ); ?></option><option><?php esc_html_e( 'Family Law', 'lexora' ); ?></option><option><?php esc_html_e( 'Litigation', 'lexora' ); ?></option></select></div>
-					<textarea name="message" rows="4" placeholder="<?php echo esc_attr__( 'How can we help you?', 'lexora' ); ?>"></textarea>
+					<div><input type="text" name="name" autocomplete="name" placeholder="<?php echo esc_attr__( 'Your Name', 'lexora' ); ?>" aria-label="<?php echo esc_attr__( 'Your Name', 'lexora' ); ?>"><input type="email" name="email" autocomplete="email" placeholder="<?php echo esc_attr__( 'Your Email', 'lexora' ); ?>" aria-label="<?php echo esc_attr__( 'Your Email', 'lexora' ); ?>"></div>
+					<div><input type="tel" name="phone" autocomplete="tel" placeholder="<?php echo esc_attr__( 'Phone Number', 'lexora' ); ?>" aria-label="<?php echo esc_attr__( 'Phone Number', 'lexora' ); ?>"><select name="area" aria-label="<?php echo esc_attr__( 'Practice Area', 'lexora' ); ?>"><option><?php esc_html_e( 'Practice Area', 'lexora' ); ?></option><option><?php esc_html_e( 'Business Law', 'lexora' ); ?></option><option><?php esc_html_e( 'Family Law', 'lexora' ); ?></option><option><?php esc_html_e( 'Litigation', 'lexora' ); ?></option></select></div>
+					<textarea name="message" rows="4" placeholder="<?php echo esc_attr__( 'How can we help you?', 'lexora' ); ?>" aria-label="<?php echo esc_attr__( 'How can we help you?', 'lexora' ); ?>"></textarea>
 					<button type="submit"><?php esc_html_e( 'Schedule Consultation', 'lexora' ); ?></button>
 				</form>
 				<div class="lx-ref-results-form__side">
