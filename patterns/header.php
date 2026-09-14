@@ -8,6 +8,20 @@
  * Description: Reusable sticky site header for legal practices with desktop and no-JS mobile navigation.
  */
 ?>
+<!-- wp:html -->
+<style>
+@media (min-width: 1100px) {
+	body:not(.home) .lexora-header__inner,
+	body:not(.home) :is(.lx-ref-page, .lx-ref-profile, .lx-ref-results) .alignwide,
+	body:not(.home) .lexora-footer-shell__inner,
+	body:not(.home) footer .alignwide {
+		width: 90vw !important;
+		max-width: none !important;
+		margin-inline: auto !important;
+	}
+}
+</style>
+<!-- /wp:html -->
 <!-- wp:group {"align":"full","className":"buildora-header lexora-header","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull buildora-header lexora-header">
 	<!-- wp:group {"align":"wide","className":"buildora-header__inner lexora-header__inner","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
