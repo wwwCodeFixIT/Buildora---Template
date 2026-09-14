@@ -46,7 +46,7 @@
 		<!-- wp:column {"verticalAlignment":"stretch","width":"54%","className":"lexora-hero-visual__media-column"} -->
 		<div class="wp-block-column is-vertically-aligned-stretch lexora-hero-visual__media-column" style="flex-basis:54%">
 			<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lexora-hero-visual__image"} -->
-			<figure class="wp-block-image size-full lexora-hero-visual__image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero-legal.svg' ) ); ?>" alt="" /></figure>
+			<figure class="wp-block-image size-full lexora-hero-visual__image"><img src="https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Illuminated classical courthouse columns at night" /></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->
