@@ -14,15 +14,15 @@
 	<div class="wp-block-group alignfull lx-ref-inner-hero">
 		<!-- wp:columns {"verticalAlignment":"stretch","className":"lx-ref-inner-hero__grid lx-ref-frame"} -->
 		<div class="wp-block-columns are-vertically-aligned-stretch lx-ref-inner-hero__grid lx-ref-frame">
-			<!-- wp:column {"verticalAlignment":"center","width":"52%","className":"lx-ref-inner-hero__copy"} -->
-			<div class="wp-block-column is-vertically-aligned-center lx-ref-inner-hero__copy" style="flex-basis:52%">
+			<!-- wp:column {"verticalAlignment":"center","width":"56%","className":"lx-ref-inner-hero__copy"} -->
+			<div class="wp-block-column is-vertically-aligned-center lx-ref-inner-hero__copy" style="flex-basis:56%">
 				<!-- wp:paragraph {"className":"lx-ref-kicker"} --><p class="lx-ref-kicker"><?php esc_html_e( 'Practice Areas', 'lexora' ); ?></p><!-- /wp:paragraph -->
-				<!-- wp:heading {"level":1,"className":"lx-ref-inner-hero__title"} --><h1 class="wp-block-heading lx-ref-inner-hero__title"><?php esc_html_e( 'Focused Legal Solutions. Proven Results.', 'lexora' ); ?></h1><!-- /wp:heading -->
+				<!-- wp:heading {"level":1,"className":"lx-ref-inner-hero__title lx-ref-practice__hero-title","style":{"typography":{"fontSize":"clamp(3rem, 4.2vw, 4.6rem)"}}} --><h1 class="wp-block-heading lx-ref-inner-hero__title lx-ref-practice__hero-title" style="font-size:clamp(3rem, 4.2vw, 4.6rem)"><span><?php esc_html_e( 'Focused Legal Solutions.', 'lexora' ); ?></span><br><span><?php esc_html_e( 'Proven Results.', 'lexora' ); ?></span></h1><!-- /wp:heading -->
 				<!-- wp:paragraph {"className":"lx-ref-inner-hero__lead"} --><p class="lx-ref-inner-hero__lead"><?php esc_html_e( 'At Lexora Law Group, we provide strategic legal counsel across a wide range of practice areas to help individuals and organizations navigate complex legal challenges.', 'lexora' ); ?></p><!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:column -->
-			<!-- wp:column {"verticalAlignment":"stretch","width":"48%","className":"lx-ref-inner-hero__media"} -->
-			<div class="wp-block-column is-vertically-aligned-stretch lx-ref-inner-hero__media" style="flex-basis:48%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} --><figure class="wp-block-image size-full"><img src="https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&amp;fit=crop&amp;w=1800&amp;q=88" alt="Illuminated classical courthouse columns at night" /></figure><!-- /wp:image --></div>
+			<!-- wp:column {"verticalAlignment":"stretch","width":"44%","className":"lx-ref-inner-hero__media"} -->
+			<div class="wp-block-column is-vertically-aligned-stretch lx-ref-inner-hero__media" style="flex-basis:44%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} --><figure class="wp-block-image size-full"><img src="https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&amp;fit=crop&amp;w=1800&amp;q=88" alt="Illuminated classical courthouse columns at night" /></figure><!-- /wp:image --></div>
 			<!-- /wp:column -->
 		</div>
 		<!-- /wp:columns -->
