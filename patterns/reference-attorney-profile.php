@@ -19,7 +19,7 @@
 		<!-- wp:columns {"align":"wide","verticalAlignment":"stretch","className":"lx-ref-profile__hero-grid"} -->
 		<div class="wp-block-columns alignwide are-vertically-aligned-stretch lx-ref-profile__hero-grid">
 			<!-- wp:column {"verticalAlignment":"stretch","width":"27%","className":"lx-ref-profile__portrait"} -->
-			<div class="wp-block-column is-vertically-aligned-stretch lx-ref-profile__portrait" style="flex-basis:27%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lx-ref-profile__fallback"} --><figure class="wp-block-image size-full lx-ref-profile__fallback"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/attorney-sophia.svg' ) ); ?>" alt="" /></figure><!-- /wp:image --><!-- wp:post-featured-image {"sizeSlug":"large","className":"lx-ref-profile__featured"} /--></div>
+			<div class="wp-block-column is-vertically-aligned-stretch lx-ref-profile__portrait" style="flex-basis:27%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lx-ref-profile__fallback"} --><figure class="wp-block-image size-full lx-ref-profile__fallback"><img src="https://images.unsplash.com/photo-1758518727888-ffa196002e59?auto=format&amp;fit=crop&amp;w=900&amp;h=1100&amp;q=84" alt="Sophia Langford" /></figure><!-- /wp:image --><!-- wp:post-featured-image {"sizeSlug":"large","className":"lx-ref-profile__featured"} /--></div>
 			<!-- /wp:column -->
 
 			<!-- wp:column {"verticalAlignment":"center","width":"73%","className":"lx-ref-profile__intro"} -->
