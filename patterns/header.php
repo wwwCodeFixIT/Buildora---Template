@@ -14,8 +14,9 @@
 	body:not(.home) .lexora-header__inner,
 	body:not(.home) :is(.lx-ref-page, .lx-ref-profile, .lx-ref-results) .alignwide,
 	body:not(.home) .lexora-footer-shell__inner,
-	body:not(.home) footer .alignwide {
-		width: 90vw !important;
+	body:not(.home) footer .alignwide,
+	body:not(.home) .lx-ref-frame {
+		width: min(90vw, 1600px) !important;
 		max-width: none !important;
 		margin-inline: auto !important;
 	}
