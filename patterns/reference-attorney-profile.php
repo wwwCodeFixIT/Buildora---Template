@@ -8,6 +8,20 @@
  * Description: Dynamic attorney profile matching the approved Lexora marketplace reference layout.
  */
 ?>
+<!-- wp:html -->
+<style>
+.lx-ref-profile__hero {
+	background:
+		linear-gradient(90deg, rgb(2 14 32 / 100%) 0%, rgb(2 14 32 / 90%) 58%, rgb(2 14 32 / 30%) 78%, rgb(2 14 32 / 8%) 100%),
+		url('https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&fit=crop&w=1800&q=88') right center / 52% 100% no-repeat,
+		#020e20 !important;
+}
+.lx-ref-profile__fallback img {
+	filter: grayscale(.16) saturate(.74) contrast(1.08) brightness(.86);
+	object-position: center top;
+}
+</style>
+<!-- /wp:html -->
 <!-- wp:group {"align":"full","className":"lx-ref-profile","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull lx-ref-profile">
 	<!-- wp:group {"align":"full","className":"lx-ref-profile__hero","layout":{"type":"constrained"}} -->
