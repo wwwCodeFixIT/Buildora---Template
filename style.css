@@ -18,6 +18,16 @@ Tags: block-patterns, full-site-editing, custom-logo, featured-images
 
 /* Keep this file intentionally small. Production styles are built by Vite. */
 
+body.home .wp-site-blocks {
+  gap: 0;
+}
+
+body.home .wp-site-blocks > .wp-block-template-part,
+body.home .wp-site-blocks > main,
+body.home main#main {
+  margin-block-start: 0;
+}
+
 body.home .lexora-attorney-mini__portrait {
   overflow: hidden;
 }
