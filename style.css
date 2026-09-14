@@ -238,4 +238,138 @@ body.home main#main {
     max-width: none !important;
     margin-inline: auto !important;
   }
+
+  /* Inner pages reference lock. Home remains untouched above. */
+  html body:not(.home) .wp-site-blocks .lexora-header .lexora-header__inner {
+    width: min(1380px, calc(100% - 120px)) !important;
+    max-width: none !important;
+    min-height: 96px !important;
+    margin-inline: auto !important;
+  }
+
+  html body:not(.home) .lexora-header__logo {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    color: #f8f1e7 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+  }
+
+  html body:not(.home) .lexora-header__logo img {
+    width: 60px !important;
+    height: 60px !important;
+    flex: 0 0 auto !important;
+  }
+
+  html body:not(.home) .lexora-header__logo .lexora-header__brand-text {
+    display: inline-block !important;
+    color: #f8f1e7 !important;
+    font-family: var(--wp--preset--font-family--serif) !important;
+    font-size: clamp(2.4rem, 2.25vw, 3rem) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+  }
+
+  html body:not(.home) .lexora-header__actions {
+    flex: 1 1 auto !important;
+    margin-left: clamp(4rem, 7vw, 8rem) !important;
+  }
+
+  html body:not(.home) .lexora-primary-nav {
+    margin-right: clamp(2rem, 3vw, 4rem) !important;
+  }
+
+  html body:not(.home) :is(.lx-ref-page, .lx-ref-profile, .lx-ref-results) .alignwide {
+    width: min(1380px, calc(100% - 120px)) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+  }
+
+  html body:not(.home) .lx-ref-inner-hero__grid {
+    min-height: 410px !important;
+  }
+
+  html body:not(.home) .lx-ref-inner-hero__copy {
+    padding: 4rem clamp(2rem, 4vw, 4.8rem) 4rem 0 !important;
+  }
+
+  html body:not(.home) .lx-ref-inner-hero__media,
+  html body:not(.home) .lx-ref-inner-hero__media figure,
+  html body:not(.home) .lx-ref-inner-hero__media img {
+    min-height: 410px !important;
+  }
+
+  html body:not(.home) .lx-ref-practice__body {
+    padding-bottom: 3rem !important;
+  }
+
+  html body:not(.home) .lx-ref-practice-grid {
+    gap: 1.35rem !important;
+  }
+
+  html body:not(.home) .lx-ref-practice-card {
+    min-height: 270px !important;
+    padding: 2.3rem 2rem !important;
+  }
+
+  html body:not(.home) .lx-ref-directory {
+    padding: 2.2rem 0 3.2rem !important;
+  }
+
+  html body:not(.home) .lx-ref-directory__toolbar {
+    margin-bottom: 1.8rem !important;
+  }
+
+  html body:not(.home) .lx-ref-attorney-grid {
+    gap: 1.15rem !important;
+  }
+
+  html body:not(.home) .lx-ref-attorney-card__media {
+    aspect-ratio: 0.88 !important;
+  }
+
+  html body:not(.home) .lx-ref-attorney-card h2 {
+    font-size: 1.28rem !important;
+  }
+
+  html body:not(.home) .lx-ref-bottom-cta {
+    margin-top: 2rem !important;
+    padding: 1.65rem 2.2rem !important;
+  }
+
+  html body:not(.home) .lx-ref-profile__hero-grid {
+    min-height: 410px !important;
+    gap: 3.2rem !important;
+  }
+
+  html body:not(.home) .lx-ref-profile__portrait {
+    min-height: 410px !important;
+  }
+
+  html body:not(.home) .lx-ref-profile__intro {
+    padding: 2.7rem 0 !important;
+  }
+
+  html body:not(.home) .lx-ref-profile__facts {
+    padding: 2.6rem 0 !important;
+  }
+
+  html body:not(.home) .lx-ref-profile__lower {
+    padding: 2.8rem 0 3.2rem !important;
+  }
+
+  html body:not(.home) .lx-ref-profile__consult {
+    padding: 2rem !important;
+  }
+
+  html body:not(.home) .wp-site-blocks footer .alignwide,
+  html body:not(.home) .wp-site-blocks .lexora-footer-shell__inner {
+    width: min(1380px, calc(100% - 120px)) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+  }
 }
