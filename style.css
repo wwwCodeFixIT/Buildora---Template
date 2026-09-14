@@ -85,3 +85,97 @@ body.home .lexora-attorney-mini__portrait img {
   border-radius: 0.25rem;
   box-shadow: 0 0 0 3px #b08d57;
 }
+
+/* Final homepage geometry pass against the supplied desktop reference. */
+body.home .wp-site-blocks,
+body.home .wp-site-blocks > *,
+body.home .lexora-header,
+body.home .lexora-header + main#main,
+body.home main#main,
+body.home main#main > *,
+body.home main#main > .lexora-hero-visual {
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+}
+
+body.home .lexora-header {
+  margin-bottom: 0 !important;
+}
+
+body.home main#main {
+  padding-top: 0 !important;
+}
+
+@media (min-width: 1100px) {
+  html body.home .wp-site-blocks .lexora-header .lexora-header__inner {
+    width: calc(100% - 140px) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-hero-visual__grid {
+    width: 100% !important;
+    max-width: none !important;
+    margin-inline: 0 !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-hero-visual__content {
+    flex-basis: 55% !important;
+    padding-left: 70px !important;
+    padding-right: clamp(3rem, 4vw, 5rem) !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-hero-visual__media-column {
+    flex-basis: 45% !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-hero-visual__media-column::before {
+    width: 30% !important;
+    background: linear-gradient(
+      90deg,
+      #041a37 0%,
+      rgb(4 26 55 / 92%) 24%,
+      rgb(4 26 55 / 54%) 58%,
+      transparent 100%
+    ) !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-hero-visual__image img {
+    object-position: 52% 52% !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-stat-bar__grid {
+    width: calc(100% - 160px) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-home-showcase {
+    padding: 2rem 18px 2.15rem !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-home-showcase__inner {
+    width: calc(100% - 36px) !important;
+    max-width: none !important;
+    min-height: 430px !important;
+    margin-inline: auto !important;
+    grid-template-columns: 1.08fr 1.78fr 0.78fr !important;
+    gap: 1rem !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-showcase-panel,
+  html body.home .wp-site-blocks main#main .lexora-contact-mini {
+    min-height: 430px !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-attorney-mini__portrait {
+    min-height: 225px !important;
+  }
+
+  html body.home .wp-site-blocks footer .alignwide,
+  html body.home .wp-site-blocks .lexora-footer-shell__inner {
+    width: calc(100% - 140px) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+  }
+}
