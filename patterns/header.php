@@ -26,6 +26,68 @@
 		margin-inline: auto !important;
 		box-sizing: border-box !important;
 	}
+
+	/* Attorneys: keep the directory closer to the compact marketplace reference. */
+	html body:not(.home) .lx-ref-attorneys .lx-ref-inner-hero__grid,
+	html body:not(.home) .lx-ref-attorneys .lx-ref-inner-hero__media,
+	html body:not(.home) .lx-ref-attorneys .lx-ref-inner-hero__media figure,
+	html body:not(.home) .lx-ref-attorneys .lx-ref-inner-hero__media img {
+		min-height: 360px !important;
+	}
+
+	html body:not(.home) .lx-ref-attorneys .lx-ref-inner-hero__copy {
+		flex-basis: 58% !important;
+		padding-block: 3.25rem !important;
+	}
+
+	html body:not(.home) .lx-ref-attorneys .lx-ref-inner-hero__media {
+		flex-basis: 42% !important;
+	}
+
+	html body:not(.home) .lx-ref-attorneys .lx-ref-directory {
+		padding-top: 1.9rem !important;
+		padding-bottom: 2.6rem !important;
+	}
+
+	html body:not(.home) .lx-ref-attorneys .lx-ref-attorney-card__media {
+		aspect-ratio: 0.96 !important;
+	}
+
+	html body:not(.home) .lx-ref-attorneys .lx-ref-attorney-card__body {
+		padding: 0.68rem 0.55rem 0.78rem !important;
+	}
+
+	html body:not(.home) .lx-ref-attorneys .lx-ref-attorney-card p {
+		margin-block: 0.18rem !important;
+	}
+
+	/* Attorney profile: reduce portrait dominance and tighten the lower navy section. */
+	html body:not(.home) .lx-ref-profile .lx-ref-profile__hero-grid {
+		min-height: 370px !important;
+		gap: 2.75rem !important;
+	}
+
+	html body:not(.home) .lx-ref-profile .lx-ref-profile__portrait {
+		flex-basis: 24.5% !important;
+		min-height: 370px !important;
+	}
+
+	html body:not(.home) .lx-ref-profile .lx-ref-profile__intro {
+		flex-basis: 75.5% !important;
+		padding-block: 2.2rem !important;
+	}
+
+	html body:not(.home) .lx-ref-profile .lx-ref-profile__facts {
+		padding-block: 2.25rem !important;
+	}
+
+	html body:not(.home) .lx-ref-profile .lx-ref-profile__lower {
+		padding: 2.15rem 0 2.45rem !important;
+	}
+
+	html body:not(.home) .lx-ref-profile .lx-ref-profile__consult {
+		padding: 1.7rem !important;
+	}
 }
 </style>
 <!-- /wp:html -->
