@@ -61,22 +61,40 @@ foreach (
 
 $attorney_profiles = array(
 	array(
-		'title'   => 'Eleanor Mercer',
-		'slug'    => 'eleanor-mercer',
-		'excerpt' => 'Managing Partner focused on commercial disputes, strategic contracts and corporate risk.',
-		'content' => '<!-- wp:paragraph {"fontSize":"xs","textColor":"muted"} --><p class="has-muted-color has-text-color has-xs-font-size"><strong>Demo content:</strong> Eleanor Mercer is a fictional attorney profile included only to demonstrate the theme layout.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Prepared for complexity. Focused on the decision in front of you.</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Eleanor advises businesses and senior decision-makers when a legal problem carries commercial consequences. Her approach identifies the leverage points, preserves options and keeps the next decision clear.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Advice stays direct: what matters now, what can wait, what the evidence supports and what each route may cost in time, money and management attention.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Representative matters</h2><!-- /wp:heading --><!-- wp:list {"className":"lexora-profile__matter-list"} --><ul class="wp-block-list lexora-profile__matter-list"><li>Advising a founder-led business through a complex shareholder dispute and negotiated exit.</li><li>Defending a services company against a substantial breach-of-contract claim.</li><li>Structuring strategic supplier agreements for a growing professional-services group.</li></ul><!-- /wp:list --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Credentials</h2><!-- /wp:heading --><!-- wp:list {"className":"lexora-profile__credential-list"} --><ul class="wp-block-list lexora-profile__credential-list"><li>Managing Partner — demo role</li><li>Commercial disputes and corporate advisory</li><li>LL.M., Commercial Law — illustrative credential</li></ul><!-- /wp:list -->',
+		'title'   => 'David Whitmore',
+		'slug'    => 'david-whitmore',
+		'excerpt' => 'Founding Partner focused on corporate law, strategic transactions and high-stakes business matters.',
+		'content' => '<!-- wp:paragraph --><p>David Whitmore advises founders, boards and established businesses on corporate strategy, contracts, governance and complex commercial decisions.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>His approach combines clear legal analysis with practical commercial judgment and disciplined preparation.</p><!-- /wp:paragraph -->',
 	),
 	array(
-		'title'   => 'Daniel Moore',
-		'slug'    => 'daniel-moore',
-		'excerpt' => 'Senior Associate advising on employment issues, contract disputes and negotiated resolutions.',
-		'content' => '<!-- wp:paragraph {"fontSize":"xs","textColor":"muted"} --><p class="has-muted-color has-text-color has-xs-font-size"><strong>Demo content:</strong> Daniel Moore is a fictional attorney profile included only to demonstrate the theme layout.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Clear advice when people and contracts collide.</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Daniel works with employers and senior professionals on employment risk, contractual disputes and sensitive negotiations. He focuses on resolving uncertainty early and preparing thoroughly when formal action is necessary.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Representative matters</h2><!-- /wp:heading --><!-- wp:list {"className":"lexora-profile__matter-list"} --><ul class="wp-block-list lexora-profile__matter-list"><li>Supporting a company through a senior executive exit and confidential settlement.</li><li>Advising on post-termination restrictions and contract enforcement.</li><li>Resolving a services agreement dispute through structured negotiation.</li></ul><!-- /wp:list --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Credentials</h2><!-- /wp:heading --><!-- wp:list {"className":"lexora-profile__credential-list"} --><ul class="wp-block-list lexora-profile__credential-list"><li>Senior Associate — demo role</li><li>Employment and contract disputes</li><li>Professional qualifications — illustrative content</li></ul><!-- /wp:list -->',
+		'title'   => 'Sophia Langford',
+		'slug'    => 'sophia-langford',
+		'excerpt' => 'Senior Counsel with over 15 years of experience delivering strategic legal solutions and exceptional client service.',
+		'content' => '<!-- wp:paragraph --><p>Sophia Langford focuses on complex litigation and business law, providing clients with practical guidance and assertive representation.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>She is known for her analytical approach and commitment to achieving favorable outcomes while keeping clients informed at every stage.</p><!-- /wp:paragraph -->',
 	),
 	array(
-		'title'   => 'Sophia Carter',
-		'slug'    => 'sophia-carter',
-		'excerpt' => 'Associate focused on property, ownership questions and private-client matters.',
-		'content' => '<!-- wp:paragraph {"fontSize":"xs","textColor":"muted"} --><p class="has-muted-color has-text-color has-xs-font-size"><strong>Demo content:</strong> Sophia Carter is a fictional attorney profile included only to demonstrate the theme layout.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Calm guidance for decisions with personal consequences.</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Sophia supports clients on property transactions, ownership disputes and private-client issues. Her work combines careful documentation with a practical explanation of the available routes and their likely consequences.</p><!-- /wp:paragraph --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Representative matters</h2><!-- /wp:heading --><!-- wp:list {"className":"lexora-profile__matter-list"} --><ul class="wp-block-list lexora-profile__matter-list"><li>Advising on a disputed beneficial ownership position.</li><li>Supporting a private client through a complex property transaction.</li><li>Negotiating practical terms to resolve a co-ownership disagreement.</li></ul><!-- /wp:list --><!-- wp:heading {"level":2} --><h2 class="wp-block-heading">Credentials</h2><!-- /wp:heading --><!-- wp:list {"className":"lexora-profile__credential-list"} --><ul class="wp-block-list lexora-profile__credential-list"><li>Associate — demo role</li><li>Property and private-client matters</li><li>Professional qualifications — illustrative content</li></ul><!-- /wp:list -->',
+		'title'   => 'James Carter',
+		'slug'    => 'james-carter',
+		'excerpt' => 'Litigation Attorney focused on disputes, personal injury matters and courtroom advocacy.',
+		'content' => '<!-- wp:paragraph --><p>James Carter represents clients in demanding disputes where preparation, evidence and strategy determine the outcome.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>He brings direct communication and a focused trial mindset to every matter.</p><!-- /wp:paragraph -->',
+	),
+	array(
+		'title'   => 'Olivia Bennett',
+		'slug'    => 'olivia-bennett',
+		'excerpt' => 'Real Estate Attorney advising on transactions, ownership matters and complex property issues.',
+		'content' => '<!-- wp:paragraph --><p>Olivia Bennett advises individuals, investors and businesses on real-estate transactions, property rights and negotiated resolutions.</p><!-- /wp:paragraph -->',
+	),
+	array(
+		'title'   => 'Michael Reeves',
+		'slug'    => 'michael-reeves',
+		'excerpt' => 'Criminal Defense Attorney providing strategic representation in complex and high-risk matters.',
+		'content' => '<!-- wp:paragraph --><p>Michael Reeves provides focused criminal-defense representation with careful case analysis, clear advice and disciplined advocacy.</p><!-- /wp:paragraph -->',
+	),
+	array(
+		'title'   => 'Isabella Mercer',
+		'slug'    => 'isabella-mercer',
+		'excerpt' => 'Estate Planning Attorney helping clients protect assets, plan succession and preserve their legacy.',
+		'content' => '<!-- wp:paragraph --><p>Isabella Mercer helps private clients structure estate plans, trusts and succession arrangements around their long-term goals.</p><!-- /wp:paragraph -->',
 	),
 );
 
