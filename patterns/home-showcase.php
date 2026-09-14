@@ -10,115 +10,207 @@
 ?>
 <!-- wp:html -->
 <style>
+body.home .wp-site-blocks {
+  gap: 0 !important;
+}
+
+body.home .wp-site-blocks > .wp-block-template-part,
+body.home .wp-site-blocks > main,
+body.home main#main {
+  margin-block-start: 0 !important;
+}
+
 @media (min-width: 900px) {
   body.home .lexora-header__inner,
-  body.home .lexora-hero-visual__grid,
   body.home .lexora-stat-bar__grid,
-  body.home .lexora-home-showcase__inner,
   body.home footer .alignwide {
-    width: calc(100% - 96px) !important;
-    max-width: 1640px !important;
+    width: min(calc(100% - 72px), 1500px) !important;
+    max-width: 1500px !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
   body.home .lexora-header__inner {
-    min-height: 84px !important;
+    min-height: 92px !important;
   }
 
   body.home .lexora-header__logo img {
-    width: 48px !important;
-    height: 48px !important;
+    width: 58px !important;
+    height: 58px !important;
   }
 
   body.home .lexora-header__logo span {
-    font-size: 2.45rem !important;
+    font-size: clamp(2.2rem, 2vw, 2.9rem) !important;
+    letter-spacing: .015em !important;
   }
 
   body.home .lexora-primary-nav .wp-block-navigation-item__content {
-    font-size: .78rem !important;
+    font-size: .8rem !important;
+    letter-spacing: .09em !important;
   }
 
   body.home .lexora-hero-visual__grid {
-    min-height: 550px !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 590px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    gap: 0 !important;
   }
 
   body.home .lexora-hero-visual__content {
-    padding: 4.8rem 4rem 4.5rem 0 !important;
+    flex-basis: 47% !important;
+    box-sizing: border-box;
+    padding: 5rem 4.25rem 4.75rem clamp(4rem, 7vw, 8.5rem) !important;
   }
 
   body.home .lexora-hero-visual__title {
-    font-size: clamp(4.5rem, 5vw, 5.8rem) !important;
-    line-height: .95 !important;
+    max-width: 700px !important;
+    font-size: clamp(4.5rem, 5vw, 5.95rem) !important;
+    line-height: .94 !important;
     letter-spacing: -.045em !important;
   }
 
   body.home .lexora-hero-visual__lead {
-    max-width: 39rem !important;
+    max-width: 38rem !important;
     font-size: 1.08rem !important;
+    line-height: 1.6 !important;
   }
 
-  body.home .lexora-hero-visual__media-column,
+  body.home .lexora-hero-visual__media-column {
+    position: relative;
+    flex-basis: 53% !important;
+    overflow: hidden;
+    min-height: 590px !important;
+    height: 590px !important;
+    isolation: isolate;
+  }
+
+  body.home .lexora-hero-visual__media-column::before {
+    position: absolute;
+    z-index: 2;
+    inset: 0 auto 0 0;
+    width: 24%;
+    pointer-events: none;
+    background: linear-gradient(90deg, #041a37 0%, rgb(4 26 55 / 84%) 28%, rgb(4 26 55 / 34%) 68%, transparent 100%);
+    content: '';
+  }
+
+  body.home .lexora-hero-visual__media-column::after {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgb(2 14 31 / 8%), rgb(2 14 31 / 22%));
+    content: '';
+  }
+
   body.home .lexora-hero-visual__image,
   body.home .lexora-hero-visual__image img {
-    min-height: 550px !important;
-    height: 550px !important;
+    min-height: 590px !important;
+    height: 590px !important;
+  }
+
+  body.home .lexora-hero-visual__image {
+    width: 100% !important;
+    margin: 0 !important;
   }
 
   body.home .lexora-hero-visual__image img {
-    object-position: 50% 52% !important;
+    width: 100% !important;
+    transform: scale(1.035);
+    transform-origin: center right;
+    object-fit: cover !important;
+    object-position: 56% 52% !important;
+    filter: brightness(.82) contrast(1.12) saturate(.82) sepia(.08);
   }
 
   body.home .lexora-stat-bar__item {
-    padding: 1.45rem 1rem 1.55rem !important;
+    padding: 1.55rem 1rem 1.65rem !important;
   }
 
   body.home .lexora-home-showcase {
-    padding: 1.35rem 48px 1.4rem !important;
+    padding: 2rem 48px 2.15rem !important;
   }
 
   body.home .lexora-home-showcase__inner {
-    grid-template-columns: 1.12fr 1.78fr .76fr !important;
+    width: min(100%, 1540px) !important;
+    max-width: 1540px !important;
+    min-height: 410px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    grid-template-columns: 1.05fr 1.72fr .75fr !important;
     gap: 1rem !important;
   }
 
   body.home .lexora-showcase-panel,
   body.home .lexora-contact-mini {
-    min-height: 360px;
+    min-height: 410px;
   }
 
   body.home .lexora-showcase-panel {
-    padding: 1.45rem 1.2rem 1.2rem !important;
+    padding: 1.55rem 1.2rem 1.35rem !important;
   }
 
   body.home .lexora-showcase-heading h2 {
-    font-size: 1.55rem !important;
+    font-size: 1.6rem !important;
   }
 
   body.home .lexora-showcase-heading p {
-    font-size: .78rem !important;
+    font-size: .82rem !important;
+  }
+
+  body.home .lexora-practice-mini-grid {
+    margin-top: 1.45rem !important;
+  }
+
+  body.home .lexora-practice-mini {
+    padding-left: .8rem !important;
+    padding-right: .8rem !important;
+  }
+
+  body.home .lexora-practice-mini__icon {
+    min-height: 54px !important;
   }
 
   body.home .lexora-practice-mini__icon svg {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
     stroke: #17202c;
-    stroke-width: 1.6;
+    stroke-width: 1.55;
     fill: none;
   }
 
   body.home .lexora-practice-mini h3 {
-    font-size: .94rem !important;
+    margin-top: .55rem !important;
+    font-size: .98rem !important;
   }
 
   body.home .lexora-practice-mini p {
-    font-size: .7rem !important;
+    font-size: .72rem !important;
+    line-height: 1.55 !important;
+  }
+
+  body.home .lexora-showcase-button {
+    margin-top: 1.5rem !important;
+    padding: .8rem 1.55rem !important;
+    font-size: .72rem !important;
+  }
+
+  body.home .lexora-attorney-mini-grid {
+    gap: .85rem !important;
+    margin-top: 1.05rem !important;
+  }
+
+  body.home .lexora-attorney-mini {
+    box-shadow: 0 5px 14px rgb(5 25 51 / 5%);
   }
 
   body.home .lexora-attorney-mini__portrait {
-    aspect-ratio: .89 / 1 !important;
+    aspect-ratio: .82 / 1 !important;
+    min-height: 205px;
     overflow: hidden;
-    background: #151515 !important;
+    background: #11161c !important;
   }
 
   body.home .lexora-attorney-mini__portrait img {
@@ -127,15 +219,86 @@
     display: block;
     object-fit: cover;
     object-position: center top;
-    filter: saturate(.82) contrast(1.04) brightness(.93);
+    filter: grayscale(.28) saturate(.78) contrast(1.04) brightness(.9);
   }
 
   body.home .lexora-attorney-mini h3 {
+    margin-top: .7rem !important;
     font-size: .9rem !important;
   }
 
+  body.home .lexora-attorney-mini p {
+    font-size: .69rem !important;
+  }
+
+  body.home .lexora-attorney-mini small {
+    padding-top: .58rem !important;
+    padding-bottom: .72rem !important;
+    font-size: .66rem !important;
+  }
+
   body.home .lexora-contact-mini {
-    padding: 1.25rem 1rem 1.1rem !important;
+    padding: 1.45rem 1.05rem 1.2rem !important;
+  }
+
+  body.home .lexora-contact-mini__form {
+    gap: .5rem !important;
+    margin-top: 1.1rem !important;
+  }
+
+  body.home .lexora-contact-mini__form input,
+  body.home .lexora-contact-mini__form textarea {
+    min-height: 39px !important;
+    padding: .6rem .68rem !important;
+    font-size: .72rem !important;
+  }
+
+  body.home .lexora-contact-mini__form textarea {
+    min-height: 86px !important;
+  }
+
+  body.home .lexora-contact-mini__form button {
+    min-height: 42px !important;
+    font-size: .72rem !important;
+  }
+}
+
+@media (max-width: 1180px) and (min-width: 900px) {
+  body.home .lexora-hero-visual__content {
+    padding-left: 3rem !important;
+    padding-right: 2.5rem !important;
+  }
+
+  body.home .lexora-home-showcase__inner {
+    grid-template-columns: 1fr 1.45fr !important;
+  }
+
+  body.home .lexora-contact-mini {
+    grid-column: 1 / -1;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 899px) {
+  body.home .lexora-hero-visual__grid {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  body.home .lexora-hero-visual__media-column {
+    position: relative;
+    overflow: hidden;
+  }
+
+  body.home .lexora-hero-visual__media-column::before {
+    position: absolute;
+    z-index: 2;
+    inset: 0 0 auto;
+    height: 26%;
+    pointer-events: none;
+    background: linear-gradient(180deg, #041a37 0%, rgb(4 26 55 / 58%) 55%, transparent 100%);
+    content: '';
   }
 }
 </style>
