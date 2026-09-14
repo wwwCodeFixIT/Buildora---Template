@@ -10,10 +10,10 @@
 ?>
 <!-- wp:group {"align":"full","className":"lx-ref-page lx-ref-practice","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull lx-ref-page lx-ref-practice">
-	<!-- wp:group {"align":"full","className":"lx-ref-inner-hero","layout":{"type":"constrained"}} -->
+	<!-- wp:group {"align":"full","className":"lx-ref-inner-hero","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignfull lx-ref-inner-hero">
-		<!-- wp:columns {"align":"wide","verticalAlignment":"stretch","className":"lx-ref-inner-hero__grid"} -->
-		<div class="wp-block-columns alignwide are-vertically-aligned-stretch lx-ref-inner-hero__grid">
+		<!-- wp:columns {"verticalAlignment":"stretch","className":"lx-ref-inner-hero__grid lx-ref-frame"} -->
+		<div class="wp-block-columns are-vertically-aligned-stretch lx-ref-inner-hero__grid lx-ref-frame">
 			<!-- wp:column {"verticalAlignment":"center","width":"52%","className":"lx-ref-inner-hero__copy"} -->
 			<div class="wp-block-column is-vertically-aligned-center lx-ref-inner-hero__copy" style="flex-basis:52%">
 				<!-- wp:paragraph {"className":"lx-ref-kicker"} --><p class="lx-ref-kicker"><?php esc_html_e( 'Practice Areas', 'lexora' ); ?></p><!-- /wp:paragraph -->
@@ -29,11 +29,11 @@
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"align":"full","className":"lx-ref-practice__body","layout":{"type":"constrained"}} -->
+	<!-- wp:group {"align":"full","className":"lx-ref-practice__body","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignfull lx-ref-practice__body">
-		<!-- wp:html --><div class="lx-ref-centered-rule alignwide" aria-hidden="true"><span></span><i></i><span></span></div><!-- /wp:html -->
-		<!-- wp:group {"align":"wide","className":"lx-ref-practice-grid","layout":{"type":"default"}} -->
-		<div class="wp-block-group alignwide lx-ref-practice-grid">
+		<!-- wp:html --><div class="lx-ref-centered-rule lx-ref-frame" aria-hidden="true"><span></span><i></i><span></span></div><!-- /wp:html -->
+		<!-- wp:group {"className":"lx-ref-practice-grid lx-ref-frame","layout":{"type":"default"}} -->
+		<div class="wp-block-group lx-ref-practice-grid lx-ref-frame">
 			<?php
 			$lexora_areas = array(
 				array( 'icon' => 'business', 'title' => 'Business Law', 'copy' => 'Comprehensive legal guidance for business formation, contracts, and corporate governance.', 'anchor' => 'business-law' ),
@@ -69,8 +69,8 @@
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:group {"align":"wide","className":"lx-ref-bottom-cta","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-		<div class="wp-block-group alignwide lx-ref-bottom-cta">
+		<!-- wp:group {"className":"lx-ref-bottom-cta lx-ref-frame","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+		<div class="wp-block-group lx-ref-bottom-cta lx-ref-frame">
 			<!-- wp:html --><div class="lx-ref-bottom-cta__icon" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v34M14 11h20M8 34h32M18 40h12M14 11L7 24h14zM34 11l-7 13h14z"/></svg></div><!-- /wp:html -->
 			<!-- wp:paragraph {"className":"lx-ref-bottom-cta__copy"} --><p class="lx-ref-bottom-cta__copy"><?php esc_html_e( 'Whatever your legal needs, our experienced attorneys are here to provide clear guidance and effective representation.', 'lexora' ); ?></p><!-- /wp:paragraph -->
 			<!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/#consultation' ) ); ?>"><?php esc_html_e( 'Schedule a Consultation', 'lexora' ); ?></a></div><!-- /wp:button --></div><!-- /wp:buttons -->
