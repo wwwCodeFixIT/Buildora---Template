@@ -18,8 +18,8 @@ body.home .wp-site-blocks > * { margin-block-start: 0 !important; }
 <div class="wp-block-group alignfull lexora-hero-visual has-surface-background-color has-background">
 	<!-- wp:columns {"align":"wide","verticalAlignment":"stretch","className":"lexora-hero-visual__grid"} -->
 	<div class="wp-block-columns alignwide are-vertically-aligned-stretch lexora-hero-visual__grid">
-		<!-- wp:column {"verticalAlignment":"center","width":"46%","className":"lexora-hero-visual__content"} -->
-		<div class="wp-block-column is-vertically-aligned-center lexora-hero-visual__content" style="flex-basis:46%">
+		<!-- wp:column {"verticalAlignment":"center","width":"55%","className":"lexora-hero-visual__content"} -->
+		<div class="wp-block-column is-vertically-aligned-center lexora-hero-visual__content" style="flex-basis:55% !important;padding:5rem 4.25rem 4.75rem clamp(7.5rem,8.5vw,10rem) !important">
 			<!-- wp:paragraph {"className":"lexora-hero-visual__eyebrow"} -->
 			<p class="lexora-hero-visual__eyebrow"><?php esc_html_e( 'Advocates. Advisors. Allies.', 'lexora' ); ?></p>
 			<!-- /wp:paragraph -->
@@ -49,10 +49,10 @@ body.home .wp-site-blocks > * { margin-block-start: 0 !important; }
 		</div>
 		<!-- /wp:column -->
 
-		<!-- wp:column {"verticalAlignment":"stretch","width":"54%","className":"lexora-hero-visual__media-column"} -->
-		<div class="wp-block-column is-vertically-aligned-stretch lexora-hero-visual__media-column" style="flex-basis:54%">
+		<!-- wp:column {"verticalAlignment":"stretch","width":"45%","className":"lexora-hero-visual__media-column"} -->
+		<div class="wp-block-column is-vertically-aligned-stretch lexora-hero-visual__media-column" style="flex-basis:45% !important">
 			<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lexora-hero-visual__image"} -->
-			<figure class="wp-block-image size-full lexora-hero-visual__image"><img src="https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Illuminated classical courthouse columns at night" /></figure>
+			<figure class="wp-block-image size-full lexora-hero-visual__image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/lexora-courthouse-reference.svg' ) ); ?>" alt="Illuminated classical courthouse columns at night" style="transform:none !important;object-fit:cover !important;object-position:center center !important;filter:none !important" /></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->
