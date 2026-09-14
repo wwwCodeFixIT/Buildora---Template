@@ -52,7 +52,7 @@ body.home .wp-site-blocks > * { margin-block-start: 0 !important; }
 		<!-- wp:column {"verticalAlignment":"stretch","width":"45%","className":"lexora-hero-visual__media-column"} -->
 		<div class="wp-block-column is-vertically-aligned-stretch lexora-hero-visual__media-column" style="flex-basis:45% !important">
 			<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"lexora-hero-visual__image"} -->
-			<figure class="wp-block-image size-full lexora-hero-visual__image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/lexora-courthouse-reference.svg' ) ); ?>" alt="Illuminated classical courthouse columns at night" style="transform:none !important;object-fit:cover !important;object-position:center center !important;filter:none !important" /></figure>
+			<figure class="wp-block-image size-full lexora-hero-visual__image"><img src="https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&amp;fit=crop&amp;w=1800&amp;q=88" alt="Illuminated classical courthouse columns at night" /></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->
