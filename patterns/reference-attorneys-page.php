@@ -23,7 +23,7 @@
 			</div>
 			<!-- /wp:column -->
 			<!-- wp:column {"verticalAlignment":"stretch","width":"44%","className":"lx-ref-inner-hero__media"} -->
-			<div class="wp-block-column is-vertically-aligned-stretch lx-ref-inner-hero__media" style="flex-basis:44%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} --><figure class="wp-block-image size-full"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/hero-legal.svg' ) ); ?>" alt="" /></figure><!-- /wp:image --></div>
+			<div class="wp-block-column is-vertically-aligned-stretch lx-ref-inner-hero__media" style="flex-basis:44%"><!-- wp:image {"sizeSlug":"full","linkDestination":"none"} --><figure class="wp-block-image size-full"><img src="https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&amp;fit=crop&amp;w=1800&amp;q=88" alt="Illuminated classical courthouse columns at night" /></figure><!-- /wp:image --></div>
 			<!-- /wp:column -->
 		</div>
 		<!-- /wp:columns -->
@@ -43,17 +43,17 @@
 		<div class="wp-block-group alignwide lx-ref-attorney-grid">
 			<?php
 			$lexora_attorneys = array(
-				array( 'image' => 'attorney-david.svg', 'name' => 'David Whitmore', 'role' => 'Founding Partner', 'focus' => 'Corporate Law', 'experience' => '30+ Years Experience', 'url' => '/attorneys/david-whitmore/' ),
-				array( 'image' => 'attorney-sophia.svg', 'name' => 'Sophia Langford', 'role' => 'Senior Attorney', 'focus' => 'Family Law', 'experience' => '18+ Years Experience', 'url' => '/attorneys/sophia-langford/' ),
-				array( 'image' => 'attorney-james.svg', 'name' => 'James Carter', 'role' => 'Litigation Attorney', 'focus' => 'Personal Injury', 'experience' => '15+ Years Experience', 'url' => '/attorneys/james-carter/' ),
-				array( 'image' => 'attorney-olivia.svg', 'name' => 'Olivia Bennett', 'role' => 'Real Estate Attorney', 'focus' => 'Real Estate Law', 'experience' => '12+ Years Experience', 'url' => '/attorneys/olivia-bennett/' ),
-				array( 'image' => 'attorney-michael.svg', 'name' => 'Michael Reeves', 'role' => 'Criminal Defense Attorney', 'focus' => 'Criminal Defense', 'experience' => '20+ Years Experience', 'url' => '/attorneys/michael-reeves/' ),
-				array( 'image' => 'attorney-isabella.svg', 'name' => 'Isabella Mercer', 'role' => 'Estate Planning Attorney', 'focus' => 'Estate Planning', 'experience' => '10+ Years Experience', 'url' => '/attorneys/isabella-mercer/' ),
+				array( 'image' => 'https://images.unsplash.com/photo-1543132220-7bc04a0e790a?auto=format&fit=crop&w=700&h=850&q=82', 'name' => 'David Whitmore', 'role' => 'Founding Partner', 'focus' => 'Corporate Law', 'experience' => '30+ Years Experience', 'url' => '/attorneys/david-whitmore/' ),
+				array( 'image' => 'https://images.unsplash.com/photo-1758518727888-ffa196002e59?auto=format&fit=crop&w=700&h=850&q=82', 'name' => 'Sophia Langford', 'role' => 'Senior Attorney', 'focus' => 'Family Law', 'experience' => '18+ Years Experience', 'url' => '/attorneys/sophia-langford/' ),
+				array( 'image' => 'https://images.unsplash.com/photo-1752778935828-bf6fdd5a834a?auto=format&fit=crop&w=700&h=850&q=82', 'name' => 'James Carter', 'role' => 'Litigation Attorney', 'focus' => 'Personal Injury', 'experience' => '15+ Years Experience', 'url' => '/attorneys/james-carter/' ),
+				array( 'image' => 'https://images.unsplash.com/photo-1758518729929-8210d3b0839e?auto=format&fit=crop&w=700&h=850&q=82', 'name' => 'Olivia Bennett', 'role' => 'Real Estate Attorney', 'focus' => 'Real Estate Law', 'experience' => '12+ Years Experience', 'url' => '/attorneys/olivia-bennett/' ),
+				array( 'image' => 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&h=850&q=82', 'name' => 'Michael Reeves', 'role' => 'Criminal Defense Attorney', 'focus' => 'Criminal Defense', 'experience' => '20+ Years Experience', 'url' => '/attorneys/michael-reeves/' ),
+				array( 'image' => 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&h=850&q=82', 'name' => 'Isabella Mercer', 'role' => 'Estate Planning Attorney', 'focus' => 'Estate Planning', 'experience' => '10+ Years Experience', 'url' => '/attorneys/isabella-mercer/' ),
 			);
 			foreach ( $lexora_attorneys as $attorney ) :
 			?>
 			<div class="lx-ref-attorney-card">
-				<a class="lx-ref-attorney-card__media" href="<?php echo esc_url( home_url( $attorney['url'] ) ); ?>"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/' . $attorney['image'] ) ); ?>" alt="<?php echo esc_attr( $attorney['name'] ); ?>" /></a>
+				<a class="lx-ref-attorney-card__media" href="<?php echo esc_url( home_url( $attorney['url'] ) ); ?>"><img src="<?php echo esc_url( $attorney['image'] ); ?>" alt="<?php echo esc_attr( $attorney['name'] ); ?>" /></a>
 				<div class="lx-ref-attorney-card__body">
 					<h2><a href="<?php echo esc_url( home_url( $attorney['url'] ) ); ?>"><?php echo esc_html( $attorney['name'] ); ?></a></h2>
 					<p class="lx-ref-attorney-card__role"><?php echo esc_html( $attorney['role'] ); ?></p>
