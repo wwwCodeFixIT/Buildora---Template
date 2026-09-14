@@ -83,6 +83,7 @@
 	height: 64px;
 	overflow: hidden;
 	border: 1px solid rgb(201 155 80 / 45%);
+	border-radius: 50%;
 	background: #1c2634;
 }
 .lx-ref-testimonial-panel__avatar img {
@@ -194,9 +195,7 @@
 		<div class="wp-block-column lx-ref-testimonial-panel" style="flex-basis:47%">
 			<!-- wp:paragraph {"className":"lx-ref-kicker"} --><p class="lx-ref-kicker"><?php esc_html_e( 'Client testimonials', 'lexora' ); ?></p><!-- /wp:paragraph -->
 			<!-- wp:heading {"level":2} --><h2 class="wp-block-heading"><?php esc_html_e( 'Trusted by Clients.', 'lexora' ); ?><br><span><?php esc_html_e( 'Proven by Results.', 'lexora' ); ?></span></h2><!-- /wp:heading -->
-			<!-- wp:html --><div class="lx-ref-testimonial-panel__quote-wrap"><div class="lx-ref-testimonial-panel__mark" aria-hidden="true">“</div><!-- /wp:html -->
-			<!-- wp:quote {"className":"lx-ref-testimonial-panel__quote"} --><blockquote class="wp-block-quote lx-ref-testimonial-panel__quote"><p><?php esc_html_e( 'The team at Lexora delivered exceptional service and achieved a result far beyond our expectations. Their dedication and professionalism are unmatched.', 'lexora' ); ?></p></blockquote><!-- /wp:quote -->
-			<!-- wp:html --></div><!-- /wp:html -->
+			<!-- wp:html --><div class="lx-ref-testimonial-panel__quote-wrap"><div class="lx-ref-testimonial-panel__mark" aria-hidden="true">“</div><blockquote class="lx-ref-testimonial-panel__quote"><p><?php esc_html_e( 'The team at Lexora delivered exceptional service and achieved a result far beyond our expectations. Their dedication and professionalism are unmatched.', 'lexora' ); ?></p></blockquote></div><!-- /wp:html -->
 			<!-- wp:group {"className":"lx-ref-testimonial-panel__author","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} --><div class="wp-block-group lx-ref-testimonial-panel__author"><!-- wp:html --><div class="lx-ref-testimonial-panel__avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&amp;fit=crop&amp;w=160&amp;h=160&amp;q=82" alt="Michael T." /></div><!-- /wp:html --><!-- wp:paragraph --><p><strong>Michael T.</strong><br><span><?php esc_html_e( 'Personal Injury Client', 'lexora' ); ?></span></p><!-- /wp:paragraph --></div><!-- /wp:group -->
 		</div>
 		<!-- /wp:column -->
