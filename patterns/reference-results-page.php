@@ -8,6 +8,16 @@
  * Description: Results and consultation layout matching the Lexora marketplace reference direction.
  */
 ?>
+<!-- wp:html -->
+<style>
+.lx-ref-results__hero {
+	background:
+		linear-gradient(90deg, rgb(2 14 32 / 97%) 0%, rgb(2 14 32 / 86%) 48%, rgb(2 14 32 / 24%) 76%, rgb(2 14 32 / 8%) 100%),
+		url('https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&fit=crop&w=1800&q=88') center right / 58% 100% no-repeat,
+		#020e20 !important;
+}
+</style>
+<!-- /wp:html -->
 <!-- wp:group {"align":"full","className":"lx-ref-page lx-ref-results","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull lx-ref-page lx-ref-results">
 	<!-- wp:group {"align":"full","className":"lx-ref-results__hero","layout":{"type":"constrained"}} -->
