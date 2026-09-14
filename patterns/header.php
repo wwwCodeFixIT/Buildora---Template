@@ -15,7 +15,7 @@
 		<!-- wp:html -->
 		<a class="lexora-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="<?php echo esc_attr__( 'Lexora home', 'lexora' ); ?>">
 			<img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/lexora-shield.svg' ) ); ?>" alt="" />
-			<span><?php bloginfo( 'name' ); ?></span>
+			<span class="lexora-header__brand-text"><?php bloginfo( 'name' ); ?></span>
 		</a>
 		<!-- /wp:html -->
 
