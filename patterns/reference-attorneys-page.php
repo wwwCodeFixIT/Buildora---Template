@@ -10,10 +10,10 @@
 ?>
 <!-- wp:group {"align":"full","className":"lx-ref-page lx-ref-attorneys","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull lx-ref-page lx-ref-attorneys">
-	<!-- wp:group {"align":"full","className":"lx-ref-inner-hero","layout":{"type":"constrained"}} -->
+	<!-- wp:group {"align":"full","className":"lx-ref-inner-hero","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignfull lx-ref-inner-hero">
-		<!-- wp:columns {"align":"wide","verticalAlignment":"stretch","className":"lx-ref-inner-hero__grid"} -->
-		<div class="wp-block-columns alignwide are-vertically-aligned-stretch lx-ref-inner-hero__grid">
+		<!-- wp:columns {"verticalAlignment":"stretch","className":"lx-ref-inner-hero__grid lx-ref-frame"} -->
+		<div class="wp-block-columns are-vertically-aligned-stretch lx-ref-inner-hero__grid lx-ref-frame">
 			<!-- wp:column {"verticalAlignment":"center","width":"56%","className":"lx-ref-inner-hero__copy"} -->
 			<div class="wp-block-column is-vertically-aligned-center lx-ref-inner-hero__copy" style="flex-basis:56%">
 				<!-- wp:paragraph {"className":"lx-ref-kicker"} --><p class="lx-ref-kicker"><?php esc_html_e( 'Advocates. Advisors. Allies.', 'lexora' ); ?></p><!-- /wp:paragraph -->
@@ -30,17 +30,17 @@
 	</div>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"align":"full","className":"lx-ref-directory","layout":{"type":"constrained"}} -->
+	<!-- wp:group {"align":"full","className":"lx-ref-directory","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignfull lx-ref-directory">
 		<!-- wp:html -->
-		<div class="lx-ref-directory__toolbar alignwide" aria-label="<?php echo esc_attr__( 'Attorney directory controls', 'lexora' ); ?>">
+		<div class="lx-ref-directory__toolbar lx-ref-frame" aria-label="<?php echo esc_attr__( 'Attorney directory controls', 'lexora' ); ?>">
 			<label><?php esc_html_e( 'Filter by practice area:', 'lexora' ); ?><select><option><?php esc_html_e( 'All Practice Areas', 'lexora' ); ?></option><option><?php esc_html_e( 'Corporate Law', 'lexora' ); ?></option><option><?php esc_html_e( 'Family Law', 'lexora' ); ?></option><option><?php esc_html_e( 'Litigation', 'lexora' ); ?></option></select></label>
 			<label><?php esc_html_e( 'Sort by:', 'lexora' ); ?><select><option><?php esc_html_e( 'Experience', 'lexora' ); ?></option><option><?php esc_html_e( 'Name', 'lexora' ); ?></option></select></label>
 		</div>
 		<!-- /wp:html -->
 
-		<!-- wp:group {"align":"wide","className":"lx-ref-attorney-grid","layout":{"type":"default"}} -->
-		<div class="wp-block-group alignwide lx-ref-attorney-grid">
+		<!-- wp:group {"className":"lx-ref-attorney-grid lx-ref-frame","layout":{"type":"default"}} -->
+		<div class="wp-block-group lx-ref-attorney-grid lx-ref-frame">
 			<?php
 			$lexora_attorneys = array(
 				array( 'image' => 'https://images.unsplash.com/photo-1543132220-7bc04a0e790a?auto=format&fit=crop&w=700&h=850&q=82', 'name' => 'David Whitmore', 'role' => 'Founding Partner', 'focus' => 'Corporate Law', 'experience' => '30+ Years Experience', 'url' => '/attorneys/david-whitmore/' ),
@@ -66,8 +66,8 @@
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:group {"align":"wide","className":"lx-ref-bottom-cta","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-		<div class="wp-block-group alignwide lx-ref-bottom-cta"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} --><div class="wp-block-group"><!-- wp:html --><div class="lx-ref-bottom-cta__icon" aria-hidden="true">⚖</div><!-- /wp:html --><!-- wp:group {"layout":{"type":"default"}} --><div class="wp-block-group"><!-- wp:heading {"level":2} --><h2 class="wp-block-heading"><?php esc_html_e( 'Need Legal Guidance?', 'lexora' ); ?></h2><!-- /wp:heading --><!-- wp:paragraph --><p><?php esc_html_e( 'Our team is ready to help you navigate complex legal challenges.', 'lexora' ); ?></p><!-- /wp:paragraph --></div><!-- /wp:group --></div><!-- /wp:group --><!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/#consultation' ) ); ?>"><?php esc_html_e( 'Schedule a Consultation', 'lexora' ); ?></a></div><!-- /wp:button --></div><!-- /wp:buttons --></div>
+		<!-- wp:group {"className":"lx-ref-bottom-cta lx-ref-frame","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+		<div class="wp-block-group lx-ref-bottom-cta lx-ref-frame"><!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} --><div class="wp-block-group"><!-- wp:html --><div class="lx-ref-bottom-cta__icon" aria-hidden="true">⚖</div><!-- /wp:html --><!-- wp:group {"layout":{"type":"default"}} --><div class="wp-block-group"><!-- wp:heading {"level":2} --><h2 class="wp-block-heading"><?php esc_html_e( 'Need Legal Guidance?', 'lexora' ); ?></h2><!-- /wp:heading --><!-- wp:paragraph --><p><?php esc_html_e( 'Our team is ready to help you navigate complex legal challenges.', 'lexora' ); ?></p><!-- /wp:paragraph --></div><!-- /wp:group --></div><!-- /wp:group --><!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/#consultation' ) ); ?>"><?php esc_html_e( 'Schedule a Consultation', 'lexora' ); ?></a></div><!-- /wp:button --></div><!-- /wp:buttons --></div>
 		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
