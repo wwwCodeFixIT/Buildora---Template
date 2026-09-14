@@ -8,6 +8,12 @@
  * Description: Premium conversion-focused hero for law firms and legal practices.
  */
 ?>
+<!-- wp:html -->
+<style>
+body.home .wp-site-blocks { gap: 0 !important; }
+body.home .wp-site-blocks > * { margin-block-start: 0 !important; }
+</style>
+<!-- /wp:html -->
 <!-- wp:group {"align":"full","className":"lexora-hero-visual","backgroundColor":"surface","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull lexora-hero-visual has-surface-background-color has-background">
 	<!-- wp:columns {"align":"wide","verticalAlignment":"stretch","className":"lexora-hero-visual__grid"} -->
