@@ -36,17 +36,31 @@
 		<div class="wp-block-group alignwide lx-ref-practice-grid">
 			<?php
 			$lexora_areas = array(
-				array( 'icon' => '🏛', 'title' => 'Business Law', 'copy' => 'Comprehensive legal guidance for business formation, contracts, and corporate governance.', 'anchor' => 'business-law' ),
-				array( 'icon' => '👥', 'title' => 'Family Law', 'copy' => 'Compassionate representation for divorce, child custody, support, and other family matters.', 'anchor' => 'family-property' ),
-				array( 'icon' => '▤', 'title' => 'Estate Planning', 'copy' => 'Protect your legacy with tailored estate plans, trusts, and asset protection strategies.', 'anchor' => 'family-property' ),
-				array( 'icon' => '⚖', 'title' => 'Litigation', 'copy' => 'Aggressive advocacy in disputes, lawsuits, and trials in state and federal courts.', 'anchor' => 'disputes' ),
-				array( 'icon' => '◈', 'title' => 'Personal Injury', 'copy' => 'Fighting for the compensation you deserve after accidents and serious injuries.', 'anchor' => 'disputes' ),
-				array( 'icon' => '▣', 'title' => 'Employment Law', 'copy' => 'Helping employers and employees resolve workplace issues and disputes.', 'anchor' => 'business-law' ),
+				array( 'icon' => 'business', 'title' => 'Business Law', 'copy' => 'Comprehensive legal guidance for business formation, contracts, and corporate governance.', 'anchor' => 'business-law' ),
+				array( 'icon' => 'family', 'title' => 'Family Law', 'copy' => 'Compassionate representation for divorce, child custody, support, and other family matters.', 'anchor' => 'family-property' ),
+				array( 'icon' => 'estate', 'title' => 'Estate Planning', 'copy' => 'Protect your legacy with tailored estate plans, trusts, and asset protection strategies.', 'anchor' => 'family-property' ),
+				array( 'icon' => 'litigation', 'title' => 'Litigation', 'copy' => 'Aggressive advocacy in disputes, lawsuits, and trials in state and federal courts.', 'anchor' => 'disputes' ),
+				array( 'icon' => 'injury', 'title' => 'Personal Injury', 'copy' => 'Fighting for the compensation you deserve after accidents and serious injuries.', 'anchor' => 'disputes' ),
+				array( 'icon' => 'employment', 'title' => 'Employment Law', 'copy' => 'Helping employers and employees resolve workplace issues and disputes.', 'anchor' => 'business-law' ),
 			);
 			foreach ( $lexora_areas as $area ) :
 			?>
 			<article class="lx-ref-practice-card">
-				<div class="lx-ref-practice-card__icon" aria-hidden="true"><?php echo esc_html( $area['icon'] ); ?></div>
+				<div class="lx-ref-practice-card__icon" aria-hidden="true">
+					<?php if ( 'business' === $area['icon'] ) : ?>
+						<svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 18h32M11 18v18M18 18v18M30 18v18M37 18v18M7 36h34M5 41h38M10 13l14-8 14 8z"/></svg>
+					<?php elseif ( 'family' === $area['icon'] ) : ?>
+						<svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="16" r="7"/><circle cx="31" cy="18" r="6"/><path d="M7 39c1-9 5-14 11-14s10 5 11 14M26 29c2-3 4-4 7-4 6 0 9 5 9 13"/></svg>
+					<?php elseif ( 'estate' === $area['icon'] ) : ?>
+						<svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5h23l5 5v31H11zM34 5v7h7M17 19h15M17 25h12M17 31h8"/><path d="M27 36l10-10 4 4-10 10-6 1z"/></svg>
+					<?php elseif ( 'litigation' === $area['icon'] ) : ?>
+						<svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v34M14 11h20M8 34h32M18 40h12M14 11L7 24h14zM34 11l-7 13h14z"/></svg>
+					<?php elseif ( 'injury' === $area['icon'] ) : ?>
+						<svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5l14 5v11c0 10-5 17-14 22C15 38 10 31 10 21V10z"/><path d="M24 15v14M17 22h14"/></svg>
+					<?php else : ?>
+						<svg width="44" height="44" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="13" width="34" height="27" rx="2"/><path d="M17 13V9h14v4M7 23h34M20 23v4h8v-4"/></svg>
+					<?php endif; ?>
+				</div>
 				<h2><?php echo esc_html( $area['title'] ); ?></h2>
 				<p><?php echo esc_html( $area['copy'] ); ?></p>
 				<a href="<?php echo esc_url( home_url( '/practice-areas/#' . $area['anchor'] ) ); ?>"><?php esc_html_e( 'Learn More', 'lexora' ); ?> <span aria-hidden="true">→</span></a>
@@ -56,7 +70,11 @@
 		<!-- /wp:group -->
 
 		<!-- wp:group {"align":"wide","className":"lx-ref-bottom-cta","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-		<div class="wp-block-group alignwide lx-ref-bottom-cta"><!-- wp:html --><div class="lx-ref-bottom-cta__icon" aria-hidden="true">⚖</div><!-- /wp:html --><!-- wp:paragraph {"className":"lx-ref-bottom-cta__copy"} --><p class="lx-ref-bottom-cta__copy"><?php esc_html_e( 'Whatever your legal needs, our experienced attorneys are here to provide clear guidance and effective representation.', 'lexora' ); ?></p><!-- /wp:paragraph --><!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/#consultation' ) ); ?>"><?php esc_html_e( 'Schedule a Consultation', 'lexora' ); ?></a></div><!-- /wp:button --></div><!-- /wp:buttons --></div>
+		<div class="wp-block-group alignwide lx-ref-bottom-cta">
+			<!-- wp:html --><div class="lx-ref-bottom-cta__icon" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v34M14 11h20M8 34h32M18 40h12M14 11L7 24h14zM34 11l-7 13h14z"/></svg></div><!-- /wp:html -->
+			<!-- wp:paragraph {"className":"lx-ref-bottom-cta__copy"} --><p class="lx-ref-bottom-cta__copy"><?php esc_html_e( 'Whatever your legal needs, our experienced attorneys are here to provide clear guidance and effective representation.', 'lexora' ); ?></p><!-- /wp:paragraph -->
+			<!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/#consultation' ) ); ?>"><?php esc_html_e( 'Schedule a Consultation', 'lexora' ); ?></a></div><!-- /wp:button --></div><!-- /wp:buttons -->
+		</div>
 		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
