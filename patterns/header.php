@@ -11,14 +11,20 @@
 <!-- wp:html -->
 <style>
 @media (min-width: 1100px) {
-	body:not(.home) .lexora-header__inner,
-	body:not(.home) :is(.lx-ref-page, .lx-ref-profile, .lx-ref-results) .alignwide,
-	body:not(.home) .lexora-footer-shell__inner,
-	body:not(.home) footer .alignwide,
-	body:not(.home) .lx-ref-frame {
-		width: min(90vw, 1600px) !important;
+	/*
+	 * Inner-page desktop frame.
+	 * Keep this after theme styles so WordPress wideSize/contentSize cannot
+	 * collapse the approved marketplace composition back to the old 1380px box.
+	 */
+	html body:not(.home) .wp-site-blocks .lexora-header .lexora-header__inner,
+	html body:not(.home) .wp-site-blocks main :is(.lx-ref-page, .lx-ref-profile, .lx-ref-results) .alignwide,
+	html body:not(.home) .wp-site-blocks main .lx-ref-frame,
+	html body:not(.home) .wp-site-blocks .lexora-footer-shell__inner,
+	html body:not(.home) .wp-site-blocks footer .alignwide {
+		width: min(94vw, 1720px) !important;
 		max-width: none !important;
 		margin-inline: auto !important;
+		box-sizing: border-box !important;
 	}
 }
 </style>
