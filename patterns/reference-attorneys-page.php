@@ -43,12 +43,12 @@
 		<div class="wp-block-group alignwide lx-ref-attorney-grid">
 			<?php
 			$lexora_attorneys = array(
-				array( 'image' => 'attorney-david.svg', 'name' => 'David Whitmore', 'role' => 'Founding Partner', 'focus' => 'Corporate Law', 'experience' => '30+ Years Experience', 'url' => '/attorneys/eleanor-mercer/' ),
-				array( 'image' => 'attorney-sophia.svg', 'name' => 'Sophia Langford', 'role' => 'Senior Attorney', 'focus' => 'Family Law', 'experience' => '18+ Years Experience', 'url' => '/attorneys/sophia-carter/' ),
-				array( 'image' => 'attorney-james.svg', 'name' => 'James Carter', 'role' => 'Litigation Attorney', 'focus' => 'Personal Injury', 'experience' => '15+ Years Experience', 'url' => '/attorneys/daniel-moore/' ),
-				array( 'image' => 'attorney-olivia.svg', 'name' => 'Olivia Bennett', 'role' => 'Real Estate Attorney', 'focus' => 'Real Estate Law', 'experience' => '12+ Years Experience', 'url' => '/attorneys/' ),
-				array( 'image' => 'attorney-michael.svg', 'name' => 'Michael Reeves', 'role' => 'Criminal Defense Attorney', 'focus' => 'Criminal Defense', 'experience' => '20+ Years Experience', 'url' => '/attorneys/' ),
-				array( 'image' => 'attorney-isabella.svg', 'name' => 'Isabella Mercer', 'role' => 'Estate Planning Attorney', 'focus' => 'Estate Planning', 'experience' => '10+ Years Experience', 'url' => '/attorneys/' ),
+				array( 'image' => 'attorney-david.svg', 'name' => 'David Whitmore', 'role' => 'Founding Partner', 'focus' => 'Corporate Law', 'experience' => '30+ Years Experience', 'url' => '/attorneys/david-whitmore/' ),
+				array( 'image' => 'attorney-sophia.svg', 'name' => 'Sophia Langford', 'role' => 'Senior Attorney', 'focus' => 'Family Law', 'experience' => '18+ Years Experience', 'url' => '/attorneys/sophia-langford/' ),
+				array( 'image' => 'attorney-james.svg', 'name' => 'James Carter', 'role' => 'Litigation Attorney', 'focus' => 'Personal Injury', 'experience' => '15+ Years Experience', 'url' => '/attorneys/james-carter/' ),
+				array( 'image' => 'attorney-olivia.svg', 'name' => 'Olivia Bennett', 'role' => 'Real Estate Attorney', 'focus' => 'Real Estate Law', 'experience' => '12+ Years Experience', 'url' => '/attorneys/olivia-bennett/' ),
+				array( 'image' => 'attorney-michael.svg', 'name' => 'Michael Reeves', 'role' => 'Criminal Defense Attorney', 'focus' => 'Criminal Defense', 'experience' => '20+ Years Experience', 'url' => '/attorneys/michael-reeves/' ),
+				array( 'image' => 'attorney-isabella.svg', 'name' => 'Isabella Mercer', 'role' => 'Estate Planning Attorney', 'focus' => 'Estate Planning', 'experience' => '10+ Years Experience', 'url' => '/attorneys/isabella-mercer/' ),
 			);
 			foreach ( $lexora_attorneys as $attorney ) :
 			?>
