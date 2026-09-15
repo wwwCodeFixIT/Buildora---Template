@@ -1,3 +1,139 @@
+<!-- wp:html -->
+<style>
+body:not(.home) .lexora-footer-shell {
+	margin: 0 !important;
+	padding: 0 !important;
+	border-top: 1px solid rgb(201 155 80 / 18%) !important;
+	background: linear-gradient(180deg, #04172f, #021124) !important;
+}
+
+body:not(.home) .lexora-footer-shell__inner {
+	min-height: 92px;
+	gap: 1rem;
+}
+
+body:not(.home) .lexora-footer-shell__brand {
+	display: flex;
+	align-items: center;
+	gap: .8rem;
+	color: #c99b50;
+}
+
+body:not(.home) .lexora-footer-shell__mark {
+	font-size: 1.9rem;
+	line-height: 1;
+}
+
+body:not(.home) .lexora-footer-shell__brand strong,
+body:not(.home) .lexora-footer-shell__brand small {
+	display: block;
+}
+
+body:not(.home) .lexora-footer-shell__brand strong {
+	color: #d9b56f;
+	font-family: var(--wp--preset--font-family--serif);
+	font-size: .86rem;
+	letter-spacing: .05em;
+}
+
+body:not(.home) .lexora-footer-shell__brand small {
+	margin-top: .15rem;
+	color: rgb(248 241 231 / 64%);
+	font-size: .66rem;
+}
+
+body:not(.home) .lexora-footer-shell__nav {
+	display: flex;
+	align-items: center;
+	gap: 1.35rem;
+}
+
+body:not(.home) .lexora-footer-shell__nav a {
+	color: #f8f1e7 !important;
+	font-size: .68rem;
+	letter-spacing: .08em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+body:not(.home) .lexora-footer-shell__nav a:hover,
+body:not(.home) .lexora-footer-shell__nav a:focus-visible {
+	color: #e0bd7a !important;
+}
+
+body:not(.home) .lexora-footer-shell__social {
+	display: flex;
+	gap: .6rem;
+}
+
+body:not(.home) .lexora-footer-shell__social a {
+	width: 31px;
+	height: 31px;
+	display: grid;
+	place-items: center;
+	border: 1px solid rgb(201 155 80 / 68%);
+	border-radius: 999px;
+	color: #c99b50 !important;
+	font-size: .72rem;
+	text-decoration: none;
+}
+
+@media (max-width: 900px) {
+	body:not(.home) .lexora-footer-shell {
+		min-height: 0 !important;
+	}
+
+	body:not(.home) .lexora-footer-shell__inner {
+		width: 100% !important;
+		max-width: none !important;
+		min-height: 0 !important;
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+		justify-content: center !important;
+		gap: 1.35rem !important;
+		box-sizing: border-box;
+		padding: 1.65rem 1rem 1.8rem !important;
+		text-align: center;
+	}
+
+	body:not(.home) .lexora-footer-shell__brand {
+		justify-content: center;
+		gap: .7rem;
+	}
+
+	body:not(.home) .lexora-footer-shell__mark {
+		font-size: 2rem;
+	}
+
+	body:not(.home) .lexora-footer-shell__brand strong {
+		font-size: .9rem;
+	}
+
+	body:not(.home) .lexora-footer-shell__brand small {
+		font-size: .7rem;
+	}
+
+	body:not(.home) .lexora-footer-shell__nav {
+		width: 100%;
+		display: flex !important;
+		flex-wrap: wrap !important;
+		justify-content: center !important;
+		gap: .8rem 1.1rem !important;
+	}
+
+	body:not(.home) .lexora-footer-shell__nav a {
+		font-size: .69rem;
+		line-height: 1.45;
+	}
+
+	body:not(.home) .lexora-footer-shell__social {
+		justify-content: center;
+		gap: .65rem;
+	}
+}
+</style>
+<!-- /wp:html -->
 <!-- wp:group {"align":"full","className":"buildora-footer lexora-footer-shell","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull buildora-footer lexora-footer-shell">
 	<!-- wp:group {"align":"wide","className":"lexora-footer-shell__inner","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
