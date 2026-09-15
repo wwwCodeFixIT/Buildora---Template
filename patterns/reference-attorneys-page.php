@@ -10,6 +10,184 @@
 ?>
 <!-- wp:group {"align":"full","className":"lx-ref-page lx-ref-attorneys","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull lx-ref-page lx-ref-attorneys">
+	<!-- wp:html -->
+	<style>
+	@media (max-width: 800px) {
+		.lx-ref-attorneys .lx-ref-directory {
+			padding: 1.35rem 0 2rem;
+		}
+
+		.lx-ref-attorneys .lx-ref-directory__toolbar,
+		.lx-ref-attorneys .lx-ref-attorney-grid,
+		.lx-ref-attorneys .lx-ref-bottom-cta {
+			width: calc(100% - 32px) !important;
+			max-width: none !important;
+			margin-inline: auto !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-directory__toolbar {
+			display: grid !important;
+			grid-template-columns: 1fr;
+			gap: .85rem !important;
+			margin-bottom: 1.15rem !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-directory__toolbar label {
+			display: grid !important;
+			grid-template-columns: 1fr;
+			gap: .42rem;
+			font-size: .68rem;
+			font-weight: 600;
+			letter-spacing: .075em;
+		}
+
+		.lx-ref-attorneys .lx-ref-directory__toolbar select {
+			width: 100% !important;
+			min-width: 0 !important;
+			min-height: 46px;
+			padding: .7rem .8rem;
+			border-color: #d8c9b4;
+			background: #fffdf9;
+			font-size: .84rem;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-grid {
+			display: grid !important;
+			grid-template-columns: 1fr !important;
+			gap: .8rem !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card {
+			display: grid;
+			grid-template-columns: 116px minmax(0, 1fr);
+			min-height: 164px;
+			overflow: hidden;
+			box-shadow: 0 8px 22px rgb(7 20 35 / 7%);
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card__media {
+			width: 100%;
+			height: 100%;
+			min-height: 164px;
+			aspect-ratio: auto !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card__media img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center top;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card__body {
+			display: flex;
+			min-width: 0;
+			flex-direction: column;
+			justify-content: center;
+			padding: .9rem 1rem;
+			text-align: left;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card h2 {
+			font-size: 1.16rem !important;
+			line-height: 1.15;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card p {
+			margin: .2rem 0;
+			font-size: .75rem;
+			line-height: 1.35;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card__role {
+			font-size: .82rem !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card__social {
+			justify-content: flex-start;
+			margin-top: .42rem;
+			font-size: .78rem;
+		}
+
+		.lx-ref-attorneys .lx-ref-bottom-cta {
+			display: grid !important;
+			grid-template-columns: 1fr;
+			gap: 1rem !important;
+			margin-top: 1.15rem !important;
+			padding: 1.3rem 1.25rem !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-bottom-cta > .wp-block-group {
+			align-items: flex-start !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-bottom-cta__icon {
+			font-size: 2rem;
+		}
+
+		.lx-ref-attorneys .lx-ref-bottom-cta h2 {
+			font-size: 1.35rem;
+		}
+
+		.lx-ref-attorneys .lx-ref-bottom-cta p {
+			font-size: .84rem;
+			line-height: 1.55;
+		}
+
+		.lx-ref-attorneys .lx-ref-bottom-cta .wp-block-buttons,
+		.lx-ref-attorneys .lx-ref-bottom-cta .wp-block-button,
+		.lx-ref-attorneys .lx-ref-bottom-cta .wp-block-button__link {
+			width: 100%;
+		}
+
+		.lx-ref-attorneys .lx-ref-bottom-cta .wp-block-button__link {
+			box-sizing: border-box;
+			min-height: 48px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	@media (max-width: 560px) {
+		.lx-ref-attorneys .lx-ref-inner-hero__copy {
+			padding: 2.45rem 0 1.5rem;
+		}
+
+		.lx-ref-attorneys .lx-ref-inner-hero__lead {
+			font-size: 1rem;
+			line-height: 1.6;
+		}
+
+		.lx-ref-attorneys .lx-ref-inner-hero__media,
+		.lx-ref-attorneys .lx-ref-inner-hero__media figure,
+		.lx-ref-attorneys .lx-ref-inner-hero__media img {
+			min-height: 230px;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card {
+			grid-template-columns: 108px minmax(0, 1fr);
+			min-height: 156px;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card__media {
+			min-height: 156px;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card__body {
+			padding: .82rem .85rem;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card h2 {
+			font-size: 1.08rem !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-attorney-card p {
+			font-size: .71rem;
+		}
+	}
+	</style>
+	<!-- /wp:html -->
 	<!-- wp:group {"align":"full","className":"lx-ref-inner-hero","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignfull lx-ref-inner-hero">
 		<!-- wp:columns {"verticalAlignment":"stretch","className":"lx-ref-inner-hero__grid lx-ref-frame"} -->
