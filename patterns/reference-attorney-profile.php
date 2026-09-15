@@ -43,7 +43,7 @@
 	}
 
 	.lexora-header__brand-text {
-		display: block !important;
+		display: inline-block !important;
 		font-size: 1.9rem !important;
 		line-height: 1 !important;
 		white-space: nowrap !important;
