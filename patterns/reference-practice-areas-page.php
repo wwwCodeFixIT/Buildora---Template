@@ -8,6 +8,210 @@
  * Description: Practice Areas page matching the Lexora marketplace reference layout.
  */
 ?>
+<!-- wp:html -->
+<style>
+@media (max-width: 800px) {
+	/* Inner-page mobile header: keep the premium crest/wordmark and leave CTA to the menu. */
+	.lexora-header__cta {
+		display: none !important;
+	}
+
+	.lexora-header__inner {
+		min-height: 72px !important;
+		padding-inline: 1rem !important;
+	}
+
+	.lexora-header__logo {
+		display: inline-flex !important;
+		align-items: center !important;
+		gap: .55rem !important;
+		white-space: nowrap !important;
+	}
+
+	.lexora-header__logo img {
+		width: 34px !important;
+		height: 34px !important;
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+		object-fit: contain !important;
+	}
+
+	.lexora-header__brand-text {
+		display: inline-block !important;
+		font-size: 1.72rem !important;
+		line-height: 1 !important;
+	}
+
+	.lx-ref-practice .lx-ref-inner-hero {
+		background:
+			linear-gradient(180deg, rgb(3 20 42 / 98%) 0%, rgb(3 20 42 / 93%) 52%, rgb(3 20 42 / 68%) 78%, rgb(2 14 31 / 34%) 100%),
+			linear-gradient(90deg, rgb(3 20 42 / 98%) 0%, rgb(3 20 42 / 76%) 60%, rgb(3 20 42 / 24%) 100%),
+			url('https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&fit=crop&w=1200&q=86') 58% bottom / cover no-repeat !important;
+	}
+
+	.lx-ref-practice .lx-ref-inner-hero__grid {
+		display: block !important;
+		width: 100% !important;
+		max-width: none !important;
+		min-height: 570px !important;
+		margin: 0 !important;
+	}
+
+	.lx-ref-practice .lx-ref-inner-hero__copy {
+		width: 100% !important;
+		max-width: 100% !important;
+		box-sizing: border-box !important;
+		padding: 3.15rem 1.4rem 4.5rem !important;
+	}
+
+	.lx-ref-practice .lx-ref-inner-hero__media {
+		display: none !important;
+	}
+
+	.lx-ref-practice .lx-ref-kicker {
+		margin-bottom: 1rem !important;
+		font-size: .75rem !important;
+		line-height: 1.5 !important;
+	}
+
+	.lx-ref-practice .lx-ref-practice__hero-title {
+		max-width: 9.7ch !important;
+		font-size: clamp(2.65rem, 11.8vw, 3.15rem) !important;
+		line-height: .98 !important;
+		letter-spacing: -.035em !important;
+	}
+
+	.lx-ref-practice .lx-ref-inner-hero__lead {
+		max-width: 20.5rem !important;
+		margin-top: 1.35rem !important;
+		font-family: var(--lx-ref-sans) !important;
+		font-size: .98rem !important;
+		line-height: 1.58 !important;
+	}
+
+	.lx-ref-practice .lx-ref-practice__body {
+		padding: 0 0 1rem !important;
+	}
+
+	.lx-ref-practice .lx-ref-centered-rule {
+		width: auto !important;
+		margin: 0 1rem !important;
+		padding: 1.4rem 0 1.1rem !important;
+	}
+
+	.lx-ref-practice .lx-ref-centered-rule span {
+		width: 62px !important;
+	}
+
+	.lx-ref-practice .lx-ref-practice-grid {
+		display: block !important;
+		width: auto !important;
+		max-width: none !important;
+		margin: 0 1rem !important;
+		border: 1px solid rgb(201 155 80 / 26%);
+		border-radius: 12px;
+		overflow: hidden;
+		background: rgb(255 253 249 / 88%);
+	}
+
+	.lx-ref-practice .lx-ref-practice-card {
+		min-height: 0 !important;
+		display: grid !important;
+		grid-template-columns: 52px minmax(0, 1fr) auto;
+		grid-template-rows: auto auto auto;
+		column-gap: .75rem;
+		align-items: center;
+		justify-content: initial !important;
+		padding: 1.05rem .95rem !important;
+		border: 0 !important;
+		border-bottom: 1px solid rgb(5 25 51 / 11%) !important;
+		background: transparent !important;
+		text-align: left !important;
+	}
+
+	.lx-ref-practice .lx-ref-practice-card:last-child {
+		border-bottom: 0 !important;
+	}
+
+	.lx-ref-practice .lx-ref-practice-card__icon {
+		grid-column: 1;
+		grid-row: 1 / span 3;
+		margin: 0 !important;
+		align-self: center;
+		justify-self: center;
+	}
+
+	.lx-ref-practice .lx-ref-practice-card__icon svg {
+		width: 34px !important;
+		height: 34px !important;
+	}
+
+	.lx-ref-practice .lx-ref-practice-card h2 {
+		grid-column: 2;
+		grid-row: 1;
+		margin: 0 0 .18rem !important;
+		font-size: 1.08rem !important;
+		line-height: 1.2 !important;
+	}
+
+	.lx-ref-practice .lx-ref-practice-card p {
+		grid-column: 2;
+		grid-row: 2;
+		max-width: none !important;
+		font-size: .77rem !important;
+		line-height: 1.42 !important;
+	}
+
+	.lx-ref-practice .lx-ref-practice-card a {
+		grid-column: 2;
+		grid-row: 3;
+		margin-top: .45rem !important;
+		font-size: .66rem !important;
+	}
+
+	.lx-ref-practice .lx-ref-practice-card::after {
+		grid-column: 3;
+		grid-row: 1 / span 3;
+		align-self: center;
+		color: #18212e;
+		content: '›';
+		font-family: Georgia, serif;
+		font-size: 1.85rem;
+		line-height: 1;
+	}
+
+	.lx-ref-practice .lx-ref-bottom-cta {
+		width: auto !important;
+		max-width: none !important;
+		display: block !important;
+		margin: 1rem !important;
+		padding: 1.35rem 1.2rem !important;
+	}
+
+	.lx-ref-practice .lx-ref-bottom-cta__icon {
+		margin-bottom: .85rem;
+	}
+
+	.lx-ref-practice .lx-ref-bottom-cta__icon svg {
+		width: 38px !important;
+		height: 38px !important;
+	}
+
+	.lx-ref-practice .lx-ref-bottom-cta__copy {
+		margin: 0 0 1rem !important;
+		font-size: .88rem !important;
+		line-height: 1.55 !important;
+	}
+
+	.lx-ref-practice .lx-ref-bottom-cta .wp-block-buttons,
+	.lx-ref-practice .lx-ref-bottom-cta .wp-block-button,
+	.lx-ref-practice .lx-ref-bottom-cta .wp-block-button__link {
+		width: 100% !important;
+	}
+}
+</style>
+<!-- /wp:html -->
 <!-- wp:group {"align":"full","className":"lx-ref-page lx-ref-practice","layout":{"type":"default"}} -->
 <div class="wp-block-group alignfull lx-ref-page lx-ref-practice">
 	<!-- wp:group {"align":"full","className":"lx-ref-inner-hero","layout":{"type":"default"}} -->
