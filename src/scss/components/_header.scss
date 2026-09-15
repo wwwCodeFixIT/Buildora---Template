@@ -244,6 +244,15 @@
 }
 
 @media (max-width: 960px) {
+  .buildora-header {
+    position: relative;
+    top: auto;
+  }
+
+  .admin-bar .buildora-header {
+    top: auto;
+  }
+
   .buildora-header__inner {
     min-height: 68px;
   }
@@ -261,7 +270,7 @@
 
 @media (max-width: 782px) {
   .admin-bar .buildora-header {
-    top: 46px;
+    top: auto;
   }
 }
 

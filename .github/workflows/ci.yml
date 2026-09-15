@@ -67,6 +67,6 @@ jobs:
       - name: Upload theme artifact
         uses: actions/upload-artifact@v4
         with:
-          name: buildora-theme-${{ github.sha }}
-          path: build/buildora.zip
+          name: lexora-theme-${{ github.sha }}
+          path: build/lexora.zip
           if-no-files-found: error

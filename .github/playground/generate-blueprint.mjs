@@ -11,8 +11,8 @@ const blueprint = {
     wp: '7.1',
   },
   siteOptions: {
-    blogname: 'Buildora',
-    blogdescription: 'Construction & Home Services',
+    blogname: 'Lexora',
+    blogdescription: 'Law Firm & Legal Practice',
   },
   steps: [
     {

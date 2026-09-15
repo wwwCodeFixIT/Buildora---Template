@@ -1,0 +1,195 @@
+.lexora-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 0 0 1rem;
+  color: var(--wp--preset--color--brand-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lexora-section-kicker::before {
+  width: 1.5rem;
+  height: 1px;
+  content: '';
+  background: currentColor;
+}
+
+.lexora-section-kicker--light {
+  color: var(--wp--preset--color--brand);
+}
+
+.lexora-section-heading {
+  gap: clamp(1.5rem, 4vw, 4rem);
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.lexora-section-heading h2,
+.lexora-section-heading p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.lexora-attorneys {
+  padding-top: clamp(4rem, 8vw, 7rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+  background: var(--wp--preset--color--paper);
+}
+
+.lexora-attorneys__grid {
+  gap: 1.25rem;
+}
+
+.lexora-attorney-card {
+  padding: 1rem;
+  border: 1px solid rgba(15, 32, 39, 0.12);
+  background: var(--wp--preset--color--paper);
+}
+
+.lexora-attorney-card__portrait {
+  position: relative;
+  display: grid;
+  min-height: 19rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  place-items: end start;
+}
+
+.lexora-attorney-card__portrait::after {
+  position: absolute;
+  inset: 12% -12% auto auto;
+  width: 13rem;
+  height: 13rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  content: '';
+}
+
+.lexora-attorney-card__portrait--accent::after {
+  border-color: rgba(15, 32, 39, 0.18);
+}
+
+.lexora-attorney-card__initials {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 1.5rem;
+  font-family: var(--wp--preset--font-family--serif);
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+}
+
+.lexora-attorney-card__role {
+  margin: 0 0 0.5rem;
+  color: var(--wp--preset--color--brand-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lexora-attorney-card__name {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.lexora-attorney-card__focus {
+  min-height: 3.2em;
+  margin: 0 0 1.25rem;
+}
+
+.lexora-attorney-card__link {
+  margin: 0;
+  font-weight: 750;
+}
+
+.lexora-attorney-card__link a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+
+.lexora-results {
+  padding-top: clamp(4rem, 8vw, 7rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.lexora-results__lead {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.lexora-results__grid {
+  gap: 1px;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.lexora-result-card {
+  min-height: 24rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--wp--preset--color--ink);
+}
+
+.lexora-result-card--accent {
+  background: #172f38;
+}
+
+.lexora-result-card__meta {
+  margin: 0 0 2rem;
+  color: var(--wp--preset--color--brand);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lexora-result-card__title {
+  margin: 0 0 1rem;
+  color: var(--wp--preset--color--paper);
+  font-size: clamp(1.5rem, 2.5vw, 2.125rem);
+}
+
+.lexora-result-card__copy {
+  margin: 0 0 2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.lexora-result-card__outcome {
+  margin: auto 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--wp--preset--color--paper);
+}
+
+.lexora-results__disclaimer {
+  max-width: 62rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.54);
+}
+
+@media (max-width: 781px) {
+  .lexora-section-heading {
+    gap: 1rem;
+  }
+
+  .lexora-attorneys__grid,
+  .lexora-results__grid {
+    gap: 1rem;
+  }
+
+  .lexora-attorney-card__portrait {
+    min-height: 15rem;
+  }
+
+  .lexora-attorney-card__focus {
+    min-height: auto;
+  }
+
+  .lexora-result-card {
+    min-height: auto;
+  }
+}

@@ -3,10 +3,11 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 BUILD_DIR="$ROOT/build"
-STAGE_DIR="$BUILD_DIR/buildora"
-ZIP_FILE="$BUILD_DIR/buildora.zip"
+STAGE_DIR="$BUILD_DIR/lexora"
+ZIP_FILE="$BUILD_DIR/lexora.zip"
+PREVIEW_ALIAS="$BUILD_DIR/buildora.zip"
 
-rm -rf "$STAGE_DIR" "$ZIP_FILE"
+rm -rf "$STAGE_DIR" "$ZIP_FILE" "$PREVIEW_ALIAS"
 mkdir -p "$STAGE_DIR"
 
 rsync -a "$ROOT/" "$STAGE_DIR/" \
@@ -30,7 +31,11 @@ rsync -a "$ROOT/" "$STAGE_DIR/" \
 
 (
   cd "$BUILD_DIR"
-  zip -qr buildora.zip buildora
+  zip -qr lexora.zip lexora
 )
+
+# Keep the legacy preview filename temporarily because the PR preview publisher
+# on the default branch still expects build/buildora.zip.
+cp "$ZIP_FILE" "$PREVIEW_ALIAS"
 
 echo "Created $ZIP_FILE"

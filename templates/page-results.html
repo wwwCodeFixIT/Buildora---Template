@@ -1,0 +1,199 @@
+<!-- wp:pattern {"slug":"lexora/site-header"} /-->
+<!-- wp:group {"tagName":"main","anchor":"main","layout":{"type":"default"}} -->
+<main id="main" class="wp-block-group">
+	<!-- wp:pattern {"slug":"lexora/reference-results-page"} /-->
+</main>
+<!-- /wp:group -->
+<!-- wp:html -->
+<style>
+@media (max-width: 900px) {
+	/* Results mobile header: keep the approved inner-page treatment compact. */
+	.lexora-header .buildora-header__cta,
+	.lexora-header .lexora-header__cta {
+		display: none !important;
+	}
+
+	.lexora-header .lexora-header__logo {
+		display: inline-flex !important;
+		align-items: center !important;
+		gap: .7rem !important;
+		min-width: 0;
+		white-space: nowrap;
+		text-decoration: none !important;
+	}
+
+	.lexora-header .lexora-header__logo img {
+		display: block !important;
+		width: 42px !important;
+		height: 42px !important;
+		flex: 0 0 42px !important;
+	}
+
+	.lexora-header .lexora-header__brand-text {
+		display: inline-block !important;
+		font-size: clamp(1.75rem, 8vw, 2rem) !important;
+		line-height: 1 !important;
+	}
+
+	.lexora-header .buildora-header__actions,
+	.lexora-header .lexora-header__actions {
+		flex: 0 0 auto !important;
+		margin-left: auto !important;
+	}
+
+	/* Results hero: remove edge clipping and stop stretching the courthouse photo
+	 * through the complete result-card stack. */
+	.lx-ref-results__hero {
+		padding: 2.45rem 0 1rem !important;
+		background:
+			linear-gradient(180deg, rgb(2 14 32 / 93%) 0%, rgb(2 14 32 / 82%) 360px, rgb(2 14 32 / 98%) 560px, #020e20 100%),
+			url('https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&fit=crop&w=1100&q=86') 68% 0 / auto 560px no-repeat,
+			#020e20 !important;
+	}
+
+	.lx-ref-results__hero-copy {
+		box-sizing: border-box;
+		padding-inline: 1.35rem !important;
+	}
+
+	.lx-ref-results__title {
+		max-width: 8.4ch;
+		font-size: clamp(2.9rem, 13vw, 3.55rem) !important;
+		line-height: .96 !important;
+	}
+
+	.lx-ref-results__lead {
+		max-width: 34rem !important;
+		margin-top: 1.15rem !important;
+		font-size: .98rem !important;
+		line-height: 1.62 !important;
+	}
+
+	.lx-ref-result-grid {
+		width: 100% !important;
+		max-width: none !important;
+		box-sizing: border-box;
+		gap: .8rem !important;
+		margin-top: 1.45rem !important;
+		padding: 0 1rem 1.2rem !important;
+	}
+
+	.lx-ref-result-grid article {
+		min-height: 0 !important;
+		padding: 1.2rem 1.15rem 1.25rem !important;
+		background: linear-gradient(145deg, rgb(10 34 60 / 98%), rgb(3 18 37 / 99%)) !important;
+	}
+
+	.lx-ref-result-grid__icon {
+		font-size: 1.7rem !important;
+	}
+
+	.lx-ref-result-grid strong {
+		margin-top: .4rem !important;
+		font-size: 2.45rem !important;
+	}
+
+	.lx-ref-result-grid h2 {
+		font-size: 1.08rem !important;
+	}
+
+	/* Testimonial: use the full phone width instead of forcing the quote into a
+	 * narrow second grid column. */
+	.lx-ref-testimonial-panel,
+	.lx-ref-results-form {
+		min-height: 0 !important;
+	}
+
+	.lx-ref-testimonial-panel {
+		padding: 2.3rem 1.4rem 2.5rem !important;
+	}
+
+	.lx-ref-testimonial-panel h2,
+	.lx-ref-results-form h2 {
+		font-size: clamp(2.35rem, 10.5vw, 2.85rem) !important;
+		line-height: 1.03 !important;
+	}
+
+	.lx-ref-testimonial-panel__quote-wrap {
+		display: block !important;
+		margin-top: 1rem !important;
+	}
+
+	.lx-ref-testimonial-panel__mark {
+		margin-bottom: .25rem;
+		font-size: 3.5rem !important;
+		line-height: .72 !important;
+	}
+
+	.lx-ref-testimonial-panel__quote {
+		font-size: 1.05rem !important;
+		line-height: 1.6 !important;
+	}
+
+	.lx-ref-testimonial-panel__author {
+		margin: 1.45rem 0 0 !important;
+	}
+
+	.lx-ref-testimonial-panel::after {
+		right: -24% !important;
+		bottom: -8% !important;
+		width: 92% !important;
+		height: 58% !important;
+		opacity: .035 !important;
+	}
+
+	/* Consultation: one clean mobile column with a full-width conversion CTA. */
+	.lx-ref-results-form {
+		padding: 2.3rem 1.4rem 2.5rem !important;
+	}
+
+	.lx-ref-results-form__layout {
+		grid-template-columns: 1fr !important;
+		gap: 1.55rem !important;
+		margin-top: 1.2rem !important;
+	}
+
+	.lx-ref-results-form__form,
+	.lx-ref-results-form__form > div {
+		grid-template-columns: 1fr !important;
+	}
+
+	.lx-ref-results-form input,
+	.lx-ref-results-form select {
+		min-height: 52px;
+	}
+
+	.lx-ref-results-form textarea {
+		min-height: 122px;
+	}
+
+	.lx-ref-results-form button {
+		width: 100% !important;
+		min-height: 52px;
+		font-weight: 700;
+	}
+
+	.lx-ref-results-form__side {
+		padding: 1.35rem 0 0 !important;
+		border-top: 1px solid rgb(201 155 80 / 26%) !important;
+		border-left: 0 !important;
+	}
+}
+
+@media (max-width: 420px) {
+	.lx-ref-results__hero-copy {
+		padding-inline: 1.2rem !important;
+	}
+
+	.lx-ref-result-grid {
+		padding-inline: .85rem !important;
+	}
+
+	.lx-ref-testimonial-panel,
+	.lx-ref-results-form {
+		padding-inline: 1.25rem !important;
+	}
+}
+</style>
+<!-- /wp:html -->
+<!-- wp:template-part {"slug":"footer","theme":"lexora","tagName":"footer"} /-->

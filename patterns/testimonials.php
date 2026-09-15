@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Client testimonials
- * Slug: buildora/testimonials
- * Categories: buildora, featured
- * Keywords: testimonials, reviews, social proof
- * Description: Editorial testimonial section with one featured review and two supporting reviews.
+ * Title: Client Testimonials
+ * Slug: lexora/testimonials
+ * Categories: lexora, featured
+ * Keywords: testimonials, reviews, legal, social proof
+ * Description: Editorial testimonial section for a premium legal practice.
  */
 ?>
 <!-- wp:group {"anchor":"testimonials","align":"full","className":"buildora-testimonials","layout":{"type":"constrained"}} -->
@@ -12,21 +12,21 @@
 	<!-- wp:group {"align":"wide","className":"buildora-testimonials__intro","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignwide buildora-testimonials__intro">
 		<!-- wp:paragraph {"className":"buildora-testimonials__eyebrow"} -->
-		<p class="buildora-testimonials__eyebrow"><?php esc_html_e( 'Client feedback', 'buildora' ); ?></p>
+		<p class="buildora-testimonials__eyebrow"><?php esc_html_e( 'Client perspective', 'lexora' ); ?></p>
 		<!-- /wp:paragraph -->
 		<!-- wp:columns {"verticalAlignment":"bottom","className":"buildora-testimonials__heading-row"} -->
 		<div class="wp-block-columns are-vertically-aligned-bottom buildora-testimonials__heading-row">
 			<!-- wp:column {"verticalAlignment":"bottom","width":"60%"} -->
 			<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:60%">
 				<!-- wp:heading {"level":2,"className":"buildora-testimonials__title"} -->
-				<h2 class="wp-block-heading buildora-testimonials__title"><?php esc_html_e( 'Trusted for the details that matter.', 'buildora' ); ?></h2>
+				<h2 class="wp-block-heading buildora-testimonials__title"><?php esc_html_e( 'Trusted when the stakes are personal.', 'lexora' ); ?></h2>
 				<!-- /wp:heading -->
 			</div>
 			<!-- /wp:column -->
 			<!-- wp:column {"verticalAlignment":"bottom","width":"40%"} -->
 			<div class="wp-block-column is-vertically-aligned-bottom" style="flex-basis:40%">
 				<!-- wp:paragraph {"textColor":"muted","className":"buildora-testimonials__lead"} -->
-				<p class="buildora-testimonials__lead has-muted-color has-text-color"><?php esc_html_e( 'Clear communication, dependable delivery and a finish clients are happy to recommend.', 'buildora' ); ?></p>
+				<p class="buildora-testimonials__lead has-muted-color has-text-color"><?php esc_html_e( 'Clear advice, careful preparation and communication that keeps clients informed from first consultation to resolution.', 'lexora' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:column -->
@@ -43,12 +43,12 @@
 			<div class="wp-block-group buildora-testimonial buildora-testimonial--featured has-paper-color has-ink-background-color has-text-color has-background">
 				<!-- wp:paragraph {"className":"buildora-testimonial__rating"} --><p class="buildora-testimonial__rating" aria-label="5 out of 5 stars">★★★★★</p><!-- /wp:paragraph -->
 				<!-- wp:quote {"className":"buildora-testimonial__quote"} -->
-				<blockquote class="wp-block-quote buildora-testimonial__quote"><p><?php esc_html_e( '“The programme stayed clear from the first quote to the final walkthrough. We always knew what was happening next, and the finish was exactly what we had agreed.”', 'buildora' ); ?></p></blockquote>
+				<blockquote class="wp-block-quote buildora-testimonial__quote"><p><?php esc_html_e( '“From the first meeting, the advice was direct and easy to understand. We always knew the options, the risks and what would happen next.”', 'lexora' ); ?></p></blockquote>
 				<!-- /wp:quote -->
 				<!-- wp:group {"className":"buildora-testimonial__meta","layout":{"type":"constrained"}} -->
 				<div class="wp-block-group buildora-testimonial__meta">
-					<!-- wp:paragraph {"className":"buildora-testimonial__name"} --><p class="buildora-testimonial__name"><strong><?php esc_html_e( 'Sarah & Mark L.', 'buildora' ); ?></strong></p><!-- /wp:paragraph -->
-					<!-- wp:paragraph {"className":"buildora-testimonial__project"} --><p class="buildora-testimonial__project"><?php esc_html_e( 'Full home renovation', 'buildora' ); ?></p><!-- /wp:paragraph -->
+					<!-- wp:paragraph {"className":"buildora-testimonial__name"} --><p class="buildora-testimonial__name"><strong><?php esc_html_e( 'Emily R.', 'lexora' ); ?></strong></p><!-- /wp:paragraph -->
+					<!-- wp:paragraph {"className":"buildora-testimonial__project"} --><p class="buildora-testimonial__project"><?php esc_html_e( 'Commercial dispute client', 'lexora' ); ?></p><!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
 			</div>
@@ -62,10 +62,10 @@
 			<div class="wp-block-group buildora-testimonial">
 				<!-- wp:paragraph {"className":"buildora-testimonial__rating"} --><p class="buildora-testimonial__rating" aria-label="5 out of 5 stars">★★★★★</p><!-- /wp:paragraph -->
 				<!-- wp:quote {"className":"buildora-testimonial__quote buildora-testimonial__quote--small"} -->
-				<blockquote class="wp-block-quote buildora-testimonial__quote buildora-testimonial__quote--small"><p><?php esc_html_e( '“The quote was straightforward, the site stayed organised and every milestone was explained before the work moved on.”', 'buildora' ); ?></p></blockquote>
+				<blockquote class="wp-block-quote buildora-testimonial__quote buildora-testimonial__quote--small"><p><?php esc_html_e( '“The team handled a difficult family matter with patience, discretion and practical advice. I never felt left in the dark.”', 'lexora' ); ?></p></blockquote>
 				<!-- /wp:quote -->
-				<!-- wp:paragraph {"className":"buildora-testimonial__name"} --><p class="buildora-testimonial__name"><strong><?php esc_html_e( 'Daniel Brooks', 'buildora' ); ?></strong></p><!-- /wp:paragraph -->
-				<!-- wp:paragraph {"className":"buildora-testimonial__project"} --><p class="buildora-testimonial__project"><?php esc_html_e( 'Commercial fit-out', 'buildora' ); ?></p><!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"buildora-testimonial__name"} --><p class="buildora-testimonial__name"><strong><?php esc_html_e( 'Michael T.', 'lexora' ); ?></strong></p><!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"buildora-testimonial__project"} --><p class="buildora-testimonial__project"><?php esc_html_e( 'Family law client', 'lexora' ); ?></p><!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 
@@ -73,10 +73,10 @@
 			<div class="wp-block-group buildora-testimonial">
 				<!-- wp:paragraph {"className":"buildora-testimonial__rating"} --><p class="buildora-testimonial__rating" aria-label="5 out of 5 stars">★★★★★</p><!-- /wp:paragraph -->
 				<!-- wp:quote {"className":"buildora-testimonial__quote buildora-testimonial__quote--small"} -->
-				<blockquote class="wp-block-quote buildora-testimonial__quote buildora-testimonial__quote--small"><p><?php esc_html_e( '“Communication was the biggest difference. Questions were answered quickly and the handover felt properly finished, not rushed.”', 'buildora' ); ?></p></blockquote>
+				<blockquote class="wp-block-quote buildora-testimonial__quote buildora-testimonial__quote--small"><p><?php esc_html_e( '“Every step was explained before a decision had to be made. The preparation was thorough and the communication was excellent.”', 'lexora' ); ?></p></blockquote>
 				<!-- /wp:quote -->
-				<!-- wp:paragraph {"className":"buildora-testimonial__name"} --><p class="buildora-testimonial__name"><strong><?php esc_html_e( 'Priya Shah', 'buildora' ); ?></strong></p><!-- /wp:paragraph -->
-				<!-- wp:paragraph {"className":"buildora-testimonial__project"} --><p class="buildora-testimonial__project"><?php esc_html_e( 'Residential extension', 'buildora' ); ?></p><!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"buildora-testimonial__name"} --><p class="buildora-testimonial__name"><strong><?php esc_html_e( 'Aisha K.', 'lexora' ); ?></strong></p><!-- /wp:paragraph -->
+				<!-- wp:paragraph {"className":"buildora-testimonial__project"} --><p class="buildora-testimonial__project"><?php esc_html_e( 'Property matter client', 'lexora' ); ?></p><!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 		</div>

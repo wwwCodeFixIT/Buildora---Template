@@ -1,19 +1,58 @@
 /*
-Theme Name: Buildora
+Theme Name: Lexora
 Theme URI: https://codefix.it/
 Author: CodeFix.IT
 Author URI: https://codefix.it/
-Description: Performance-first WordPress block theme for construction, renovation and home-service businesses.
+Description: Premium Full Site Editing WordPress theme for law firms, attorneys and legal practices.
 Version: 1.0.0
 Requires at least: 6.6
 Requires PHP: 8.1
-Text Domain: buildora
+Text Domain: lexora
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: block-patterns, full-site-editing, custom-logo, featured-images
 */
 
-/* Keep this file intentionally small. Production styles are built by Vite. */
+@import url("assets/css/lexora-reference-pages.css");
+@import url("assets/css/lexora-homepage-mockup.css");
+
+body.home .wp-site-blocks {
+  gap: 0;
+}
+
+body.home .wp-site-blocks > .wp-block-template-part,
+body.home .wp-site-blocks > main,
+body.home main#main {
+  margin-block-start: 0;
+}
+
+body.home .lexora-attorney-mini__portrait {
+  overflow: hidden;
+}
+
+body.home .lexora-attorney-mini__portrait img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.buildora-primary-nav .current-menu-item > .wp-block-navigation-item__content,
+.lexora-primary-nav .current-menu-item > .wp-block-navigation-item__content {
+  position: relative;
+  color: #d8ad63 !important;
+}
+
+.buildora-primary-nav .current-menu-item > .wp-block-navigation-item__content::after,
+.lexora-primary-nav .current-menu-item > .wp-block-navigation-item__content::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.75rem;
+  left: 0;
+  height: 1px;
+  background: #c99b50;
+  content: "";
+}
 
 .screen-reader-text {
   position: absolute;
@@ -39,8 +78,298 @@ Tags: block-patterns, full-site-editing, custom-logo, featured-images
   overflow: visible;
   clip: auto;
   white-space: normal;
-  background: #ffffff;
-  color: #111111;
-  border-radius: 0.375rem;
-  box-shadow: 0 0 0 3px #111111;
+  background: #fbf8f1;
+  color: #101820;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0 3px #b08d57;
+}
+
+/* Homepage reference lock. */
+body.home .wp-site-blocks,
+body.home .wp-site-blocks > *,
+body.home .lexora-header,
+body.home .lexora-header + main#main,
+body.home main#main,
+body.home main#main > *,
+body.home main#main > .lexora-hero-visual {
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+}
+
+body.home .lexora-header {
+  margin-bottom: 0 !important;
+}
+
+body.home main#main {
+  padding-top: 0 !important;
+}
+
+@media (min-width: 1100px) {
+  html body.home .wp-site-blocks .lexora-header .lexora-header__inner {
+    width: calc(100% - 140px) !important;
+    max-width: none !important;
+    min-height: 108px !important;
+    margin-inline: auto !important;
+  }
+
+  html body.home .lexora-header__logo img {
+    width: 66px !important;
+    height: 66px !important;
+  }
+
+  html body.home .lexora-header__logo span {
+    font-size: clamp(2.8rem, 2.5vw, 3.35rem) !important;
+    letter-spacing: 0.012em !important;
+  }
+
+  html body.home .lexora-header__actions {
+    flex: 1 1 auto !important;
+    margin-left: clamp(5rem, 8vw, 10rem) !important;
+  }
+
+  html body.home .lexora-primary-nav {
+    margin-right: clamp(4rem, 5vw, 7rem) !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-hero-visual__grid {
+    width: 100% !important;
+    max-width: none !important;
+    margin-inline: 0 !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-hero-visual__content {
+    flex-basis: 55% !important;
+    padding-left: clamp(7.25rem, 7.5vw, 9.75rem) !important;
+    padding-right: clamp(3rem, 4vw, 5rem) !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-hero-visual__media-column {
+    flex-basis: 45% !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-hero-visual__media-column::before {
+    width: 32% !important;
+    background: linear-gradient(
+      90deg,
+      #041a37 0%,
+      rgb(4 26 55 / 94%) 22%,
+      rgb(4 26 55 / 56%) 58%,
+      transparent 100%
+    ) !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-hero-visual__image img {
+    object-position: 52% 52% !important;
+    filter: brightness(0.88) contrast(1.12) saturate(1.02) sepia(0.18) !important;
+  }
+
+  html body.home .lexora-hero-visual__actions .wp-block-button:first-child .wp-block-button__link {
+    min-width: 215px !important;
+  }
+
+  html body.home .lexora-hero-visual__actions .wp-block-button:nth-child(2) .wp-block-button__link {
+    min-width: 255px !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-stat-bar__grid {
+    width: calc(100% - 160px) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-stat-bar__item {
+    padding: 1rem 1rem 1.05rem !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-home-showcase {
+    padding: 1.45rem 18px 1.55rem !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-home-showcase__inner {
+    width: calc(100% - 36px) !important;
+    max-width: none !important;
+    min-height: 360px !important;
+    margin-inline: auto !important;
+    grid-template-columns: 1.14fr 1.78fr 0.76fr !important;
+    gap: 1rem !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-showcase-panel,
+  html body.home .wp-site-blocks main#main .lexora-contact-mini {
+    min-height: 360px !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-showcase-panel--practice {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-showcase-panel--practice .lexora-practice-mini-grid {
+    flex: 0 0 auto;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-showcase-panel--practice .lexora-showcase-button {
+    margin-top: auto !important;
+    margin-bottom: 0.55rem !important;
+    align-self: center !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-attorney-mini__portrait {
+    min-height: 215px !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-attorney-mini__portrait img {
+    filter: grayscale(0.18) saturate(0.68) contrast(1.1) brightness(0.82) sepia(0.08) !important;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-attorney-mini:nth-child(1) .lexora-attorney-mini__portrait img {
+    transform: scale(1.2);
+    transform-origin: center 24%;
+  }
+
+  html body.home .wp-site-blocks main#main .lexora-contact-mini__form input,
+  html body.home .wp-site-blocks main#main .lexora-contact-mini__form textarea {
+    font-size: 0.74rem !important;
+  }
+
+  html body.home .wp-site-blocks footer .alignwide,
+  html body.home .wp-site-blocks .lexora-footer-shell__inner {
+    width: calc(100% - 140px) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+  }
+
+  /* Inner pages reference lock. Home remains untouched above. */
+  html body:not(.home) .wp-site-blocks .lexora-header .lexora-header__inner {
+    width: min(1380px, calc(100% - 120px)) !important;
+    max-width: none !important;
+    min-height: 96px !important;
+    margin-inline: auto !important;
+  }
+
+  html body:not(.home) .lexora-header__logo {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    color: #f8f1e7 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+  }
+
+  html body:not(.home) .lexora-header__logo img {
+    width: 60px !important;
+    height: 60px !important;
+    flex: 0 0 auto !important;
+  }
+
+  html body:not(.home) .lexora-header__logo .lexora-header__brand-text {
+    display: inline-block !important;
+    color: #f8f1e7 !important;
+    font-family: var(--wp--preset--font-family--serif) !important;
+    font-size: clamp(2.4rem, 2.25vw, 3rem) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    line-height: 1 !important;
+    text-transform: uppercase !important;
+  }
+
+  html body:not(.home) .lexora-header__actions {
+    flex: 1 1 auto !important;
+    margin-left: clamp(4rem, 7vw, 8rem) !important;
+  }
+
+  html body:not(.home) .lexora-primary-nav {
+    margin-right: clamp(2rem, 3vw, 4rem) !important;
+  }
+
+  html body:not(.home) :is(.lx-ref-page, .lx-ref-profile, .lx-ref-results) .alignwide {
+    width: min(1380px, calc(100% - 120px)) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+  }
+
+  html body:not(.home) .lx-ref-inner-hero__grid {
+    min-height: 410px !important;
+  }
+
+  html body:not(.home) .lx-ref-inner-hero__copy {
+    padding: 4rem clamp(2rem, 4vw, 4.8rem) 4rem 0 !important;
+  }
+
+  html body:not(.home) .lx-ref-inner-hero__media,
+  html body:not(.home) .lx-ref-inner-hero__media figure,
+  html body:not(.home) .lx-ref-inner-hero__media img {
+    min-height: 410px !important;
+  }
+
+  html body:not(.home) .lx-ref-practice__body {
+    padding-bottom: 3rem !important;
+  }
+
+  html body:not(.home) .lx-ref-practice-grid {
+    gap: 1.35rem !important;
+  }
+
+  html body:not(.home) .lx-ref-practice-card {
+    min-height: 270px !important;
+    padding: 2.3rem 2rem !important;
+  }
+
+  html body:not(.home) .lx-ref-directory {
+    padding: 2.2rem 0 3.2rem !important;
+  }
+
+  html body:not(.home) .lx-ref-directory__toolbar {
+    margin-bottom: 1.8rem !important;
+  }
+
+  html body:not(.home) .lx-ref-attorney-grid {
+    gap: 1.15rem !important;
+  }
+
+  html body:not(.home) .lx-ref-attorney-card__media {
+    aspect-ratio: 0.88 !important;
+  }
+
+  html body:not(.home) .lx-ref-attorney-card h2 {
+    font-size: 1.28rem !important;
+  }
+
+  html body:not(.home) .lx-ref-bottom-cta {
+    margin-top: 2rem !important;
+    padding: 1.65rem 2.2rem !important;
+  }
+
+  html body:not(.home) .lx-ref-profile__hero-grid {
+    min-height: 410px !important;
+    gap: 3.2rem !important;
+  }
+
+  html body:not(.home) .lx-ref-profile__portrait {
+    min-height: 410px !important;
+  }
+
+  html body:not(.home) .lx-ref-profile__intro {
+    padding: 2.7rem 0 !important;
+  }
+
+  html body:not(.home) .lx-ref-profile__facts {
+    padding: 2.6rem 0 !important;
+  }
+
+  html body:not(.home) .lx-ref-profile__lower {
+    padding: 2.8rem 0 3.2rem !important;
+  }
+
+  html body:not(.home) .lx-ref-profile__consult {
+    padding: 2rem !important;
+  }
+
+  html body:not(.home) .wp-site-blocks footer .alignwide,
+  html body:not(.home) .wp-site-blocks .lexora-footer-shell__inner {
+    width: min(1380px, calc(100% - 120px)) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+  }
 }
