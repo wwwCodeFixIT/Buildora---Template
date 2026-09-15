@@ -109,6 +109,7 @@
 				<!-- wp:navigation-link {"label":"About","url":"<?php echo esc_url( home_url( '/about/' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 				<!-- wp:navigation-link {"label":"Practice Areas","url":"<?php echo esc_url( home_url( '/practice-areas/' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 				<!-- wp:navigation-link {"label":"Attorneys","url":"<?php echo esc_url( home_url( '/attorneys/' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
+				<!-- wp:navigation-link {"label":"Results","url":"<?php echo esc_url( home_url( '/results/' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 				<!-- wp:navigation-link {"label":"Blog","url":"#","kind":"custom","isTopLevelLink":true} /-->
 				<!-- wp:navigation-link {"label":"Contact","url":"<?php echo esc_url( home_url( '/contact/' ) ); ?>","kind":"custom","isTopLevelLink":true} /-->
 			<!-- /wp:navigation -->
@@ -131,6 +132,7 @@
 							<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php esc_html_e( 'About', 'lexora' ); ?></a></li>
 							<li><a href="<?php echo esc_url( home_url( '/practice-areas/' ) ); ?>"><?php esc_html_e( 'Practice Areas', 'lexora' ); ?></a></li>
 							<li><a href="<?php echo esc_url( home_url( '/attorneys/' ) ); ?>"><?php esc_html_e( 'Attorneys', 'lexora' ); ?></a></li>
+							<li><a href="<?php echo esc_url( home_url( '/results/' ) ); ?>"><?php esc_html_e( 'Results', 'lexora' ); ?></a></li>
 							<li><a href="#"><?php esc_html_e( 'Blog', 'lexora' ); ?></a></li>
 							<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact', 'lexora' ); ?></a></li>
 						</ul>
