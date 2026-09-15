@@ -239,7 +239,7 @@ body.home .wp-site-blocks > * { margin-block-start: 0 !important; }
 	<!-- wp:columns {"align":"wide","verticalAlignment":"stretch","className":"lexora-hero-visual__grid"} -->
 	<div class="wp-block-columns alignwide are-vertically-aligned-stretch lexora-hero-visual__grid">
 		<!-- wp:column {"verticalAlignment":"center","width":"55%","className":"lexora-hero-visual__content"} -->
-		<div class="wp-block-column is-vertically-aligned-center lexora-hero-visual__content" style="flex-basis:55% !important;padding:5rem 4.25rem 4.75rem clamp(7.5rem,8.5vw,10rem) !important">
+		<div class="wp-block-column is-vertically-aligned-center lexora-hero-visual__content" style="flex-basis:55% !important">
 			<!-- wp:paragraph {"className":"lexora-hero-visual__eyebrow"} -->
 			<p class="lexora-hero-visual__eyebrow"><?php esc_html_e( 'Advocates. Advisors. Allies.', 'lexora' ); ?></p>
 			<!-- /wp:paragraph -->
