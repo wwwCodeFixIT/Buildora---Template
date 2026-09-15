@@ -13,6 +13,94 @@
 	<!-- wp:html -->
 	<style>
 	@media (max-width: 800px) {
+		/* Keep the mobile header focused on the brand and menu trigger. */
+		.lexora-header__cta {
+			display: none !important;
+		}
+
+		.lexora-header__inner {
+			min-height: 72px !important;
+			padding-inline: 1rem !important;
+		}
+
+		.lexora-header__logo {
+			display: inline-flex !important;
+			align-items: center !important;
+			gap: .55rem !important;
+			white-space: nowrap !important;
+		}
+
+		.lexora-header__logo img {
+			width: 34px !important;
+			height: 34px !important;
+			display: block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+			object-fit: contain !important;
+		}
+
+		.lexora-header__brand-text {
+			display: inline-block !important;
+			font-size: 1.72rem !important;
+			line-height: 1 !important;
+		}
+
+		/* Mobile Attorneys hero: integrate the courthouse into the hero background. */
+		.lx-ref-attorneys .lx-ref-inner-hero {
+			background:
+				linear-gradient(180deg, rgb(3 20 42 / 98%) 0%, rgb(3 20 42 / 93%) 52%, rgb(3 20 42 / 68%) 78%, rgb(2 14 31 / 34%) 100%),
+				linear-gradient(90deg, rgb(3 20 42 / 98%) 0%, rgb(3 20 42 / 76%) 60%, rgb(3 20 42 / 24%) 100%),
+				url('https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&fit=crop&w=1200&q=86') 58% bottom / cover no-repeat !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-inner-hero__grid {
+			display: block !important;
+			width: 100% !important;
+			max-width: none !important;
+			min-height: 520px !important;
+			margin: 0 !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-inner-hero__copy {
+			width: 100% !important;
+			max-width: 100% !important;
+			box-sizing: border-box !important;
+			padding: 3rem 1.35rem 4rem !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-inner-hero__media {
+			display: none !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-kicker {
+			margin-bottom: 1rem !important;
+			font-size: .75rem !important;
+			line-height: 1.5 !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-inner-hero__title {
+			max-width: 10ch !important;
+			font-size: clamp(2.8rem, 12.6vw, 3.35rem) !important;
+			line-height: .98 !important;
+			letter-spacing: -.035em !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-rule {
+			margin: 1.35rem 0 !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-rule span {
+			width: 72px !important;
+		}
+
+		.lx-ref-attorneys .lx-ref-inner-hero__lead {
+			max-width: 20.5rem !important;
+			margin-top: 0 !important;
+			font-family: var(--lx-ref-sans) !important;
+			font-size: .98rem !important;
+			line-height: 1.58 !important;
+		}
+
 		.lx-ref-attorneys .lx-ref-directory {
 			padding: 1.35rem 0 2rem;
 		}
@@ -46,7 +134,7 @@
 			min-width: 0 !important;
 			min-height: 46px;
 			padding: .7rem .8rem;
-			border-color: #d8c9b4;
+			border: 1px solid #d8c9b4;
 			background: #fffdf9;
 			font-size: .84rem;
 		}
@@ -150,19 +238,17 @@
 	}
 
 	@media (max-width: 560px) {
+		.lx-ref-attorneys .lx-ref-inner-hero__grid {
+			min-height: 500px !important;
+		}
+
 		.lx-ref-attorneys .lx-ref-inner-hero__copy {
-			padding: 2.45rem 0 1.5rem;
+			padding: 2.7rem 1.2rem 3.6rem !important;
 		}
 
 		.lx-ref-attorneys .lx-ref-inner-hero__lead {
-			font-size: 1rem;
-			line-height: 1.6;
-		}
-
-		.lx-ref-attorneys .lx-ref-inner-hero__media,
-		.lx-ref-attorneys .lx-ref-inner-hero__media figure,
-		.lx-ref-attorneys .lx-ref-inner-hero__media img {
-			min-height: 230px;
+			font-size: .95rem !important;
+			line-height: 1.58 !important;
 		}
 
 		.lx-ref-attorneys .lx-ref-attorney-card {
