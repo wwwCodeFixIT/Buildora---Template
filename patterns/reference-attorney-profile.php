@@ -20,6 +20,135 @@
 	filter: grayscale(.16) saturate(.74) contrast(1.08) brightness(.86);
 	object-position: center top;
 }
+
+@media (max-width: 560px) {
+	.lexora-header__cta,
+	.buildora-header__cta {
+		display: none !important;
+	}
+
+	.lexora-header__logo img {
+		display: block !important;
+		width: 34px !important;
+		height: 34px !important;
+	}
+
+	.lx-ref-profile__hero {
+		padding-top: .85rem;
+		background:
+			linear-gradient(180deg, rgb(2 14 32 / 96%) 0%, rgb(2 14 32 / 92%) 54%, rgb(2 14 32 / 78%) 100%),
+			url('https://images.unsplash.com/photo-1765281723581-550d92b63591?auto=format&fit=crop&w=1100&q=86') center / cover no-repeat,
+			#020e20 !important;
+	}
+
+	.lx-ref-profile__crumbs {
+		padding: 0 1.35rem .85rem !important;
+	}
+
+	.lx-ref-profile__crumbs nav {
+		flex-wrap: wrap;
+		gap: .4rem .55rem;
+		font-size: .68rem;
+	}
+
+	.lx-ref-profile__hero-grid {
+		display: block !important;
+		min-height: 0 !important;
+		padding: 0 1.35rem 1.8rem !important;
+	}
+
+	.lx-ref-profile__portrait {
+		width: min(66vw, 240px) !important;
+		min-height: 0 !important;
+		aspect-ratio: 4 / 5;
+		margin: 0 0 1.35rem !important;
+	}
+
+	.lx-ref-profile__intro {
+		padding: 0 !important;
+	}
+
+	.lx-ref-profile__name {
+		font-size: clamp(2.65rem, 11.5vw, 3.1rem) !important;
+		line-height: .98 !important;
+		letter-spacing: -.035em !important;
+	}
+
+	.lx-ref-profile__role {
+		margin-top: .45rem;
+		font-size: 1.45rem;
+	}
+
+	.lx-ref-profile__lead {
+		font-size: .95rem;
+		line-height: 1.6;
+	}
+
+	.lx-ref-profile__contact {
+		gap: .65rem;
+		margin-top: 1.15rem;
+		font-size: .83rem;
+	}
+
+	.lx-ref-profile__facts {
+		padding: 1.25rem 0 1.4rem;
+	}
+
+	.lx-ref-profile__facts-grid {
+		padding-inline: 1.35rem !important;
+	}
+
+	.lx-ref-profile__facts-grid > .wp-block-column {
+		padding: 1.15rem 0 !important;
+	}
+
+	.lx-ref-profile__facts-grid > .wp-block-column:first-child {
+		padding-top: 0 !important;
+	}
+
+	.lx-ref-profile__facts-grid > .wp-block-column:last-child {
+		padding-bottom: 0 !important;
+	}
+
+	.lx-ref-profile__facts h2,
+	.lx-ref-profile__lower h2 {
+		font-size: 1.25rem;
+		line-height: 1.15;
+	}
+
+	.lx-ref-profile__lower {
+		padding: 1.6rem 0 2rem;
+	}
+
+	.lx-ref-profile__lower > .wp-block-columns {
+		display: block !important;
+		padding-inline: 1.35rem !important;
+	}
+
+	.lx-ref-profile__focus-grid {
+		gap: 1rem;
+	}
+
+	.lx-ref-profile__focus-grid article {
+		grid-template-columns: 34px 1fr;
+		gap: .65rem;
+	}
+
+	.lx-ref-profile__focus-grid b {
+		font-size: 1.5rem;
+	}
+
+	.lx-ref-profile__consult {
+		margin-top: 1.6rem;
+		padding: 1.35rem;
+	}
+
+	.lx-ref-profile__consult .wp-block-buttons,
+	.lx-ref-profile__consult .wp-block-button,
+	.lx-ref-profile__consult .wp-block-button__link {
+		width: 100%;
+	}
+}
 </style>
 <!-- /wp:html -->
 <!-- wp:group {"align":"full","className":"lx-ref-profile","layout":{"type":"default"}} -->
