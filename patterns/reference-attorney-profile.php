@@ -27,10 +27,26 @@
 		display: none !important;
 	}
 
+	.lexora-header__logo {
+		display: inline-flex !important;
+		align-items: center !important;
+		gap: .65rem !important;
+		white-space: nowrap !important;
+		text-decoration: none !important;
+	}
+
 	.lexora-header__logo img {
 		display: block !important;
 		width: 34px !important;
 		height: 34px !important;
+		flex: 0 0 34px !important;
+	}
+
+	.lexora-header__brand-text {
+		display: block !important;
+		font-size: 1.9rem !important;
+		line-height: 1 !important;
+		white-space: nowrap !important;
 	}
 
 	.lx-ref-profile__hero {
